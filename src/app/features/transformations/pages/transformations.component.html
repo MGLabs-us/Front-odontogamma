@@ -1,0 +1,100 @@
+<!-- Encabezado de Página -->
+<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+    <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
+      Galería Clínica
+    </span>
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
+      Antes & Después
+    </h1>
+    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+      Explora los resultados reales de nuestros pacientes. Desliza el cursor o tu dedo sobre las imágenes para comparar el estado inicial con el resultado definitivo.
+    </p>
+  </div>
+</section>
+
+<!-- Filtros de Categoría y Galería -->
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+  
+  <!-- Barra de Filtros Estilo Minimalista Editorial -->
+  <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-16">
+    @for (tab of categories; track tab.key) {
+      <button
+        type="button"
+        (click)="setCategory(tab.key)"
+        class="px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-all duration-200 cursor-pointer rounded-xs border"
+        [class.bg-og-deep]="selectedCategory() === tab.key"
+        [class.text-white]="selectedCategory() === tab.key"
+        [class.border-og-deep]="selectedCategory() === tab.key"
+        [class.bg-white]="selectedCategory() !== tab.key"
+        [class.text-og-slate]="selectedCategory() !== tab.key"
+        [class.border-og-border]="selectedCategory() !== tab.key"
+        [class.hover:border-og-electric]="selectedCategory() !== tab.key"
+        [class.hover:text-og-headline]="selectedCategory() !== tab.key"
+      >
+        {{ tab.label }}
+      </button>
+    }
+  </div>
+
+  <!-- Malla de Casos Clínicos con Slider Interactivo -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+    @for (caseItem of filteredCases(); track caseItem.id) {
+      <div class="bg-white border border-og-border p-6 rounded-xs shadow-subtle hover:shadow-elevated transition-shadow duration-300">
+        
+        <!-- Comparador Interactivo Antes / Después -->
+        <app-before-after-slider
+          [beforeImage]="caseItem.beforeImageUrl"
+          [afterImage]="caseItem.afterImageUrl"
+          [alt]="caseItem.title"
+          aspectRatio="aspect-[16/11]"
+        />
+
+        <!-- Datos del Caso -->
+        <div class="mt-6">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-og-electric font-semibold block mb-1">
+            {{ caseItem.categoryLabel }}
+          </span>
+          <h2 class="text-2xl font-editorial font-light text-og-headline mb-3">
+            {{ caseItem.title }}
+          </h2>
+          <p class="text-xs md:text-sm text-og-slate font-light leading-relaxed mb-6">
+            {{ caseItem.description }}
+          </p>
+
+          <!-- Especificaciones Técnicas del Tratamiento -->
+          <div class="pt-4 border-t border-og-border flex flex-wrap gap-4 text-xs text-og-slate font-mono">
+            @if (caseItem.details.units) {
+              <span>• {{ caseItem.details.units }}</span>
+            }
+            @if (caseItem.details.shade) {
+              <span>• Color: {{ caseItem.details.shade }}</span>
+            }
+            @if (caseItem.details.timeframe) {
+              <span>• Duración: {{ caseItem.details.timeframe }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Bloque de Contacto Final -->
+  <div class="mt-24 p-12 bg-og-deep text-white text-center rounded-xs">
+    <h3 class="text-3xl font-editorial font-light text-white mb-4">
+      ¿Deseas una Valoración Personalizada para tu Sonrisa?
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-300 font-light max-w-xl mx-auto mb-8">
+      Cada diseño se planifica de forma única respetando tus facciones y aspiraciones. Agenda una consulta privada con el Dr. Jaime Arcila.
+    </p>
+    <app-luxury-button
+      routerLink="/contacto"
+      variant="primary"
+      size="md"
+    >
+      Solicitar Cita de Valoración
+    </app-luxury-button>
+  </div>
+
+</section>
+
