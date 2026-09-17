@@ -1,7 +1,7 @@
 <!-- ================================================================= -->
-<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Editorial)                 -->
+<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Video Inmersivo)            -->
 <!-- ================================================================= -->
-<section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-og-deep">
+<section class="relative h-[85vh] sm:h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-og-deep">
   <!-- Video Cinemático de Fondo con Movimiento Fluido y Póster de Respaldo -->
   <div class="absolute inset-0 z-0 overflow-hidden">
     <video
@@ -11,69 +11,24 @@
       playsinline
       preload="auto"
       poster="/videos/hero-poster.jpg"
-      class="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000 ease-out"
+      class="w-full h-full object-cover object-center opacity-90 scale-105 transition-transform duration-1000 ease-out"
     >
       <source src="/videos/hero-loop.mp4" type="video/mp4" />
       <!-- Fallback en imagen fija en caso de navegadores antiguos -->
       <img
         src="/videos/hero-poster.jpg"
         alt="Odontogamma Oriente Clínica de Lujo"
-        class="w-full h-full object-cover object-center opacity-35"
+        class="w-full h-full object-cover object-center opacity-90"
       />
     </video>
-    <!-- Máscaras de Gradiente Editorial para legibilidad y elegancia -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/75 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Gradiente sutil inferior para fundir con la siguiente sección -->
+    <div class="absolute inset-0 bg-gradient-to-t from-og-deep/90 via-transparent to-black/20"></div>
   </div>
 
-  <!-- Contenido Central del Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16">
-    
-    <!-- Insignia Superior -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xs bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fadeIn">
-      <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-ping"></span>
-      <span class="text-[10px] md:text-xs tracking-[0.3em] uppercase text-white font-medium">
-        Odontología Estética de Ultra-Precisión
-      </span>
-    </div>
-
-    <!-- Título de Impacto Editorial estilo Apa Aesthetic -->
-    <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-editorial font-light text-white tracking-tight leading-[1.05] mb-6">
-      EL NUEVO ESTÁNDAR <br class="hidden sm:inline" />
-      <span class="italic font-normal text-og-cyan">EN ODONTOLOGÍA</span>
-    </h1>
-
-    <!-- Subtítulo de Filosofía -->
-    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed tracking-wide">
-      No se trata simplemente de los dientes; se trata de la seguridad, armonía y plenitud que una sonrisa hecha a mano inspira a vivir.
-    </p>
-
-    <!-- Botones de Acción -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <app-luxury-button
-        routerLink="/contacto"
-        variant="primary"
-        size="lg"
-      >
-        Agendar Valoración
-      </app-luxury-button>
-
-      <app-luxury-button
-        routerLink="/transformaciones"
-        variant="outline"
-        size="lg"
-        class="text-white border-white/40 hover:border-white"
-      >
-        Ver Casos Clínicos
-      </app-luxury-button>
-    </div>
-
-  </div>
-
-  <!-- Indicador de Desplazamiento Inferior -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 text-white pointer-events-none">
-    <span class="text-[9px] uppercase tracking-[0.3em] font-light">Descubrir</span>
-    <div class="w-[1px] h-6 bg-gradient-to-b from-white to-transparent"></div>
+  <!-- Indicador sutil de Desplazamiento Inferior -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-75 hover:opacity-100 transition-opacity text-white pointer-events-none">
+    <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/90">Descubre Odontogamma</span>
+    <div class="w-[1px] h-8 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
 </section>
 
@@ -146,7 +101,7 @@
       </div>
 
       <app-luxury-button
-        routerLink="/transformaciones"
+        routerLink="/nuestro-trabajo/antes-y-despues"
         variant="outline"
         size="sm"
         class="text-white border-white/30 hover:border-white self-start md:self-auto"
@@ -284,7 +239,7 @@
       </span>
       
       <app-luxury-button
-        routerLink="/sobre-mi"
+        routerLink="/who-we-are/dr-jaime-arcila"
         variant="outline"
         size="sm"
         class="text-white border-white/30 hover:border-white"
@@ -296,7 +251,7 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 6. BANNER DE AGENDAMIENTO & CONTACTO                              -->
+<!-- 6. BANNER DE AGENDAMIENTO & VALORACIÓN VIRTUAL                    -->
 <!-- ================================================================= -->
 <section class="py-24 px-6 md:px-12 bg-white text-center">
   <div class="max-w-3xl mx-auto">
@@ -304,28 +259,27 @@
       Comienza tu Transformación
     </span>
     <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-6">
-      Agenda tu Consulta Privada
+      Elige Cómo Iniciar tu Diagnóstico
     </h2>
     <p class="text-sm md:text-base text-og-slate font-light leading-relaxed mb-10 max-w-xl mx-auto">
-      Permítenos evaluar tu caso con atención dedicada y diseñar el plan de tratamiento que mejor refleje tu esencia y armonía facial.
+      Sube las fotos de tus dientes para una evaluación virtual sin costo, o agenda una cita presencial exclusiva en nuestra sede de Llanogrande.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="lg"
       >
-        Solicitar Cita de Valoración
+        Valoración Virtual Gratuita
       </app-luxury-button>
 
       <app-luxury-button
-        href="https://wa.me/573000000000?text=Hola,%20quisiera%20agendar%20una%20valoración%20con%20el%20Dr.%20Jaime%20Arcila."
-        target="_blank"
+        routerLink="/contacto"
         variant="secondary"
         size="lg"
       >
-        WhatsApp Concierge
+        Cita Presencial en Sede
       </app-luxury-button>
     </div>
   </div>

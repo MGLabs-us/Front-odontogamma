@@ -1,0 +1,249 @@
+<!-- ================================================================= -->
+<!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED BRAND PARTNERS & MEDIA      -->
+<!-- ================================================================= -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+  <!-- Fotografía de Fondo Completo Editorial -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=2200&q=85"
+      alt="Alianzas de Marca y Presencia Editorial Odontogamma Oriente"
+      class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
+    />
+    <!-- Gradiente multicapa de alta costura -->
+    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+  </div>
+
+  <!-- Contenido Hero -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
+        Alianzas Globales & Presencia Digital
+      </span>
+    </div>
+
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+      Vanguardia, Medios <br />
+      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+        y Alianzas de Prestigio
+      </span>
+    </h1>
+
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+      Respaldados por las casas pioneras mundiales en cerámica dental y tecnología óptica. Compartimos nuestro día a día, transformaciones reales y contenido educativo en nuestras plataformas oficiales.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-medium text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 rounded-xs hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300"
+      >
+        <span>Seguir en Instagram</span>
+        <span class="text-sm">↗</span>
+      </a>
+
+      <app-luxury-button
+        routerLink="/contacto"
+        variant="outline"
+        size="md"
+        class="border-white/30 text-white hover:border-og-cyan hover:text-og-cyan"
+      >
+        Propuesta de Colaboración
+      </app-luxury-button>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 2. ALIANZAS TECNOLÓGICAS Y DE BIOMATERIALES                       -->
+<!-- ================================================================= -->
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+  <app-section-header
+    kicker="Estándares Internacionales"
+    title="Nuestros Aliados en Excelencia Clínica"
+    subtitle="Trabajamos exclusivamente con las casas matrices europeas y norteamericanas más avanzadas del sector."
+    align="center"
+  />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-16">
+    @for (partner of partners; track partner.name) {
+      <div class="p-8 sm:p-10 border border-og-border bg-white rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold">
+              {{ partner.country }}
+            </span>
+            <span class="px-3 py-1 bg-slate-100 text-og-deep text-[10px] uppercase tracking-wider font-mono rounded-xs">
+              {{ partner.badge }}
+            </span>
+          </div>
+
+          <h3 class="text-2xl font-editorial font-light text-og-headline mb-1">
+            {{ partner.name }}
+          </h3>
+          <span class="text-xs uppercase tracking-wider text-og-cyan block mb-4 font-mono">
+            {{ partner.category }}
+          </span>
+
+          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+            {{ partner.description }}
+          </p>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-og-border flex items-center justify-between text-[11px] text-og-slate">
+          <span>Integración directa en el protocolo Odontogamma</span>
+          <span class="text-og-electric font-medium">✓ Certificado</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 3. FEED EDITORIAL SOCIAL: INSTAGRAM & REELS                       -->
+<!-- ================================================================= -->
+<section class="py-24 bg-slate-50 border-y border-og-border">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-2">
+          Comunidad & Publicaciones
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-editorial font-light text-og-headline">
+          El Diario Visual de Nuestras Sonrisas
+        </h2>
+      </div>
+
+      <!-- Filtros de Contenido -->
+      <div class="flex items-center gap-2 bg-white p-1 border border-og-border rounded-xs self-start md:self-auto">
+        <button
+          type="button"
+          (click)="setFilter('all')"
+          [class]="selectedFilter() === 'all' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
+        >
+          Todos
+        </button>
+        <button
+          type="button"
+          (click)="setFilter('reels')"
+          [class]="selectedFilter() === 'reels' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
+        >
+          Reels & Videos
+        </button>
+        <button
+          type="button"
+          (click)="setFilter('cases')"
+          [class]="selectedFilter() === 'cases' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
+        >
+          Casos Clínicos
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid de Publicaciones -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (post of filteredPosts(); track post.id) {
+        <article class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+          
+          <div>
+            <!-- Visual de la Publicación -->
+            <div class="relative aspect-square overflow-hidden bg-slate-200">
+              <img
+                [src]="post.imageUrl"
+                [alt]="post.title"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+              <!-- Badge de Tipo (Reel o Caso) -->
+              <span class="absolute top-3 right-3 px-2.5 py-1 bg-black/60 backdrop-blur-md text-white text-[10px] uppercase tracking-wider rounded-xs font-mono">
+                @if (post.type === 'reel') { ▶ Reel } @else { ✦ Foto }
+              </span>
+
+              <!-- Métricas de Engagement -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
+                <span>♥ {{ post.likes }}</span>
+                @if (post.views) {
+                  <span>👁 {{ post.views }}</span>
+                }
+              </div>
+            </div>
+
+            <!-- Contenido del Post -->
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-wider text-og-electric font-semibold block mb-1">
+                {{ post.tag }}
+              </span>
+              <h3 class="text-lg font-editorial font-light text-og-headline mb-3 leading-snug">
+                {{ post.title }}
+              </h3>
+              <p class="text-xs text-og-slate font-light leading-relaxed mb-4">
+                {{ post.caption }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Conclusión Clínica del Post -->
+          <div class="p-6 pt-0">
+            <div class="p-3 bg-slate-50 border-l-2 border-og-electric rounded-r-xs">
+              <span class="text-[10px] uppercase tracking-wider text-og-headline font-semibold block mb-0.5">Conclusión:</span>
+              <p class="text-[11px] text-og-slate font-light italic">
+                {{ post.conclusion }}
+              </p>
+            </div>
+          </div>
+
+        </article>
+      }
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 4. BANNER INSTAGRAM CONNECT & CTA                                  -->
+<!-- ================================================================= -->
+<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+      <span class="text-pink-400">●</span>
+      <span class="text-[10px] uppercase tracking-[0.3em] text-slate-200 font-mono">&#64;odontogammaoriente</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+      Únete a Nuestra Comunidad Estética
+    </h2>
+    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+      Descubre diariamente casos inéditos de transformación, videos de laboratorio y el detrás de escena de nuestra práctica médica.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 rounded-xs hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300"
+      >
+        <span>Abrir Instagram</span>
+        <span>↗</span>
+      </a>
+
+      <app-luxury-button
+        routerLink="/contacto"
+        variant="primary"
+        size="lg"
+      >
+        Agendar Consulta
+      </app-luxury-button>
+    </div>
+  </div>
+</section>
+

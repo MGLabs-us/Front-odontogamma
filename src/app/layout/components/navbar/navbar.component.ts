@@ -1,5 +1,5 @@
 import { Component, signal, HostListener, ChangeDetectionStrategy } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
 
@@ -10,7 +10,7 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, LuxuryButtonComponent],
+  imports: [CommonModule, RouterLink, LuxuryButtonComponent],
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -23,6 +23,12 @@ export class NavbarComponent {
 
   /** Controla el submenú de tratamientos en versión móvil */
   protected readonly mobileServicesOpen = signal<boolean>(false);
+
+  /** Controla el submenú de Quiénes Somos en versión móvil */
+  protected readonly mobileWhoWeAreOpen = signal<boolean>(false);
+
+  /** Controla el submenú de Nuestro Trabajo en versión móvil */
+  protected readonly mobileOurWorkOpen = signal<boolean>(false);
 
   @HostListener('window:scroll')
   protected onScroll(): void {
@@ -37,8 +43,18 @@ export class NavbarComponent {
     this.mobileServicesOpen.update(val => !val);
   }
 
+  protected toggleMobileWhoWeAre(): void {
+    this.mobileWhoWeAreOpen.update(val => !val);
+  }
+
+  protected toggleMobileOurWork(): void {
+    this.mobileOurWorkOpen.update(val => !val);
+  }
+
   protected closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
     this.mobileServicesOpen.set(false);
+    this.mobileWhoWeAreOpen.set(false);
+    this.mobileOurWorkOpen.set(false);
   }
 }

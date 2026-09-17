@@ -1,0 +1,207 @@
+<!-- ================================================================= -->
+<!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED NUESTRA SEDE               -->
+<!-- ================================================================= -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+  <!-- Fotografía de Fondo Completo Editorial -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85"
+      alt="Sede Odontogamma Oriente en Llanogrande"
+      class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
+    />
+    <!-- Gradiente multicapa de alta costura -->
+    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+  </div>
+
+  <!-- Contenido Hero -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
+        Oriente Antioqueño · Llanogrande
+      </span>
+    </div>
+
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+      Un Santuario de Calma, <br />
+      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+        Privacidad y Naturaleza
+      </span>
+    </h1>
+
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+      Diseñada para transformar tu experiencia médica en un momento de absoluto bienestar. A minutos del Aeropuerto Internacional JMC y en el corazón campestre más exclusivo de Antioquia.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <app-luxury-button
+        routerLink="/contacto"
+        variant="primary"
+        size="md"
+      >
+        Programar Visita Privada
+      </app-luxury-button>
+      <a
+        href="https://maps.google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-medium text-white border border-white/30 rounded-xs hover:border-og-cyan hover:text-og-cyan transition-all duration-300 backdrop-blur-sm"
+      >
+        Ver en Google Maps ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 2. RECORRIDO POR NUESTROS ESPACIOS                                -->
+<!-- ================================================================= -->
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+  <app-section-header
+    kicker="Arquitectura & Bienestar"
+    title="Espacios Concebidos para el Confort Supremo"
+    subtitle="Cada rincón de nuestra clínica combina líneas contemporáneas, luz natural y tecnología médica silenciosa."
+    align="center"
+  />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-16">
+    @for (space of spaces; track space.title) {
+      <div class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300">
+        <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-100">
+          <img
+            [src]="space.imageUrl"
+            [alt]="space.title"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          
+          <span class="absolute top-4 left-4 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-md rounded-xs">
+            {{ space.category }}
+          </span>
+        </div>
+
+        <div class="p-8">
+          <h3 class="text-2xl font-editorial font-light text-og-headline mb-3">
+            {{ space.title }}
+          </h3>
+          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+            {{ space.description }}
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 3. AMENIDADES EXCLUSIVAS DE LA SEDE                               -->
+<!-- ================================================================= -->
+<section class="py-24 bg-slate-50 border-y border-og-border">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-3">
+        Hospitalidad de Alto Nivel
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-light text-og-headline leading-tight">
+        Detalles que Definen la Experiencia Odontogamma
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">01</span>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entrada & Parking VIP</h4>
+        <p class="text-xs text-og-slate font-light leading-relaxed">
+          Estacionamiento privado con acceso directo y discreto al interior de la clínica para salvaguardar tu privacidad.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">02</span>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Concierge de Traslados</h4>
+        <p class="text-xs text-og-slate font-light leading-relaxed">
+          Coordinación de transporte privado desde el Aeropuerto JMC y los principales hoteles de Medellín y Llanogrande.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">03</span>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entorno Anti-Estrés</h4>
+        <p class="text-xs text-og-slate font-light leading-relaxed">
+          Aromaterapia sutil, insonorización acústica y vista a jardines verdes para una experiencia médica relajante.
+        </p>
+      </div>
+
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">04</span>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Atención Bilingüe</h4>
+        <p class="text-xs text-og-slate font-light leading-relaxed">
+          Personal clínico y de hospitalidad fluido en inglés para atender a nuestros pacientes internacionales sin barreras.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 4. CÓMO LLEGAR: RUTAS Y TIEMPOS DE TRASLADO                       -->
+<!-- ================================================================= -->
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+  <app-section-header
+    kicker="Accesibilidad Privilegiada"
+    title="Tu Viaje a Nuestra Sede"
+    subtitle="Ubicación estratégica y descongestionada en el corazón del Oriente Antioqueño."
+    align="center"
+  />
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+    @for (route of travelRoutes; track route.origin) {
+      <div class="p-8 border border-og-border bg-white rounded-xs flex flex-col justify-between">
+        <div>
+          <span class="text-3xl font-editorial font-light text-og-electric block mb-2">
+            {{ route.time }}
+          </span>
+          <h4 class="text-base font-editorial font-medium text-og-headline mb-1">
+            {{ route.origin }}
+          </h4>
+          <span class="text-[10px] uppercase tracking-wider text-og-cyan block mb-4 font-mono">
+            {{ route.route }}
+          </span>
+          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+            {{ route.description }}
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 5. CTA DE AGENDAMIENTO Y VISITA                                   -->
+<!-- ================================================================= -->
+<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
+      Oriente Antioqueño
+    </span>
+    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+      Ven a Conocer la Experiencia en Persona
+    </h2>
+    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+      Te esperamos en nuestras suites privadas de Llanogrande para diseñar la sonrisa que siempre soñaste.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <app-luxury-button
+        routerLink="/contacto"
+        variant="primary"
+        size="lg"
+      >
+        Agendar Cita Privada
+      </app-luxury-button>
+    </div>
+  </div>
+</section>
+

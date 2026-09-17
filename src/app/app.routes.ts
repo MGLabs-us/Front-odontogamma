@@ -17,10 +17,59 @@ export const routes: Routes = [
         title: 'Odontogamma Oriente | Dr. Jaime Arcila Cano — Odontología Estética de Lujo'
       },
       {
+        path: 'who-we-are',
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'about-us'
+          },
+          {
+            path: 'about-us',
+            loadComponent: () =>
+              import('./features/who-we-are/pages/about-us/about-us.component').then(
+                m => m.AboutUsComponent
+              ),
+            title: 'About Us | Odontogamma Oriente'
+          },
+          {
+            path: 'dr-jaime-arcila',
+            loadComponent: () =>
+              import('./features/who-we-are/pages/chief-doctor/chief-doctor.component').then(
+                m => m.ChiefDoctorComponent
+              ),
+            title: 'Dr. Jaime Arcila Cano — Director Clínico | Odontogamma Oriente'
+          },
+          {
+            path: 'our-team',
+            loadComponent: () =>
+              import('./features/who-we-are/pages/team/team.component').then(
+                m => m.TeamComponent
+              ),
+            title: 'Our Team — Especialistas Clínicos | Odontogamma Oriente'
+          },
+          {
+            path: 'our-location',
+            loadComponent: () =>
+              import('./features/who-we-are/pages/location/location.component').then(
+                m => m.LocationComponent
+              ),
+            title: 'Our Location — Sede Llanogrande | Odontogamma Oriente'
+          },
+          {
+            path: 'brand-partners',
+            loadComponent: () =>
+              import('./features/who-we-are/pages/brand-partners/brand-partners.component').then(
+                m => m.BrandPartnersComponent
+              ),
+            title: 'Brand Partners & Medios | Odontogamma Oriente'
+          }
+        ]
+      },
+      {
         path: 'sobre-mi',
-        loadComponent: () =>
-          import('./features/about/pages/about.component').then(m => m.AboutComponent),
-        title: 'Dr. Jaime Arcila Cano | Odontogamma Oriente'
+        redirectTo: 'who-we-are/dr-jaime-arcila',
+        pathMatch: 'full'
       },
       {
         path: 'servicios',
@@ -37,12 +86,53 @@ export const routes: Routes = [
         title: 'Tratamiento de Alta Precisión | Odontogamma Oriente'
       },
       {
+        path: 'nuestro-trabajo',
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'antes-y-despues'
+          },
+          {
+            path: 'antes-y-despues',
+            loadComponent: () =>
+              import('./features/our-work/pages/before-after/before-after.component').then(
+                m => m.BeforeAfterComponent
+              ),
+            title: 'Antes y Después — Casos Clínicos | Odontogamma Oriente'
+          },
+          {
+            path: 'testimonios',
+            loadComponent: () =>
+              import('./features/our-work/pages/testimonials/testimonials.component').then(
+                m => m.TestimonialsComponent
+              ),
+            title: 'Testimonios de Pacientes | Odontogamma Oriente'
+          },
+          {
+            path: 'valoracion-virtual',
+            loadComponent: () =>
+              import(
+                './features/our-work/pages/virtual-consultation/virtual-consultation.component'
+              ).then(m => m.VirtualConsultationComponent),
+            title: 'Valoración Virtual Gratuita | Odontogamma Oriente'
+          }
+        ]
+      },
+      {
         path: 'transformaciones',
-        loadComponent: () =>
-          import('./features/transformations/pages/transformations.component').then(
-            m => m.TransformationsComponent
-          ),
-        title: 'Antes & Después — Casos Clínicos | Odontogamma Oriente'
+        redirectTo: 'nuestro-trabajo/antes-y-despues',
+        pathMatch: 'full'
+      },
+      {
+        path: 'valoracion-virtual',
+        redirectTo: 'nuestro-trabajo/valoracion-virtual',
+        pathMatch: 'full'
+      },
+      {
+        path: 'testimonios',
+        redirectTo: 'nuestro-trabajo/testimonios',
+        pathMatch: 'full'
       },
       {
         path: 'contacto',
