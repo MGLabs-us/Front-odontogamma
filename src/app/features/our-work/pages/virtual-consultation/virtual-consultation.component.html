@@ -1,0 +1,425 @@
+<!-- ================================================================= -->
+<!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED VALORACIÓN VIRTUAL          -->
+<!-- ================================================================= -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+  <!-- Fotografía de Fondo Completo Editorial -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2200&q=85"
+      alt="Valoración Estética Digital Odontogamma Oriente"
+      class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
+    />
+    <!-- Gradiente multicapa de alta costura -->
+    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+  </div>
+
+  <!-- Contenido Hero -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
+        Consulta Preliminar 100% Gratuita & Confidencial
+      </span>
+    </div>
+
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+      Descubre el Potencial <br />
+      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+        de Tu Nueva Sonrisa
+      </span>
+    </h1>
+
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+      Sube 3 fotografías de tus dientes desde tu teléfono móvil. El Dr. Jaime Arcila Cano revisará personalmente tu caso y te enviará una evaluación estética preliminar con opciones viables directo a tu correo electrónico.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="#formulario-valoracion"
+        class="inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-og-electric hover:bg-og-deep transition-all duration-300 rounded-xs shadow-glow hover:shadow-elevated"
+      >
+        Llenar Formulario y Subir Fotos ↓
+      </a>
+      <a
+        href="https://wa.me/573000000000?text=Hola,%20quisiera%20asesoría%20para%20mi%20valoración%20virtual%20en%20Odontogamma%20Oriente."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white border border-white/30 rounded-xs hover:border-og-cyan hover:text-og-cyan transition-all duration-300 backdrop-blur-sm"
+      >
+        <span>Hablar con Concierge</span>
+        <span class="text-sm">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- 2. PANTALLA DE ÉXITO TRAS EL ENVÍO                                -->
+<!-- ================================================================= -->
+@if (isSuccess()) {
+  <section class="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center animate-fadeIn">
+    <div class="bg-white border border-emerald-500/30 p-10 sm:p-14 rounded-xs shadow-elevated">
+      <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-6 text-2xl">
+        ✓
+      </div>
+
+      <span class="text-xs uppercase tracking-[0.25em] text-emerald-600 font-semibold block mb-2 font-mono">
+        Solicitud Recibida con Éxito
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-editorial font-light text-og-headline mb-4">
+        ¡Gracias por Confiar en Odontogamma Oriente!
+      </h2>
+      <p class="text-sm sm:text-base text-og-slate font-light leading-relaxed max-w-xl mx-auto mb-8">
+        Hemos recibido tus datos y fotografías correctamente. El <strong>Dr. Jaime Arcila Cano</strong> y nuestro equipo clínico estudiarán las proporciones de tu sonrisa y te responderán con un informe de viabilidad estética preliminar al correo: <strong class="text-og-headline">{{ formData.email }}</strong> en un plazo máximo de <strong>24 a 48 horas laborales</strong>.
+      </p>
+
+      <div class="p-6 bg-slate-50 border border-og-border rounded-xs max-w-lg mx-auto mb-8 text-left text-xs text-og-slate space-y-2">
+        <div class="flex justify-between">
+          <span class="font-medium text-og-headline">Paciente:</span>
+          <span>{{ formData.fullName }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-og-headline">Fotos adjuntas:</span>
+          <span>{{ uploadedPhotos().length }} archivo(s)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-og-headline">Tratamiento de interés:</span>
+          <span class="capitalize">{{ formData.serviceInterest.replace('-', ' ') }}</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <app-luxury-button
+          (clicked)="resetForm()"
+          variant="outline"
+          size="md"
+        >
+          Enviar Otra Solicitud
+        </app-luxury-button>
+        <app-luxury-button
+          routerLink="/nuestro-trabajo/antes-y-despues"
+          variant="primary"
+          size="md"
+        >
+          Ver Casos de Antes y Después
+        </app-luxury-button>
+      </div>
+    </div>
+  </section>
+} @else {
+
+  <!-- ================================================================= -->
+  <!-- 3. GUÍA VISUAL DE 3 PASOS: CÓMO TOMAR TUS FOTOGRAFÍAS             -->
+  <!-- ================================================================= -->
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="Guía Sencilla"
+        title="Cómo Tomar tus Fotos en 3 Pasos"
+        subtitle="Para que el Dr. Jaime Arcila pueda evaluar con exactitud tu dentadura, sigue estas recomendaciones básicas con la cámara de tu celular."
+        align="center"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+      @for (step of photoSteps; track step.step; let i = $index) {
+        <div
+          [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+          class="bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle flex flex-col justify-between"
+        >
+          <div>
+            <div class="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+              <img
+                [src]="step.imageUrl"
+                [alt]="step.title"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 left-3 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-widest uppercase font-mono rounded-xs backdrop-blur-sm">
+                {{ step.step }}
+              </span>
+            </div>
+
+            <div class="p-6">
+              <h4 class="text-xl font-editorial font-light text-og-headline mb-2">
+                {{ step.title }}
+              </h4>
+              <p class="text-xs text-og-slate font-light leading-relaxed mb-4">
+                {{ step.description }}
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="p-3 bg-slate-50 border-l-2 border-og-cyan rounded-r-xs text-[11px] text-og-slate">
+              <span class="font-medium text-og-headline block mb-0.5">Consejo:</span>
+              <span>{{ step.tip }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 4. FORMULARIO EDITORIAL & CARGADOR INTERACTIVO DE FOTOS           -->
+  <!-- ================================================================= -->
+  <section id="formulario-valoracion" class="py-20 px-6 md:px-12 max-w-5xl mx-auto overflow-hidden">
+    <div class="bg-white border border-og-border p-8 sm:p-12 md:p-16 rounded-xs shadow-elevated reveal-init reveal-scale delay-100">
+      
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <span class="text-xs uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
+          Evaluación Estética Personalizada
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-editorial font-light text-og-headline mb-4">
+          Completa tus Datos y Sube tus Fotos
+        </h2>
+        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+          Toda la información y las fotografías compartidas son tratadas con estricta confidencialidad médica y profesional.
+        </p>
+      </div>
+
+      <!-- Alerta de Error si aplica -->
+      @if (errorMessage()) {
+        <div class="mb-8 p-4 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xs flex items-center justify-between animate-fadeIn">
+          <span>{{ errorMessage() }}</span>
+          <button type="button" (click)="errorMessage.set(null)" class="text-rose-500 font-bold ml-4">✕</button>
+        </div>
+      }
+
+      <form (ngSubmit)="submitConsultation()" class="space-y-8">
+        
+        <!-- Bloque 1: Datos Personales -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6">
+            1. Tus Datos de Contacto
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                Nombre Completo *
+              </label>
+              <input
+                type="text"
+                [(ngModel)]="formData.fullName"
+                name="fullName"
+                required
+                placeholder="Ej. Valentina Gómez Restrepo"
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric focus:ring-1 focus:ring-og-electric transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                Correo Electrónico (donde recibirás la valoración) *
+              </label>
+              <input
+                type="email"
+                [(ngModel)]="formData.email"
+                name="email"
+                required
+                placeholder="tucorreo@ejemplo.com"
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric focus:ring-1 focus:ring-og-electric transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                Teléfono / WhatsApp *
+              </label>
+              <input
+                type="tel"
+                [(ngModel)]="formData.phone"
+                name="phone"
+                required
+                placeholder="+57 300 123 4567"
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric focus:ring-1 focus:ring-og-electric transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                Ciudad y País de Residencia
+              </label>
+              <input
+                type="text"
+                [(ngModel)]="formData.city"
+                name="city"
+                placeholder="Ej. Medellín, Colombia / Miami, EE.UU."
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric focus:ring-1 focus:ring-og-electric transition-colors"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Expectativas y Tratamiento -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6">
+            2. Tu Sonrisa Deseada
+          </h3>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                Tratamiento o Servicio de Interés
+              </label>
+              <select
+                [(ngModel)]="formData.serviceInterest"
+                name="serviceInterest"
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric bg-white transition-colors"
+              >
+                @for (opt of treatmentOptions; track opt.value) {
+                  <option [value]="opt.value">{{ opt.label }}</option>
+                }
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-og-headline font-medium mb-2">
+                ¿Qué es lo que más te gustaría transformar o mejorar de tu sonrisa?
+              </label>
+              <textarea
+                [(ngModel)]="formData.concerns"
+                name="concerns"
+                rows="3"
+                placeholder="Cuéntanos brevemente: si sientes tus dientes desgastados, si te incomoda algún espacio, si deseas un cambio de color o si buscas armonizar toda tu fisionomía..."
+                class="w-full px-4 py-3 text-xs border border-og-border rounded-xs focus:outline-hidden focus:border-og-electric focus:ring-1 focus:ring-og-electric transition-colors"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Cargador de Fotografías de la Dentadura -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6 flex items-center justify-between">
+            <span>3. Fotografías de tu Dentadura</span>
+            <span class="text-xs text-og-slate font-light">({{ uploadedPhotos().length }}/6 fotos)</span>
+          </h3>
+
+          <!-- Zona de Drag and Drop -->
+          <div
+            (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave($event)"
+            (drop)="onDrop($event)"
+            [class.border-og-cyan]="isDragging()"
+            [class.bg-sky-50\/40]="isDragging()"
+            class="relative border-2 border-dashed border-og-border rounded-xs p-8 text-center transition-all duration-300 hover:border-og-cyan group"
+          >
+            <input
+              type="file"
+              multiple
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              id="fileInput"
+              class="sr-only"
+            />
+            
+            <label for="fileInput" class="cursor-pointer block">
+              <div class="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-sky-100 text-og-deep group-hover:text-og-electric flex items-center justify-center mx-auto mb-4 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                </svg>
+              </div>
+
+              <span class="text-xs uppercase tracking-wider font-semibold text-og-headline block mb-1">
+                Arrastra tus fotos aquí o haz clic para seleccionarlas
+              </span>
+              <span class="text-[11px] text-og-slate font-light block">
+                Formatos permitidos: JPG, PNG, WEBP (hasta 6 imágenes)
+              </span>
+            </label>
+          </div>
+
+          <!-- Previsualización de Miniaturas Cargadas -->
+          @if (uploadedPhotos().length > 0) {
+            <div class="mt-6">
+              <span class="text-[11px] uppercase tracking-wider font-semibold text-og-headline block mb-3 font-mono">
+                Fotos listas para enviar:
+              </span>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                @for (photo of uploadedPhotos(); track photo.previewUrl; let i = $index) {
+                  <div class="relative group/thumb border border-og-border rounded-xs overflow-hidden bg-slate-50 aspect-square shadow-xs">
+                    <img
+                      [src]="photo.previewUrl"
+                      [alt]="photo.name"
+                      class="w-full h-full object-cover"
+                    />
+
+                    <!-- Botón Eliminar Miniatura -->
+                    <button
+                      type="button"
+                      (click)="removePhoto(i)"
+                      class="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/70 hover:bg-rose-600 text-white flex items-center justify-center text-xs transition-colors cursor-pointer"
+                      title="Eliminar esta foto"
+                    >
+                      ✕
+                    </button>
+
+                    <div class="absolute inset-x-0 bottom-0 bg-black/75 backdrop-blur-xs p-1 text-center">
+                      <span class="text-[9px] text-white truncate block max-w-full font-mono">
+                        {{ photo.name }}
+                      </span>
+                      <span class="text-[8px] text-slate-300 block font-mono">
+                        {{ photo.sizeFormatted }}
+                      </span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="pt-6 border-t border-og-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-[11px] text-og-slate font-light">
+            Al enviar, aceptas que tu caso sea evaluado por el equipo clínico del Dr. Jaime Arcila Cano.
+          </p>
+
+          <button
+            type="submit"
+            [disabled]="isSubmitting()"
+            class="w-full sm:w-auto px-10 py-4 text-xs uppercase tracking-[0.25em] font-medium text-white bg-og-electric hover:bg-og-deep transition-all duration-300 rounded-xs shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer text-center"
+          >
+            @if (isSubmitting()) {
+              <span>Enviando fotografías...</span>
+            } @else {
+              <span>Enviar para Valoración Gratuita →</span>
+            }
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+}
+
+<!-- ================================================================= -->
+<!-- 5. CIERRE / PREGUNTAS FRECUENTES RÁPIDAS                          -->
+<!-- ================================================================= -->
+<section class="py-20 bg-slate-50 border-t border-og-border overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal-init reveal-fade-up">
+    <span class="text-xs uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
+      Dudas Habituales
+    </span>
+    <h3 class="text-2xl font-editorial font-light text-og-headline mb-4">
+      ¿Tiene Algún Costo o Compromiso?
+    </h3>
+    <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed max-w-2xl mx-auto mb-8">
+      Absolutamente ninguno. La valoración virtual es una cortesía para que conozcas la opinión honesta de un especialista en alta estética dental antes de viajar o programar una cita física.
+    </p>
+
+    <a
+      routerLink="/nuestro-trabajo/antes-y-despues"
+      class="text-xs uppercase tracking-[0.2em] font-medium text-og-electric hover:underline"
+    >
+      Ver Galería de Casos Clínicos Terminados →
+    </a>
+  </div>
+</section>
+

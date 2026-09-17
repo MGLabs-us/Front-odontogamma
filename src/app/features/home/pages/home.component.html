@@ -1,7 +1,7 @@
 <!-- ================================================================= -->
-<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Editorial)                 -->
+<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Video Inmersivo)            -->
 <!-- ================================================================= -->
-<section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-og-deep">
+<section class="relative h-[85vh] sm:h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-og-deep">
   <!-- Video Cinemático de Fondo con Movimiento Fluido y Póster de Respaldo -->
   <div class="absolute inset-0 z-0 overflow-hidden">
     <video
@@ -11,116 +11,149 @@
       playsinline
       preload="auto"
       poster="/videos/hero-poster.jpg"
-      class="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000 ease-out"
+      class="w-full h-full object-cover object-center opacity-90 scale-105 transition-transform duration-1000 ease-out"
     >
       <source src="/videos/hero-loop.mp4" type="video/mp4" />
       <!-- Fallback en imagen fija en caso de navegadores antiguos -->
       <img
         src="/videos/hero-poster.jpg"
         alt="Odontogamma Oriente Clínica de Lujo"
-        class="w-full h-full object-cover object-center opacity-35"
+        class="w-full h-full object-cover object-center opacity-90"
       />
     </video>
-    <!-- Máscaras de Gradiente Editorial para legibilidad y elegancia -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/75 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Gradiente sutil inferior para fundir con la siguiente sección -->
+    <div class="absolute inset-0 bg-gradient-to-t from-og-deep/90 via-transparent to-black/20"></div>
   </div>
 
-  <!-- Contenido Central del Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16">
-    
-    <!-- Insignia Superior -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xs bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fadeIn">
-      <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-ping"></span>
-      <span class="text-[10px] md:text-xs tracking-[0.3em] uppercase text-white font-medium">
-        Odontología Estética de Ultra-Precisión
-      </span>
-    </div>
-
-    <!-- Título de Impacto Editorial estilo Apa Aesthetic -->
-    <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-editorial font-light text-white tracking-tight leading-[1.05] mb-6">
-      EL NUEVO ESTÁNDAR <br class="hidden sm:inline" />
-      <span class="italic font-normal text-og-cyan">EN ODONTOLOGÍA</span>
-    </h1>
-
-    <!-- Subtítulo de Filosofía -->
-    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed tracking-wide">
-      No se trata simplemente de los dientes; se trata de la seguridad, armonía y plenitud que una sonrisa hecha a mano inspira a vivir.
-    </p>
-
-    <!-- Botones de Acción -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <app-luxury-button
-        routerLink="/contacto"
-        variant="primary"
-        size="lg"
-      >
-        Agendar Valoración
-      </app-luxury-button>
-
-      <app-luxury-button
-        routerLink="/transformaciones"
-        variant="outline"
-        size="lg"
-        class="text-white border-white/40 hover:border-white"
-      >
-        Ver Casos Clínicos
-      </app-luxury-button>
-    </div>
-
-  </div>
-
-  <!-- Indicador de Desplazamiento Inferior -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 text-white pointer-events-none">
-    <span class="text-[9px] uppercase tracking-[0.3em] font-light">Descubrir</span>
-    <div class="w-[1px] h-6 bg-gradient-to-b from-white to-transparent"></div>
+  <!-- Indicador sutil de Desplazamiento Inferior -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-75 hover:opacity-100 transition-opacity text-white pointer-events-none">
+    <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/90">Descubre Odontogamma</span>
+    <div class="w-[1px] h-8 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
 </section>
 
 <!-- ================================================================= -->
-<!-- 2. FILOSOFÍA: TRES PILARES DE EXCELENCIA (Dentistry as Art)        -->
+<!-- 2. FILOSOFÍA & BENEFICIOS: LA ODONTOLOGÍA CONCEBIDA COMO ARTE      -->
 <!-- ================================================================= -->
-<section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="Nuestra Filosofía"
-    title="La Odontología Concebida como Arte"
-    subtitle="Unión impecable entre artesanía analógica y tecnología digital tridimensional para resultados naturales y duraderos."
-    align="center"
-  />
+<section class="relative py-28 md:py-36 px-6 md:px-12 bg-white text-og-headline overflow-hidden border-b border-slate-100">
+  
+  <!-- Acentos lumínicos sutiles en fondo blanco -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-sky-100/60 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+  <div class="max-w-7xl mx-auto relative z-10">
     
-    <!-- Pilar 1 -->
-    <div class="group p-8 md:p-10 bg-white rounded-xs border border-og-border shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
-      <span class="text-3xl font-editorial text-og-electric font-light block mb-4">01</span>
-      <h3 class="text-xl font-editorial font-medium text-og-headline mb-3 tracking-wide">
-        Biomimética y Precisión
-      </h3>
-      <p class="text-xs md:text-sm text-og-slate leading-relaxed font-light">
-        Diseñamos cada restauración respetando la anatomía biológica original. La textura, translucidez y refracción lumínica son idénticas al esmalte dental más puro.
+    <!-- Encabezado Editorial con Scroll Reveal (Fade Up) -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-og-electric/20 mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-og-electric animate-pulse"></span>
+        <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-og-electric font-mono font-medium">
+          Nuestra Filosofía de Vanguardia
+        </span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl md:text-6xl font-editorial font-light text-og-headline tracking-tight leading-[1.1] mb-6">
+        La Odontología Concebida <br class="hidden sm:inline" />
+        <span class="italic font-normal text-og-electric">
+          como una Obra de Arte
+        </span>
+      </h2>
+
+      <p class="text-sm sm:text-base text-og-slate font-light leading-relaxed">
+        Unión impecable entre artesanía analógica, microscopía de precisión y tecnología tridimensional para que sonreír vuelva a ser tu mayor fuente de seguridad y orgullo.
       </p>
     </div>
 
-    <!-- Pilar 2 -->
-    <div class="group p-8 md:p-10 bg-white rounded-xs border border-og-border shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
-      <span class="text-3xl font-editorial text-og-electric font-light block mb-4">02</span>
-      <h3 class="text-xl font-editorial font-medium text-og-headline mb-3 tracking-wide">
-        Maestría en Cerámica
-      </h3>
-      <p class="text-xs md:text-sm text-og-slate leading-relaxed font-light">
-        Colaboramos con maestros ceramistas de élite para estratificar manualmente porcelana feldespática con microdetalles imposibles de reproducir con métodos convencionales.
-      </p>
+    <!-- Grid de Tarjetas con Entradas Animadas Laterales y Escaladas -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+      @for (pillar of pillars; track pillar.number; let i = $index) {
+        <div
+          [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+          class="group bg-white border border-slate-200/90 hover:border-og-electric/60 rounded-xs overflow-hidden shadow-subtle hover:shadow-[0_22px_50px_rgba(0,114,206,0.12)] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+        >
+          
+          <div>
+            <!-- Fotografía de Detalle en Alta Resolución -->
+            <div class="relative h-60 overflow-hidden bg-slate-100">
+              <img
+                [src]="pillar.imageUrl"
+                [alt]="pillar.title"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+
+              <!-- Badge con Ventaja de Alto Valor -->
+              <span class="absolute top-4 left-4 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-md rounded-xs border border-white/20">
+                {{ pillar.badge }}
+              </span>
+
+              <!-- Número Esculpido -->
+              <span class="absolute bottom-2 right-4 text-4xl font-editorial font-light text-white/80 group-hover:text-og-cyan transition-colors">
+                {{ pillar.number }}
+              </span>
+            </div>
+
+            <!-- Cuerpo Editorial de Venta -->
+            <div class="p-8">
+              <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-mono font-medium block mb-1">
+                {{ pillar.subtitle }}
+              </span>
+              <h3 class="text-2xl font-editorial font-normal text-og-headline mb-3 leading-snug">
+                {{ pillar.title }}
+              </h3>
+              <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+                {{ pillar.description }}
+              </p>
+
+              <!-- Lista de Ventajas Concretas -->
+              <ul class="space-y-2.5 pt-4 border-t border-slate-100 mb-6">
+                @for (b of pillar.benefits; track b) {
+                  <li class="flex items-start gap-2.5 text-xs text-slate-700 font-light leading-snug">
+                    <span class="text-og-electric font-bold shrink-0 mt-0.5">✓</span>
+                    <span>{{ b }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <!-- Enlace de Conversión al Pie de la Tarjeta -->
+          <div class="p-8 pt-0">
+            <a
+              [routerLink]="pillar.link"
+              class="text-xs uppercase tracking-[0.2em] font-medium text-og-electric group-hover:text-og-deep inline-flex items-center gap-2 transition-all group-hover:translate-x-1 pt-4 border-t border-slate-100 w-full"
+            >
+              <span>{{ pillar.linkText }}</span>
+            </a>
+          </div>
+
+        </div>
+      }
     </div>
 
-    <!-- Pilar 3 -->
-    <div class="group p-8 md:p-10 bg-white rounded-xs border border-og-border shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
-      <span class="text-3xl font-editorial text-og-electric font-light block mb-4">03</span>
-      <h3 class="text-xl font-editorial font-medium text-og-headline mb-3 tracking-wide">
-        Experiencia Privada
-      </h3>
-      <p class="text-xs md:text-sm text-og-slate leading-relaxed font-light">
-        Un santuario clínico en el Oriente Antioqueño diseñado para una atención pausada, confidencial y personalizada desde el momento en que cruzas nuestras puertas.
-      </p>
+    <!-- Banner Inferior de Incitación a la Acción con Entrada Suave -->
+    <div class="mt-16 p-8 md:p-10 rounded-xs bg-gradient-to-r from-sky-50 via-white to-blue-50/70 border border-og-electric/25 flex flex-col md:flex-row items-center justify-between gap-6 shadow-subtle reveal-init reveal-scale delay-200">
+      <div class="text-center md:text-left">
+        <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric font-mono font-semibold block mb-1">
+          ¿Por qué seguir postergando tu mejor versión?
+        </span>
+        <h4 class="text-2xl sm:text-3xl font-editorial font-light text-og-headline">
+          Tu Sonrisa es tu Mayor Carta de Presentación
+        </h4>
+        <p class="text-xs sm:text-sm text-og-slate font-light mt-1 max-w-xl">
+          Descubre en menos de 24 horas qué es posible lograr en tus dientes enviando 3 fotos desde tu celular.
+        </p>
+      </div>
+
+      <app-luxury-button
+        routerLink="/nuestro-trabajo/valoracion-virtual"
+        variant="primary"
+        size="md"
+        class="border border-og-electric/40 shadow-glow shrink-0"
+      >
+        Iniciar Valoración Gratuita →
+      </app-luxury-button>
     </div>
 
   </div>
@@ -132,7 +165,7 @@
 <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-init reveal-fade-up">
       <div>
         <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-3">
           Transformaciones Clínicas
@@ -146,7 +179,7 @@
       </div>
 
       <app-luxury-button
-        routerLink="/transformaciones"
+        routerLink="/nuestro-trabajo/antes-y-despues"
         variant="outline"
         size="sm"
         class="text-white border-white/30 hover:border-white self-start md:self-auto"
@@ -155,10 +188,13 @@
       </app-luxury-button>
     </div>
 
-    <!-- Renderizado de casos destacados con slider interactivo -->
+    <!-- Renderizado de casos destacados con entradas laterales animadas -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      @for (caseItem of featuredCases(); track caseItem.id) {
-        <div class="bg-white/5 border border-white/10 p-6 rounded-xs backdrop-blur-xs">
+      @for (caseItem of featuredCases(); track caseItem.id; let i = $index) {
+        <div
+          [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
+          class="bg-white/5 border border-white/10 p-6 rounded-xs backdrop-blur-xs hover:border-og-cyan/50 transition-colors"
+        >
           <!-- Slider Interactivo Reutilizable -->
           <app-before-after-slider
             [beforeImage]="caseItem.beforeImageUrl"
@@ -202,16 +238,21 @@
 <!-- 4. CATÁLOGO DE TRATAMIENTOS DESTACADOS                            -->
 <!-- ================================================================= -->
 <section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="Procedimientos de Firma"
-    title="Tratamientos Diseñados a Medida"
-    subtitle="Soluciones de odontología avanzada que integran salud funcional y perfección estética."
-    align="center"
-  />
+  <div class="reveal-init reveal-fade-up">
+    <app-section-header
+      kicker="Procedimientos de Firma"
+      title="Tratamientos Diseñados a Medida"
+      subtitle="Soluciones de odontología avanzada que integran salud funcional y perfección estética."
+      align="center"
+    />
+  </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-    @for (service of services(); track service.id) {
-      <div class="group relative bg-white border border-og-border overflow-hidden rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-12">
+    @for (service of services(); track service.id; let i = $index) {
+      <div
+        [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
+        class="group relative bg-white border border-og-border overflow-hidden rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+      >
         <!-- Imagen del Procedimiento -->
         <div class="relative h-64 overflow-hidden bg-slate-100">
           <img
@@ -270,7 +311,7 @@
 <!-- 5. CITA EDITORIAL DEL DR. JAIME ARCILA CANO                       -->
 <!-- ================================================================= -->
 <section class="py-24 bg-og-deep text-white relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-init reveal-scale">
     <span class="text-5xl md:text-7xl font-editorial text-og-cyan/40 leading-none select-none">“</span>
     <blockquote class="text-xl sm:text-2xl md:text-3xl font-editorial font-light leading-relaxed text-slate-100 -mt-4 mb-8">
       No se trata únicamente de colocar carillas o reparar piezas dentales; se trata de comprender la armonía facial y devolver la seguridad con la que una persona sonríe y se comunica con el mundo.
@@ -284,7 +325,7 @@
       </span>
       
       <app-luxury-button
-        routerLink="/sobre-mi"
+        routerLink="/who-we-are/dr-jaime-arcila"
         variant="outline"
         size="sm"
         class="text-white border-white/30 hover:border-white"
@@ -296,36 +337,35 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 6. BANNER DE AGENDAMIENTO & CONTACTO                              -->
+<!-- 6. BANNER DE AGENDAMIENTO & VALORACIÓN VIRTUAL                    -->
 <!-- ================================================================= -->
 <section class="py-24 px-6 md:px-12 bg-white text-center">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto reveal-init reveal-fade-up">
     <span class="text-xs font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
       Comienza tu Transformación
     </span>
     <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-6">
-      Agenda tu Consulta Privada
+      Elige Cómo Iniciar tu Diagnóstico
     </h2>
     <p class="text-sm md:text-base text-og-slate font-light leading-relaxed mb-10 max-w-xl mx-auto">
-      Permítenos evaluar tu caso con atención dedicada y diseñar el plan de tratamiento que mejor refleje tu esencia y armonía facial.
+      Sube las fotos de tus dientes para una evaluación virtual sin costo, o agenda una cita presencial exclusiva en nuestra sede de Llanogrande.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="lg"
       >
-        Solicitar Cita de Valoración
+        Valoración Virtual Gratuita
       </app-luxury-button>
 
       <app-luxury-button
-        href="https://wa.me/573000000000?text=Hola,%20quisiera%20agendar%20una%20valoración%20con%20el%20Dr.%20Jaime%20Arcila."
-        target="_blank"
+        routerLink="/contacto"
         variant="secondary"
         size="lg"
       >
-        WhatsApp Concierge
+        Cita Presencial en Sede
       </app-luxury-button>
     </div>
   </div>

@@ -116,3 +116,47 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* ==========================================================================
+   SISTEMA DE ANIMACIONES AL SCROLL (Scroll Reveal & Entradas Cinemáticas)
+   ========================================================================== */
+
+/* Estado base oculto con transiciones fluidas de 60fps */
+.reveal-init {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dirección: Entra desde abajo */
+.reveal-fade-up {
+  transform: translateY(45px);
+}
+
+/* Dirección: Entra desde la izquierda */
+.reveal-fade-left {
+  transform: translateX(-50px);
+}
+
+/* Dirección: Entra desde la derecha */
+.reveal-fade-right {
+  transform: translateX(50px);
+}
+
+/* Dirección: Entrada con escalado suave */
+.reveal-scale {
+  transform: scale(0.93) translateY(20px);
+}
+
+/* Estado activo cuando el usuario hace scroll hacia el elemento */
+.reveal-active {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Delays escalonados para efecto cascada (stagger) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }

@@ -1,6 +1,6 @@
 <!-- Encabezado de Página -->
-<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 reveal-init reveal-fade-up">
     <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
       Catálogo Clínico
     </span>
@@ -14,7 +14,7 @@
 </section>
 
 <!-- Listado Editorial Detallado de Tratamientos -->
-<section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+<section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="space-y-24">
     @for (service of services(); track service.id; let i = $index) {
       <div
@@ -24,6 +24,7 @@
         <!-- Imagen del Tratamiento con enlace directo a vista individual -->
         <a
           [routerLink]="['/servicios', service.slug]"
+          [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-100'"
           class="lg:col-span-6 block relative group overflow-hidden rounded-xs border border-og-border shadow-elevated bg-slate-100 aspect-[16/10]"
           [class.lg:order-2]="i % 2 !== 0"
         >
@@ -44,6 +45,7 @@
 
         <!-- Contenido Editorial -->
         <div
+          [class]="i % 2 === 0 ? 'reveal-init reveal-fade-right delay-200' : 'reveal-init reveal-fade-left delay-200'"
           class="lg:col-span-6"
           [class.lg:order-1]="i % 2 !== 0"
         >
@@ -102,17 +104,19 @@
 </section>
 
 <!-- Proceso en 4 Pasos (The Experience Journey) -->
-<section class="py-24 bg-white border-t border-og-border">
+<section class="py-24 bg-white border-t border-og-border overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <app-section-header
-      kicker="Tu Experiencia Clínica"
-      title="El Viaje hacia tu Nueva Sonrisa"
-      subtitle="Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables."
-      align="center"
-    />
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="Tu Experiencia Clínica"
+        title="El Viaje hacia tu Nueva Sonrisa"
+        subtitle="Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables."
+        align="center"
+      />
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border">
+      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 01</span>
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Consulta y Diálogo</h3>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -120,7 +124,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border">
+      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-up delay-200">
         <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 02</span>
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Diseño Digital & Prueba</h3>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -128,7 +132,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border">
+      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-up delay-300">
         <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 03</span>
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Confección Artesanal</h3>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -136,7 +140,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border">
+      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-right delay-400">
         <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 04</span>
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Cementación y Entrega</h3>
         <p class="text-xs text-og-slate font-light leading-relaxed">

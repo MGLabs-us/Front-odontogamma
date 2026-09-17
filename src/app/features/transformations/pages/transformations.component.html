@@ -1,6 +1,6 @@
 <!-- Encabezado de Página -->
-<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 reveal-init reveal-fade-up">
     <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
       Galería Clínica
     </span>
@@ -14,10 +14,10 @@
 </section>
 
 <!-- Filtros de Categoría y Galería -->
-<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   
   <!-- Barra de Filtros Estilo Minimalista Editorial -->
-  <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-16">
+  <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-16 reveal-init reveal-fade-up delay-100">
     @for (tab of categories; track tab.key) {
       <button
         type="button"
@@ -39,8 +39,11 @@
 
   <!-- Malla de Casos Clínicos con Slider Interactivo -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-    @for (caseItem of filteredCases(); track caseItem.id) {
-      <div class="bg-white border border-og-border p-6 rounded-xs shadow-subtle hover:shadow-elevated transition-shadow duration-300">
+    @for (caseItem of filteredCases(); track caseItem.id; let i = $index) {
+      <div
+        [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
+        class="bg-white border border-og-border p-6 rounded-xs shadow-subtle hover:shadow-elevated transition-shadow duration-300"
+      >
         
         <!-- Comparador Interactivo Antes / Después -->
         <app-before-after-slider
@@ -80,7 +83,7 @@
   </div>
 
   <!-- Bloque de Contacto Final -->
-  <div class="mt-24 p-12 bg-og-deep text-white text-center rounded-xs">
+  <div class="mt-24 p-12 bg-og-deep text-white text-center rounded-xs reveal-init reveal-scale delay-100">
     <h3 class="text-3xl font-editorial font-light text-white mb-4">
       ¿Deseas una Valoración Personalizada para tu Sonrisa?
     </h3>
