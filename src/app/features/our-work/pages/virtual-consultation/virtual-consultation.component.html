@@ -15,7 +15,7 @@
   </div>
 
   <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
       <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
@@ -112,17 +112,22 @@
   <!-- ================================================================= -->
   <!-- 3. GUÍA VISUAL DE 3 PASOS: CÓMO TOMAR TUS FOTOGRAFÍAS             -->
   <!-- ================================================================= -->
-  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-    <app-section-header
-      kicker="Guía Sencilla"
-      title="Cómo Tomar tus Fotos en 3 Pasos"
-      subtitle="Para que el Dr. Jaime Arcila pueda evaluar con exactitud tu dentadura, sigue estas recomendaciones básicas con la cámara de tu celular."
-      align="center"
-    />
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="Guía Sencilla"
+        title="Cómo Tomar tus Fotos en 3 Pasos"
+        subtitle="Para que el Dr. Jaime Arcila pueda evaluar con exactitud tu dentadura, sigue estas recomendaciones básicas con la cámara de tu celular."
+        align="center"
+      />
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
-      @for (step of photoSteps; track step.step) {
-        <div class="bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle flex flex-col justify-between">
+      @for (step of photoSteps; track step.step; let i = $index) {
+        <div
+          [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+          class="bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle flex flex-col justify-between"
+        >
           <div>
             <div class="relative aspect-[4/3] bg-slate-100 overflow-hidden">
               <img
@@ -160,8 +165,8 @@
   <!-- ================================================================= -->
   <!-- 4. FORMULARIO EDITORIAL & CARGADOR INTERACTIVO DE FOTOS           -->
   <!-- ================================================================= -->
-  <section id="formulario-valoracion" class="py-20 px-6 md:px-12 max-w-5xl mx-auto">
-    <div class="bg-white border border-og-border p-8 sm:p-12 md:p-16 rounded-xs shadow-elevated">
+  <section id="formulario-valoracion" class="py-20 px-6 md:px-12 max-w-5xl mx-auto overflow-hidden">
+    <div class="bg-white border border-og-border p-8 sm:p-12 md:p-16 rounded-xs shadow-elevated reveal-init reveal-scale delay-100">
       
       <div class="mb-10 text-center max-w-2xl mx-auto">
         <span class="text-xs uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
@@ -397,8 +402,8 @@
 <!-- ================================================================= -->
 <!-- 5. CIERRE / PREGUNTAS FRECUENTES RÁPIDAS                          -->
 <!-- ================================================================= -->
-<section class="py-20 bg-slate-50 border-t border-og-border">
-  <div class="max-w-4xl mx-auto px-6 text-center">
+<section class="py-20 bg-slate-50 border-t border-og-border overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal-init reveal-fade-up">
     <span class="text-xs uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
       Dudas Habituales
     </span>

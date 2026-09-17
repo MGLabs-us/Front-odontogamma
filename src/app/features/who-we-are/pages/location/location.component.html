@@ -15,7 +15,7 @@
   </div>
 
   <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
       <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
       <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
@@ -57,17 +57,22 @@
 <!-- ================================================================= -->
 <!-- 2. RECORRIDO POR NUESTROS ESPACIOS                                -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="Arquitectura & Bienestar"
-    title="Espacios Concebidos para el Confort Supremo"
-    subtitle="Cada rincón de nuestra clínica combina líneas contemporáneas, luz natural y tecnología médica silenciosa."
-    align="center"
-  />
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="reveal-init reveal-fade-up">
+    <app-section-header
+      kicker="Arquitectura & Bienestar"
+      title="Espacios Concebidos para el Confort Supremo"
+      subtitle="Cada rincón de nuestra clínica combina líneas contemporáneas, luz natural y tecnología médica silenciosa."
+      align="center"
+    />
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-16">
-    @for (space of spaces; track space.title) {
-      <div class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300">
+    @for (space of spaces; track space.title; let i = $index) {
+      <div
+        [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
+        class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300"
+      >
         <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-100">
           <img
             [src]="space.imageUrl"
@@ -98,9 +103,9 @@
 <!-- ================================================================= -->
 <!-- 3. AMENIDADES EXCLUSIVAS DE LA SEDE                               -->
 <!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border">
+<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <div class="max-w-3xl mb-12">
+    <div class="max-w-3xl mb-12 reveal-init reveal-fade-up">
       <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-3">
         Hospitalidad de Alto Nivel
       </span>
@@ -110,7 +115,7 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-left delay-100">
         <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">01</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entrada & Parking VIP</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -118,7 +123,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-200">
         <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">02</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Concierge de Traslados</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -126,7 +131,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-300">
         <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">03</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entorno Anti-Estrés</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -134,7 +139,7 @@
         </p>
       </div>
 
-      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-400">
         <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">04</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Atención Bilingüe</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
@@ -148,17 +153,22 @@
 <!-- ================================================================= -->
 <!-- 4. CÓMO LLEGAR: RUTAS Y TIEMPOS DE TRASLADO                       -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="Accesibilidad Privilegiada"
-    title="Tu Viaje a Nuestra Sede"
-    subtitle="Ubicación estratégica y descongestionada en el corazón del Oriente Antioqueño."
-    align="center"
-  />
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="reveal-init reveal-fade-up">
+    <app-section-header
+      kicker="Accesibilidad Privilegiada"
+      title="Tu Viaje a Nuestra Sede"
+      subtitle="Ubicación estratégica y descongestionada en el corazón del Oriente Antioqueño."
+      align="center"
+    />
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-    @for (route of travelRoutes; track route.origin) {
-      <div class="p-8 border border-og-border bg-white rounded-xs flex flex-col justify-between">
+    @for (route of travelRoutes; track route.origin; let i = $index) {
+      <div
+        [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+        class="p-8 border border-og-border bg-white rounded-xs flex flex-col justify-between shadow-subtle"
+      >
         <div>
           <span class="text-3xl font-editorial font-light text-og-electric block mb-2">
             {{ route.time }}
@@ -181,8 +191,8 @@
 <!-- ================================================================= -->
 <!-- 5. CTA DE AGENDAMIENTO Y VISITA                                   -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center">
-  <div class="max-w-4xl mx-auto px-6">
+<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
     <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
       Oriente Antioqueño
     </span>

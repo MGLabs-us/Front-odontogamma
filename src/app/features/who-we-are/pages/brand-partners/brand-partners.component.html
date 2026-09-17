@@ -15,7 +15,7 @@
   </div>
 
   <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
       <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
       <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
@@ -60,17 +60,22 @@
 <!-- ================================================================= -->
 <!-- 2. ALIANZAS TECNOLÓGICAS Y DE BIOMATERIALES                       -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="Estándares Internacionales"
-    title="Nuestros Aliados en Excelencia Clínica"
-    subtitle="Trabajamos exclusivamente con las casas matrices europeas y norteamericanas más avanzadas del sector."
-    align="center"
-  />
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="reveal-init reveal-fade-up">
+    <app-section-header
+      kicker="Estándares Internacionales"
+      title="Nuestros Aliados en Excelencia Clínica"
+      subtitle="Trabajamos exclusivamente con las casas matrices europeas y norteamericanas más avanzadas del sector."
+      align="center"
+    />
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-16">
-    @for (partner of partners; track partner.name) {
-      <div class="p-8 sm:p-10 border border-og-border bg-white rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+    @for (partner of partners; track partner.name; let i = $index) {
+      <div
+        [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
+        class="p-8 sm:p-10 border border-og-border bg-white rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
+      >
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold">
@@ -105,10 +110,10 @@
 <!-- ================================================================= -->
 <!-- 3. FEED EDITORIAL SOCIAL: INSTAGRAM & REELS                       -->
 <!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border">
+<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-init reveal-fade-up">
       <div>
         <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-2">
           Comunidad & Publicaciones
@@ -149,8 +154,11 @@
 
     <!-- Grid de Publicaciones -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      @for (post of filteredPosts(); track post.id) {
-        <article class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+      @for (post of filteredPosts(); track post.id; let i = $index) {
+        <article
+          [class]="i % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (i % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+          class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
+        >
           
           <div>
             <!-- Visual de la Publicación -->
@@ -211,8 +219,8 @@
 <!-- ================================================================= -->
 <!-- 4. BANNER INSTAGRAM CONNECT & CTA                                  -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center">
-  <div class="max-w-4xl mx-auto px-6">
+<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
       <span class="text-pink-400">●</span>
       <span class="text-[10px] uppercase tracking-[0.3em] text-slate-200 font-mono">&#64;odontogammaoriente</span>

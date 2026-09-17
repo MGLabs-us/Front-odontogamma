@@ -15,7 +15,7 @@
   </div>
 
   <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
       <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
       <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
@@ -57,17 +57,22 @@
 <!-- ================================================================= -->
 <!-- 2. CATÁLOGO EDITORIAL DE INTEGRANTES DEL EQUIPO                   -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-  <app-section-header
-    kicker="El Colectivo Clínico"
-    title="Especialistas Dedicados a Tu Transformación"
-    subtitle="Cada miembro aporta un área específica de maestría para que tu sonrisa sea tratada con visión de 360 grados."
-    align="center"
-  />
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="reveal-init reveal-fade-up">
+    <app-section-header
+      kicker="El Colectivo Clínico"
+      title="Especialistas Dedicados a Tu Transformación"
+      subtitle="Cada miembro aporta un área específica de maestría para que tu sonrisa sea tratada con visión de 360 grados."
+      align="center"
+    />
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-16">
-    @for (member of members; track member.name) {
-      <div class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+    @for (member of members; track member.name; let i = $index) {
+      <div
+        [class]="i % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (i % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+        class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
+      >
         
         <!-- Retrato Editorial -->
         <div>
@@ -119,10 +124,10 @@
 <!-- ================================================================= -->
 <!-- 3. LA VENTAJA DE LA SINERGIA INTERDISCIPLINARIA                   -->
 <!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border">
+<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div>
+      <div class="reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-3">
           Sinergia en un Mismo Espacio
         </span>
@@ -138,22 +143,22 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4">
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-100">
           <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">01</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Evaluación en Vivo</h4>
           <p class="text-xs text-og-slate font-light">El ceramista participa en la sesión de colorimetría con luz polarizada.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">02</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Salud Gingival</h4>
           <p class="text-xs text-og-slate font-light">Encías sanas y simétricas antes de colocar la primera carilla.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">03</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Oclusión Segura</h4>
           <p class="text-xs text-og-slate font-light">Armonización de mordida para evitar fracturas o desgastes prematuros.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle">
+        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-300">
           <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">04</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Concierge Privado</h4>
           <p class="text-xs text-og-slate font-light">Atención prioritaria y agenda confidencial de principio a fin.</p>
@@ -166,8 +171,8 @@
 <!-- ================================================================= -->
 <!-- 4. CIERRE CONVERSIÓN EQUIPO                                       -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center">
-  <div class="max-w-4xl mx-auto px-6">
+<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
     <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
       Tu Equipo Médico Exclusivo
     </span>

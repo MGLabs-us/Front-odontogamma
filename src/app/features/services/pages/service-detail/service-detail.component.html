@@ -16,7 +16,7 @@
     </div>
 
     <!-- Contenido Central del Hero -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16 reveal-init reveal-fade-up">
       
       <!-- Insignia del Procedimiento -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xs bg-white/10 backdrop-blur-md border border-white/20 mb-6">
@@ -68,11 +68,11 @@
   <!-- ================================================================= -->
   <!-- 2. DESCRIPCIÓN EDITORIAL & DISTINTIVOS CLÍNICOS                   -->
   <!-- ================================================================= -->
-  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
       <!-- Columna Izquierda: La Filosofía y Técnica del Procedimiento -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-7 space-y-6 reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block">
           Excelencia Clínica & Artesanía
         </span>
@@ -103,7 +103,7 @@
       </div>
 
       <!-- Columna Derecha: ¿Para Quién es Ideal? (Candidatos) & Contacto Rápido -->
-      <div class="lg:col-span-5 space-y-8">
+      <div class="lg:col-span-5 space-y-8 reveal-init reveal-fade-right delay-200">
         
         <!-- Tarjeta de Candidatos Ideales -->
         <div class="p-8 bg-white border border-og-border rounded-xs shadow-elevated">
@@ -167,9 +167,9 @@
   <!-- ================================================================= -->
   <!-- 3. FOTOS DE REFERENCIA DE LA EMPRESA (GALERÍA CLÍNICA)            -->
   <!-- ================================================================= -->
-  <section class="py-24 bg-white border-y border-og-border">
+  <section class="py-24 bg-white border-y border-og-border overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
         <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
           Galería de Referencia
         </span>
@@ -184,7 +184,10 @@
       <!-- Mosaico Editorial de Fotografías -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         @for (imgUrl of item.galleryImages; track imgUrl; let idx = $index) {
-          <div class="group relative overflow-hidden rounded-xs border border-og-border shadow-subtle aspect-[4/3] bg-slate-100">
+          <div
+            [class]="idx % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (idx % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+            class="group relative overflow-hidden rounded-xs border border-og-border shadow-subtle aspect-[4/3] bg-slate-100"
+          >
             <img
               [src]="imgUrl"
               [alt]="item.title + ' detalle ' + (idx + 1)"
@@ -208,7 +211,7 @@
   <section id="antes-despues" class="py-28 bg-slate-900 text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
         <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-3">
           Transformación Real
         </span>
@@ -221,7 +224,7 @@
       </div>
 
       <!-- Contenedor del Caso con Slider -->
-      <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 p-6 md:p-10 rounded-xs backdrop-blur-xs">
+      <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 p-6 md:p-10 rounded-xs backdrop-blur-xs reveal-init reveal-scale delay-100">
         <app-before-after-slider
           [beforeImage]="item.beforeAfter.beforeImageUrl"
           [afterImage]="item.beforeAfter.afterImageUrl"
@@ -254,8 +257,8 @@
   <!-- ================================================================= -->
   <!-- 5. LLAMADO A LA ACCIÓN FINAL                                      -->
   <!-- ================================================================= -->
-  <section class="py-24 px-6 md:px-12 bg-white text-center">
-    <div class="max-w-3xl mx-auto">
+  <section class="py-24 px-6 md:px-12 bg-white text-center overflow-hidden">
+    <div class="max-w-3xl mx-auto reveal-init reveal-scale delay-100">
       <span class="text-xs font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
         Tu Próximo Paso
       </span>
