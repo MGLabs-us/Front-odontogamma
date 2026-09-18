@@ -27,8 +27,10 @@ export const CLOUDINARY_FOLDERS = {
 export const CLOUDINARY_ASSETS_MANIFEST = {
   // Video Principal del Hero & Póster
   hero: {
-    videoPublicId: `${CLOUDINARY_FOLDERS.VIDEOS}/hero-loop`,
-    posterPublicId: `${CLOUDINARY_FOLDERS.VIDEOS}/hero-poster`,
+    videoPublicId: 'VIdeo_1',
+    posterPublicId: 'VIdeo_1',
+    videoUrl: 'https://res.cloudinary.com/ffvpll33/video/upload/v1789691342/VIdeo_1.mp4',
+    posterUrl: 'https://res.cloudinary.com/ffvpll33/video/upload/so_0,w_1280,q_auto,f_jpg/v1789691342/VIdeo_1.jpg',
     fallbackVideoUrl: '/videos/hero-loop.mp4',
     fallbackPosterUrl: '/videos/hero-poster.jpg'
   },

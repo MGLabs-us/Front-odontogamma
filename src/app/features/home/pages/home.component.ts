@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../../core/services/portfolio.service';
@@ -36,8 +36,43 @@ export interface PhilosophyPillar {
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  @ViewChild('heroVideo') private heroVideo?: ElementRef<HTMLVideoElement>;
   private readonly portfolioService = inject(PortfolioService);
+
+  public ngAfterViewInit(): void {
+    const video = this.heroVideo?.nativeElement;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const triggerPlayback = () => {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Si la política del navegador bloquea el autoplay tras restaurar pestaña
+            const onWakeup = () => {
+              video.play().catch(() => {});
+              window.removeEventListener('click', onWakeup);
+              window.removeEventListener('touchstart', onWakeup);
+              window.removeEventListener('scroll', onWakeup);
+            };
+            window.addEventListener('click', onWakeup, { once: true, passive: true });
+            window.addEventListener('touchstart', onWakeup, { once: true, passive: true });
+            window.addEventListener('scroll', onWakeup, { once: true, passive: true });
+          });
+        }
+      };
+
+      if (video.readyState >= 2) {
+        triggerPlayback();
+      } else {
+        video.addEventListener('loadeddata', triggerPlayback, { once: true });
+        triggerPlayback();
+      }
+    }
+  }
 
   // Signals reactivas obtenidas del servicio central
   protected readonly services = this.portfolioService.services;
