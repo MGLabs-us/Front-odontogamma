@@ -1,17 +1,27 @@
-<!-- Encabezado de Página Hero Editorial -->
-<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center reveal-init reveal-fade-up">
+<!-- Encabezado de Página Hero Editorial con Fotografía de Fondo -->
+<section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden bg-slate-950">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=2200&q=85"
+      alt="Dr. Jaime Arcila Cano Odontogamma Oriente"
+      class="w-full h-full object-cover object-top scale-105"
+    />
+    <!-- Velo neutral para preservar los tonos naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center pt-32 pb-16 reveal-init reveal-fade-up">
     <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
       Dirección Clínica & Artesanía
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
       Dr. Jaime Arcila Cano
     </h1>
-    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
       Pionero en odontología estética mínimamente invasiva, carillas cerámicas y rehabilitación oral de alta precisión en el Oriente Antioqueño.
     </p>
   </div>
-  <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-transparent to-transparent opacity-90"></div>
 </section>
 
 <!-- Sección de Perfil & Filosofía Escultórica -->
@@ -113,7 +123,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-8 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-left delay-100">
+      <div class="card-luxury-aesthetic p-8 rounded-xs reveal-init reveal-fade-left delay-100">
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-3">
           Tecnología Diagnóstica 3D
         </h3>
@@ -122,7 +132,7 @@
         </p>
       </div>
 
-      <div class="p-8 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-up delay-200">
+      <div class="card-luxury-aesthetic p-8 rounded-xs reveal-init reveal-fade-up delay-200">
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-3">
           Bioseguridad Grado Hospitalario
         </h3>
@@ -131,7 +141,7 @@
         </p>
       </div>
 
-      <div class="p-8 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-right delay-300">
+      <div class="card-luxury-aesthetic p-8 rounded-xs reveal-init reveal-fade-right delay-300">
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-3">
           Laboratorio y Maestros Ceramistas
         </h3>

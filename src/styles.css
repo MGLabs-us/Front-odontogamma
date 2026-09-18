@@ -6,9 +6,9 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Paleta cromática oficial de Odontogamma Oriente */
-  --color-og-deep: #0A2540;
-  --color-og-dark: #061526;
+  /* Paleta cromática oficial de Odontogamma Oriente (Royal Sapphire + RGB 1E90FF) */
+  --color-og-deep: #104B96;
+  --color-og-dark: #0B356D;
   --color-og-electric: #0072CE;
   --color-og-cyan: #29B6F6;
   --color-og-marble: #F8FAFC;
@@ -20,17 +20,112 @@
 
   /* Tipografías editoriales */
   --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
   /* Variables CSS para gradientes y sombras de lujo */
   --og-gradient-brand: linear-gradient(135deg, #0072CE 0%, #29B6F6 100%);
-  --og-gradient-dark: linear-gradient(180deg, #0A2540 0%, #061526 100%);
+  --og-gradient-royal: linear-gradient(135deg, #104B96 0%, #155BB8 50%, #0B356D 100%);
+  --og-gradient-dodger: linear-gradient(135deg, #1E90FF 0%, #0072CE 100%);
+  --og-gradient-dark: linear-gradient(180deg, #104B96 0%, #0B356D 100%);
   --og-gradient-silver: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
-  --shadow-subtle: 0 4px 25px rgba(10, 37, 64, 0.04);
-  --shadow-elevated: 0 20px 45px rgba(10, 37, 64, 0.08);
-  --shadow-glow: 0 0 25px rgba(0, 114, 206, 0.25);
+  --shadow-subtle: 0 4px 25px rgba(16, 75, 150, 0.08);
+  --shadow-elevated: 0 20px 45px rgba(16, 75, 150, 0.14);
+  --shadow-glow: 0 0 25px rgba(30, 144, 255, 0.35);
+}
+
+/* ==========================================================================
+   ESTILOS PERSONALIZADOS PARA NAVBAR ROYAL SAPPHIRE (AZUL VIBRANTE DE ALTA GAMA)
+   - Arriba estático: azul zafiro pleno con difuminado suave en la mera parte de abajo.
+   - Con scroll: se quita el difuminado y queda la barra sólida con borde inferior.
+   ========================================================================== */
+.navbar-royal-sapphire {
+background:
+  /* Destellos superiores platino mineral */
+  radial-gradient(circle at 0% 0%, rgba(226, 232, 240, 0.18) 0%, transparent 45%),
+  radial-gradient(circle at 100% 0%, rgba(203, 213, 225, 0.15) 0%, transparent 45%),
+  /* Base carbón grafito difuminada hacia abajo */
+  linear-gradient(
+    to bottom,
+    #121417 0%,
+    rgba(18, 20, 23, 0.95) 45%,
+    rgba(18, 20, 23, 0.4) 75%,
+    rgba(18, 20, 23, 0) 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  -webkit-mask-image: linear-gradient(to bottom, #000000 0%, #000000 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000000 0%, #000000 85%, transparent 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado con scroll: SE QUITA EL DIFUMINADO (barra completa sólida con borde) */
+header.py-3 .navbar-royal-sapphire {
+background: 
+  radial-gradient(circle at 0% 0%, rgba(41, 182, 246, 0.22) 0%, transparent 45%),
+  radial-gradient(circle at 100% 0%, rgba(0, 114, 206, 0.28) 0%, transparent 45%),
+  linear-gradient(180deg, #0A2540 0%, #071A2E 50%, #040E1A 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 15px 35px -5px rgba(10, 40, 90, 0.5);
+  -webkit-mask-image: none;
+  mask-image: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dropdown-royal-sapphire {
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(30, 144, 255, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(0, 195, 255, 0.3) 0%, transparent 50%),
+    linear-gradient(155deg, rgba(22, 90, 185, 0.98) 0%, rgba(14, 65, 145, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 25px 50px -10px rgba(10, 55, 130, 0.6),
+    0 0 30px rgba(30, 144, 255, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ==========================================================================
+   SISTEMA DE CONTENEDORES DE ALTA GAMA & ESTÉTICA AESTHETIC
+   - Reemplaza bloques azules planos por superficies dimensionales y elegantes
+   ========================================================================== */
+
+/* Contenedor Noche Obsidiana & Resplandor Zafiro (para Citas Editoriales y Contrastes) */
+.container-luxury-dark {
+  background: 
+    radial-gradient(ellipse 70% 60% at 50% 20%, rgba(30, 144, 255, 0.14) 0%, transparent 60%),
+    radial-gradient(circle at 90% 90%, rgba(0, 114, 206, 0.12) 0%, transparent 50%),
+    linear-gradient(170deg, #0A0F1D 0%, #070B14 50%, #04070D 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tarjeta Flotante Esculpida en Blanco Aesthetic & Mármol Perla */
+.card-luxury-aesthetic {
+  background: 
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.92) 50%, rgba(241, 245, 249, 0.8) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 
+    0 30px 60px -15px rgba(15, 23, 42, 0.07),
+    0 0 30px rgba(0, 114, 206, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Footer Noche Obsidiana de Alta Costura */
+.footer-luxury {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30, 144, 255, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #0B1120 0%, #060911 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 *, *::before, *::after {
@@ -65,7 +160,7 @@ body {
 
 /* Efecto de texto metálico platino sutil */
 .text-metallic {
-  background: linear-gradient(135deg, #0F172A 0%, #0A2540 50%, #0072CE 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #104B96 50%, #1E90FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

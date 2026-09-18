@@ -72,13 +72,13 @@ export class LuxuryButtonComponent {
 
     const variantClasses = {
       // Azul eléctrico característico de Odontogamma con elevación
-      primary: 'bg-og-electric text-white hover:bg-og-deep shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
-      // Azul oscuro / noche editorial
-      dark: 'bg-og-deep text-white hover:bg-og-electric shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
+      primary: 'bg-og-electric text-white hover:bg-slate-900 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
+      // Noche editorial
+      dark: 'bg-slate-950 text-white hover:bg-og-electric shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
       // Fondo blanco mármol
-      secondary: 'bg-white text-og-deep border border-og-border hover:border-og-electric hover:text-og-electric shadow-sm hover:shadow-md hover:-translate-y-0.5',
+      secondary: 'bg-white text-og-headline border border-og-border hover:border-og-electric hover:text-og-electric shadow-sm hover:shadow-md hover:-translate-y-0.5',
       // Borde transparente fino estilo alta costura
-      outline: 'bg-transparent text-og-deep border border-og-deep/30 hover:border-og-electric hover:text-og-electric hover:-translate-y-0.5'
+      outline: 'bg-transparent text-og-headline border border-slate-300 hover:border-og-electric hover:text-og-electric hover:-translate-y-0.5'
     }[this.variant()];
 
     const stateClasses = this.disabled() ? 'opacity-50 cursor-not-allowed pointer-events-none' : '';

@@ -1,15 +1,19 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { ServiceItem } from '../models/service-item.model';
 import { CaseStudy } from '../models/case-study.model';
+import { CloudinaryService } from './cloudinary.service';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../constants/cloudinary-assets.manifest';
 
 /**
  * Servicio centralizado para gestionar el catálogo de servicios clínicos,
- * testimonios y casos de transformación de Odontogamma Oriente.
+ * testimonios y casos de transformación de Odontogamma Oriente,
+ * totalmente adaptado a Cloudinary para entrega y optimización de medios.
  */
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
+  private readonly cloudinaryService = inject(CloudinaryService);
   /**
    * Catálogo de tratamientos con vistas individuales completas
    */
@@ -263,5 +267,31 @@ export class PortfolioService {
       return this.casesData();
     }
     return this.casesData().filter(c => c.category === category);
+  }
+
+  /**
+   * Obtiene la URL del video cinemático del Hero optimizado para streaming en Cloudinary.
+   */
+  getHeroVideoUrl(): string {
+    return this.cloudinaryService.buildOptimizedVideoUrl(
+      CLOUDINARY_ASSETS_MANIFEST.hero.fallbackVideoUrl
+    );
+  }
+
+  /**
+   * Obtiene la URL del póster de respaldo del Hero optimizado en Cloudinary.
+   */
+  getHeroPosterUrl(): string {
+    return this.cloudinaryService.buildOptimizedImageUrl(
+      CLOUDINARY_ASSETS_MANIFEST.hero.fallbackPosterUrl,
+      { width: 1920, quality: 'auto', format: 'auto' }
+    );
+  }
+
+  /**
+   * Optimiza cualquier URL o identificador de imagen a través del motor de Cloudinary.
+   */
+  optimizeImage(publicIdOrUrl: string, preset: 'hero' | 'card' | 'gallery' | 'thumbnail' = 'card'): string {
+    return this.cloudinaryService.buildPresetImageUrl(publicIdOrUrl, preset);
   }
 }

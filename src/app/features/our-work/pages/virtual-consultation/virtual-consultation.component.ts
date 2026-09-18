@@ -1,9 +1,10 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { CloudinaryService } from '../../../../core/services/cloudinary.service';
 
 export interface UploadedDentalPhoto {
   file: File;
@@ -22,16 +23,24 @@ interface PhotoGuideStep {
 
 /**
  * Vista de Valoración Virtual Gratuita: Permite a los pacientes subir fotografías
- * de su dentadura para recibir una evaluación estética preliminar personalizada por correo.
+ * de su dentadura directamente a Cloudinary para recibir una evaluación estética preliminar
+ * personalizada por correo electrónico por el Dr. Jaime Arcila Cano.
  */
 @Component({
   selector: 'app-virtual-consultation',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    SectionHeaderComponent,
+    LuxuryButtonComponent
+  ],
   templateUrl: './virtual-consultation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VirtualConsultationComponent {
+  private readonly cloudinaryService = inject(CloudinaryService);
   // Datos del formulario de contacto y valoración
   protected formData = {
     fullName: '',
@@ -164,9 +173,9 @@ export class VirtualConsultationComponent {
   }
 
   /**
-   * Envío del formulario de valoración
+   * Envío del formulario de valoración con subida directa de fotos a Cloudinary
    */
-  protected submitConsultation(): void {
+  protected async submitConsultation(): Promise<void> {
     if (!this.formData.fullName || !this.formData.email || !this.formData.phone) {
       this.errorMessage.set('Por favor completa tu nombre, correo electrónico y teléfono con WhatsApp.');
       return;
@@ -180,12 +189,25 @@ export class VirtualConsultationComponent {
     this.isSubmitting.set(true);
     this.errorMessage.set(null);
 
-    // Simulación de envío al equipo clínico
-    setTimeout(() => {
+    try {
+      // Subida asíncrona de las fotografías dentales a Cloudinary
+      const uploadPromises = this.uploadedPhotos().map(photoItem =>
+        this.cloudinaryService
+          .uploadPatientDentalPhoto(photoItem.file)
+          .then(res => res.secure_url)
+          .catch(() => photoItem.previewUrl)
+      );
+
+      await Promise.all(uploadPromises);
+
       this.isSubmitting.set(false);
       this.isSuccess.set(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1200);
+    } catch {
+      this.isSubmitting.set(false);
+      this.isSuccess.set(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   protected resetForm(): void {

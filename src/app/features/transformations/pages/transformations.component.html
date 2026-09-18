@@ -1,13 +1,24 @@
-<!-- Encabezado de Página -->
-<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 reveal-init reveal-fade-up">
+<!-- Encabezado de Página Editorial con Fotografía de Alta Precisión -->
+<section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden bg-slate-950">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2200&q=85"
+      alt="Galería Clínica Odontogamma Oriente"
+      class="w-full h-full object-cover object-center scale-105"
+    />
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-32 pb-16 reveal-init reveal-fade-up">
     <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
       Galería Clínica
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
       Antes & Después
     </h1>
-    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
       Explora los resultados reales de nuestros pacientes. Desliza el cursor o tu dedo sobre las imágenes para comparar el estado inicial con el resultado definitivo.
     </p>
   </div>
@@ -22,10 +33,11 @@
       <button
         type="button"
         (click)="setCategory(tab.key)"
-        class="px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-all duration-200 cursor-pointer rounded-xs border"
-        [class.bg-og-deep]="selectedCategory() === tab.key"
+        class="px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-all duration-200 cursor-pointer rounded-xs border font-medium"
+        [class.bg-og-electric]="selectedCategory() === tab.key"
         [class.text-white]="selectedCategory() === tab.key"
-        [class.border-og-deep]="selectedCategory() === tab.key"
+        [class.border-og-electric]="selectedCategory() === tab.key"
+        [class.shadow-md]="selectedCategory() === tab.key"
         [class.bg-white]="selectedCategory() !== tab.key"
         [class.text-og-slate]="selectedCategory() !== tab.key"
         [class.border-og-border]="selectedCategory() !== tab.key"
@@ -82,22 +94,26 @@
     }
   </div>
 
-  <!-- Bloque de Contacto Final -->
-  <div class="mt-24 p-12 bg-og-deep text-white text-center rounded-xs reveal-init reveal-scale delay-100">
-    <h3 class="text-3xl font-editorial font-light text-white mb-4">
-      ¿Deseas una Valoración Personalizada para tu Sonrisa?
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-300 font-light max-w-xl mx-auto mb-8">
-      Cada diseño se planifica de forma única respetando tus facciones y aspiraciones. Agenda una consulta privada con el Dr. Jaime Arcila.
-    </p>
-    <app-luxury-button
-      routerLink="/contacto"
-      variant="primary"
-      size="md"
-    >
-      Solicitar Cita de Valoración
-    </app-luxury-button>
+  <!-- Bloque de Contacto Final Estilo Blanco Aesthetic Esculpido -->
+  <div class="mt-24 p-12 md:p-16 card-luxury-aesthetic text-center rounded-xs reveal-init reveal-scale delay-100 relative overflow-hidden">
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric font-semibold block mb-3 font-mono">
+        Agenda Personalizada
+      </span>
+      <h3 class="text-3xl sm:text-4xl font-editorial font-light text-og-headline mb-4">
+        ¿Deseas una Valoración Personalizada para tu Sonrisa?
+      </h3>
+      <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed max-w-xl mx-auto mb-8">
+        Cada diseño se planifica de forma única respetando tus facciones y aspiraciones. Agenda una consulta privada con el Dr. Jaime Arcila.
+      </p>
+      <app-luxury-button
+        routerLink="/contacto"
+        variant="primary"
+        size="md"
+      >
+        Solicitar Cita de Valoración
+      </app-luxury-button>
+    </div>
   </div>
 
 </section>
-
