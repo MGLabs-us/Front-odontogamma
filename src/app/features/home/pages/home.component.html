@@ -1,33 +1,6 @@
 <!-- ================================================================= -->
-<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Video Inmersivo)            -->
 <!-- 1. HERO BANNER PRINCIPAL (Editorial Split & Video Showcase)        -->
 <!-- ================================================================= -->
-<section class="relative h-[85vh] sm:h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950">
-  <!-- Video Cinemático de Fondo con Movimiento Fluido y Póster de Respaldo -->
-  <div class="absolute inset-0 z-0 overflow-hidden">
-    <video
-      #heroVideo
-      autoplay
-      muted
-      [muted]="true"
-      loop
-      playsinline
-      webkit-playsinline
-      preload="auto"
-      poster="/videos/hero-poster.jpg"
-      class="w-full h-full object-cover object-center opacity-90 scale-105 transition-transform duration-1000 ease-out"
-    >
-      <source src="/videos/hero-loop.mp4" type="video/mp4" />
-      <source src="https://res.cloudinary.com/ffvpll33/video/upload/ac_none/v1789691342/VIdeo_1.mp4" type="video/mp4" />
-      <!-- Fallback en imagen fija en caso de navegadores antiguos -->
-      <img
-        src="/videos/hero-poster.jpg"
-        alt="Odontogamma Oriente Clínica de Lujo"
-        class="w-full h-full object-cover object-center"
-      />
-    </video>
-    <!-- Gradiente sutil neutral para no alterar los colores del video -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
 <section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#060B16] via-[#0A1222] to-[#040810] text-white pt-32 pb-20">
   
   <!-- Halos lumínicos ambientales de fondo (Ambilight Studio) -->
@@ -154,9 +127,6 @@
   </div>
 
   <!-- Indicador sutil de Desplazamiento Inferior -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-75 hover:opacity-100 transition-opacity text-white pointer-events-none">
-    <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/90">Descubre Odontogamma</span>
-    <div class="w-[1px] h-8 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
     <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/80">Descubre Más</span>
     <div class="w-[1px] h-6 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
