@@ -1,17 +1,17 @@
-<footer class="bg-og-deep text-white border-t border-white/10 pt-20 pb-12">
-  <div class="max-w-7xl mx-auto px-6 md:px-12">
+<footer class="relative footer-luxury text-white pt-20 pb-12 overflow-hidden">
+  <!-- Bisel de brillo superior de cristal blanco puro -->
+  <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     
     <!-- Bloque Superior: Marca y Filosofía -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       
       <!-- Columna 1: Marca & Declaración -->
       <div class="lg:col-span-1">
-        <span class="text-xs font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-2">
-          Odontología de Alta Precisión
-        </span>
-        <h3 class="text-2xl font-editorial font-light tracking-wide text-white mb-4">
-          Odontogamma Oriente
-        </h3>
+        <a routerLink="/" class="block mb-6" aria-label="Odontogamma Oriente">
+          <app-brand-logo variant="footer"></app-brand-logo>
+        </a>
         <p class="text-xs text-slate-300 leading-relaxed font-light mb-6">
           El estándar supremo en odontología estética y diseño de sonrisa en el Oriente Antioqueño. Tradición artesanal y tecnología biométrica bajo la dirección del Dr. Jaime Arcila Cano.
         </p>

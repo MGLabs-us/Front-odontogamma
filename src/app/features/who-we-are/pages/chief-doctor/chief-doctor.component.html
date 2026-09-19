@@ -9,20 +9,17 @@
       alt="Dr. Jaime Arcila Cano - Director Clínico Odontogamma Oriente"
       class="w-full h-full object-cover object-top scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente cinematográfico de lujo -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/40"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep via-og-deep/70 to-transparent"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-32 pb-20 reveal-init reveal-fade-up">
     <div class="max-w-2xl">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-        <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-          Director Clínico & Fundador
-        </span>
-      </div>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
+        Director Clínico & Fundador
+      </span>
 
       <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
         Dr. Jaime <br />
@@ -86,7 +83,7 @@
           loading="lazy"
           class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-og-deep/80 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
         <div class="absolute bottom-6 left-6 right-6 text-white">
           <span class="text-[10px] uppercase tracking-[0.25em] text-og-cyan font-mono block mb-1">
@@ -204,17 +201,17 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 5. CTA DE CONSULTA DIRECTA CON EL DOCTOR                          -->
+<!-- 5. CTA DE CONSULTA DIRECTA CON EL DOCTOR (ESTÉTICA AESTHETIC)     -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
+<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
       Atención Personalizada
     </span>
-    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
       Diseña Tu Sonrisa Directamente con el Dr. Arcila
     </h2>
-    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
       Las valoraciones se atienden bajo agenda limitada y confidencial para garantizar tiempo exclusivo a cada paciente.
     </p>
 
@@ -222,15 +219,15 @@
       <app-luxury-button
         routerLink="/contacto"
         variant="primary"
-        size="lg"
+        size="md"
       >
         Agendar Cita Privada
       </app-luxury-button>
       <app-luxury-button
         routerLink="/who-we-are/our-team"
         variant="outline"
-        size="lg"
-        class="border-white/30 text-white hover:border-og-cyan hover:text-og-cyan"
+        size="md"
+        class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric"
       >
         Conocer al Equipo Completo
       </app-luxury-button>

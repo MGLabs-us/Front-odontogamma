@@ -2,17 +2,17 @@
   <!-- ================================================================= -->
   <!-- 1. PRIMER CONTENEDOR: FOTO DE FONDO COMPLETO (HERO EDITORIAL)     -->
   <!-- ================================================================= -->
-  <section class="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-og-deep text-white">
+  <section class="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
     <!-- Imagen a Fondo Completo con Gradientes de Lujo -->
     <div class="absolute inset-0 z-0">
       <img
         [src]="item.heroImageUrl"
         [alt]="item.title + ' - Odontogamma Oriente'"
-        class="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000 ease-out"
+        class="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000 ease-out"
       />
-      <!-- Máscaras de degradado para legibilidad y misterio estético -->
-      <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/70 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+      <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+      <div class="absolute inset-0 bg-black/45"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
     </div>
 
     <!-- Contenido Central del Hero -->
@@ -139,23 +139,24 @@
         </div>
 
         <!-- Tarjeta Concierge Directo -->
-        <div class="p-6 bg-og-deep text-white rounded-xs border border-white/10">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-og-cyan block mb-2">
+        <div class="card-luxury-aesthetic p-8 rounded-xs text-left">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
             Atención Inmediata
           </span>
-          <h4 class="text-lg font-editorial font-light text-white mb-2">
+          <h4 class="text-xl font-editorial font-light text-og-headline mb-2">
             Consulta con Nuestro Concierge
           </h4>
-          <p class="text-xs text-slate-300 font-light mb-4">
+          <p class="text-xs text-og-slate font-light leading-relaxed mb-6">
             Resuelve dudas sobre tiempos, costos y agenda tu cita directamente con nuestro equipo.
           </p>
           <a
             [href]="'https://wa.me/573000000000?text=Hola,%20deseo%20más%20información%20sobre%20el%20tratamiento%20de%20' + item.title + '%20en%20Odontogamma%20Oriente.'"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-og-cyan hover:text-white transition-colors"
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-og-electric hover:text-og-headline transition-colors"
           >
-            Chatear por WhatsApp →
+            <span>Chatear por WhatsApp</span>
+            <span>→</span>
           </a>
         </div>
 
@@ -208,42 +209,45 @@
   <!-- ================================================================= -->
   <!-- 4. CASO REAL ANTES & DESPUÉS CON COMPARADOR INTERACTIVO           -->
   <!-- ================================================================= -->
-  <section id="antes-despues" class="py-28 bg-slate-900 text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
+  <section id="antes-despues" class="py-28 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F8FAFC] text-og-headline relative overflow-hidden border-t border-slate-200/80">
+    <!-- Acentos lumínicos perla y zafiro sutil -->
+    <div class="pointer-events-none absolute -top-24 -left-20 w-80 h-80 bg-sky-100/60 rounded-full blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-20 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
       
       <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
-        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-3">
+        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3 font-mono">
           Transformación Real
         </span>
-        <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-4">
+        <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-4">
           Antes & Después: {{ item.title }}
         </h2>
-        <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
           Desliza la barra divisoria interactiva para comparar el estado inicial con el resultado definitivo entregado al paciente.
         </p>
       </div>
 
       <!-- Contenedor del Caso con Slider -->
-      <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 p-6 md:p-10 rounded-xs backdrop-blur-xs reveal-init reveal-scale delay-100">
+      <div class="max-w-4xl mx-auto card-luxury-aesthetic p-6 md:p-10 rounded-xs reveal-init reveal-scale delay-100">
         <app-before-after-slider
           [beforeImage]="item.beforeAfter.beforeImageUrl"
           [afterImage]="item.beforeAfter.afterImageUrl"
           [alt]="item.beforeAfter.caseTitle"
-          aspectRatio="aspect-[16/10]"
+          aspectRatio="aspect-[16/9]"
         />
 
         <div class="mt-8">
-          <span class="text-[10px] tracking-[0.25em] uppercase text-og-cyan font-medium block mb-2">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-og-electric font-semibold block mb-2 font-mono">
             Caso Clínico Documentado
           </span>
-          <h3 class="text-2xl font-editorial text-white font-light mb-3">
+          <h3 class="text-2xl font-editorial text-og-headline font-light mb-3">
             {{ item.beforeAfter.caseTitle }}
           </h3>
-          <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed mb-6">
+          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
             {{ item.beforeAfter.description }}
           </p>
 
-          <div class="flex flex-wrap gap-6 pt-4 border-t border-white/10 text-xs text-slate-400 font-mono">
+          <div class="flex flex-wrap gap-6 pt-4 border-t border-slate-200/80 text-xs text-slate-500 font-mono">
             <span>• Unidades: {{ item.beforeAfter.units }}</span>
             <span>• Duración del tratamiento: {{ item.beforeAfter.timeframe }}</span>
             <span>• Clínica: Odontogamma Oriente</span>

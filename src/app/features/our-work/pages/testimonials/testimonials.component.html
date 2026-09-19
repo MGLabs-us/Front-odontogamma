@@ -9,19 +9,16 @@
       alt="Historias Reales de Pacientes Odontogamma Oriente"
       class="w-full h-full object-cover object-top scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente multicapa de alta costura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-        Vidas Transformadas · Experiencias Reales
-      </span>
-    </div>
+    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
+      Vidas Transformadas · Experiencias Reales
+    </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
       La Seguridad de Sonreír: <br />
@@ -61,19 +58,19 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
       <div class="p-4 reveal-init reveal-fade-left delay-100">
-        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-deep block mb-1">99.4%</span>
+        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-headline block mb-1">99.4%</span>
         <span class="text-xs uppercase tracking-wider text-og-slate font-light">Satisfacción Estética</span>
       </div>
       <div class="p-4 reveal-init reveal-fade-up delay-200">
-        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-deep block mb-1">+1000</span>
+        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-headline block mb-1">+1000</span>
         <span class="text-xs uppercase tracking-wider text-og-slate font-light">Sonrisas Diseñadas</span>
       </div>
       <div class="p-4 reveal-init reveal-fade-up delay-300">
-        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-deep block mb-1">8+</span>
+        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-headline block mb-1">8+</span>
         <span class="text-xs uppercase tracking-wider text-og-slate font-light">Países de Origen</span>
       </div>
       <div class="p-4 reveal-init reveal-fade-right delay-400">
-        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-deep block mb-1">100%</span>
+        <span class="text-3xl sm:text-4xl font-editorial font-light text-og-headline block mb-1">100%</span>
         <span class="text-xs uppercase tracking-wider text-og-slate font-light">Privacidad Confidencial</span>
       </div>
     </div>
@@ -112,7 +109,7 @@
               loading="lazy"
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-og-deep/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
             
             <div class="absolute bottom-4 left-4 right-4 text-white">
               <span class="text-[10px] uppercase tracking-wider text-og-cyan block mb-0.5 font-mono">
@@ -151,7 +148,7 @@
             <span class="text-[10px] uppercase tracking-wider text-og-headline font-semibold block mb-1">
               Logro Clínico & Personal:
             </span>
-            <span class="text-xs text-og-deep font-medium font-mono">
+            <span class="text-xs text-og-electric font-semibold font-mono">
               ✦ {{ story.highlight }}
             </span>
           </div>
@@ -181,13 +178,13 @@
         <div
           (click)="openVideoModal(video)"
           [class]="i % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (i % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-          class="group relative aspect-[9/16] bg-slate-900 rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 cursor-pointer"
+          class="group relative aspect-[9/16] bg-black rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 cursor-pointer"
         >
           <img
             [src]="video.thumbnailUrl"
             [alt]="video.title"
             loading="lazy"
-            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
@@ -221,7 +218,7 @@
 <!-- ================================================================= -->
 @if (activeVideo()) {
   <div class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-    <div class="bg-og-deep border border-white/20 rounded-xs max-w-2xl w-full p-6 text-white relative">
+    <div class="bg-slate-900 border border-slate-700 rounded-sm max-w-2xl w-full p-6 text-white relative shadow-2xl">
       <button
         type="button"
         (click)="closeVideoModal()"
@@ -263,17 +260,17 @@
 }
 
 <!-- ================================================================= -->
-<!-- 6. CIERRE EDITORIAL / CTA                                         -->
+<!-- 6. CIERRE EDITORIAL / CTA (ESTÉTICA AESTHETIC)                    -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
+<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
       Tu Historia es la Siguiente
     </span>
-    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
       Comienza Tu Propia Transformación Hoy
     </h2>
-    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
       Envía tus fotografías desde la comodidad de tu casa y recibe un análisis estético preliminar gratuito por correo electrónico.
     </p>
 
@@ -281,7 +278,7 @@
       <app-luxury-button
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
-        size="lg"
+        size="md"
       >
         Iniciar Valoración Virtual Gratuita
       </app-luxury-button>

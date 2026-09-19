@@ -9,19 +9,16 @@
       alt="Valoración Estética Digital Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente multicapa de alta costura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-        Consulta Preliminar 100% Gratuita & Confidencial
-      </span>
-    </div>
+    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-emerald-400 font-semibold block mb-4">
+      Consulta Preliminar 100% Gratuita & Confidencial
+    </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
       Descubre el Potencial <br />
@@ -37,7 +34,7 @@
     <div class="flex flex-wrap items-center justify-center gap-4">
       <a
         href="#formulario-valoracion"
-        class="inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-og-electric hover:bg-og-deep transition-all duration-300 rounded-xs shadow-glow hover:shadow-elevated"
+        class="inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-og-electric hover:bg-slate-900 transition-all duration-300 rounded-xs shadow-glow hover:shadow-elevated"
       >
         Llenar Formulario y Subir Fotos ↓
       </a>
@@ -136,9 +133,6 @@
                 loading="lazy"
                 class="w-full h-full object-cover"
               />
-              <span class="absolute top-3 left-3 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-widest uppercase font-mono rounded-xs backdrop-blur-sm">
-                {{ step.step }}
-              </span>
             </div>
 
             <div class="p-6">
@@ -192,7 +186,7 @@
         
         <!-- Bloque 1: Datos Personales -->
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-headline border-b border-og-border pb-3 mb-6 font-mono">
             1. Tus Datos de Contacto
           </h3>
 
@@ -256,7 +250,7 @@
 
         <!-- Bloque 2: Expectativas y Tratamiento -->
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-headline border-b border-og-border pb-3 mb-6 font-mono">
             2. Tu Sonrisa Deseada
           </h3>
 
@@ -293,7 +287,7 @@
 
         <!-- Bloque 3: Cargador de Fotografías de la Dentadura -->
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-deep border-b border-og-border pb-3 mb-6 flex items-center justify-between">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-og-headline border-b border-og-border pb-3 mb-6 flex items-center justify-between font-mono">
             <span>3. Fotografías de tu Dentadura</span>
             <span class="text-xs text-og-slate font-light">({{ uploadedPhotos().length }}/6 fotos)</span>
           </h3>
@@ -317,7 +311,7 @@
             />
             
             <label for="fileInput" class="cursor-pointer block">
-              <div class="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-sky-100 text-og-deep group-hover:text-og-electric flex items-center justify-center mx-auto mb-4 transition-colors">
+              <div class="w-14 h-14 rounded-full bg-slate-100 group-hover:bg-sky-100 text-slate-700 group-hover:text-og-electric flex items-center justify-center mx-auto mb-4 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                 </svg>
@@ -382,7 +376,7 @@
           <button
             type="submit"
             [disabled]="isSubmitting()"
-            class="w-full sm:w-auto px-10 py-4 text-xs uppercase tracking-[0.25em] font-medium text-white bg-og-electric hover:bg-og-deep transition-all duration-300 rounded-xs shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer text-center"
+            class="w-full sm:w-auto px-10 py-4 text-xs uppercase tracking-[0.25em] font-medium text-white bg-og-electric hover:bg-slate-900 transition-all duration-300 rounded-xs shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer text-center"
           >
             @if (isSubmitting()) {
               <span>Enviando fotografías...</span>

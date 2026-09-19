@@ -1,35 +1,149 @@
 <!-- ================================================================= -->
-<!-- 1. HERO BANNER PRINCIPAL (Cinemático & Video Inmersivo)            -->
+<!-- 1. HERO BANNER PRINCIPAL (Editorial Split & Video Showcase)        -->
 <!-- ================================================================= -->
-<section class="relative h-[85vh] sm:h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-og-deep">
-  <!-- Video Cinemático de Fondo con Movimiento Fluido y Póster de Respaldo -->
+<section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-32 pb-20">
+  
+  <!-- Fotografía de Fondo Completo con Tono Azulado de Alta Costura -->
   <div class="absolute inset-0 z-0 overflow-hidden">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      poster="/videos/hero-poster.jpg"
-      class="w-full h-full object-cover object-center opacity-90 scale-105 transition-transform duration-1000 ease-out"
-    >
-      <source src="/videos/hero-loop.mp4" type="video/mp4" />
-      <!-- Fallback en imagen fija en caso de navegadores antiguos -->
-      <img
-        src="/videos/hero-poster.jpg"
-        alt="Odontogamma Oriente Clínica de Lujo"
-        class="w-full h-full object-cover object-center opacity-90"
-      />
-    </video>
-    <!-- Gradiente sutil inferior para fundir con la siguiente sección -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep/90 via-transparent to-black/20"></div>
+    <img
+      src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2400&q=85"
+      alt="Clínica Odontogamma Oriente"
+      class="w-full h-full object-cover object-center scale-105"
+    />
+    <!-- Velo con Tono Azulado Zafiro Profundo & Viñetas de Contraste -->
+    <div class="absolute inset-0 bg-[#07162C]/82 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#040E1B]/95 via-[#081F3D]/80 to-[#040E1B]/90"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#040810] via-transparent to-black/40"></div>
+  </div>
+
+  <!-- Halos lumínicos ambientales de acento azul -->
+  <div class="pointer-events-none absolute -top-32 -left-20 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(30,144,255,0.22)_0%,transparent_70%)] blur-3xl z-0"></div>
+  <div class="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,75,150,0.25)_0%,transparent_70%)] blur-3xl z-0"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Columna Izquierda: Manifiesto Editorial & Acciones de Conversión -->
+      <div class="lg:col-span-7 text-center lg:text-left reveal-init reveal-fade-up">
+        
+        <!-- Insignia de Prestigio -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-pulse"></span>
+          <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-mono font-medium">
+            Oriente Antioqueño · Llanogrande
+          </span>
+        </div>
+
+        <!-- Titular Editorial Principal -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+          Donde la Ciencia <br class="hidden sm:inline" />
+          <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+            se Convierte en Arte
+          </span>
+        </h1>
+
+        <!-- Párrafo Descriptivo de Alta Gama -->
+        <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+          Odontología estética de mínima invasión, carillas cerámicas de ultra precisión y diseño de sonrisa biomimético dirigido por el Dr. Jaime Arcila Cano.
+        </p>
+
+        <!-- Botones de Acción Inmediata -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+          <app-luxury-button
+            routerLink="/nuestro-trabajo/valoracion-virtual"
+            variant="primary"
+            size="md"
+            class="w-full sm:w-auto shadow-glow"
+          >
+            Iniciar Valoración Gratuita →
+          </app-luxury-button>
+
+          <app-luxury-button
+            routerLink="/servicios"
+            variant="outline"
+            size="md"
+            class="w-full sm:w-auto border-white/30 text-white hover:border-og-cyan hover:text-og-cyan"
+          >
+            Explorar Tratamientos
+          </app-luxury-button>
+        </div>
+
+        <!-- Métricas / Sellos de Garantía Clínica -->
+        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-left">
+          <div>
+            <span class="text-lg sm:text-xl font-editorial font-light text-white block">0.2mm</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-mono">Micro Precisión</span>
+          </div>
+          <div>
+            <span class="text-lg sm:text-xl font-editorial font-light text-white block">100%</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-mono">Personalizado</span>
+          </div>
+          <div>
+            <span class="text-lg sm:text-xl font-editorial font-light text-white block">VIP</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-mono">Atención Privada</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna Derecha: Showcase del Video en su Proporción Nativa 9:16 -->
+      <div class="lg:col-span-5 flex justify-center reveal-init reveal-scale delay-100">
+        
+        <div class="relative max-w-[320px] sm:max-w-[360px] lg:max-w-[390px] w-full aspect-[9/16] rounded-2xl overflow-hidden border border-white/20 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] bg-slate-900 group">
+          
+          <!-- Resplandor Perimetral de Alta Costura -->
+          <div class="pointer-events-none absolute -inset-1 bg-gradient-to-b from-og-cyan/25 via-transparent to-og-electric/25 rounded-2xl blur-xl opacity-75"></div>
+
+          <!-- Video en Proporción Nativa 1:1 sin Estiramiento Ni Pérdida de Calidad -->
+          <video
+            #heroVideo
+            autoplay
+            muted
+            [muted]="true"
+            loop
+            playsinline
+            webkit-playsinline
+            preload="auto"
+            poster="/videos/hero-poster.jpg"
+            class="w-full h-full object-cover object-center relative z-10"
+          >
+            <source src="/videos/hero-loop.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/ffvpll33/video/upload/ac_none/v1789691342/VIdeo_1.mp4" type="video/mp4" />
+            <img
+              src="/videos/hero-poster.jpg"
+              alt="Odontogamma Oriente Clínica de Lujo"
+              class="w-full h-full object-cover object-center"
+            />
+          </video>
+
+          <!-- Velo sutil inferior con viñeta para dar profundidad -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none z-20"></div>
+
+          <!-- Insignia Flotante Inferior en el Marco del Video -->
+          <div class="absolute bottom-4 inset-x-4 p-3 rounded-xs bg-black/50 backdrop-blur-md border border-white/15 flex items-center justify-between text-white pointer-events-none z-30">
+            <div>
+              <span class="text-[9px] uppercase tracking-[0.25em] text-og-cyan font-mono block">En Directo</span>
+              <span class="text-xs font-editorial font-light">Odontogamma Oriente</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-[10px] text-slate-300 font-mono uppercase tracking-wider">Clínica</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
   <!-- Indicador sutil de Desplazamiento Inferior -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-75 hover:opacity-100 transition-opacity text-white pointer-events-none">
-    <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/90">Descubre Odontogamma</span>
-    <div class="w-[1px] h-8 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
+    <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/80">Descubre Más</span>
+    <div class="w-[1px] h-6 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
+
 </section>
 
 <!-- ================================================================= -->
@@ -81,12 +195,7 @@
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
-
-              <!-- Badge con Ventaja de Alto Valor -->
-              <span class="absolute top-4 left-4 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-md rounded-xs border border-white/20">
-                {{ pillar.badge }}
-              </span>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
               <!-- Número Esculpido -->
               <span class="absolute bottom-2 right-4 text-4xl font-editorial font-light text-white/80 group-hover:text-og-cyan transition-colors">
@@ -122,7 +231,7 @@
           <div class="p-8 pt-0">
             <a
               [routerLink]="pillar.link"
-              class="text-xs uppercase tracking-[0.2em] font-medium text-og-electric group-hover:text-og-deep inline-flex items-center gap-2 transition-all group-hover:translate-x-1 pt-4 border-t border-slate-100 w-full"
+              class="text-xs uppercase tracking-[0.2em] font-medium text-og-electric group-hover:text-og-headline inline-flex items-center gap-2 transition-all group-hover:translate-x-1 pt-4 border-t border-slate-100 w-full"
             >
               <span>{{ pillar.linkText }}</span>
             </a>
@@ -160,20 +269,24 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 3. CASOS DESTACADOS CON SLIDER ANTES / DESPUÉS                    -->
 <!-- ================================================================= -->
-<section class="py-24 bg-slate-900 text-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12">
+<!-- 3. CASOS DESTACADOS CON SLIDER ANTES / DESPUÉS (ESTÉTICA AESTHETIC) -->
+<!-- ================================================================= -->
+<section class="py-28 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F8FAFC] text-og-headline relative overflow-hidden border-y border-slate-200/80">
+  <!-- Acentos lumínicos perla y zafiro sutil -->
+  <div class="pointer-events-none absolute -top-32 -left-20 w-96 h-96 bg-sky-100/50 rounded-full blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-32 -right-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-init reveal-fade-up">
       <div>
-        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-3">
+        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
           Transformaciones Clínicas
         </span>
-        <h2 class="text-3xl md:text-5xl font-editorial font-light text-white tracking-tight">
+        <h2 class="text-3xl md:text-5xl font-editorial font-light text-og-headline tracking-tight">
           Antes & Después
         </h2>
-        <p class="text-xs md:text-sm text-slate-300 font-light mt-2 max-w-xl">
+        <p class="text-xs md:text-sm text-og-slate font-light mt-2 max-w-xl">
           Resultados sutiles y balanceados que armonizan con la fisionomía del rostro sin artificialidad.
         </p>
       </div>
@@ -182,7 +295,7 @@
         routerLink="/nuestro-trabajo/antes-y-despues"
         variant="outline"
         size="sm"
-        class="text-white border-white/30 hover:border-white self-start md:self-auto"
+        class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric self-start md:self-auto"
       >
         Ver Galería Completa
       </app-luxury-button>
@@ -193,29 +306,29 @@
       @for (caseItem of featuredCases(); track caseItem.id; let i = $index) {
         <div
           [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
-          class="bg-white/5 border border-white/10 p-6 rounded-xs backdrop-blur-xs hover:border-og-cyan/50 transition-colors"
+          class="card-luxury-aesthetic p-6 rounded-xs hover:border-og-electric/50 transition-all duration-300"
         >
           <!-- Slider Interactivo Reutilizable -->
           <app-before-after-slider
             [beforeImage]="caseItem.beforeImageUrl"
             [afterImage]="caseItem.afterImageUrl"
             [alt]="caseItem.title"
-            aspectRatio="aspect-[16/10]"
+            aspectRatio="aspect-[16/9]"
           />
 
           <!-- Ficha Técnica del Caso -->
           <div class="mt-6">
-            <span class="text-[10px] tracking-[0.25em] uppercase text-og-cyan font-medium block mb-1">
+            <span class="text-[10px] tracking-[0.25em] uppercase text-og-electric font-semibold block mb-1">
               {{ caseItem.categoryLabel }}
             </span>
-            <h3 class="text-xl font-editorial text-white font-light mb-2">
+            <h3 class="text-xl font-editorial text-og-headline font-light mb-2">
               {{ caseItem.title }}
             </h3>
-            <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
+            <p class="text-xs text-og-slate font-light leading-relaxed mb-4">
               {{ caseItem.description }}
             </p>
 
-            <div class="flex flex-wrap gap-4 pt-3 border-t border-white/10 text-[11px] text-slate-400 font-mono">
+            <div class="flex flex-wrap gap-4 pt-3 border-t border-slate-200/80 text-[11px] text-slate-500 font-mono">
               @if (caseItem.details.units) {
                 <span>• {{ caseItem.details.units }}</span>
               }
@@ -262,12 +375,6 @@
             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          
-          @if (service.badge) {
-            <span class="absolute top-4 left-4 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-md rounded-xs">
-              {{ service.badge }}
-            </span>
-          }
         </div>
 
         <!-- Contenido Editorial -->
@@ -308,11 +415,13 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 5. CITA EDITORIAL DEL DR. JAIME ARCILA CANO                       -->
+<!-- 5. CITA EDITORIAL DEL DR. JAIME ARCILA CANO (ATELIER DE ALTA GAMA) -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white relative overflow-hidden">
+<section class="py-28 container-luxury-dark text-white relative overflow-hidden">
+  <!-- Destello superior sutil de platino -->
+  <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-init reveal-scale">
-    <span class="text-5xl md:text-7xl font-editorial text-og-cyan/40 leading-none select-none">“</span>
+    <span class="text-5xl md:text-7xl font-editorial text-og-cyan/50 leading-none select-none">“</span>
     <blockquote class="text-xl sm:text-2xl md:text-3xl font-editorial font-light leading-relaxed text-slate-100 -mt-4 mb-8">
       No se trata únicamente de colocar carillas o reparar piezas dentales; se trata de comprender la armonía facial y devolver la seguridad con la que una persona sonríe y se comunica con el mundo.
     </blockquote>
@@ -328,7 +437,7 @@
         routerLink="/who-we-are/dr-jaime-arcila"
         variant="outline"
         size="sm"
-        class="text-white border-white/30 hover:border-white"
+        class="text-white border-white/40 hover:border-white hover:bg-white/10"
       >
         Conocer su Trayectoria
       </app-luxury-button>
