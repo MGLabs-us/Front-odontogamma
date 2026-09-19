@@ -4,7 +4,7 @@
 export interface CaseStudy {
   id: string;
   title: string;
-  category: 'carillas' | 'diseno-sonrisa' | 'rehabilitacion' | 'aclaramiento';
+  category: 'carillas' | 'diseno-sonrisa' | 'rehabilitacion' | 'aclaramiento' | 'ortodoncia';
   categoryLabel: string;
   description: string;
   beforeImageUrl: string;
