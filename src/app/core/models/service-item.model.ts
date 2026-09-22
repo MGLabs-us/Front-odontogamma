@@ -18,8 +18,10 @@ export interface ServiceItem {
     afterImageUrl: string;
     caseTitle: string;
     description: string;
-    units: string;
-    timeframe: string;
+    technique?: string;
+    focus?: string;
+    units?: string;
+    timeframe?: string;
   };
   badge?: string;
 }

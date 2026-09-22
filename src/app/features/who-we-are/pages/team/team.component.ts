@@ -24,48 +24,47 @@ interface TeamMember {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TeamComponent {
-  // Miembros del equipo editorial clínico y artesanal
+  // Miembros del equipo de trabajo real de Odontogamma Oriente
   protected readonly members: TeamMember[] = [
     {
       name: 'Dr. Jaime Arcila Cano',
       role: 'Director Médico & Especialista en Estética',
-      specialty: 'Diseño de Sonrisa Biomimético & Carillas',
-      bio: 'Lidera la dirección clínica, la planificación digital y la armonización facial individual de cada paciente que visita Odontogamma.',
-      imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=85',
-      credentials: ['+15 Años de Experiencia', 'Máster en Rehabilitación Oral', 'Certificación Digital Smile Design']
+      specialty: 'Diseño de Sonrisa Biomimético',
+      bio: 'Lidera la dirección clínica, la visión artística y la personalización integral de cada sonrisa en Odontogamma Oriente.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758166/624512340_18106700200685547_1543458093715588057_n.jpg',
+      credentials: ['Director Clínico', 'Rehabilitación Oral & Estética', 'Odontogamma Oriente']
     },
     {
-      name: 'Maestro Ceramista Dental',
-      role: 'Director de Laboratorio de Cerámica Fina',
-      specialty: 'Estratificación y Microtexturizado de Feldespato',
-      bio: 'Artesano de precisión dedicado a esculpir a mano cada carilla. Especialista en juegos de opalescencia, translucidez incisal y degradé de tonalidades naturales.',
-      imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=85',
-      credentials: ['Entrenado en Suiza y Alemania', 'Especialista en Cerámica Feldespática', 'Micromecanizado de Precisión']
+      name: 'Equipo Odontogamma',
+      role: 'Atención Clínica & Estética Dental',
+      specialty: 'Odontología de Precisión',
+      bio: 'Parte integral del equipo interdisciplinario que acompaña al Dr. Jaime Arcila en cada procedimiento de diseño y restauración estética.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758172/623767744_18139684015482831_3052695333261664610_n.jpg',
+      credentials: ['Atención Personalizada', 'Biomimética y Confort', 'Odontogamma Oriente']
     },
     {
-      name: 'Dra. Especialista en Periodoncia',
-      role: 'Microcirugía Plástica Gingival',
-      specialty: 'Armonización de Encroaches y Márgenes Rosados',
-      bio: 'Garantiza el marco perfecto para los dientes. Realiza alargamientos coronarios estéticos, injertos y contornos gingivales de cicatrización ultrarrápida.',
-      imageUrl: 'https://images.unsplash.com/photo-1594824813590-7892b1580214?auto=format&fit=crop&w=1000&q=85',
-      credentials: ['Periodoncia e Implantología', 'Microcirugía Asistida por Láser', 'Salud Biológica Periapical']
+      name: 'Equipo Odontogamma',
+      role: 'Asistencia Clínica & Biomateriales',
+      specialty: 'Precisión en Procedimientos',
+      bio: 'Comprometida con los protocolos clínicos más rigurosos y el bienestar sensorial del paciente en cada sesión de consulta.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758178/622980093_18093378355788920_6489025597437504639_n.jpg',
+      credentials: ['Cuidado Integral', 'Protocolos de Vanguardia', 'Odontogamma Oriente']
     },
     {
-      name: 'Especialista en Ortodoncia Invisible',
-      role: 'Ortodoncia Digital & Alineadores',
-      specialty: 'Estabilidad Oclusal Pre-Carillas',
-      bio: 'Alinea las arcadas dentales con mínima fricción para que las carillas requieran el menor desgaste posible, logrando la perfecta oclusión funcional.',
-      imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85',
-      credentials: ['Certificación Alineadores Transparentes', 'Planificación Oclusal 3D', 'Biomecánica Dental Avanzada']
+      name: 'Equipo Odontogamma',
+      role: 'Coordinación Clínica & Cuidados',
+      specialty: 'Salud y Armonía Dental',
+      bio: 'Acompaña a cada paciente durante las distintas etapas clínicas, asegurando una experiencia cálida, cercana y sin dolor.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758188/624649658_18056254670663874_7510318105389766555_n.jpg',
+      credentials: ['Atención Dedicada', 'Experiencia del Paciente', 'Odontogamma Oriente']
     },
     {
-      name: 'Concierge & Dirección de Pacientes',
-      role: 'Hospitalidad & Bienestar VIP',
-      specialty: 'Experiencia del Paciente & Turismo Dental',
-      bio: 'Tu contacto de confianza desde el primer mensaje. Coordina agendas privadas, traslados desde el aeropuerto, estadías en el Oriente y seguimiento posoperatorio 24/7.',
-      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85',
-      credentials: ['Atención Bilingüe', 'Hospitalidad de Lujo', 'Acompañamiento Personalizado']
+      name: 'Equipo Odontogamma',
+      role: 'Coordinación & Hospitalidad VIP',
+      specialty: 'Experiencia & Gestión de Pacientes',
+      bio: 'Coordina la atención, tiempos de cita y acompañamiento exclusivo para pacientes locales e internacionales en Llanogrande.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758232/632201995_18412412407121334_7513765155196393691_n.jpg',
+      credentials: ['Acompañamiento VIP', 'Gestión Integral', 'Odontogamma Oriente']
     }
   ];
 }
-

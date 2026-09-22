@@ -1,70 +1,94 @@
 <!-- ================================================================= -->
-<!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED DOCTOR EN JEFE              -->
+<!-- 1. PRIMER CONTENEDOR: EDITORIAL SPLIT DOCTOR EN JEFE              -->
 <!-- ================================================================= -->
-<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-  <!-- Fotografía de Fondo Completo Editorial -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=2200&q=85"
-      alt="Dr. Jaime Arcila Cano - Director Clínico Odontogamma Oriente"
-      class="w-full h-full object-cover object-top scale-105 animate-subtle-zoom"
-    />
-    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
-    <div class="absolute inset-0 bg-black/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-32 pb-20">
+  <!-- Fondo arquitectónico oscuro con acentos lumínicos zafiro -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#06101E] via-slate-950 to-[#040810]"></div>
+    <div class="absolute -top-32 -left-20 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(30,144,255,0.18)_0%,transparent_70%)] blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,75,150,0.22)_0%,transparent_70%)] blur-3xl"></div>
   </div>
 
-  <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-32 pb-20 reveal-init reveal-fade-up">
-    <div class="max-w-2xl">
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
-        Director Clínico & Fundador
-      </span>
-
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
-        Dr. Jaime <br />
-        <span class="italic font-normal text-og-cyan">
-          Arcila Cano
-        </span>
-      </h1>
-
-      <p class="text-base sm:text-lg text-slate-200 font-light leading-relaxed mb-8">
-        Maestro de la odontología estética biomimética en el Oriente Antioqueño. Su práctica se fundamenta en la máxima preservación biológica, la escultura cerámica de alta fidelidad y la transformación de vidas a través de la confianza al sonreír.
-      </p>
-
-      <!-- Métricas Clave de Autor -->
-      <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/15 mb-10">
-        <div>
-          <span class="text-3xl sm:text-4xl font-editorial font-light text-white block">15+</span>
-          <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-widest font-light">Años de Maestría</span>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Columna Izquierda: Presentación Editorial & Acciones -->
+      <div class="lg:col-span-7 text-center lg:text-left reveal-init reveal-fade-up">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+          <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-white font-mono font-semibold">
+            Director Clínico & Fundador
+          </span>
         </div>
-        <div>
-          <span class="text-3xl sm:text-4xl font-editorial font-light text-white block">1000+</span>
-          <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-widest font-light">Sonrisas Esculpidas</span>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-editorial font-medium text-white tracking-tight leading-[1.08] mb-6">
+          Dr. Jaime <br />
+          <span class="italic font-medium bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+            Arcila Cano
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+          Especialista en odontología estética biomimética en el Oriente Antioqueño. Su práctica se fundamenta en la máxima preservación biológica, la microescultura cerámica de alta fidelidad y la transformación integral de la sonrisa.
+        </p>
+
+
+
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <app-luxury-button
+            routerLink="/contacto"
+            variant="primary"
+            size="md"
+            class="w-full sm:w-auto shadow-glow font-semibold"
+          >
+            Agendar Cita Privada
+          </app-luxury-button>
+          
+          <app-luxury-button
+            routerLink="/nuestro-trabajo/antes-y-despues"
+            variant="outline"
+            size="md"
+            class="w-full sm:w-auto border-white/30 text-white hover:border-og-cyan hover:text-og-cyan font-semibold"
+          >
+            Ver Casos Clínicos
+          </app-luxury-button>
         </div>
-        <div>
-          <span class="text-3xl sm:text-4xl font-editorial font-light text-white block">0.2mm</span>
-          <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-widest font-light">Láminas Ultrafinas</span>
+
+      </div>
+
+      <!-- Columna Derecha: Retrato Vertical en Marco Editorial Curvo (Proporción Natural) -->
+      <div class="lg:col-span-5 flex justify-center reveal-init reveal-scale delay-100">
+        <div class="relative max-w-[360px] sm:max-w-[420px] w-full aspect-[3/4] sm:aspect-[4/5] rounded-[32px] overflow-hidden border border-white/20 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] bg-slate-900 group">
+          
+          <!-- Resplandor ambiental de acento -->
+          <div class="pointer-events-none absolute -inset-1 bg-gradient-to-b from-og-cyan/25 via-transparent to-og-electric/25 rounded-[32px] blur-xl opacity-75"></div>
+
+          <!-- Fotografía Real del Dr. Jaime Arcila -->
+          <img
+            src="https://res.cloudinary.com/ffvpll33/image/upload/v1790029073/628032151_18503251906073838_8830790894546818104_n.jpg"
+            alt="Dr. Jaime Arcila Cano - Director Clínico Odontogamma Oriente"
+            class="w-full h-full object-cover object-center relative z-10 transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+
+          <!-- Velo sutil inferior con viñeta -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 pointer-events-none z-20"></div>
+
+          <!-- Insignia Flotante Inferior en Cristal -->
+          <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 flex items-center justify-between text-white pointer-events-none z-30 shadow-lg">
+            <div>
+              <span class="text-[9px] uppercase tracking-[0.25em] text-og-cyan font-mono font-bold block">Dirección Médica</span>
+              <span class="text-sm font-editorial font-medium">Dr. Jaime Arcila Cano</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-[10px] text-slate-300 font-mono uppercase tracking-wider">Llanogrande</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-4">
-        <app-luxury-button
-          routerLink="/contacto"
-          variant="primary"
-          size="md"
-        >
-          Agendar Cita Privada con el Dr. Arcila
-        </app-luxury-button>
-        <app-luxury-button
-          routerLink="/transformaciones"
-          variant="outline"
-          size="md"
-          class="border-white/30 text-white hover:border-og-cyan hover:text-og-cyan"
-        >
-          Ver Casos Clínicos
-        </app-luxury-button>
-      </div>
     </div>
   </div>
 </section>

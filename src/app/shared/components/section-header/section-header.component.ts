@@ -13,24 +13,24 @@ import { CommonModule } from '@angular/common';
   template: `
     <div [class]="wrapperClasses()">
       @if (kicker()) {
-        <span class="inline-block text-[11px] md:text-xs font-semibold tracking-[0.25em] uppercase text-og-electric mb-3">
+        <span class="inline-block text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric mb-3 font-mono">
           {{ kicker() }}
         </span>
       }
 
-      <h2 class="text-3xl md:text-5xl lg:text-6xl font-editorial font-light tracking-tight text-og-headline leading-[1.1] mb-5">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-editorial font-medium tracking-tight text-slate-900 leading-[1.12] mb-5">
         {{ title() }}
       </h2>
 
       @if (subtitle()) {
-        <p class="text-sm md:text-base text-og-slate font-light leading-relaxed max-w-2xl" [class.mx-auto]="align() === 'center'">
+        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl" [class.mx-auto]="align() === 'center'">
           {{ subtitle() }}
         </p>
       }
 
       <!-- Línea de acento sutil opcional -->
       @if (showDivider()) {
-        <div class="mt-6 h-[1px] w-16 bg-gradient-to-r from-og-electric to-transparent" [class.mx-auto]="align() === 'center'"></div>
+        <div class="mt-6 h-[1.5px] w-20 bg-gradient-to-r from-og-electric to-transparent" [class.mx-auto]="align() === 'center'"></div>
       }
     </div>
   `

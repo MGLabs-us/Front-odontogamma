@@ -127,22 +127,22 @@
 
         <!-- Ficha Técnica Clínica del Caso -->
         <div class="pt-4 border-t border-og-border flex flex-wrap gap-4 text-xs text-og-slate font-mono">
-          @if (caseItem.details.units) {
+          @if (caseItem.details.treatment) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              {{ caseItem.details.units }}
+              {{ caseItem.details.treatment }}
             </span>
           }
-          @if (caseItem.details.shade) {
+          @if (caseItem.details.focus) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              Color: {{ caseItem.details.shade }}
+              {{ caseItem.details.focus }}
             </span>
           }
-          @if (caseItem.details.timeframe) {
+          @if (caseItem.details.result) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              {{ caseItem.details.timeframe }}
+              {{ caseItem.details.result }}
             </span>
           }
         </div>
