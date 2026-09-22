@@ -79,14 +79,14 @@
 
           <!-- Especificaciones Técnicas del Tratamiento -->
           <div class="pt-4 border-t border-og-border flex flex-wrap gap-4 text-xs text-og-slate font-mono">
-            @if (caseItem.details.units) {
-              <span>• {{ caseItem.details.units }}</span>
+            @if (caseItem.details.treatment) {
+              <span>• {{ caseItem.details.treatment }}</span>
             }
-            @if (caseItem.details.shade) {
-              <span>• Color: {{ caseItem.details.shade }}</span>
+            @if (caseItem.details.focus) {
+              <span>• {{ caseItem.details.focus }}</span>
             }
-            @if (caseItem.details.timeframe) {
-              <span>• Duración: {{ caseItem.details.timeframe }}</span>
+            @if (caseItem.details.result) {
+              <span>• {{ caseItem.details.result }}</span>
             }
           </div>
         </div>

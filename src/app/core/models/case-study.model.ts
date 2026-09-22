@@ -10,9 +10,12 @@ export interface CaseStudy {
   beforeImageUrl: string;
   afterImageUrl: string;
   details: {
-    units?: string;       // Ej: "10 Carillas de Porcelana E-max"
-    shade?: string;       // Ej: "BL2 Natural Luminescence"
-    timeframe?: string;   // Ej: "2 Sesiones clínicas"
+    treatment?: string;   // Ej: "Carillas Cerámicas Feldespáticas"
+    focus?: string;       // Ej: "Restauración de Bordes & Longitud"
+    result?: string;      // Ej: "Textura y Brillo Natural"
+    units?: string;       // Opcional para retrocompatibilidad
+    shade?: string;       // Opcional para retrocompatibilidad
+    timeframe?: string;   // Opcional para retrocompatibilidad
   };
   featured?: boolean;
 }

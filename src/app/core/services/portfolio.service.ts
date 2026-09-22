@@ -51,10 +51,12 @@ export class PortfolioService {
       beforeAfter: {
         beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
-        caseTitle: 'Rejuvenecimiento con 10 Carillas Feldespáticas',
-        description: 'Paciente con desgaste en bordes incisales y pérdida de longitud dental. Se diseñaron 10 carillas cerámicas con textura microlineal y translucidez incisal personalizada.',
-        units: '10 Carillas Feldespáticas',
-        timeframe: '2 Sesiones Clínicas'
+        caseTitle: 'Rejuvenecimiento Dental con Carillas Feldespáticas',
+        description: 'Paciente con desgaste en bordes incisales y pérdida de longitud dental. Se diseñaron láminas cerámicas con textura microlineal y translucidez incisal personalizada.',
+        technique: 'Carillas Cerámicas Feldespáticas',
+        focus: 'Restauración de Bordes & Longitud',
+        units: 'Carillas Cerámicas Feldespáticas',
+        timeframe: 'Restauración de Bordes & Longitud'
       },
       badge: 'Firma de la Clínica'
     },
@@ -92,9 +94,11 @@ export class PortfolioService {
         beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762894/foto7_antes.png',
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762895/foto7_despues.png',
         caseTitle: 'Armonización de Sonrisa y Arco Bimaxilar',
-        description: 'Corrección de desgaste por bruxismo y aplanamiento de bordes con 16 carillas cerámicas para devolver luminosidad, amplitud y equilibrio al rostro.',
-        units: '16 Carillas Cerámicas E-max',
-        timeframe: '3 Semanas'
+        description: 'Corrección de desgaste y aplanamiento de bordes con carillas cerámicas para devolver luminosidad, amplitud y equilibrio al rostro.',
+        technique: 'Diseño de Sonrisa Cerámico',
+        focus: 'Armonización Facial & Simetría',
+        units: 'Diseño de Sonrisa Cerámico',
+        timeframe: 'Armonización Facial & Simetría'
       },
       badge: 'Bespoke Design'
     },
@@ -110,17 +114,17 @@ export class PortfolioService {
         'Integramos escaneo intraoral 3D sin pastas invasivas, simulación virtual computarizada y fabricación robotizada combinada con terminado manual de artista.',
         'Nos aseguramos de que no solo obtengas una estética sublime, sino también una mordida funcional, estable y completamente cómoda.'
       ],
-      heroImageUrl: 'https://images.cloudinary.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2000&q=85',
+      heroImageUrl: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2000&q=85',
       galleryImages: [
         'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80',
         'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
         'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80'
       ],
       highlights: [
-        'Fase 1: Consulta diagnóstica, fotografías de alta gama y escaneo 3D',
-        'Fase 2: Simulación digital y prueba en boca en resina estética (Mock-up)',
-        'Fase 3: Preparación microscópica y confección en laboratorio de élite',
-        'Fase 4: Cementación definitiva bajo aislamiento absoluto y pulido'
+        'Fase 1: Consulta diagnóstica, fotos de estudio y escaneo 3D',
+        'Fase 2: Simulación digital y prueba en boca estética (Mock-up)',
+        'Fase 3: Confección de élite en laboratorio de vanguardia',
+        'Fase 4: Cementación definitiva bajo aislamiento y pulido'
       ],
       idealFor: [
         'Pacientes que desean una transformación dental completa y definitiva',
@@ -132,8 +136,10 @@ export class PortfolioService {
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762885/foto6_despues.png',
         caseTitle: 'Microestética & Nivelación de Bordes Incisales',
         description: 'Carillas de porcelana ultradelgadas con estratificación de esmalte para máxima translucidez y feminidad de la sonrisa.',
-        units: '8 Carillas Ultrafinas (0.3 mm)',
-        timeframe: '2 Sesiones'
+        technique: 'Láminas Cerámicas de Precisión',
+        focus: 'Nivelación Incisal & Simetría',
+        units: 'Láminas Cerámicas de Precisión',
+        timeframe: 'Nivelación Incisal & Simetría'
       },
       badge: 'Experiencia Total'
     },
@@ -146,7 +152,7 @@ export class PortfolioService {
       shortDescription: 'Protocolos combinados en clínica y casa con luz fría fotocatalizada que desintegran pigmentos orgánicos profundos respetando la matriz biológica del diente.',
       detailedDescription: [
         'A diferencia de los blanqueamientos agresivos que deshidratan el diente y generan sensibilidad insoportable, nuestro protocolo de aclaramiento avanzado utiliza tecnología de fotocatálisis con agentes remineralizantes.',
-        'Logramos aclarar entre 4 y 8 tonos en la escala cromática dental, devolviendo la luminosidad juvenil sin erosionar el esmalte.',
+        'Logramos devolver la luminosidad juvenil y blancura armónica sin erosionar el esmalte ni alterar la vitalidad pulpar.',
         'Incluimos férulas termoformadas a medida y geles de mantenimiento para prolongar la pureza de tu sonrisa por años.'
       ],
       heroImageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2000&q=85',
@@ -157,22 +163,24 @@ export class PortfolioService {
       ],
       highlights: [
         'Tecnología de luz fría con agentes bio-protectores',
-        'Cero sensibilidad dental post-tratamiento',
-        'Elevación de hasta 8 tonos en una sola sesión clínica',
-        'Kit premium para mantenimiento en el hogar'
+        'Cero dolor y máxima protección del esmalte dental',
+        'Aclaramiento profundo y luminoso en una sola sesión',
+        'Kit exclusivo para mantenimiento y brillo duradero'
       ],
       idealFor: [
         'Dientes oscurecidos por café, té, mate, vino tinto o tabaco',
         'Preparación estética previa a la colocación de carillas',
-        'Pacientes con eventos especiales (bodas, compromisos) que buscan resultados rápidos'
+        'Pacientes con eventos especiales que buscan resultados inmediatos'
       ],
       beforeAfter: {
         beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762828/foto1_antes.png',
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762829/foto1_despues.png',
         caseTitle: 'Alineación Óptica & Laminados Cerámicos',
         description: 'Corrección de apiñamiento leve anterior y elevación de luminosidad mediante carillas cerámicas de preparación mínima.',
-        units: '8 Carillas de Contacto',
-        timeframe: '2 Semanas'
+        technique: 'Láminas Cerámicas de Contacto',
+        focus: 'Alineación Óptica & Salud Gingival',
+        units: 'Láminas Cerámicas de Contacto',
+        timeframe: 'Alineación Óptica & Salud Gingival'
       }
     }
   ]);
@@ -184,31 +192,31 @@ export class PortfolioService {
   private readonly casesData = signal<CaseStudy[]>([
     {
       id: 'caso-01',
-      title: 'Rejuvenecimiento Dental & Carillas Feldespáticas',
+      title: 'Rejuvenecimiento Dental & Carillas Cerámicas',
       category: 'carillas',
       categoryLabel: 'Carillas de Porcelana',
-      description: 'Paciente con atrición dental severa, pérdida de longitud del tercio incisal y dentina expuesta. Se diseñaron 10 carillas cerámicas personalizadas devolviendo volumen anatómico, reflectancia y luminosidad natural.',
+      description: 'Restauración anatómica de bordes incisales desgastados. Mediante láminas cerámicas personalizadas, se devolvió la longitud, textura y reflectancia natural para una sonrisa rejuvenecida y armónica.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
       details: {
-        units: '10 Carillas Feldespáticas',
-        shade: 'BL2 Soft Natural',
-        timeframe: '2 Sesiones Clínicas'
+        treatment: 'Carillas de Cerámica Pura',
+        focus: 'Restauración Anatómica & Volumen',
+        result: 'Textura y Brillo Natural'
       },
       featured: true
     },
     {
       id: 'caso-02',
-      title: 'Armonización de Arco Bimaxilar & Diseño de Sonrisa',
+      title: 'Armonización Facial & Diseño de Sonrisa',
       category: 'diseno-sonrisa',
       categoryLabel: 'Diseño de Sonrisa',
-      description: 'Tratamiento de desgaste generalizado por bruxismo y pérdida de curvatura de la sonrisa. Se realizó un diseño de sonrisa biométrico con carillas cerámicas superiores e inferiores logrando una estética radiante y equilibrada.',
+      description: 'Transformación armónica del arco dental devolviendo amplitud a la línea de la sonrisa. El diseño biométrico equilibra las proporciones del rostro con máxima naturalidad.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762894/foto7_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762895/foto7_despues.png',
       details: {
-        units: '16 Carillas Cerámicas E-max',
-        shade: 'BL1 Ultra Luminescence',
-        timeframe: '3 Semanas'
+        treatment: 'Diseño de Sonrisa Cerámico',
+        focus: 'Armonización Facial & Simetría',
+        result: 'Luminosidad y Balance Orgánico'
       },
       featured: true
     },
@@ -217,103 +225,103 @@ export class PortfolioService {
       title: 'Microestética & Nivelación de Bordes Incisales',
       category: 'carillas',
       categoryLabel: 'Carillas Cerámicas',
-      description: 'Corrección de microfracturas, asimetría de bordes incisales y tono dental irregular. Se colocaron carillas ultrafinas de alta translucidez respetando la anatomía orgánica y la feminidad de la sonrisa.',
+      description: 'Corrección de microfracturas, asimetría de bordes incisales y tono irregular. Se colocaron láminas ultrafinas que devuelven la continuidad y suavidad a la línea de la sonrisa.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762884/foto6_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762885/foto6_despues.png',
       details: {
-        units: '8 Carillas Ultrafinas (0.3 mm)',
-        shade: 'OM2 Translucent',
-        timeframe: '2 Sesiones'
+        treatment: 'Láminas Cerámicas Ultrafinas',
+        focus: 'Nivelación Incisal & Simetría',
+        result: 'Contorno Suave y Translucidez'
       },
-      featured: true
+      featured: false
     },
     {
       id: 'caso-04',
-      title: 'Alineación Óptica & Corrección de Apiñamiento Anterior',
+      title: 'Alineación Óptica & Estética de Contacto',
       category: 'diseno-sonrisa',
       categoryLabel: 'Diseño de Sonrisa',
-      description: 'Resolución de apiñamiento leve anterior y discrepancia de ejes axiales mediante carillas cerámicas de preparación mínima, redefiniendo el plano de oclusión de forma armónica.',
+      description: 'Solución estética para leves apiñamientos y discrepancias de ejes axiales sin recurrir a desgastes invasivos, optimizando la reflexión de la luz para una sonrisa uniforme.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762828/foto1_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762829/foto1_despues.png',
       details: {
-        units: '8 Carillas Cerámicas de Contacto',
-        shade: 'BL2 Soft White',
-        timeframe: '2 Semanas'
+        treatment: 'Láminas Cerámicas de Contacto',
+        focus: 'Alineación Óptica & Ejes',
+        result: 'Sonrisa Uniforme y Salud Gingival'
       },
-      featured: true
+      featured: false
     },
     {
       id: 'caso-05',
       title: 'Cierre de Diastema Central con Lentes Cerámicos',
       category: 'carillas',
       categoryLabel: 'Lentes Cerámicos',
-      description: 'Cierre estético de espacio interincisal (diastema) y optimización de proporciones áureas mediante lentes cerámicos de contacto ultrafinos sin desgaste del esmalte dental.',
+      description: 'Cierre armonioso del espacio interincisal optimizando las proporciones dentales. Se emplearon lentes cerámicos de contacto que preservan la estructura dental intacta.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762873/foto5_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762874/foto5_despues.png',
       details: {
-        units: '4 Lentes Cerámicos Sin Desgaste',
-        shade: 'A1 Natural Bright',
-        timeframe: '10 Días'
+        treatment: 'Lentes Cerámicos Sin Desgaste',
+        focus: 'Cierre de Espacio Interdental',
+        result: 'Proporción Áurea y Continuidad'
       },
       featured: false
     },
     {
       id: 'caso-06',
-      title: 'Implantología Estética & Corona de Circonio Anterior',
+      title: 'Implantología Estética & Corona Cerámica Anterior',
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación & Implantes',
-      description: 'Reemplazo de incisivo central ausente mediante implante osteointegrado y corona cerámica personalizada sobre pilar estético, logrando perfecta simetría gingival e indistinguible del diente contralateral.',
+      description: 'Reemplazo de pieza anterior ausente mediante implante dental y corona cerámica personalizada, logrando una integración de encía natural e imperceptible frente a los dientes contiguos.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762902/foto8_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762907/foto8_despues.png',
       details: {
-        units: '1 Implante Inmediato + Corona Circonio',
-        shade: 'Colorimetría 3D Individual',
-        timeframe: 'Fase Guiada'
+        treatment: 'Implante & Corona Cerámica Pura',
+        focus: 'Perfil de Emergencia y Simetría',
+        result: 'Integración Gingival Imperceptible'
       },
       featured: false
     },
     {
       id: 'caso-07',
-      title: 'Rehabilitación Fija Anterior & Prótesis Cerámica',
+      title: 'Rehabilitación Fija Anterior Libre de Metal',
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación Oral',
-      description: 'Rehabilitación estética y funcional de sector anterior edéntulo mediante estructura fija de alta resistencia libre de metal, restaurando de inmediato fonación, soporte labial y seguridad masticatoria.',
+      description: 'Sustitución de restauraciones antiguas desajustadas por estructuras cerámicas biomiméticas de alta resistencia, devolviendo función masticatoria, soporte labial y estética.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762839/foto2_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762845/foto2_despues.png',
       details: {
-        units: 'Estructura Cerámica de Alta Resistencia',
-        shade: 'BL3 Natural Tone',
-        timeframe: '3 Semanas'
+        treatment: 'Cerámica Biomimética Sin Metal',
+        focus: 'Sellado Marginal & Biocompatibilidad',
+        result: 'Firmeza Funcional y Salud de Encía'
       },
       featured: false
     },
     {
       id: 'caso-08',
-      title: 'Reconstrucción de Diente Fracturado & Corona Libre de Metal',
+      title: 'Reconstrucción de Diente Fracturado',
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación Oral',
-      description: 'Sustitución de muñón y diente fracturado con poste de fibra de vidrio y corona estética de porcelana pura, eliminando sombras oscuras en la encía y devolviendo la anatomía original.',
+      description: 'Recuperación anatómica y estructural de diente anterior fracturado mediante restauración cerámica pura, eliminando sombras antiestéticas y devolviendo la anatomía original.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762916/foto9_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762917/foto9_despues.png',
       details: {
-        units: 'Poste Anatómico + Corona Cerámica',
-        shade: 'A2 Translucent Match',
-        timeframe: '2 Sesiones'
+        treatment: 'Corona Cerámica Monolítica',
+        focus: 'Recuperación Estructural & Función',
+        result: 'Mimetismo Óptico y Firmeza'
       },
       featured: false
     },
     {
       id: 'caso-09',
-      title: 'Alineación de Apiñamiento Severo & Expansión de Arco',
+      title: 'Alineación de Apiñamiento & Expansión de Arco',
       category: 'ortodoncia',
       categoryLabel: 'Ortodoncia & Alineación',
-      description: 'Corrección de maloclusión y apiñamiento severo con discrepancia anterior. Se logró la nivelación completa del arco dental superior, simetría funcional y una estética luminosa y radiante.',
+      description: 'Corrección de maloclusión y apiñamiento severo devolviendo la amplitud del arco superior, simetría funcional y una estética luminosa y radiante.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762819/cropped_teeth_after.png',
       details: {
-        units: 'Alineación de Arco Completo',
-        shade: 'Esmalte Natural',
-        timeframe: 'Tratamiento Integral'
+        treatment: 'Alineación y Expansión de Arco',
+        focus: 'Corrección de Apiñamiento',
+        result: 'Oclusión Balanceada y Amplitud'
       },
       featured: false
     },
@@ -322,13 +330,13 @@ export class PortfolioService {
       title: 'Estratificación Cerámica & Biomimética Clínica',
       category: 'carillas',
       categoryLabel: 'Carillas & Biomimética',
-      description: 'Documentación intraoral de alta precisión clínica. Manejo y acondicionamiento biológico tisular para la adhesión de carillas cerámicas con sellado marginal microscópico.',
+      description: 'Acondicionamiento y adhesión cerámica de alta precisión. La estratificación de capas reproduce fielmente la opalescencia y vitalidad de la dentición natural.',
       beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762918/foto10_antes.png',
       afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762920/foto10_despues.png',
       details: {
-        units: 'Laminados Cerámicos Directos',
-        shade: 'BL2 / Traslúcido',
-        timeframe: 'Fase de Precisión'
+        treatment: 'Estratificación Cerámica',
+        focus: 'Microtextura & Mimetismo',
+        result: 'Opalescencia y Vitalidad Visual'
       },
       featured: false
     }

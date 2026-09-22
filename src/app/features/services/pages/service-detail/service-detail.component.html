@@ -248,8 +248,12 @@
           </p>
 
           <div class="flex flex-wrap gap-6 pt-4 border-t border-slate-200/80 text-xs text-slate-500 font-mono">
-            <span>• Unidades: {{ item.beforeAfter.units }}</span>
-            <span>• Duración del tratamiento: {{ item.beforeAfter.timeframe }}</span>
+            @if (item.beforeAfter.technique) {
+              <span>• Técnica: {{ item.beforeAfter.technique }}</span>
+            }
+            @if (item.beforeAfter.focus) {
+              <span>• Enfoque: {{ item.beforeAfter.focus }}</span>
+            }
             <span>• Clínica: Odontogamma Oriente</span>
           </div>
         </div>
