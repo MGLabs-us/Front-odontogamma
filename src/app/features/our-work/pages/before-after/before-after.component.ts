@@ -40,10 +40,10 @@ export class BeforeAfterComponent {
   // Categorías de filtro disponibles
   protected readonly categories: FilterCategory[] = [
     { key: 'all', label: 'Todos los Casos' },
-    { key: 'veneers', label: 'Carillas de Porcelana' },
-    { key: 'cosmetic', label: 'Odontología Cosmética' },
-    { key: 'full-mouth', label: 'Transformación Integral' },
-    { key: 'whitening', label: 'Aclaramiento Dental' }
+    { key: 'carillas', label: 'Carillas de Porcelana' },
+    { key: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
+    { key: 'rehabilitacion', label: 'Rehabilitación & Implantes' },
+    { key: 'ortodoncia', label: 'Ortodoncia & Alineación' }
   ];
 
   // Casos filtrados computados reactivamente

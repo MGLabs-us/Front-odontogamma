@@ -9,19 +9,16 @@
       alt="Alianzas de Marca y Presencia Editorial Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente multicapa de alta costura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-        Alianzas Globales & Presencia Digital
-      </span>
-    </div>
+    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
+      Alianzas Globales & Presencia Digital
+    </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
       Vanguardia, Medios <br />
@@ -81,7 +78,7 @@
             <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold">
               {{ partner.country }}
             </span>
-            <span class="px-3 py-1 bg-slate-100 text-og-deep text-[10px] uppercase tracking-wider font-mono rounded-xs">
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-[10px] uppercase tracking-wider font-mono rounded-xs">
               {{ partner.badge }}
             </span>
           </div>
@@ -128,7 +125,7 @@
         <button
           type="button"
           (click)="setFilter('all')"
-          [class]="selectedFilter() === 'all' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          [class]="selectedFilter() === 'all' ? 'bg-og-electric text-white shadow-xs font-semibold' : 'text-og-slate hover:text-og-headline'"
           class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
         >
           Todos
@@ -136,7 +133,7 @@
         <button
           type="button"
           (click)="setFilter('reels')"
-          [class]="selectedFilter() === 'reels' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          [class]="selectedFilter() === 'reels' ? 'bg-og-electric text-white shadow-xs font-semibold' : 'text-og-slate hover:text-og-headline'"
           class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
         >
           Reels & Videos
@@ -144,7 +141,7 @@
         <button
           type="button"
           (click)="setFilter('cases')"
-          [class]="selectedFilter() === 'cases' ? 'bg-og-deep text-white shadow-xs' : 'text-og-slate hover:text-og-headline'"
+          [class]="selectedFilter() === 'cases' ? 'bg-og-electric text-white shadow-xs font-semibold' : 'text-og-slate hover:text-og-headline'"
           class="px-4 py-2 text-[11px] uppercase tracking-wider font-medium rounded-xs transition-all cursor-pointer"
         >
           Casos Clínicos
@@ -217,19 +214,19 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 4. BANNER INSTAGRAM CONNECT & CTA                                  -->
+<!-- 4. BANNER INSTAGRAM CONNECT & CTA (ESTÉTICA AESTHETIC)             -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="text-pink-400">●</span>
-      <span class="text-[10px] uppercase tracking-[0.3em] text-slate-200 font-mono">&#64;odontogammaoriente</span>
+<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-6">
+      <span class="text-pink-500">●</span>
+      <span class="text-[10px] uppercase tracking-[0.3em] text-og-headline font-mono font-medium">&#64;odontogammaoriente</span>
     </div>
 
-    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
       Únete a Nuestra Comunidad Estética
     </h2>
-    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
       Descubre diariamente casos inéditos de transformación, videos de laboratorio y el detrás de escena de nuestra práctica médica.
     </p>
 
@@ -238,7 +235,7 @@
         href="https://instagram.com"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 rounded-xs hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300"
+        class="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-medium text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 rounded-xs hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
       >
         <span>Abrir Instagram</span>
         <span>↗</span>
@@ -247,7 +244,7 @@
       <app-luxury-button
         routerLink="/contacto"
         variant="primary"
-        size="lg"
+        size="md"
       >
         Agendar Consulta
       </app-luxury-button>

@@ -9,19 +9,16 @@
       alt="Equipo Clínico Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente multicapa de alta costura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-        Especialistas de Alta Gama
-      </span>
-    </div>
+    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
+      Especialistas de Alta Gama
+    </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
       Mentes Maestras <br />
@@ -67,52 +64,56 @@
     />
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-16">
-    @for (member of members; track member.name; let i = $index) {
+  <!-- Grid de Gran Formato: Fotos Grandes que Sobresalen (2 Columnas de Alto Impacto) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-16">
+    @for (member of members; track member.imageUrl; let i = $index) {
       <div
-        [class]="i % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (i % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-        class="group bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
+        [class]="i % 2 === 0 ? 'reveal-init reveal-fade-up delay-100' : 'reveal-init reveal-fade-up delay-200'"
+        class="group bg-white border border-slate-200/90 rounded-[32px] sm:rounded-[40px] p-5 sm:p-7 overflow-hidden shadow-[0_20px_50px_-15px_rgba(16,75,150,0.08)] hover:shadow-[0_30px_70px_-15px_rgba(0,114,206,0.2)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between"
       >
-        
-        <!-- Retrato Editorial -->
-        <div>
-          <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
-            <img
-              [src]="member.imageUrl"
-              [alt]="member.name"
-              loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-og-deep/70 via-transparent to-transparent"></div>
-            
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-[10px] uppercase tracking-[0.25em] text-og-cyan block mb-1 font-mono">
-                {{ member.specialty }}
-              </span>
-              <h3 class="text-xl font-editorial font-light text-white">
-                {{ member.name }}
-              </h3>
-            </div>
+        <!-- Fotografía en Gran Formato (Protagonista Visual Absoluta) -->
+        <div class="relative w-full aspect-[4/5] sm:aspect-[1/1] md:aspect-[4/5] rounded-[24px] sm:rounded-[30px] overflow-hidden bg-slate-100 shadow-md">
+          <img
+            [src]="member.imageUrl"
+            [alt]="member.role"
+            loading="lazy"
+            class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+          <!-- Velo degradado sutil inferior para legibilidad -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none"></div>
+
+          <!-- Insignia Flotante Superior en Cristal -->
+          <div class="absolute top-4 left-4 z-10">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-white shadow-md">
+              <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+              {{ member.specialty }}
+            </span>
           </div>
 
-          <!-- Cuerpo Editorial -->
-          <div class="p-6">
-            <span class="text-[10px] uppercase tracking-[0.2em] text-og-electric font-semibold block mb-3">
+          <!-- Identificación al Pie de la Fotografía -->
+          <div class="absolute bottom-5 inset-x-5 z-10">
+            <span class="text-xs sm:text-sm font-mono tracking-wider uppercase text-sky-200 font-bold block mb-1">
               {{ member.role }}
             </span>
-            <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
-              {{ member.bio }}
-            </p>
+            <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-white drop-shadow-md">
+              {{ member.name }}
+            </h3>
+          </div>
+        </div>
 
-            <!-- Credenciales -->
-            <ul class="space-y-1.5 pt-4 border-t border-og-border">
-              @for (cred of member.credentials; track cred) {
-                <li class="flex items-center gap-2 text-[11px] text-og-slate">
-                  <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-                  <span>{{ cred }}</span>
-                </li>
-              }
-            </ul>
+        <!-- Ficha Editorial y Credenciales -->
+        <div class="pt-6 px-2">
+          <p class="text-base sm:text-lg text-slate-700 font-normal leading-relaxed mb-6">
+            {{ member.bio }}
+          </p>
+
+          <div class="flex flex-wrap gap-2.5 pt-4 border-t border-slate-100">
+            @for (cred of member.credentials; track cred) {
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-700">
+                <span class="w-1.5 h-1.5 rounded-full bg-og-electric"></span>
+                {{ cred }}
+              </span>
+            }
           </div>
         </div>
 
@@ -144,22 +145,22 @@
 
       <div class="grid grid-cols-2 gap-4">
         <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-100">
-          <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">01</span>
+          <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">01</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Evaluación en Vivo</h4>
           <p class="text-xs text-og-slate font-light">El ceramista participa en la sesión de colorimetría con luz polarizada.</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-200">
-          <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">02</span>
+          <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">02</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Salud Gingival</h4>
           <p class="text-xs text-og-slate font-light">Encías sanas y simétricas antes de colocar la primera carilla.</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-200">
-          <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">03</span>
+          <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">03</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Oclusión Segura</h4>
           <p class="text-xs text-og-slate font-light">Armonización de mordida para evitar fracturas o desgastes prematuros.</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-300">
-          <span class="text-2xl sm:text-3xl font-editorial text-og-deep block mb-1">04</span>
+          <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">04</span>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Concierge Privado</h4>
           <p class="text-xs text-og-slate font-light">Atención prioritaria y agenda confidencial de principio a fin.</p>
         </div>
@@ -169,17 +170,17 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 4. CIERRE CONVERSIÓN EQUIPO                                       -->
+<!-- 4. CIERRE CONVERSIÓN EQUIPO (ESTÉTICA AESTHETIC)                   -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
+<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
       Tu Equipo Médico Exclusivo
     </span>
-    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
       Empieza Tu Experiencia en Buenas Manos
     </h2>
-    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
       Conversemos sobre tus expectativas estéticas y creemos juntos un plan a tu medida.
     </p>
 
@@ -187,11 +188,10 @@
       <app-luxury-button
         routerLink="/contacto"
         variant="primary"
-        size="lg"
+        size="md"
       >
         Reservar Valoración con el Equipo
       </app-luxury-button>
     </div>
   </div>
 </section>
-

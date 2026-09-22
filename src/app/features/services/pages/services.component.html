@@ -1,13 +1,23 @@
-<!-- Encabezado de Página -->
-<section class="relative pt-36 pb-20 md:pb-28 bg-og-deep text-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 reveal-init reveal-fade-up">
+<!-- Encabezado de Página Editorial con Fotografía Arquitectónica -->
+<section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2200&q=85"
+      alt="Tratamientos de Firma Odontogamma Oriente"
+      class="w-full h-full object-cover object-center scale-105"
+    />
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-32 pb-16 reveal-init reveal-fade-up">
     <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
       Catálogo Clínico
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
       Tratamientos de Firma
     </h1>
-    <p class="text-sm sm:text-base md:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
       Cada procedimiento combina ciencia biomimética, tecnología digital de vanguardia y un sentido estético refinado para transformar tu sonrisa de por vida.
     </p>
   </div>
@@ -35,12 +45,6 @@
             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-          
-          @if (service.badge) {
-            <span class="absolute top-4 left-4 px-3 py-1 bg-og-deep/90 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-md rounded-xs">
-              {{ service.badge }}
-            </span>
-          }
         </a>
 
         <!-- Contenido Editorial -->

@@ -9,19 +9,16 @@
       alt="Galería de Casos Clínicos Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
-    <!-- Gradiente multicapa de alta costura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-og-deep via-og-deep/80 to-og-deep/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-og-deep/90 via-transparent to-og-deep/90"></div>
+    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
   </div>
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-      <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-medium">
-        Casos Clínicos Reales · Sin Filtros
-      </span>
-    </div>
+    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-og-cyan font-semibold block mb-4">
+      Casos Clínicos Reales · Sin Filtros
+    </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
       El Arte de lo Imperceptible: <br />
@@ -81,9 +78,9 @@
         type="button"
         (click)="setCategory(tab.key)"
         class="px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-all duration-200 cursor-pointer rounded-xs border"
-        [class.bg-og-deep]="selectedCategory() === tab.key"
+        [class.bg-og-electric]="selectedCategory() === tab.key"
         [class.text-white]="selectedCategory() === tab.key"
-        [class.border-og-deep]="selectedCategory() === tab.key"
+        [class.border-og-electric]="selectedCategory() === tab.key"
         [class.bg-white]="selectedCategory() !== tab.key"
         [class.text-og-slate]="selectedCategory() !== tab.key"
         [class.border-og-border]="selectedCategory() !== tab.key"
@@ -110,7 +107,7 @@
               [beforeImage]="caseItem.beforeImageUrl"
               [afterImage]="caseItem.afterImageUrl"
               [alt]="caseItem.title"
-              aspectRatio="aspect-[16/11]"
+              aspectRatio="aspect-[16/9]"
             />
           </div>
 
@@ -130,22 +127,22 @@
 
         <!-- Ficha Técnica Clínica del Caso -->
         <div class="pt-4 border-t border-og-border flex flex-wrap gap-4 text-xs text-og-slate font-mono">
-          @if (caseItem.details.units) {
+          @if (caseItem.details.treatment) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              {{ caseItem.details.units }}
+              {{ caseItem.details.treatment }}
             </span>
           }
-          @if (caseItem.details.shade) {
+          @if (caseItem.details.focus) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              Color: {{ caseItem.details.shade }}
+              {{ caseItem.details.focus }}
             </span>
           }
-          @if (caseItem.details.timeframe) {
+          @if (caseItem.details.result) {
             <span class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-              {{ caseItem.details.timeframe }}
+              {{ caseItem.details.result }}
             </span>
           }
         </div>
@@ -202,17 +199,17 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 4. CTA DE VALORACIÓN VIRTUAL Y AGENDAMIENTO                       -->
+<!-- 4. CTA DE VALORACIÓN VIRTUAL Y AGENDAMIENTO (ESTÉTICA AESTHETIC)  -->
 <!-- ================================================================= -->
-<section class="py-24 bg-og-deep text-white border-t border-white/10 text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-cyan block mb-3 font-semibold">
+<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
       ¿Te Preguntas Cómo Quedaría Tu Sonrisa?
     </span>
-    <h2 class="text-3xl sm:text-5xl font-editorial font-light text-white mb-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
       Recibe una Valoración Estética Digital Sin Costo
     </h2>
-    <p class="text-sm sm:text-base text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
       Sube 3 fotos de tus dientes desde tu móvil y el Dr. Jaime Arcila evaluará la viabilidad de tu caso, respondiéndote directamente por correo electrónico.
     </p>
 
@@ -220,15 +217,15 @@
       <app-luxury-button
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
-        size="lg"
+        size="md"
       >
         Iniciar Valoración Virtual Gratuita
       </app-luxury-button>
       <app-luxury-button
         routerLink="/contacto"
         variant="outline"
-        size="lg"
-        class="border-white/30 text-white hover:border-og-cyan hover:text-og-cyan"
+        size="md"
+        class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric"
       >
         Agendar Cita en Sede Llanogrande
       </app-luxury-button>

@@ -1,7 +1,7 @@
 import { Component, signal, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
+import { BrandLogoComponent } from '../../../shared/components/brand-logo/brand-logo.component';
 
 /**
  * Barra de navegación principal en azul corporativo con texto en blanco de alto contraste,
@@ -10,7 +10,7 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, LuxuryButtonComponent],
+  imports: [CommonModule, RouterLink, BrandLogoComponent],
   templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -32,7 +32,7 @@ export class NavbarComponent {
 
   @HostListener('window:scroll')
   protected onScroll(): void {
-    this.isScrolled.set(window.scrollY > 30);
+    this.isScrolled.set(window.scrollY > 15);
   }
 
   protected toggleMobileMenu(): void {

@@ -1,5 +1,17 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  inject,
+  ChangeDetectionStrategy,
+  AfterViewInit,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  signal,
+  computed,
+  PLATFORM_ID
+} from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../../core/services/portfolio.service';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
@@ -9,10 +21,10 @@ import { SectionHeaderComponent } from '../../../shared/components/section-heade
 export interface PhilosophyPillar {
   number: string;
   badge: string;
+  categoryTag: string;
   title: string;
   subtitle: string;
   description: string;
-  benefits: string[];
   imageUrl: string;
   link: string;
   linkText: string;
@@ -36,59 +48,161 @@ export interface PhilosophyPillar {
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('heroVideo') private heroVideo?: ElementRef<HTMLVideoElement>;
   private readonly portfolioService = inject(PortfolioService);
+  private readonly platformId = inject(PLATFORM_ID);
+
+  // Slider de tratamientos de firma interactivo ("corredizo" con avance automático)
+  protected readonly activeServiceIndex = signal<number>(0);
+  protected readonly isAutoplayPaused = signal<boolean>(false);
+  private autoplayTimer: ReturnType<typeof setInterval> | null = null;
+  private readonly AUTOPLAY_INTERVAL_MS = 6000;
+
+  // Señal calculada para el procedimiento actualmente visible
+  protected readonly activeService = computed(() => {
+    const list = this.services();
+    return list[this.activeServiceIndex()] ?? list[0];
+  });
+
+  public ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.startAutoplay();
+    }
+  }
+
+  public ngOnDestroy(): void {
+    this.stopAutoplay();
+  }
+
+  public setService(index: number): void {
+    this.activeServiceIndex.set(index);
+    this.restartAutoplay();
+  }
+
+  public nextService(): void {
+    const count = this.services().length;
+    if (count > 0) {
+      this.activeServiceIndex.update(curr => (curr + 1) % count);
+    }
+    this.restartAutoplay();
+  }
+
+  public prevService(): void {
+    const count = this.services().length;
+    if (count > 0) {
+      this.activeServiceIndex.update(curr => (curr - 1 + count) % count);
+    }
+    this.restartAutoplay();
+  }
+
+  public pauseAutoplay(): void {
+    this.isAutoplayPaused.set(true);
+    this.stopAutoplay();
+  }
+
+  public resumeAutoplay(): void {
+    this.isAutoplayPaused.set(false);
+    this.startAutoplay();
+  }
+
+  private startAutoplay(): void {
+    this.stopAutoplay();
+    this.autoplayTimer = setInterval(() => {
+      if (!this.isAutoplayPaused()) {
+        const count = this.services().length;
+        if (count > 0) {
+          this.activeServiceIndex.update(curr => (curr + 1) % count);
+        }
+      }
+    }, this.AUTOPLAY_INTERVAL_MS);
+  }
+
+  private stopAutoplay(): void {
+    if (this.autoplayTimer) {
+      clearInterval(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
+  }
+
+  private restartAutoplay(): void {
+    if (isPlatformBrowser(this.platformId) && !this.isAutoplayPaused()) {
+      this.startAutoplay();
+    }
+  }
+
+  public ngAfterViewInit(): void {
+    const video = this.heroVideo?.nativeElement;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const triggerPlayback = () => {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Si la política del navegador bloquea el autoplay tras restaurar pestaña
+            const onWakeup = () => {
+              video.play().catch(() => {});
+              window.removeEventListener('click', onWakeup);
+              window.removeEventListener('touchstart', onWakeup);
+              window.removeEventListener('scroll', onWakeup);
+            };
+            window.addEventListener('click', onWakeup, { once: true, passive: true });
+            window.addEventListener('touchstart', onWakeup, { once: true, passive: true });
+            window.addEventListener('scroll', onWakeup, { once: true, passive: true });
+          });
+        }
+      };
+
+      if (video.readyState >= 2) {
+        triggerPlayback();
+      } else {
+        video.addEventListener('loadeddata', triggerPlayback, { once: true });
+        triggerPlayback();
+      }
+    }
+  }
 
   // Signals reactivas obtenidas del servicio central
   protected readonly services = this.portfolioService.services;
   protected readonly featuredCases = this.portfolioService.featuredCases;
 
-  // Pilares persuasivos con imágenes, ventajas de alto impacto y llamadas a la acción
+  // Pilares de filosofía estética con fotografías reales de Odontogamma y redacción concisa
   protected readonly pillars: PhilosophyPillar[] = [
     {
       number: '01',
-      badge: 'Cero Desgaste Agresivo',
-      title: 'Biomimética y Precisión',
+      badge: 'Dirección Médica',
+      categoryTag: 'BIOMIMÉTICA & PRECISIÓN',
+      title: 'Biomimética y Alta Precisión',
       subtitle: 'Tus Dientes Intactos: Belleza Sin Dolor',
-      description: '¿Temes que tallen tus dientes como en la odontología tradicional? Diseñamos láminas cerámicas ultrafinas (0.2 a 0.3mm) que preservan tu esmalte vivo. Obtienes una sonrisa alineada, simétrica y luminosa con máxima naturalidad.',
-      benefits: [
-        'Adiós a dientes gruesos, artificiales o "blanco pared"',
-        'Preservación del 100% de la salud biológica de tu diente',
-        'Diseño guiado por microscopía óptica y estética facial'
-      ],
-      imageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=85',
+      description: 'Láminas cerámicas ultrafinas (0.2 a 0.3 mm) modeladas con magnificación microscópica que preservan tu esmalte biológico vivo sin desgastes invasivos.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1790029060/648985706_17911045683163425_7279892063267287894_n.jpg',
       link: '/servicios/carillas-porcelana',
-      linkText: 'Conocer Carillas de Porcelana →'
+      linkText: 'Conocer Carillas de Porcelana'
     },
     {
       number: '02',
-      badge: 'Blancura Inalterable +15 Años',
-      title: 'Maestría en Cerámica',
-      subtitle: 'Inmune al Café, Vino y Paso del Tiempo',
-      description: 'Las resinas plásticas se manchan y pierden brillo a los pocos meses. Nuestras carillas de cerámica feldespática europea son modeladas a mano por maestros ceramistas con la misma translucidez y refracción lumínica que el esmalte de un diamante.',
-      benefits: [
-        'Disfruta de café, vino y comidas sin temor a pigmentaciones',
-        'Brillo vítreo permanente que no requiere pulidos constantes',
-        'Resistencia superior a microfracturas y desgaste por masticación'
-      ],
-      imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=85',
-      link: '/servicios/odontologia-cosmetica',
-      linkText: 'Ver Arte en Cerámica →'
+      badge: 'Experiencia Sensorial',
+      categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
+      title: 'Confort Clínico Cero Dolor',
+      subtitle: 'Olvídate del Miedo al Odontólogo',
+      description: 'Suites privadas insonorizadas en Llanogrande, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg',
+      link: '/who-we-are/our-location',
+      linkText: 'Explorar Nuestra Sede'
     },
     {
       number: '03',
-      badge: 'Santuario de Calma en Llanogrande',
-      title: 'Experiencia Privada VIP',
-      subtitle: 'Olvídate del Miedo al Odontólogo',
-      description: 'Transformar tu sonrisa debe ser un momento de absoluto deleite. Nuestra clínica en el Oriente Antioqueño combina arquitectura contemporánea, jardines verdes, insonorización, suites privadas y un trato cálido y humano sin prisas.',
-      benefits: [
-        'Atención confidencial personalizada One-to-One',
-        'Tecnología 3D sin moldes de silicona ni procedimientos incómodos',
-        'Entorno campestre exclusivo a 15 min del Aeropuerto JMC'
-      ],
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
-      link: '/who-we-are/our-location',
-      linkText: 'Explorar Nuestra Sede →'
+      badge: 'Resultados Reales',
+      categoryTag: 'EVIDENCIA CLÍNICA & PRESTIGIO',
+      title: 'Sonrisas de Firma y Confianza',
+      subtitle: 'Resultados que Transforman Vidas',
+      description: 'Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.',
+      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757984/485992449_646326938135326_7644290108229838413_n.jpg',
+      link: '/nuestro-trabajo/antes-y-despues',
+      linkText: 'Ver Casos Clínicos'
     }
   ];
 }
