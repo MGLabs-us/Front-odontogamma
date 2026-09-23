@@ -311,3 +311,153 @@ body {
 .delay-300 { transition-delay: 300ms; }
 .delay-400 { transition-delay: 400ms; }
 .delay-500 { transition-delay: 500ms; }
+
+/* ==========================================================================
+   SISTEMA DE PERSPECTIVA 3D, FÍSICA ESPACIAL & MICRO-INTERACCIONES LUXURY
+   ========================================================================== */
+
+/* Contenedores de Perspectiva Espacial */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Capas de Profundidad en el Eje Z para efecto Parallax Tridimensional */
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+/* Animación de Levitación Flotante Suave (Micro-interacción 60 FPS) */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.3deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) -3s infinite;
+}
+
+/* Pulsación de Resplandor Azul Zafiro */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 114, 206, 0.2), 0 0 40px rgba(41, 182, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 114, 206, 0.4), 0 0 65px rgba(41, 182, 246, 0.25);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Resplandor Especular Interactivo según Coordenadas del Cursor */
+.glass-specular {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-specular::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(41, 182, 246, 0.06) 30%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+}
+
+.glass-specular:hover::after {
+  opacity: 1;
+}
+
+/* Marco Fotográfico 3D de Alta Definición con Resalte Perimetral */
+.photo-frame-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.8);
+}
+
+.photo-frame-3d:hover {
+  box-shadow: 0 35px 80px -20px rgba(0, 114, 206, 0.25), 0 0 0 1px rgba(0, 114, 206, 0.4);
+}
+
+/* Brillo metálico diagonal pasando periódicamente */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+.shimmer-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-sheen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) rotate(25deg);
+  pointer-events: none;
+  z-index: 12;
+}
+
+.shimmer-sheen:hover::before {
+  animation: shimmerSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}

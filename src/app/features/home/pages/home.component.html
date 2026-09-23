@@ -1,7 +1,7 @@
 <!-- ================================================================= -->
-<!-- 1. HERO BANNER PRINCIPAL (Editorial Split & Video Showcase)        -->
+<!-- 1. HERO BANNER PRINCIPAL (Editorial Split & Video Showcase 3D)    -->
 <!-- ================================================================= -->
-<section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-32 pb-20">
+<section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-20 lg:pt-24 pb-12">
   
   <!-- Fotografía de Fondo Completo con Tono Azulado de Alta Costura -->
   <div class="absolute inset-0 z-0 overflow-hidden">
@@ -11,17 +11,17 @@
       class="w-full h-full object-cover object-center scale-105"
     />
     <!-- Velo con Tono Azulado Zafiro Profundo & Viñetas de Contraste -->
-    <div class="absolute inset-0 bg-[#07162C]/82 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-[#07162C]/85 mix-blend-multiply"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-[#040E1B]/95 via-[#081F3D]/80 to-[#040E1B]/90"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-[#040810] via-transparent to-black/40"></div>
   </div>
 
-  <!-- Halos lumínicos ambientales de acento azul -->
-  <div class="pointer-events-none absolute -top-32 -left-20 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(30,144,255,0.22)_0%,transparent_70%)] blur-3xl z-0"></div>
-  <div class="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,75,150,0.25)_0%,transparent_70%)] blur-3xl z-0"></div>
+  <!-- Halos lumínicos ambientales de acento azul con animación flotante -->
+  <div class="pointer-events-none absolute -top-32 -left-20 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(30,144,255,0.22)_0%,transparent_70%)] blur-3xl z-0 animate-float-slow"></div>
+  <div class="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,75,150,0.25)_0%,transparent_70%)] blur-3xl z-0 animate-float-delayed"></div>
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       
       <!-- Columna Izquierda: Manifiesto Editorial & Acciones de Conversión -->
       <div class="lg:col-span-7 text-center lg:text-left reveal-init reveal-fade-up">
@@ -48,7 +48,7 @@
         </p>
 
         <!-- Botones de Acción Inmediata -->
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
           <app-luxury-button
             routerLink="/nuestro-trabajo/valoracion-virtual"
             variant="primary"
@@ -70,50 +70,72 @@
 
       </div>
 
-      <!-- Columna Derecha: Showcase del Video en su Proporción Nativa 9:16 -->
-      <div class="lg:col-span-5 flex justify-center reveal-init reveal-scale delay-100">
+      <!-- Columna Derecha: Showcase del Video con Perspectiva 3D Tilt y Proporción Cómoda -->
+      <div class="lg:col-span-5 flex justify-center perspective-1000 reveal-init reveal-scale delay-100">
         
-        <div class="relative max-w-[320px] sm:max-w-[360px] lg:max-w-[390px] w-full aspect-[9/16] rounded-2xl overflow-hidden border border-white/20 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] bg-slate-900 group">
+        <div class="relative w-full max-w-[420px] lg:max-w-[450px] xl:max-w-[480px]">
           
-          <!-- Resplandor Perimetral de Alta Costura -->
-          <div class="pointer-events-none absolute -inset-1 bg-gradient-to-b from-og-cyan/25 via-transparent to-og-electric/25 rounded-2xl blur-xl opacity-75"></div>
-
-          <!-- Video en Proporción Nativa 1:1 sin Estiramiento Ni Pérdida de Calidad -->
-          <video
-            #heroVideo
-            autoplay
-            muted
-            [muted]="true"
-            loop
-            playsinline
-            webkit-playsinline
-            preload="auto"
-            poster="/videos/hero-poster.jpg"
-            class="w-full h-full object-cover object-center relative z-10"
+          <!-- Contenedor Maestro 3D Tilt con Resplandor Especular y Sombra Espacial -->
+          <div
+            appTilt3d
+            [maxTilt]="7"
+            [scale]="1.02"
+            [glare]="true"
+            [glareMaxOpacity]="0.18"
+            class="relative w-full aspect-[4/5] sm:aspect-[4/5] max-h-[490px] lg:max-h-[520px] rounded-[28px] overflow-hidden border border-white/25 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] bg-slate-900 group preserve-3d"
           >
-            <source src="/videos/hero-loop.mp4" type="video/mp4" />
-            <source src="https://res.cloudinary.com/ffvpll33/video/upload/ac_none/v1789691342/VIdeo_1.mp4" type="video/mp4" />
-            <img
-              src="/videos/hero-poster.jpg"
-              alt="Odontogamma Oriente Clínica de Lujo"
-              class="w-full h-full object-cover object-center"
-            />
-          </video>
+            
+            <!-- Resplandor Perimetral Neón Zafiro -->
+            <div class="pointer-events-none absolute -inset-1 bg-gradient-to-b from-og-cyan/30 via-transparent to-og-electric/30 rounded-[28px] blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
 
-          <!-- Velo sutil inferior con viñeta para dar profundidad -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none z-20"></div>
+            <!-- Video Optimizado con Encuadre Centrado y Fluido -->
+            <video
+              #heroVideo
+              autoplay
+              muted
+              [muted]="true"
+              loop
+              playsinline
+              webkit-playsinline
+              preload="auto"
+              poster="/videos/hero-poster.jpg"
+              class="w-full h-full object-cover object-center relative z-10 transition-transform duration-700 ease-out group-hover:scale-105"
+            >
+              <source src="/videos/hero-loop.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/ffvpll33/video/upload/ac_none/v1789691342/VIdeo_1.mp4" type="video/mp4" />
+              <img
+                src="/videos/hero-poster.jpg"
+                alt="Odontogamma Oriente Clínica de Lujo"
+                class="w-full h-full object-cover object-center"
+              />
+            </video>
 
-          <!-- Insignia Flotante Inferior en el Marco del Video -->
-          <div class="absolute bottom-4 inset-x-4 p-3 rounded-xs bg-black/50 backdrop-blur-md border border-white/15 flex items-center justify-between text-white pointer-events-none z-30">
-            <div>
-              <span class="text-[9px] uppercase tracking-[0.25em] text-og-cyan font-mono block">En Directo</span>
-              <span class="text-xs font-editorial font-light">Odontogamma Oriente</span>
+            <!-- Velo sutil inferior con viñeta para dar contraste cinematográfico -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none z-20"></div>
+
+            <!-- Badge Superior Flotante 3D (Capa Z-30) -->
+            <div class="absolute top-4 left-4 z-30 translate-z-30 pointer-events-none">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[10px] font-mono tracking-widest uppercase text-white font-semibold shadow-lg">
+                <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-pulse"></span>
+                Microestética de Precisión
+              </span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-[10px] text-slate-300 font-mono uppercase tracking-wider">Clínica</span>
+
+            <!-- Insignia Flotante Inferior 3D en el Marco del Video (Capa Z-30) -->
+            <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-[18px] bg-black/65 backdrop-blur-xl border border-white/20 flex items-center justify-between text-white pointer-events-none z-30 translate-z-30 shadow-2xl">
+              <div>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-og-cyan font-mono font-bold block">En Directo</span>
+                <span class="text-xs font-editorial font-medium text-slate-100">Odontogamma Oriente</span>
+              </div>
+              <div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-[10px] text-emerald-300 font-mono font-semibold uppercase tracking-wider">Carmen de viboral</span>
+              </div>
             </div>
+
           </div>
+
+       
 
         </div>
 
@@ -123,9 +145,9 @@
   </div>
 
   <!-- Indicador sutil de Desplazamiento Inferior -->
-  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
+  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
     <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/80">Descubre Más</span>
-    <div class="w-[1px] h-6 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
+    <div class="w-[1px] h-5 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
 
 </section>
@@ -162,17 +184,22 @@
       </p>
     </div>
 
-    <!-- Grid de Tarjetas Modernas Esculpidas (Silueta 32px, No Cuadradas) -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+    <!-- Grid de Tarjetas Modernas Esculpidas con Física 3D Tilt y Glare Especular -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 perspective-1000">
       @for (pillar of pillars; track pillar.number; let i = $index) {
         <div
+          appTilt3d
+          [maxTilt]="8"
+          [scale]="1.02"
+          [glare]="true"
+          [glareMaxOpacity]="0.14"
           [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-          class="group card-philosophy-aesthetic p-4 sm:p-5 flex flex-col justify-between rounded-[32px] bg-gradient-to-b from-white via-slate-50/40 to-white border border-slate-200/85 hover:border-og-electric/50 transition-all duration-500 hover:-translate-y-2.5 hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.18)]"
+          class="group card-philosophy-aesthetic p-4 sm:p-5 flex flex-col justify-between rounded-[32px] bg-gradient-to-b from-white via-slate-50/50 to-white border border-slate-200/85 hover:border-og-electric/60 transition-all duration-500 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_30px_70px_-15px_rgba(0,114,206,0.22)] preserve-3d"
         >
           
-          <div>
-            <!-- Fotografía de Detalle en Marco Orgánico con Velo Cinemático y Badges Flotantes -->
-            <div class="relative h-72 sm:h-80 rounded-[24px] overflow-hidden bg-slate-100 shadow-inner">
+          <div class="preserve-3d">
+            <!-- Fotografía de Detalle en Marco Orgánico con Velo Cinemático y Badges Flotantes 3D -->
+            <div class="relative h-72 sm:h-80 rounded-[24px] overflow-hidden bg-slate-100 shadow-inner photo-frame-3d preserve-3d">
               <img
                 [src]="pillar.imageUrl"
                 [alt]="pillar.title"
@@ -182,20 +209,20 @@
               <!-- Velo gradiente para contraste y legibilidad -->
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent pointer-events-none"></div>
 
-              <!-- Badge Flotante Superior Izquierdo -->
-              <div class="absolute top-3.5 left-3.5 z-10">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-white/20 text-xs sm:text-sm tracking-wider uppercase font-mono text-white shadow-md font-semibold">
+              <!-- Badge Flotante Superior Izquierdo con Profundidad 3D (Z-30) -->
+              <div class="absolute top-3.5 left-3.5 z-10 translate-z-30 pointer-events-none">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-white/25 text-xs sm:text-sm tracking-wider uppercase font-mono text-white shadow-lg font-semibold">
                   <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
                   {{ pillar.badge }}
                 </span>
               </div>
 
-              <!-- Pie de Imagen: Categoría y Número Esculpido -->
-              <div class="absolute bottom-3 inset-x-4 z-10 flex items-end justify-between pointer-events-none">
+              <!-- Pie de Imagen: Categoría y Número Esculpido con Profundidad 3D (Z-20) -->
+              <div class="absolute bottom-3 inset-x-4 z-10 flex items-end justify-between pointer-events-none translate-z-20">
                 <span class="text-xs sm:text-sm font-mono tracking-wider uppercase text-sky-100 font-bold drop-shadow-md">
                   {{ pillar.categoryTag }}
                 </span>
-                <span class="text-4xl sm:text-5xl font-editorial font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+                <span class="text-4xl sm:text-5xl font-editorial font-medium text-white/90 group-hover:text-white transition-colors duration-300 drop-shadow-lg">
                   {{ pillar.number }}
                 </span>
               </div>
@@ -247,7 +274,14 @@
         </p>
       </div>
 
-     
+      <app-luxury-button
+        routerLink="/nuestro-trabajo/valoracion-virtual"
+        variant="primary"
+        size="md"
+        class="border  shadow-glow shrink-0 font-semibold text-white whitespace-nowrap"
+      >
+        Subir Fotos para Valoración →
+      </app-luxury-button>
     </div>
 
   </div>
@@ -394,6 +428,161 @@
 </section>
 
 <!-- ================================================================= -->
+<!-- 3.5 GALERÍA TRIDIMENSIONAL DE TRANSFORMACIONES REALES & MACRO-DETALLE -->
+<!-- ================================================================= -->
+<section class="py-24 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white text-og-headline relative overflow-hidden border-b border-slate-200/80">
+  
+  <!-- Acentos lumínicos de fondo -->
+  <div class="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(41,182,246,0.12)_0%,transparent_70%)] blur-3xl z-0"></div>
+  <div class="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,114,206,0.1)_0%,transparent_70%)] blur-3xl z-0"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Encabezado de la Galería Tridimensional -->
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal-init reveal-fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-4 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+        <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric font-mono">
+          Macro-Estética & Evidencia Clínica
+        </span>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 tracking-tight leading-[1.12] mb-5">
+        El Arte de Cada Sonrisa <br class="hidden sm:inline" />
+        <span class="italic font-medium text-og-electric">
+          en Micro-Detalle
+        </span>
+      </h2>
+
+      <p class="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed max-w-2xl mx-auto">
+        Fotografías clínicas de alta fidelidad donde se aprecia la textura, la translucidez del esmalte y la integración biológica con la encía.
+      </p>
+    </div>
+
+    <!-- Píldoras de Filtro por Tratamiento -->
+    <div class="flex flex-wrap items-center justify-center gap-2.5 mb-14 reveal-init reveal-fade-up delay-100">
+      @for (cat of galleryCategories; track cat.id) {
+        <button
+          type="button"
+          (click)="setCategory(cat.id)"
+          class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-300 cursor-pointer border flex items-center gap-2"
+          [class]="selectedCaseCategory() === cat.id
+            ? 'bg-slate-900 text-white border-slate-900 shadow-md shadow-slate-900/20 scale-105'
+            : 'bg-white text-slate-700 hover:text-slate-900 border-slate-200 hover:border-og-electric/50 shadow-xs'"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full"
+            [class]="selectedCaseCategory() === cat.id ? 'bg-og-cyan animate-pulse' : 'bg-slate-300'"
+          ></span>
+          <span>{{ cat.label }}</span>
+        </button>
+      }
+    </div>
+
+    <!-- Grid de Tarjetas 3D con Fotografía Protagónica y Alternancia Antes / Después -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 perspective-1000">
+      @for (caseItem of filteredCases(); track caseItem.id; let idx = $index) {
+        <div
+          appTilt3d
+          [maxTilt]="8"
+          [scale]="1.02"
+          [glare]="true"
+          [glareMaxOpacity]="0.14"
+          class="group rounded-[30px] bg-white p-5 border border-slate-200/90 hover:border-og-electric/50 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 flex flex-col justify-between preserve-3d shimmer-sheen"
+        >
+          <div class="preserve-3d">
+            <!-- Marco Fotográfico Principal con Zoom Óptico y Transición Suave -->
+            <div class="relative aspect-[4/3] rounded-[22px] overflow-hidden bg-slate-900 shadow-md border border-slate-200/80 preserve-3d">
+              
+              <!-- Imagen del Caso (Alternable entre Antes y Después con Transición) -->
+              <img
+                [src]="getCaseCurrentView(caseItem.id) === 'after' ? caseItem.afterImageUrl : caseItem.beforeImageUrl"
+                [alt]="caseItem.title + (getCaseCurrentView(caseItem.id) === 'after' ? ' - Resultado' : ' - Estado Inicial')"
+                loading="lazy"
+                class="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-105"
+              />
+
+              <!-- Velo translúcido inferior -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none"></div>
+
+              <!-- Badge Superior de Categoría 3D (Capa Z-30) -->
+              <div class="absolute top-3.5 left-3.5 z-20 translate-z-30 pointer-events-none">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-[10px] font-mono uppercase tracking-wider text-white font-semibold shadow-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-pulse"></span>
+                  {{ caseItem.categoryLabel }}
+                </span>
+              </div>
+
+              <!-- Selector Interactivo Flotante Inferior: [Antes] | [Después] -->
+              <div class="absolute bottom-3 inset-x-3 z-30 translate-z-30 flex items-center justify-between">
+                <!-- Indicador de Estado Activo -->
+                <span class="text-[10px] uppercase font-mono tracking-widest text-white/90 drop-shadow-md font-semibold px-2 py-1 rounded-md bg-black/40 backdrop-blur-xs">
+                  {{ getCaseCurrentView(caseItem.id) === 'after' ? '✨ Resultado Final' : '⏱️ Estado Inicial' }}
+                </span>
+
+                <!-- Botón de Alternancia Rápida Táctil -->
+                <button
+                  type="button"
+                  (click)="toggleCaseView(caseItem.id)"
+                  class="px-3.5 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer shadow-lg flex items-center gap-1.5 border"
+                  [class]="getCaseCurrentView(caseItem.id) === 'after'
+                    ? 'bg-white/90 text-slate-900 border-white hover:bg-white hover:scale-105'
+                    : 'bg-og-electric text-white border-og-cyan hover:bg-og-deep hover:scale-105'"
+                >
+                  <svg class="w-3 h-3 text-og-electric" [class.text-white]="getCaseCurrentView(caseItem.id) === 'before'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M4 12v-2a8 8 0 0 1 16 0v2M12 4v4m0 8v4" />
+                  </svg>
+                  <span>{{ getCaseCurrentView(caseItem.id) === 'after' ? 'Ver Antes' : 'Ver Resultado' }}</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Ficha Descriptiva del Caso Clínico -->
+            <div class="px-1.5 pt-5 pb-2">
+              <h3 class="text-xl sm:text-[22px] font-editorial font-semibold text-slate-900 mb-2 leading-snug group-hover:text-og-electric transition-colors">
+                {{ caseItem.title }}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed line-clamp-2">
+                {{ caseItem.description }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Pie con Especificaciones Técnicas y Enlace Directo -->
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between mt-2">
+            <span class="text-[11px] font-mono font-medium text-slate-500 tracking-wider">
+              {{ caseItem.details.treatment }}
+            </span>
+            <a
+              routerLink="/nuestro-trabajo/antes-y-despues"
+              class="inline-flex items-center gap-1 text-xs font-bold text-og-electric group-hover:text-og-deep hover:underline cursor-pointer"
+            >
+              <span>Ver Detalle</span>
+              <span class="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+
+        </div>
+      }
+    </div>
+
+    <!-- Botón Central de Exploración Completa -->
+    <div class="text-center mt-14 reveal-init reveal-fade-up delay-200">
+      <app-luxury-button
+        routerLink="/nuestro-trabajo/antes-y-despues"
+        variant="outline"
+        size="lg"
+        class="border-slate-300 text-slate-900 hover:border-og-electric hover:text-og-electric shadow-xs font-semibold bg-white"
+      >
+        Explorar Casos Certificados en Galería Completa →
+      </app-luxury-button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================= -->
 <!-- 4. SHOWCASE DE PROCEDIMIENTOS DE FIRMA (SLIDER CORREDIZO AESTHETIC) -->
 <!-- ================================================================= -->
 <section class="py-28 px-6 md:px-12 max-w-7xl mx-auto">
@@ -421,7 +610,6 @@
           class="w-2 h-2 rounded-full transition-all duration-300"
           [class]="activeServiceIndex() === idx ? 'bg-og-cyan animate-pulse' : 'bg-slate-300 group-hover/tab:bg-og-electric'"
         ></span>
-        <span>{{ service.title }}</span>
         <span [class]="activeServiceIndex() === idx ? 'text-white font-semibold' : 'text-slate-700 group-hover/tab:text-slate-900'">{{ service.title }}</span>
       </button>
     }
@@ -454,9 +642,15 @@
       @if (activeServiceIndex() === idx) {
         <div class="relative z-10 p-6 sm:p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center animate-slide-fade">
           
-          <!-- Columna Izquierda: Fotografía de Autor en Marco Esculpido -->
-          <div class="lg:col-span-6 relative">
-            <div class="relative rounded-[24px] sm:rounded-[30px] overflow-hidden shadow-xl border border-slate-200/90 aspect-[4/3] sm:aspect-[16/11] bg-slate-100 group/img">
+          <!-- Columna Izquierda: Fotografía de Autor en Marco Esculpido con 3D Tilt -->
+          <div class="lg:col-span-6 relative perspective-1000">
+            <div
+              appTilt3d
+              [maxTilt]="7"
+              [scale]="1.02"
+              [glare]="true"
+              class="relative rounded-[24px] sm:rounded-[30px] overflow-hidden shadow-xl border border-slate-200/90 aspect-[4/3] sm:aspect-[16/11] bg-slate-100 group/img preserve-3d"
+            >
               <img
                 [src]="service.heroImageUrl"
                 [alt]="service.title"
@@ -465,16 +659,16 @@
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-              <!-- Insignia Superior Flotante en Cristal -->
-              <div class="absolute top-4 left-4 z-20">
+              <!-- Insignia Superior Flotante en Cristal (Capa Z-30) -->
+              <div class="absolute top-4 left-4 z-20 translate-z-30 pointer-events-none">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/40 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-900 shadow-sm">
                   <span class="w-1.5 h-1.5 rounded-full bg-og-electric animate-pulse"></span>
                   {{ service.badge || 'Procedimiento de Vanguardia' }}
                 </span>
               </div>
 
-              <!-- Contador Numérico de Procedimiento -->
-              <div class="absolute bottom-4 right-4 z-20">
+              <!-- Contador Numérico de Procedimiento (Capa Z-20) -->
+              <div class="absolute bottom-4 right-4 z-20 translate-z-20 pointer-events-none">
                 <span class="px-3.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold tracking-widest shadow-md">
                   0{{ idx + 1 }} / 0{{ services().length }}
                 </span>
@@ -530,8 +724,6 @@
               >
                 <span>Conocer Procedimiento</span>
                 <span class="transition-transform duration-300 group-hover/cta:translate-x-1 text-base">→</span>
-                <span class="text-white">Conocer Procedimiento</span>
-                <span class="text-white transition-transform duration-300 group-hover/cta:translate-x-1 text-base">→</span>
               </a>
 
               <!-- Controles Flechas Prev / Next con Texto Explícito -->
