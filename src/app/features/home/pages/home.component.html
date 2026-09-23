@@ -28,9 +28,9 @@
         
         <!-- Insignia de Prestigio -->
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-          <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
           <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-white font-mono font-semibold">
-            Oriente Antioqueño · Llanogrande
+            Oriente Antioqueño · El Carmen de Viboral
           </span>
         </div>
 
@@ -62,7 +62,7 @@
             routerLink="/servicios"
             variant="outline"
             size="md"
-            class="w-full sm:w-auto border-white/30 text-white hover:border-og-cyan hover:text-og-cyan font-semibold"
+            class="w-full sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
           >
             Explorar Tratamientos
           </app-luxury-button>
@@ -124,7 +124,7 @@
             <!-- Insignia Flotante Inferior 3D en el Marco del Video (Capa Z-30) -->
             <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-[18px] bg-black/65 backdrop-blur-xl border border-white/20 flex items-center justify-between text-white pointer-events-none z-30 translate-z-30 shadow-2xl">
               <div>
-                <span class="text-[9px] uppercase tracking-[0.25em] text-og-cyan font-mono font-bold block">En Directo</span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-white font-mono font-bold block">En Directo</span>
                 <span class="text-xs font-editorial font-medium text-slate-100">Odontogamma Oriente</span>
               </div>
               <div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30">
@@ -260,28 +260,51 @@
       }
     </div>
 
-    <!-- Banner Inferior de Incitación a la Acción con Silueta Curva 28px -->
-    <div class="mt-16 p-8 md:p-10 rounded-[28px] bg-gradient-to-r from-white via-sky-50/50 to-white border border-slate-200/90 hover:border-og-electric/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-subtle hover:shadow-elevated transition-all duration-300 reveal-init reveal-scale delay-200">
-      <div class="text-center md:text-left">
-        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold block mb-2">
-          ¿Por qué seguir postergando tu mejor versión?
-        </span>
-        <h4 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900">
+    <!-- Banner de Incitación con Marca de Agua de Ortodoncia & Estética Blanco Luxury -->
+    <div class="mt-16 p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-200 relative overflow-hidden group">
+      
+      <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
+        <img
+          src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+          alt="Marca de agua ortodoncia y alineación"
+          class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
+        />
+        <!-- Velo difuminador hacia la izquierda para legibilidad perfecta del texto -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-white/40"></div>
+      </div>
+
+      <!-- Resplandor azul zafiro interactivo de esquina -->
+      <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
+
+      <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
+      <div class="text-center lg:text-left relative z-10 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
+          <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
+            Diagnóstico Virtual & Ortodoncia Digital
+          </span>
+        </div>
+        <h4 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
           Tu Sonrisa es tu Mayor Carta de Presentación
         </h4>
-        <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 max-w-xl leading-relaxed">
-          Descubre en menos de 24 horas qué es posible lograr en tus dientes enviando 3 fotos desde tu celular.
+        <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 leading-relaxed">
+          Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.
         </p>
       </div>
 
-      <app-luxury-button
-        routerLink="/nuestro-trabajo/valoracion-virtual"
-        variant="primary"
-        size="md"
-        class="border  shadow-glow shrink-0 font-semibold text-white whitespace-nowrap"
-      >
-        Subir Fotos para Valoración →
-      </app-luxury-button>
+      <!-- Botón de Conversión Destacado con Sombra Zafiro -->
+      <div class="relative z-10 shrink-0">
+        <app-luxury-button
+          routerLink="/nuestro-trabajo/valoracion-virtual"
+          variant="primary"
+          size="md"
+          class="shadow-glow font-semibold text-white whitespace-nowrap"
+        >
+          Subir Fotos para Valoración →
+        </app-luxury-button>
+      </div>
     </div>
 
   </div>
@@ -289,38 +312,38 @@
 
 <!-- ================================================================= -->
 <!-- ================================================================= -->
-<!-- 3. CASOS DESTACADOS CON SLIDER ANTES / DESPUÉS (ESTÉTICA AESTHETIC) -->
+<!-- 3. CASOS DESTACADOS CON SLIDER ANTES / DESPUÉS (ROYAL SAPPHIRE LUXURY) -->
 <!-- ================================================================= -->
-<section class="py-28 text-og-headline relative overflow-hidden border-y border-slate-200/80">
+<section class="py-28 text-white relative overflow-hidden bg-gradient-to-b from-[#07172E] via-[#0D2A54] to-[#07162C] border-y border-white/15">
   
-  <!-- Fotografía arquitectónica de fondo con velo blanco perla luminoso -->
+  <!-- Fotografía arquitectónica y clínica de fondo con velo azul zafiro profundo -->
   <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
     <img
       src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2400&q=85"
       alt="Fondo Arquitectónico Odontogamma Oriente"
-      class="w-full h-full object-cover object-center scale-105 filter grayscale contrast-125 opacity-20"
+      class="w-full h-full object-cover object-center scale-105 filter grayscale contrast-125 opacity-15"
     />
-    <!-- Velo translúcido blanco que da el tono 'blanco aesthetic' sin perder la foto de fondo -->
-    <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/88 to-white/95 backdrop-blur-[1.5px]"></div>
+    <!-- Velo translúcido azul zafiro imperial -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#050E1C]/95 via-[#0D2A54]/85 to-[#050E1C]/95 mix-blend-multiply"></div>
     <!-- Resplandores etéreos azul zafiro y cyan difusos -->
-    <div class="absolute -top-32 -left-20 w-[550px] h-[550px] bg-sky-100/60 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-blue-100/50 rounded-full blur-3xl"></div>
+    <div class="absolute -top-32 -left-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(41,182,246,0.22)_0%,transparent_70%)] blur-3xl animate-float-slow"></div>
+    <div class="absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,114,206,0.3)_0%,transparent_70%)] blur-3xl animate-float-delayed"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-init reveal-fade-up">
       <div>
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
-          <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
-          <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric font-mono">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-3 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-white font-mono">
             Transformaciones Clínicas
           </span>
         </div>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-editorial font-medium text-slate-900 tracking-tight">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-editorial font-medium text-white tracking-tight">
           Antes & Después
         </h2>
-        <p class="text-base sm:text-lg text-slate-600 font-normal mt-2 max-w-xl leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-200 font-normal mt-2 max-w-xl leading-relaxed">
           Resultados sutiles y balanceados que armonizan con la fisionomía del rostro sin artificialidad.
         </p>
       </div>
@@ -329,7 +352,7 @@
         routerLink="/nuestro-trabajo/antes-y-despues"
         variant="outline"
         size="md"
-        class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric self-start md:self-auto font-semibold bg-white/80 backdrop-blur-md shadow-xs"
+        class="border-white/30 text-white hover:border-white hover:text-white self-start md:self-auto font-semibold bg-white/10 backdrop-blur-md shadow-xs"
       >
         Ver Galería Completa
       </app-luxury-button>
@@ -340,14 +363,14 @@
       @for (caseItem of featuredCases().slice(0, 2); track caseItem.id; let i = $index) {
         <div
           [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
-          class="group relative bg-white/95 backdrop-blur-xl p-6 sm:p-8 rounded-[32px] sm:rounded-[36px] border border-slate-200/90 hover:border-og-electric/60 transition-all duration-500 hover:-translate-y-2.5 shadow-[0_20px_45px_-10px_rgba(16,75,150,0.08)] hover:shadow-[0_30px_70px_-15px_rgba(0,114,206,0.22)] flex flex-col justify-between overflow-hidden"
+          class="group relative bg-slate-900/85 backdrop-blur-2xl p-6 sm:p-8 rounded-[32px] sm:rounded-[36px] border border-white/20 hover:border-white/50 transition-all duration-500 hover:-translate-y-2.5 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.7)] hover:shadow-[0_30px_70px_-15px_rgba(255,255,255,0.1)] flex flex-col justify-between overflow-hidden"
         >
           <!-- Destello de luz superior horizontal en hover -->
-          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-og-electric to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
 
           <div>
             <!-- Slider Interactivo con Marco Curvo Esculpido y Pista Táctil -->
-            <div class="relative overflow-hidden rounded-[24px] shadow-md border border-slate-200/80">
+            <div class="relative overflow-hidden rounded-[24px] shadow-md border border-white/20">
               <app-before-after-slider
                 [beforeImage]="caseItem.beforeImageUrl"
                 [afterImage]="caseItem.afterImageUrl"
@@ -358,7 +381,7 @@
               <!-- Píldora interactiva flotante de guía -->
               <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none opacity-85 group-hover:opacity-100 transition-opacity">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 text-[11px] font-mono tracking-wider text-white shadow-md font-semibold">
-                  <svg class="w-3.5 h-3.5 text-og-cyan animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <svg class="w-3.5 h-3.5 text-white animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="m8 7-5 5 5 5M16 7l5 5-5 5"/>
                   </svg>
                   Desliza para comparar
@@ -368,41 +391,41 @@
 
             <!-- Ficha Técnica del Caso -->
             <div class="mt-7">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-og-electric/25 mb-3">
-                <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
-                <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-og-electric">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 mb-3">
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white">
                   {{ caseItem.categoryLabel }}
                 </span>
               </div>
 
-              <h3 class="text-2xl sm:text-3xl font-editorial font-semibold text-slate-900 mb-3 leading-snug group-hover:text-og-electric transition-colors duration-300">
+              <h3 class="text-2xl sm:text-3xl font-editorial font-semibold text-white mb-3 leading-snug group-hover:text-white transition-colors duration-300">
                 {{ caseItem.title }}
               </h3>
 
-              <p class="text-base sm:text-lg text-slate-700 font-normal leading-relaxed mb-6">
+              <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-6">
                 {{ caseItem.description }}
               </p>
             </div>
           </div>
 
-          <!-- Mini-cápsulas técnicas de especificaciones clínicas (Sin números ni cifras) -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-slate-100">
+          <!-- Mini-cápsulas técnicas de especificaciones clínicas -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-white/15">
             @if (caseItem.details.treatment) {
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col group-hover:bg-sky-50/50 group-hover:border-og-electric/30 transition-colors">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
                 <span class="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">Procedimiento</span>
-                <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1 leading-snug">{{ caseItem.details.treatment }}</span>
+                <span class="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">{{ caseItem.details.treatment }}</span>
               </div>
             }
             @if (caseItem.details.focus) {
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col group-hover:bg-sky-50/50 group-hover:border-og-electric/30 transition-colors">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
                 <span class="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">Enfoque</span>
-                <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1 leading-snug">{{ caseItem.details.focus }}</span>
+                <span class="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">{{ caseItem.details.focus }}</span>
               </div>
             }
             @if (caseItem.details.result) {
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col group-hover:bg-sky-50/50 group-hover:border-og-electric/30 transition-colors">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
                 <span class="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">Resultado</span>
-                <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1 leading-snug">{{ caseItem.details.result }}</span>
+                <span class="text-xs sm:text-sm font-bold text-emerald-300 mt-1 leading-snug">{{ caseItem.details.result }}</span>
               </div>
             }
           </div>
@@ -410,12 +433,12 @@
           <!-- Botón de Acción con Texto Claro -->
           <a
             [routerLink]="caseItem.category === 'carillas' ? '/servicios/carillas-porcelana' : '/servicios/odontologia-cosmetica'"
-            class="mt-6 w-full py-4 px-6 rounded-full bg-slate-900 hover:bg-og-electric text-white flex items-center justify-between transition-all duration-300 shadow-md group/btn cursor-pointer"
+            class="mt-6 w-full py-4 px-6 rounded-full bg-white text-slate-900 hover:bg-slate-100 hover:text-slate-950 flex items-center justify-between transition-all duration-300 shadow-lg group/btn cursor-pointer font-bold"
           >
             <span class="text-xs sm:text-sm uppercase tracking-wider font-bold">
               Conocer Tratamiento Clínico
             </span>
-            <span class="w-7 h-7 rounded-full bg-white text-slate-900 flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1 shadow-xs text-sm font-bold">
+            <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-1 shadow-xs text-sm font-bold">
               →
             </span>
           </a>
@@ -432,9 +455,19 @@
 <!-- ================================================================= -->
 <section class="py-24 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white text-og-headline relative overflow-hidden border-b border-slate-200/80">
   
+  <!-- Fotografía arquitectónica y de ortodoncia en marca de agua de alta costura -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+    <img
+      src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+      alt="Marca de agua arquitectónica y ortodóntica"
+      class="w-full h-full object-cover object-center filter grayscale contrast-150 opacity-[0.05] scale-110"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/95 backdrop-blur-[1px]"></div>
+  </div>
+
   <!-- Acentos lumínicos de fondo -->
-  <div class="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(41,182,246,0.12)_0%,transparent_70%)] blur-3xl z-0"></div>
-  <div class="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,114,206,0.1)_0%,transparent_70%)] blur-3xl z-0"></div>
+  <div class="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(41,182,246,0.14)_0%,transparent_70%)] blur-3xl z-0"></div>
+  <div class="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,114,206,0.12)_0%,transparent_70%)] blur-3xl z-0"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     
@@ -770,18 +803,177 @@
 </section>
 
 <!-- ================================================================= -->
+<!-- 4.5 CONTENEDOR ENTERO DE ORTODONCIA & ALINEACIÓN BIOMECÁNICA     -->
+<!-- ================================================================= -->
+<section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+  <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border border-white/20 shadow-[0_30px_90px_-20px_rgba(10,40,90,0.45)] bg-[#071324] text-white reveal-init reveal-scale p-8 sm:p-12 lg:p-16">
+    
+    <!-- Fotografía Entera de Ortodoncia de Alta Fidelidad en Fondo Completo -->
+    <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+      <img
+        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+        alt="Ortodoncia y Alineación Dental de Precisión Odontogamma"
+        class="w-full h-full object-cover object-right md:object-center filter contrast-125 brightness-95 scale-105"
+      />
+      <!-- Gradientes de Color de Marca Oficial: Royal Sapphire (#104B96), Dodger Blue (#0072CE) y Obsidiana (#071324) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050D18]/96 via-[#0A2346]/90 to-[#050D18]/75 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#040A14] via-transparent to-[#071324]/85"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(41,182,246,0.35)_0%,transparent_65%)]"></div>
+    </div>
+
+    <!-- Halos de luz ambiental zafiro y cyan -->
+    <div class="pointer-events-none absolute -bottom-24 -left-24 w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(0,114,206,0.35)_0%,transparent_70%)] blur-3xl z-0 animate-float-slow"></div>
+    <div class="pointer-events-none absolute top-0 right-0 w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(41,182,246,0.2)_0%,transparent_70%)] blur-3xl z-0 animate-float-delayed"></div>
+    <!-- Destello superior sutil de platino zafiro -->
+    <div class="pointer-events-none absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-og-cyan/70 to-transparent z-10"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
+      
+      <!-- Columna Izquierda: Manifiesto de Ortodoncia y Valor Clínico -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        
+        <!-- Insignia de Especialidad -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-white font-mono font-bold">
+            Ortodoncia Digital & Expansión de Arco
+          </span>
+        </div>
+
+        <!-- Titular Principal -->
+        <h3 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-medium text-white leading-[1.12] mb-6">
+          La Base Oclusal para una <br class="hidden sm:inline" />
+          <span class="italic font-medium bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent">
+            Sonrisa de Alta Costura
+          </span>
+        </h3>
+
+        <!-- Párrafo Descriptivo -->
+        <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+          Antes de colocar carillas cerámicas o diseñar una sonrisa cosmética, la correcta alineación dental restaura el plano de mordida y la simetría de tus facciones. Mediante escaneo 3D y biomecánica de precisión, corregimos apiñamientos para que cualquier resultado definitivo sea biológicamente sano y perdurable.
+        </p>
+
+        <!-- Cápsulas Estructuradas de Beneficios Clínicos -->
+        <div class="space-y-3.5 mb-10 max-w-xl mx-auto lg:mx-0 text-left">
+          <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 flex items-start gap-3.5 hover:bg-white/10 hover:border-white/40 transition-colors">
+            <div class="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/30">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <h5 class="text-sm sm:text-base font-semibold text-white">Corrección de Apiñamientos y Rotaciones</h5>
+              <p class="text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Movimientos milimétricos controlados que restauran la continuidad del arco dental.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 flex items-start gap-3.5 hover:bg-white/10 hover:border-white/40 transition-colors">
+            <div class="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/30">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <h5 class="text-sm sm:text-base font-semibold text-white">Expansión Armónica del Corredor Bucal</h5>
+              <p class="text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Amplitud simétrica que ilumina las comisuras labiales y equilibra el rostro.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 flex items-start gap-3.5 hover:bg-white/10 hover:border-white/40 transition-colors">
+            <div class="w-7 h-7 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/30">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <h5 class="text-sm sm:text-base font-semibold text-white">Preparación de Mínima Invasión para Carillas</h5>
+              <p class="text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Al alinear primero los ejes, cualquier restauración requiere cero desgaste agresivo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <app-luxury-button
+            routerLink="/nuestro-trabajo/valoracion-virtual"
+            variant="primary"
+            size="md"
+            class="w-full sm:w-auto shadow-glow font-semibold text-white"
+          >
+            Diagnóstico de Ortodoncia Gratuito →
+          </app-luxury-button>
+          <app-luxury-button
+            routerLink="/nuestro-trabajo/antes-y-despues"
+            variant="outline"
+            size="md"
+            class="w-full sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
+          >
+            Ver Casos de Alineación
+          </app-luxury-button>
+        </div>
+
+      </div>
+
+      <!-- Columna Derecha: Tarjeta 3D Tilt con Comparador Real de Ortodoncia -->
+      <div class="lg:col-span-5 perspective-1000 flex justify-center">
+        <div
+          appTilt3d
+          [maxTilt]="7"
+          [scale]="1.02"
+          [glare]="true"
+          class="w-full max-w-[480px] rounded-[30px] bg-slate-900/90 backdrop-blur-2xl border border-white/25 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.8)] p-5 sm:p-6 preserve-3d"
+        >
+          <!-- Insignia superior del caso -->
+          <div class="flex items-center justify-between mb-4 translate-z-20">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[11px] font-mono uppercase tracking-wider text-white font-semibold border border-white/15">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Caso Certificado · Ortodoncia
+            </span>
+            <span class="text-xs font-mono text-slate-300 font-bold tracking-widest">Caso 09</span>
+          </div>
+
+          <!-- Slider Interactivo de Antes y Después de Ortodoncia -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg border border-white/20 preserve-3d">
+            <app-before-after-slider
+              beforeImage="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+              afterImage="https://res.cloudinary.com/ffvpll33/image/upload/v1789762819/cropped_teeth_after.png"
+              alt="Caso de Ortodoncia y Alineación Dental"
+              beforeLabel="Con Brackets"
+              afterLabel="Alineación Final"
+              aspectRatio="aspect-[16/10]"
+            />
+          </div>
+
+          <!-- Ficha de resultados técnicos -->
+          <div class="mt-5 pt-4 border-t border-white/15 space-y-2.5 translate-z-20">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-mono uppercase tracking-wider text-slate-400">Diagnóstico</span>
+              <span class="font-semibold text-slate-100">Apiñamiento y Asimetría</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-mono uppercase tracking-wider text-slate-400">Tratamiento</span>
+              <span class="font-semibold text-white">Alineación Biomecánica & Expansión</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-mono uppercase tracking-wider text-slate-400">Resultado</span>
+              <span class="font-semibold text-emerald-400">Oclusión Balanceada & Simetría</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================= -->
 <!-- 5. CITA EDITORIAL DEL DR. JAIME ARCILA CANO (ATELIER DE ALTA GAMA) -->
 <!-- ================================================================= -->
 <section class="py-28 container-luxury-dark text-white relative overflow-hidden">
   <!-- Destello superior sutil de platino -->
   <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-init reveal-scale">
-    <span class="text-5xl md:text-7xl font-editorial text-og-cyan/50 leading-none select-none">“</span>
+    <span class="text-5xl md:text-7xl font-editorial text-white/40 leading-none select-none">“</span>
     <blockquote class="text-2xl sm:text-3xl md:text-4xl font-editorial font-normal leading-relaxed text-white -mt-4 mb-8">
       No se trata únicamente de colocar carillas o reparar piezas dentales; se trata de comprender la armonía facial y devolver la seguridad con la que una persona sonríe y se comunica con el mundo.
     </blockquote>
     <div class="flex flex-col items-center">
-      <span class="text-sm sm:text-base uppercase tracking-[0.25em] font-bold text-og-cyan mb-1 font-mono">
+      <span class="text-sm sm:text-base uppercase tracking-[0.25em] font-bold text-white mb-1 font-mono">
         Dr. Jaime Arcila Cano
       </span>
       <span class="text-sm text-slate-300 tracking-wider font-normal mb-6">
@@ -803,36 +995,110 @@
 <!-- ================================================================= -->
 <!-- 6. BANNER DE AGENDAMIENTO & VALORACIÓN VIRTUAL                    -->
 <!-- ================================================================= -->
-<section class="py-24 px-6 md:px-12 bg-white text-center">
-  <div class="max-w-3xl mx-auto reveal-init reveal-fade-up">
-    <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric block mb-3 font-mono">
-      Comienza tu Transformación
-    </span>
-    <h2 class="text-4xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 mb-6">
-      Elige Cómo Iniciar tu Diagnóstico
-    </h2>
-    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-10 max-w-xl mx-auto">
-      Sube las fotos de tus dientes para una evaluación virtual sin costo, o agenda una cita presencial exclusiva en nuestra sede de Llanogrande.
-    </p>
+<section class="py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-sky-50/40 border-t border-slate-200/80">
+  
+  <!-- Marca de agua fotográfica sutil de sonrisa y arquitectura clínica -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+    <img
+      src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762819/cropped_teeth_after.png"
+      alt="Marca de agua sonrisa estética Odontogamma"
+      class="w-full h-full object-cover object-center filter grayscale contrast-150 opacity-[0.04] scale-110"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/90"></div>
+  </div>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <app-luxury-button
-        routerLink="/nuestro-trabajo/valoracion-virtual"
-        variant="primary"
-        size="lg"
-        class="font-semibold"
-      >
-        Valoración Virtual Gratuita
-      </app-luxury-button>
+  <!-- Acentos lumínicos zafiro suaves -->
+  <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse,rgba(41,182,246,0.15)_0%,transparent_70%)] blur-3xl z-0"></div>
 
-      <app-luxury-button
-        routerLink="/contacto"
-        variant="secondary"
-        size="lg"
-        class="font-semibold"
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal-init reveal-fade-up">
+      <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric block mb-3 font-mono">
+        Comienza tu Transformación
+      </span>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 mb-5 leading-tight">
+        Elige Cómo Iniciar tu Diagnóstico
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mx-auto">
+        Sube las fotos de tus dientes para una evaluación virtual sin costo, o agenda una cita presencial exclusiva en nuestra sede de El Carmen de Viboral.
+      </p>
+    </div>
+
+    <!-- 2 Tarjetas Interactivas de Diagnóstico (Virtual vs Presencial) con Estética Blanco Luxury -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 perspective-1000">
+      
+      <!-- Opción A: Valoración Virtual -->
+      <div
+        appTilt3d
+        [maxTilt]="6"
+        [scale]="1.02"
+        [glare]="true"
+        [glareMaxOpacity]="0.12"
+        class="group p-8 sm:p-10 rounded-[32px] bg-white border border-slate-200/90 hover:border-og-electric/60 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_65px_-12px_rgba(0,114,206,0.22)] transition-all duration-500 flex flex-col justify-between preserve-3d"
       >
-        Cita Presencial en Sede
-      </app-luxury-button>
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-sky-50 text-og-electric flex items-center justify-center mb-6 group-hover:bg-og-electric group-hover:text-white transition-colors duration-300 shadow-xs">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-[11px] font-mono font-bold uppercase text-og-electric mb-3 border border-og-electric/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-pulse"></span>
+            Sin Costo · Desde tu Celular
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-slate-900 mb-3">
+            Valoración Virtual
+          </h3>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
+            Envía 3 fotos de tu sonrisa tomadas desde tu teléfono y recibe en menos de 24 horas el criterio preliminar del Dr. Jaime Arcila Cano.
+          </p>
+        </div>
+        <app-luxury-button
+          routerLink="/nuestro-trabajo/valoracion-virtual"
+          variant="primary"
+          size="md"
+          class="w-full font-semibold text-white shadow-glow"
+        >
+          Iniciar Valoración Virtual →
+        </app-luxury-button>
+      </div>
+
+      <!-- Opción B: Cita Presencial en Sede El Carmen de Viboral -->
+      <div
+        appTilt3d
+        [maxTilt]="6"
+        [scale]="1.02"
+        [glare]="true"
+        [glareMaxOpacity]="0.12"
+        class="group p-8 sm:p-10 rounded-[32px] bg-gradient-to-b from-white to-slate-50/70 border border-slate-200/90 hover:border-slate-900 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_65px_-12px_rgba(15,23,42,0.2)] transition-all duration-500 flex flex-col justify-between preserve-3d"
+      >
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300 shadow-xs">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>
+            </svg>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-[11px] font-mono font-bold uppercase text-slate-800 mb-3 border border-slate-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+            Atelier Privado · El Carmen de Viboral
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-slate-900 mb-3">
+            Cita Presencial en Sede
+          </h3>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
+            Agenda una consulta clínica presencial con escaneo intraoral 3D, fotografía de estudio y diseño personalizado de sonrisa en El Carmen de Viboral.
+          </p>
+        </div>
+        <app-luxury-button
+          routerLink="/contacto"
+          variant="secondary"
+          size="md"
+          class="w-full font-semibold"
+        >
+          Agendar Cita en Sede →
+        </app-luxury-button>
+      </div>
+
     </div>
   </div>
 </section>

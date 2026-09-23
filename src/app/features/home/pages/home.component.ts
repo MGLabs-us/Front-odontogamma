@@ -228,7 +228,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
       title: 'Confort Clínico Cero Dolor',
       subtitle: 'Olvídate del Miedo al Odontólogo',
-      description: 'Suites privadas insonorizadas en Llanogrande, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
+      description: 'Suites privadas insonorizadas en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
       imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg',
       link: '/who-we-are/our-location',
       linkText: 'Explorar Nuestra Sede'

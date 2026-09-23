@@ -86,7 +86,7 @@ export class BrandPartnersComponent {
     {
       id: 'post-2',
       type: 'case',
-      title: 'Transformación de 10 Unidades en Llanogrande',
+      title: 'Transformación de 10 Unidades en El Carmen de Viboral',
       caption: 'Corrección de asimetría dental severa y desgate incisal mediante carillas feldespáticas de 0.2mm de espesor. Armonización facial completa sin tallado agresivo.',
       imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=85',
       likes: '4.1k',

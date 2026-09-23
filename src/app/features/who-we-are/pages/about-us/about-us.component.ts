@@ -69,7 +69,7 @@ export class AboutUsComponent {
     {
       year: 'Presente',
       title: 'Referente de Turismo Dental Selecto',
-      description: 'Pacientes de todo el país y el exterior eligen nuestra clínica en Llanogrande por su confidencialidad, entorno natural y resultados de autor.'
+      description: 'Pacientes de todo el país y el exterior eligen nuestra clínica en El Carmen de Viboral por su confidencialidad, entorno natural y resultados de autor.'
     }
   ];
 }

@@ -62,7 +62,7 @@ export class TeamComponent {
       name: 'Equipo Odontogamma',
       role: 'Coordinación & Hospitalidad VIP',
       specialty: 'Experiencia & Gestión de Pacientes',
-      bio: 'Coordina la atención, tiempos de cita y acompañamiento exclusivo para pacientes locales e internacionales en Llanogrande.',
+      bio: 'Coordina la atención, tiempos de cita y acompañamiento exclusivo para pacientes locales e internacionales en El Carmen de Viboral.',
       imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758232/632201995_18412412407121334_7513765155196393691_n.jpg',
       credentials: ['Acompañamiento VIP', 'Gestión Integral', 'Odontogamma Oriente']
     }

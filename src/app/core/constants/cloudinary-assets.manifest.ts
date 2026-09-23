@@ -35,7 +35,7 @@ export const CLOUDINARY_ASSETS_MANIFEST = {
     fallbackPosterUrl: '/videos/hero-poster.jpg'
   },
 
-  // Sede Llanogrande & Espacios de Confort
+  // Sede El Carmen de Viboral & Espacios de Confort
   clinic: {
     heroLandscape: `${CLOUDINARY_FOLDERS.CLINIC}/sede-fachada-principal`,
     suitePrivate: `${CLOUDINARY_FOLDERS.CLINIC}/suite-clinica-privada`,

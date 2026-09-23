@@ -54,7 +54,7 @@ export const routes: Routes = [
               import('./features/who-we-are/pages/location/location.component').then(
                 m => m.LocationComponent
               ),
-            title: 'Our Location — Sede Llanogrande | Odontogamma Oriente'
+            title: 'Our Location — Sede El Carmen de Viboral | Odontogamma Oriente'
           },
           {
             path: 'brand-partners',

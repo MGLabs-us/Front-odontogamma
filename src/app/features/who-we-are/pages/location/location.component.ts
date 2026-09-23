@@ -62,7 +62,7 @@ export class LocationComponent {
     {
       origin: 'Desde el Aeropuerto Internacional JMC',
       time: '15 Minutos',
-      route: 'Vía Llanogrande / Rionegro',
+      route: 'Vía El Carmen de Viboral / Rionegro',
       description: 'Conexión ultrarrápida para pacientes nacionales e internacionales que viajan por turismo médico.'
     },
     {
@@ -72,7 +72,7 @@ export class LocationComponent {
       description: 'Acceso directo y fluido sin tráfico urbano, disfrutando del clima fresco del altiplano.'
     },
     {
-      origin: 'Entorno de Llanogrande & Guarne',
+      origin: 'Entorno de El Carmen de Viboral & Rionegro',
       time: '5 - 10 Minutos',
       route: 'Corredor Gastronómico y Residencial',
       description: 'Ubicación privilegiada en la zona campestre más exclusiva del departamento.'
