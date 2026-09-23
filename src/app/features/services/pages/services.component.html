@@ -11,7 +11,7 @@
   </div>
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-32 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-cyan block mb-4">
+    <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-white block mb-4">
       Catálogo Clínico
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
@@ -107,11 +107,17 @@
   </div>
 </section>
 
-<!-- Proceso en 4 Pasos (The Experience Journey) -->
-<section class="py-24 bg-white border-t border-og-border overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12">
+<!-- Proceso en 4 Pasos (Royal Sapphire Luxury Journey) -->
+<section class="py-28 bg-gradient-to-b from-[#07172E] via-[#0D2A54] to-[#07162C] text-white border-y border-white/15 relative overflow-hidden">
+  
+  <!-- Acentos lumínicos de fondo -->
+  <div class="pointer-events-none absolute -top-32 -left-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(41,182,246,0.2)_0%,transparent_70%)] blur-3xl animate-float-slow"></div>
+  <div class="pointer-events-none absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,114,206,0.3)_0%,transparent_70%)] blur-3xl animate-float-delayed"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
+        theme="dark"
         kicker="Tu Experiencia Clínica"
         title="El Viaje hacia tu Nueva Sonrisa"
         subtitle="Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables."
@@ -119,38 +125,93 @@
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-left delay-100">
-        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 01</span>
-        <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Consulta y Diálogo</h3>
-        <p class="text-xs text-og-slate font-light leading-relaxed">
-          Escuchamos tus expectativas, evaluamos la armonía facial y realizamos fotografías diagnósticas de alta definición.
-        </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-left delay-100 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 01</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Consulta y Diálogo</h3>
+          <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+            Escuchamos tus expectativas, evaluamos la armonía facial y realizamos fotografías diagnósticas de alta definición.
+          </p>
+        </div>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-up delay-200">
-        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 02</span>
-        <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Diseño Digital & Prueba</h3>
-        <p class="text-xs text-og-slate font-light leading-relaxed">
-          Modelamos tu sonrisa en 3D y realizamos una prueba estética (mock-up) para que aprecies el resultado antes de comenzar.
-        </p>
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-up delay-200 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 02</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Diseño Digital & Prueba</h3>
+          <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+            Modelamos tu sonrisa en 3D y realizamos una prueba estética (mock-up) para que aprecies el resultado antes de comenzar.
+          </p>
+        </div>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-up delay-300">
-        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 03</span>
-        <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Confección Artesanal</h3>
-        <p class="text-xs text-og-slate font-light leading-relaxed">
-          Los maestros ceramistas elaboran cada lámina de porcelana a mano, asegurando translucidez y naturalidad máxima.
-        </p>
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-up delay-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 03</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Confección Artesanal</h3>
+          <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+            Los maestros ceramistas elaboran cada lámina de porcelana a mano, asegurando translucidez y naturalidad máxima.
+          </p>
+        </div>
       </div>
 
-      <div class="p-6 bg-og-marble rounded-xs border border-og-border reveal-init reveal-fade-right delay-400">
-        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-electric block mb-2">Paso 04</span>
-        <h3 class="text-xl font-editorial font-medium text-og-headline mb-2">Cementación y Entrega</h3>
-        <p class="text-xs text-og-slate font-light leading-relaxed">
-          Adhesión micrométrica bajo aislamiento absoluto, ajuste de oclusión y pulido de brillo dental final.
-        </p>
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-right delay-400 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 04</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Cementación y Entrega</h3>
+          <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+            Adhesión micrométrica bajo aislamiento absoluto, ajuste de oclusión y pulido de brillo dental final.
+          </p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Banner con Marca de Agua de Ortodoncia & Diagnóstico Virtual -->
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
+    
+    <!-- Marca de Agua de Ortodoncia en Segundo Plano -->
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
+      <img
+        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+        alt="Marca de agua ortodoncia y estética dental"
+        class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+    </div>
+
+    <!-- Resplandor azul zafiro interactivo de esquina -->
+    <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
+
+    <!-- Contenido Textual -->
+    <div class="text-center lg:text-left relative z-10 max-w-2xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
+        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
+          Diagnóstico Virtual & Ortodoncia Digital
+        </span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
+        Tu Sonrisa es tu Mayor Carta de Presentación
+      </h3>
+      <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 leading-relaxed">
+        Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.
+      </p>
+    </div>
+
+    <!-- Botón de Conversión Destacado -->
+    <div class="relative z-10 shrink-0">
+      <app-luxury-button
+        routerLink="/nuestro-trabajo/valoracion-virtual"
+        variant="primary"
+        size="md"
+        class="shadow-glow font-semibold text-white whitespace-nowrap"
+      >
+        Subir Fotos para Valoración →
+      </app-luxury-button>
     </div>
   </div>
 </section>

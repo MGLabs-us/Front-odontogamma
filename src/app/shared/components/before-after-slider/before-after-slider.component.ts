@@ -23,6 +23,7 @@ export class BeforeAfterSliderComponent {
 
   // Posición del divisor (0 a 100%)
   protected readonly sliderPosition = signal<number>(50);
+  protected readonly isDragging = signal<boolean>(false);
 
   /**
    * Actualiza la posición del slider al deslizar
@@ -32,5 +33,13 @@ export class BeforeAfterSliderComponent {
     if (target) {
       this.sliderPosition.set(Number(target.value));
     }
+  }
+
+  protected onPointerDown(): void {
+    this.isDragging.set(true);
+  }
+
+  protected onPointerUp(): void {
+    this.isDragging.set(false);
   }
 }

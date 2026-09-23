@@ -39,7 +39,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
           
           <div class="absolute bottom-6 left-6 right-6 text-white">
-            <span class="text-[9px] uppercase tracking-[0.3em] text-og-cyan block mb-1 font-mono">
+            <span class="text-[9px] uppercase tracking-[0.3em] text-white font-semibold block mb-1 font-mono">
               Artesanía Quirúrgica
             </span>
             <p class="font-editorial text-lg font-light text-slate-100">
@@ -90,12 +90,18 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 3. LOS 3 PILARES FUNDAMENTALES (CARDS EDITORIALES)                 -->
+<!-- 3. LOS 3 PILARES FUNDAMENTALES (ROYAL SAPPHIRE LUXURY)            -->
 <!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12">
+<section class="py-28 bg-gradient-to-b from-[#07172E] via-[#0D2A54] to-[#07162C] text-white border-y border-white/15 relative overflow-hidden">
+  
+  <!-- Acentos lumínicos de fondo -->
+  <div class="pointer-events-none absolute -top-32 -left-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(41,182,246,0.2)_0%,transparent_70%)] blur-3xl animate-float-slow"></div>
+  <div class="pointer-events-none absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,114,206,0.3)_0%,transparent_70%)] blur-3xl animate-float-delayed"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
+        theme="dark"
         kicker="Nuestros Fundamentos"
         title="Los Pilares de la Experiencia Odontogamma"
         subtitle="Tres principios innegociables que orientan cada decisión clínica y artística en nuestra práctica."
@@ -103,30 +109,30 @@
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
       @for (pillar of pillars; track pillar.number; let i = $index) {
         <div
           [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-          class="group bg-white p-8 sm:p-10 border border-og-border rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
+          class="group bg-slate-900/80 backdrop-blur-xl p-8 sm:p-10 border border-white/20 rounded-[28px] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.6)] hover:border-white/50 hover:shadow-[0_25px_60px_-10px_rgba(255,255,255,0.1)] transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
         >
           <div>
             <!-- Número de Pilar -->
-            <span class="text-4xl font-editorial font-light text-slate-300 group-hover:text-og-electric/40 transition-colors block mb-4">
+            <span class="text-4xl sm:text-5xl font-editorial font-medium text-slate-400/80 group-hover:text-white transition-colors block mb-4">
               {{ pillar.number }}
             </span>
-            <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-white font-bold block mb-2 font-mono">
               {{ pillar.subtitle }}
             </span>
-            <h3 class="text-xl font-editorial font-normal text-og-headline mb-4">
+            <h3 class="text-2xl font-editorial font-normal text-white mb-4">
               {{ pillar.title }}
             </h3>
-            <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+            <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed mb-6">
               {{ pillar.description }}
             </p>
           </div>
 
-          <div class="pt-4 border-t border-og-border/60">
-            <span class="text-[11px] font-mono text-og-electric uppercase tracking-wider font-semibold">
+          <div class="pt-4 border-t border-white/15">
+            <span class="text-[11px] font-mono text-white uppercase tracking-wider font-semibold">
               ✦ {{ pillar.highlight }}
             </span>
           </div>
@@ -137,68 +143,104 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 4. LÍNEA DE TIEMPO / HITOS CLÍNICOS                               -->
+<!-- 4. LÍNEA DE TIEMPO / HITOS CLÍNICOS (CON MARCA DE AGUA SUTIL)     -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  <div class="reveal-init reveal-fade-up">
-    <app-section-header
-      kicker="Evolución Continua"
-      title="La Trayectoria de una Visión"
-      subtitle="De pioneros en la región a clínica insignia de odontología cosmética avanzada."
-      align="center"
+<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden relative">
+  
+  <!-- Marca de agua fotográfica sutil de ortodoncia en fondo -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+    <img
+      src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+      alt="Marca de agua trayectoria"
+      class="w-full h-full object-cover object-center filter grayscale contrast-150 opacity-[0.04] scale-110"
     />
+    <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/95"></div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mt-12">
-    @for (milestone of milestones; track milestone.year; let i = $index) {
-      <div
-        [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-        class="relative p-8 border border-og-border bg-white rounded-xs"
-      >
-        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-og-electric block mb-2">
-          {{ milestone.year }}
-        </span>
-        <h4 class="text-xl font-editorial font-light text-og-headline mb-3">
-          {{ milestone.title }}
-        </h4>
-        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
-          {{ milestone.description }}
-        </p>
-      </div>
-    }
+  <div class="relative z-10">
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="Evolución Continua"
+        title="La Trayectoria de una Visión"
+        subtitle="De pioneros en la región a clínica insignia de odontología cosmética avanzada."
+        align="center"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mt-12">
+      @for (milestone of milestones; track milestone.year; let i = $index) {
+        <div
+          [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
+          class="relative p-8 border border-slate-200/90 bg-white/90 backdrop-blur-md rounded-[24px] shadow-sm hover:shadow-elevated hover:border-og-electric/40 transition-all duration-300"
+        >
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-og-electric block mb-2 font-mono">
+            {{ milestone.year }}
+          </span>
+          <h4 class="text-xl font-editorial font-medium text-slate-900 mb-3">
+            {{ milestone.title }}
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+            {{ milestone.description }}
+          </p>
+        </div>
+      }
+    </div>
   </div>
 </section>
 
 <!-- ================================================================= -->
-<!-- 5. CIERRE EDITORIAL / CTA DE CONVERSIÓN (ESTÉTICA AESTHETIC)      -->
+<!-- 5. BANNER CON MARCA DE AGUA DE ORTODONCIA & VALORACIÓN VIRTUAL    -->
 <!-- ================================================================= -->
-<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
-  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
-      Comienza Tu Transformación
-    </span>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
-      Tu Sonrisa Merece la Mano de un Maestro
-    </h2>
-    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
-      Agenda una cita privada de valoración fotográfica y diagnóstico 3D con nuestro equipo en Llanogrande.
-    </p>
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
+    
+    <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
+      <img
+        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
+        alt="Marca de agua ortodoncia y alineación"
+        class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
+      />
+      <!-- Velo difuminador hacia la izquierda -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+    </div>
 
-    <div class="flex flex-wrap items-center justify-center gap-4">
+    <!-- Resplandor azul zafiro interactivo de esquina -->
+    <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
+
+    <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
+    <div class="text-center lg:text-left relative z-10 max-w-2xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
+        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
+          Diagnóstico Virtual & Ortodoncia Digital
+        </span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
+        Tu Sonrisa es tu Mayor Carta de Presentación
+      </h3>
+      <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 leading-relaxed">
+        Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.
+      </p>
+    </div>
+
+    <!-- Botones de Conversión Destacados -->
+    <div class="relative z-10 shrink-0 flex flex-col sm:flex-row gap-3.5">
       <app-luxury-button
-        routerLink="/contacto"
+        routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="md"
+        class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Solicitar Cita de Valoración
+        Subir Fotos para Valoración →
       </app-luxury-button>
       <app-luxury-button
-        routerLink="/who-we-are/our-location"
+        routerLink="/contacto"
         variant="outline"
         size="md"
-        class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric"
+        class="border-slate-300 text-slate-900 hover:border-og-electric hover:text-og-electric font-semibold whitespace-nowrap bg-white/80"
       >
-        Conoce Nuestra Sede
+        Cita en El Carmen de Viboral
       </app-luxury-button>
     </div>
   </div>

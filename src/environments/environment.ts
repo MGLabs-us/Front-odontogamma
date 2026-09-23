@@ -6,7 +6,7 @@ export const environment = {
   production: true,
   clinicName: 'Odontogamma Oriente',
   clinicDirector: 'Dr. Jaime Arcila Cano',
-  location: 'Llanogrande, Rionegro, Antioquia, Colombia',
+  location: 'El Carmen de Viboral, Antioquia, Colombia',
   cloudinary: {
     cloudName: 'ffvpll33',
     apiKey: '379846884563928',
