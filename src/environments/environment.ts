@@ -4,9 +4,10 @@
  */
 export const environment = {
   production: true,
+  chatUrl: 'https://gvzsbtuyaraqierhnhjz.supabase.co/functions/v1/chat',
   clinicName: 'Odontogamma Oriente',
   clinicDirector: 'Dr. Jaime Arcila Cano',
-  location: 'Llanogrande, Rionegro, Antioquia, Colombia',
+  location: 'Carmen de viboral, Antioquia, Colombia',
   cloudinary: {
     cloudName: 'ffvpll33',
     apiKey: '379846884563928',

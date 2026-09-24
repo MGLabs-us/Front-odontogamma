@@ -94,3 +94,5 @@ form button {
   cursor: pointer;
   color: #0d6efd;
 }
+.msg.typing { opacity: .6; font-style: italic; }
+form button:disabled { opacity: .5; cursor: not-allowed; }

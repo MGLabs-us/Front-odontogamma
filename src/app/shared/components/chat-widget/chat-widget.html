@@ -9,6 +9,9 @@
       @for (m of chat.messages(); track $index) {
         <div class="msg" [class.user]="m.from === 'user'">{{ m.text }}</div>
       }
+        @if (chat.isLoading()) {
+        <div class="msg typing">Escribiendo…</div>
+      }
     </div>
 
     <form (ngSubmit)="send()">
@@ -17,7 +20,7 @@
         (ngModelChange)="draft.set($event)"
         name="draft"
         placeholder="Escribe un mensaje..." />
-      <button type="submit">Enviar</button>
+        <button type="submit" [disabled]="chat.isLoading()">Enviar</button>
     </form>
   </div>
 }
