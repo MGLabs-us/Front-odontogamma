@@ -1,0 +1,25 @@
+@if (chat.isOpen()) {
+  <div class="chat-panel">
+    <header>
+      <span>Asistente</span>
+      <button (click)="chat.toggle()">✕</button>
+    </header>
+
+    <div class="messages">
+      @for (m of chat.messages(); track $index) {
+        <div class="msg" [class.user]="m.from === 'user'">{{ m.text }}</div>
+      }
+    </div>
+
+    <form (ngSubmit)="send()">
+      <input
+        [ngModel]="draft()"
+        (ngModelChange)="draft.set($event)"
+        name="draft"
+        placeholder="Escribe un mensaje..." />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+}
+
+<button class="chat-fab" (click)="chat.toggle()">💬</button>
