@@ -69,7 +69,7 @@ export class TestimonialsComponent {
       city: 'Bogotá, D.C.',
       treatment: 'Odontología Cosmética & Contorneado Gingival',
       profession: 'Abogada Corporativa',
-      quote: '«Viajé desde Bogotá por recomendación de una colega. La paz de la sede en Llanogrande y la delicadeza del trato hicieron que la experiencia fuera un placer total.»',
+      quote: '«Viajé desde Bogotá por recomendación de una colega. La paz de la sede en El Carmen de Viboral y la delicadeza del trato hicieron que la experiencia fuera un placer total.»',
       fullStory: 'Camila deseaba corregir una asimetría notable en sus encías y dientes centrales que le restaban simetría al hablar en público. En solo 2 sesiones coordinadas con el periodoncista y el Dr. Arcila, se armonizó el margen gingival y se colocaron carillas ultra delgadas con cero dolor posoperatorio.',
       imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85',
       highlight: 'Corrección de asimetría gingival en 2 sesiones'
@@ -107,7 +107,7 @@ export class TestimonialsComponent {
     },
     {
       id: 'v3',
-      title: 'Por Qué Viajé desde Estados Unidos a Llanogrande',
+      title: 'Por Qué Viajé desde Estados Unidos a El Carmen de Viboral',
       duration: '2:30',
       patient: 'Sofia & David',
       treatment: 'Diseño de Sonrisa en Pareja',

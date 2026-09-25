@@ -17,6 +17,7 @@ import { PortfolioService } from '../../../core/services/portfolio.service';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
 import { BeforeAfterSliderComponent } from '../../../shared/components/before-after-slider/before-after-slider.component';
 import { SectionHeaderComponent } from '../../../shared/components/section-header/section-header.component';
+import { Tilt3dDirective } from '../../../shared/directives/tilt-3d.directive';
 
 export interface PhilosophyPillar {
   number: string;
@@ -32,8 +33,8 @@ export interface PhilosophyPillar {
 
 /**
  * Página Principal (Landing Page) inspirada en la estética editorial de Apa Aesthetic.
- * Presenta el Hero cinemático, pilares persuasivos con imágenes y beneficios, casos interactivos
- * y catálogo de procedimientos de firma.
+ * Presenta el Hero cinemático con perspectiva 3D, pilares interactivos con profundidad espacial,
+ * casos interactivos antes/después y galería tridimensional de micro-detalle.
  */
 @Component({
   selector: 'app-home',
@@ -43,7 +44,8 @@ export interface PhilosophyPillar {
     RouterLink,
     LuxuryButtonComponent,
     BeforeAfterSliderComponent,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    Tilt3dDirective
   ],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -168,6 +170,44 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // Signals reactivas obtenidas del servicio central
   protected readonly services = this.portfolioService.services;
   protected readonly featuredCases = this.portfolioService.featuredCases;
+  protected readonly allCases = this.portfolioService.cases;
+
+  // Estado del visualizador tridimensional de casos de transformación
+  protected readonly selectedCaseCategory = signal<string>('todos');
+  protected readonly activeCompareView = signal<Record<string, 'after' | 'before'>>({});
+
+  // Categorías disponibles para filtrar la galería tridimensional
+  protected readonly galleryCategories = [
+    { id: 'todos', label: 'Todos los Casos' },
+    { id: 'carillas', label: 'Carillas & Lentes' },
+    { id: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
+    { id: 'rehabilitacion', label: 'Rehabilitación' }
+  ];
+
+  // Casos filtrados para la galería de alta definición
+  protected readonly filteredCases = computed(() => {
+    const cat = this.selectedCaseCategory();
+    const cases = this.allCases();
+    if (cat === 'todos') {
+      return cases.slice(0, 6);
+    }
+    return cases.filter(c => c.category === cat);
+  });
+
+  public setCategory(categoryId: string): void {
+    this.selectedCaseCategory.set(categoryId);
+  }
+
+  public toggleCaseView(caseId: string): void {
+    this.activeCompareView.update(map => {
+      const current = map[caseId] ?? 'after';
+      return { ...map, [caseId]: current === 'after' ? 'before' : 'after' };
+    });
+  }
+
+  public getCaseCurrentView(caseId: string): 'after' | 'before' {
+    return this.activeCompareView()[caseId] ?? 'after';
+  }
 
   // Pilares de filosofía estética con fotografías reales de Odontogamma y redacción concisa
   protected readonly pillars: PhilosophyPillar[] = [
@@ -188,7 +228,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
       title: 'Confort Clínico Cero Dolor',
       subtitle: 'Olvídate del Miedo al Odontólogo',
-      description: 'Suites privadas insonorizadas en Llanogrande, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
+      description: 'Suites privadas insonorizadas en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
       imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg',
       link: '/who-we-are/our-location',
       linkText: 'Explorar Nuestra Sede'
