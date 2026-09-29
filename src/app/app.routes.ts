@@ -56,14 +56,6 @@ export const routes: Routes = [
               ),
             title: 'Our Location — Sede El Carmen de Viboral | Odontogamma Oriente'
           },
-          {
-            path: 'brand-partners',
-            loadComponent: () =>
-              import('./features/who-we-are/pages/brand-partners/brand-partners.component').then(
-                m => m.BrandPartnersComponent
-              ),
-            title: 'Brand Partners & Medios | Odontogamma Oriente'
-          }
         ]
       },
       {
