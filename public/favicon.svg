@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Fondo gradiente azul zafiro imperial -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040D1B" />
+      <stop offset="50%" stop-color="#071933" />
+      <stop offset="100%" stop-color="#0B2E5C" />
+    </linearGradient>
+
+    <!-- Borde con brillo cyan zafiro -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#0284C7" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Gradiente del dientecito central (blanco luminoso a cyan suave) -->
+    <linearGradient id="toothGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#7DD3FC" />
+    </linearGradient>
+
+    <!-- Gradiente de las alas -->
+    <linearGradient id="wingGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <linearGradient id="wingGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#0284C7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Resplandor sutil -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#38BDF8" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Contenedor Base redondeado tipo Squircle -->
+  <rect width="128" height="128" rx="30" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="124" height="124" rx="28" fill="none" stroke="url(#borderGrad)" stroke-width="2.5" />
+
+  <!-- Halo de luz ambiental central -->
+  <circle cx="64" cy="64" r="42" fill="#0284C7" opacity="0.25" filter="blur(10px)" />
+
+  <!-- Isotipo Odontogamma Centrado (Alas + Dientecito) -->
+  <g filter="url(#glow)">
+    <!-- Alas Superiores -->
+    <!-- Ala Superior Izquierda -->
+    <path
+      d="M 57 58 C 42 53, 24 55, 10 59 C 27 57, 43 56, 58 62 Z"
+      fill="url(#wingGradLeft)"
+    />
+    <!-- Ala Superior Derecha -->
+    <path
+      d="M 71 58 C 86 53, 104 55, 118 59 C 101 57, 85 56, 70 62 Z"
+      fill="url(#wingGradRight)"
+    />
+
+    <!-- Alas Inferiores -->
+    <!-- Ala Inferior Izquierda -->
+    <path
+      d="M 58 66 C 44 63, 30 65, 18 68 C 32 65, 46 65, 59 69 Z"
+      fill="url(#wingGradLeft)"
+      opacity="0.85"
+    />
+    <!-- Ala Inferior Derecha -->
+    <path
+      d="M 70 66 C 84 63, 98 65, 110 68 C 96 65, 82 65, 69 69 Z"
+      fill="url(#wingGradRight)"
+      opacity="0.85"
+    />
+
+    <!-- Dientecito Central Anatómico Protagonista -->
+    <!-- Escala ampliada y centrada en (64, 64) -->
+    <g transform="translate(64, 64) scale(1.18) translate(-140, -38)">
+      <path
+        fill-rule="evenodd"
+        d="M 140 7
+           C 133 3, 125 5, 123 15
+           C 121 24, 124 33, 127 45
+           C 129 55, 131 67, 133 69
+           C 135 70, 137 61, 138 52
+           C 139 44, 140 40, 140 40
+           C 140 40, 141 44, 142 52
+           C 143 61, 145 70, 147 69
+           C 149 67, 151 55, 153 45
+           C 156 33, 159 24, 157 15
+           C 155 5, 147 3, 140 7 Z
+           
+           M 140 14
+           C 145 10, 150 11, 151 18
+           C 152 25, 150 34, 147 42
+           C 145 49, 144 54, 143 57
+           C 143 54, 142 46, 141 41
+           C 140 37, 140 37, 139 41
+           C 138 46, 137 54, 137 57
+           C 136 54, 135 49, 133 42
+           C 130 34, 128 25, 129 18
+           C 130 11, 135 10, 140 14 Z"
+        fill="url(#toothGrad)"
+      />
+    </g>
+  </g>
+</svg>

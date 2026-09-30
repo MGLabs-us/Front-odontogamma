@@ -19,176 +19,247 @@ export class PortfolioService {
    */
   private readonly servicesData = signal<ServiceItem[]>([
     {
-      id: 'carillas-porcelana',
-      slug: 'carillas-porcelana',
-      title: 'Carillas de Porcelana',
-      subtitle: 'Porcelain Veneers & Feldspathic Artistry',
-      tagline: 'Mínima invasión biológica, máxima naturalidad',
-      shortDescription: 'Láminas ultrafinas de cerámica feldespática modeladas a mano por maestros ceramistas para recrear la translucidez, opalescencia y textura del esmalte dental más puro.',
+      id: 'implantologia-oral',
+      slug: 'implantologia-oral',
+      title: 'Implantología Oral',
+      subtitle: 'Oral Implantology & Osseointegration',
+      badge: 'Raíz Artificial & Rehabilitación Fija',
+      tagline: '¿Te falta uno o varios dientes? Recupera tu sonrisa y función con una rehabilitación sobre implantes, planificada de acuerdo con tus necesidades.',
+      shortDescription: 'Tratamiento de vanguardia para reemplazar uno o varios dientes perdidos mediante un implante dental de titanio o zirconia que funciona como raíz artificial, sobre el cual se coloca una restauración fija de máxima precisión anatómica.',
       detailedDescription: [
-        'En Odontogamma Oriente concebimos las carillas de porcelana como piezas de alta relojería. A diferencia de las carillas convencionales o las resinas compuestas, cada carilla se estratifica capa por capa utilizando polvos cerámicos importados que reproducen fielmente los matices tridimensionales de un diente natural.',
-        'Nuestro protocolo mínimamente invasivo preserva la mayor cantidad de estructura dental sana, logrando una adhesión micrométrica al esmalte que garantiza una longevidad superior a los 15 años sin manchas ni pérdida de brillo.',
-        'Cada tratamiento comienza con un estudio biométrico digital y una prueba estética física (mock-up) para que puedas apreciar y aprobar tu nueva sonrisa antes de realizar cualquier procedimiento definitivo.'
+        'La implantología oral es el tratamiento odontológico de elección para reemplazar uno o varios dientes perdidos de manera definitiva. Un implante dental funciona como una raíz artificial anclada al hueso maxilar mediante osteointegración biológica, sobre la cual se instala posteriormente una corona o restauración fija personalizada de alta estética.',
+        'Materiales Principales: El implante dental se fabrica en titanio de grado médico de máxima pureza o en zirconia biocompatible. La conexión se realiza a través de un pilar (abutment) de titanio o zirconia, y la corona sobre implante se confecciona en Zirconia monolítica, Zirconia estratificada con cerámica feldespática, Disilicato de litio o Metal-cerámica, según la exigencia oclusal y estética de cada paciente.',
+        'En Odontogamma Oriente planificamos cada procedimiento mediante tomografía volumétrica y escaneo digital 3D. Esto asegura una colocación milimétrica que no requiere desgastar los dientes vecinos, como ocurre en los puentes convencionales, preservando íntegra la estructura dental biológica remanente.'
+      ],
+      materials: [
+        'Implante Dental: Titanio grado médico de alta pureza u opciones biocompatibles de zirconia.',
+        'Pilar o Abutment: Conexión protésica personalizada maquinada en titanio o zirconia según la zona estética.',
+        'Corona sobre Implante: Zirconia monolítica, Zirconia estratificada, Disilicato de litio o Metal-cerámica.'
+      ],
+      materialGroups: [
+        {
+          category: 'Implante Dental',
+          items: ['Titanio grado médico de alta biocompatibilidad', 'Implantes cerámicos de Zirconia biocompatible']
+        },
+        {
+          category: 'Pilar / Abutment',
+          items: ['Pilar personalizado en Titanio', 'Pilar estético en Zirconia']
+        },
+        {
+          category: 'Corona sobre Implante',
+          items: ['Zirconia monolítica de máxima resistencia', 'Zirconia estratificada de alta estética', 'Disilicato de litio para mimetismo óptico', 'Metal-cerámica según indicación oclusal']
+        }
+      ],
+      heroImageUrl: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2000&q=85',
+      galleryImages: [
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1790029060/648985706_17911045683163425_7279892063267287894_n.jpg',
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg',
+        'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80'
+      ],
+      highlights: [
+        'Recuperación total de la función masticatoria con fuerza y confort natural',
+        'Apariencia y reflectancia óptica idéntica a un diente biológico',
+        'Restauración fija, permanente y de máxima estabilidad ósea',
+        'No requiere desgastar los dientes vecinos como en puentes convencionales'
+      ],
+      idealFor: [
+        'Pérdida de un solo diente (reemplazo unitario con corona estética)',
+        'Pérdida de varios dientes (rehabilitaciones parciales fijas)',
+        'Pacientes con pérdida completa de dientes que requieren soporte sobre implantes',
+        'Pacientes que desean frenar la reabsorción ósea y recuperar la estabilidad masticatoria'
+      ],
+      beforeAfter: {
+        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png',
+        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762819/cropped_teeth_after.png',
+        caseTitle: 'Reemplazo Dental & Rehabilitación Fija sobre Implante',
+        description: 'Reposición de pieza dental ausente mediante implante osteointegrado y corona cerámica de ultra precisión, devolviendo la estética gingival y la función masticatoria.',
+        technique: 'Implantología Digital Guiada',
+        focus: 'Osteointegración & Estética Gingival'
+      }
+    },
+    {
+      id: 'coronas-porcelana',
+      slug: 'coronas-porcelana',
+      title: 'Coronas de Porcelana',
+      subtitle: 'All-Ceramic & Zirconia Restorations',
+      badge: 'Restauración Anatómica & Alta Resistencia',
+      tagline: 'Devuelve a tus dientes su forma, función y estética con coronas personalizadas en materiales cerámicos de alta calidad.',
+      shortDescription: 'Restauraciones personalizadas que recubren integralmente un diente para recuperar su forma anatómica, resistencia estructural, función oclusal y estética de máxima luminosidad.',
+      detailedDescription: [
+        'Las coronas dentales son restauraciones personalizadas de cobertura total diseñadas para recubrir un diente dañado o debilitado, devolviéndole de manera integral su forma anatómica, resistencia mecánica, función masticatoria y belleza estética.',
+        'Materiales de Alta Ingeniería: En Odontogamma Oriente seleccionamos el material según el caso clínico específico. Empleamos Zirconia (alta tenacidad y resistencia mecánica, excelente opción para dientes posteriores y casos anteriores seleccionados, en versiones monolíticas o estratificadas), Disilicato de Litio (extraordinaria estética y translucidez natural, óptimo en rehabilitaciones anteriores) y Cerámica sobre estructura (combinando una base interna reforzada con cerámica feldespática de recubrimiento para detalles ópticos únicos).',
+        'Cada corona se diseña y fresa con tecnología digital CAD/CAM de ultra precisión, garantizando un sellado marginal hermético que protege el tejido dental vivo y una integración biológica perfecta con la encía sin sombras artificiales.'
+      ],
+      materials: [
+        'Zirconia: Alta resistencia mecánica, excelente opción para dientes posteriores y casos anteriores (monolítica o estratificada).',
+        'Disilicato de Litio: Excelente estética y translucidez natural, muy utilizado en rehabilitaciones anteriores y casos posteriores seleccionados.',
+        'Cerámica sobre Estructura: Combina una estructura interna de soporte con cerámica de recubrimiento para características funcionales y estéticas específicas.'
+      ],
+      materialGroups: [
+        {
+          category: 'Zirconia de Alta Resistencia',
+          items: ['Zirconia monolítica para máxima durabilidad en molares', 'Zirconia estratificada para alta exigencia estética anterior']
+        },
+        {
+          category: 'Disilicato de Litio',
+          items: ['Translucidez y opalescencia idéntica al esmalte dental', 'Óptima para sector anterior y rehabilitaciones cosméticas']
+        },
+        {
+          category: 'Cerámica sobre Estructura',
+          items: ['Estructura interna reforzada para soporte oclusal', 'Estratificación cerámica para gradientes cromáticos naturales']
+        }
       ],
       heroImageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=2000&q=85',
       galleryImages: [
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1790029060/648985706_17911045683163425_7279892063267287894_n.jpg',
         'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=80'
+        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80'
       ],
       highlights: [
-        'Espesor ultrafino (0.2 a 0.4 mm) sin desgaste agresivo',
-        'Estratificación artesanal por ceramistas de clase mundial',
-        'Inmunidad total a pigmentaciones de café, vino o tabaco',
-        'Biocompatibilidad absoluta con los tejidos gingivales'
+        'Recuperación total de la forma anatómica, resistencia estructural y masticatoria',
+        'Materiales cerámicos de vanguardia: Zirconia, Disilicato de litio y cerámica estratificada',
+        'Sellado marginal milimétrico que previene filtraciones y protege el diente',
+        'Acabado translúcido que se mimetiza con la dentición natural adyacente'
       ],
       idealFor: [
-        'Dientes desgastados, fracturados o con bordes irregulares',
-        'Espacios interdentales (diastemas) y asimetrías de forma',
-        'Pigmentaciones profundas resistentes a aclaramiento químico',
-        'Pacientes que buscan una sonrisa radiante con acabado 100% natural'
+        'Dientes fracturados o con compromiso estructural severo',
+        'Dientes muy desgastados por bruxismo, atrición o erosión',
+        'Dientes con grandes restauraciones previas desajustadas o tras endodoncia',
+        'Cambios importantes de forma, eje o proporción dental',
+        'Rehabilitaciones estéticas y funcionales complejas',
+        'Restauraciones definitivas sobre implantes dentales'
       ],
       beforeAfter: {
         beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
-        caseTitle: 'Rejuvenecimiento Dental con Carillas Feldespáticas',
-        description: 'Paciente con desgaste en bordes incisales y pérdida de longitud dental. Se diseñaron láminas cerámicas con textura microlineal y translucidez incisal personalizada.',
-        technique: 'Carillas Cerámicas Feldespáticas',
-        focus: 'Restauración de Bordes & Longitud',
-        units: 'Carillas Cerámicas Feldespáticas',
-        timeframe: 'Restauración de Bordes & Longitud'
-      },
-      badge: 'Firma de la Clínica'
+        caseTitle: 'Restauración Integral con Coronas de Cerámica Pura',
+        description: 'Reconstrucción anatómica de dientes desgastados mediante coronas en disilicato de litio, devolviendo la altura oclusal y la reflectancia natural.',
+        technique: 'Disilicato de Litio CAD/CAM',
+        focus: 'Resistencia & Textura Biológica'
+      }
     },
     {
-      id: 'odontologia-cosmetica',
-      slug: 'odontologia-cosmetica',
-      title: 'Odontología Cosmética',
-      subtitle: 'Cosmetic Dentistry & Facial Architecture',
-      tagline: 'Armonía estética que realza los rasgos de tu rostro',
-      shortDescription: 'Planificación integral que fusiona la arquitectura de los labios, el marco facial y la línea de la sonrisa para lograr un rejuvenecimiento dental sutil y elegante.',
+      id: 'protesis-hibrida-implantes',
+      slug: 'protesis-hibrida-implantes',
+      title: 'Prótesis Híbrida sobre Implantes',
+      subtitle: 'Full-Arch Fixed Implant Rehabilitation',
+      badge: 'Rehabilitación Fija de Arcada Completa',
+      tagline: 'Vuelve a sonreír, hablar y comer con mayor seguridad. Las prótesis híbridas sobre implantes permiten rehabilitar una arcada completa mediante una solución fija sobre implantes.',
+      shortDescription: 'Rehabilitación dental fija de arcada completa anclada rígidamente a múltiples implantes, diseñada para devolver la estabilidad total, soporte facial y función masticatoria a personas con pérdida total de dientes.',
       detailedDescription: [
-        'La odontología cosmética de alta gama va más allá de alinear dientes: se enfoca en cómo tu sonrisa interactúa con los ojos, los labios y la gesticulación al hablar y reír.',
-        'Analizamos las proporciones áureas de tu rostro mediante fotografía macroscópica de estudio y modelado 3D para diseñar una sonrisa que te reste años y potencie tu seguridad.',
-        'Combinamos recontorneo gingival con láser de diodo, microestética del esmalte y diseño digital para esculpir un resultado perfectamente equilibrado.'
+        'La prótesis híbrida sobre implantes es uno de los servicios más importantes y transformadores para pacientes con pérdida total de dientes en una o ambas arcadas, o con piezas terminales sin pronóstico favorable. Se trata de una rehabilitación fija sostenida sobre múltiples implantes que reemplaza una arcada completa con máxima solidez.',
+        'A diferencia radical de las prótesis removibles convencionales (que suelen moverse, desajustarse y causar inseguridad al comer o hablar), la prótesis híbrida queda firmemente atornillada a los implantes dentales, ofreciendo una sensación de estabilidad idéntica a la dentición propia.',
+        'Materiales y Bioingeniería: Dependiendo del diseño clínico, se fabrica mediante una estructura interna pasiva de titanio maquinada por CAD/CAM, dientes protésicos de resina o acrílico de alta resistencia al impacto, resinas de laboratorio nanohíbridas o alternativas completas en zirconia de alta gama con caracterización gingival tridimensional para restaurar la plenitud labial y facial.'
+      ],
+      materials: [
+        'Estructura de Titanio: Barra fresada por CAD/CAM para ajuste pasivo absoluto sobre los implantes.',
+        'Dientes Protésicos de Alta Resistencia: Resinas y acrílicos de última generación diseñados para absorber fuerzas masticatorias.',
+        'Resinas de Laboratorio Nanohíbridas: Caracterización estética y gingival de ultra naturalidad.',
+        'Estructuras CAD/CAM y Alternativas en Zirconia: Opciones cerámicas de máxima longevidad según el caso.'
+      ],
+      materialGroups: [
+        {
+          category: 'Estructura Primaria',
+          items: ['Barra de Titanio grado médico maquinada por CAD/CAM', 'Estructuras cerámicas de Zirconia reforzada']
+        },
+        {
+          category: 'Dientes Protésicos & Resinas',
+          items: ['Dientes de resina/acrílico de alta resistencia al impacto', 'Resinas de laboratorio de alta tenacidad y estética']
+        },
+        {
+          category: 'Acabado y Fijación',
+          items: ['Fijación atornillada pasiva sobre múltiples implantes', 'Mimetismo gingival biológico en tono y volumen']
+        }
       ],
       heroImageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2000&q=85',
       galleryImages: [
-        'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=80'
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1789757984/485992449_646326938135326_7644290108229838413_n.jpg',
+        'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=80',
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg'
       ],
       highlights: [
-        'Análisis biométrico facial tridimensional',
-        'Gingivoplastia láser sin sangrado ni suturas',
-        'Prueba en boca (Mock-up estético) antes de iniciar',
-        'Corrección milimétrica del corredor bucal y exposición dental'
+        'Mayor estabilidad y firmeza absoluta que cualquier prótesis removible convencional',
+        'Mejora radical de la función masticatoria: vuelve a comer lo que quieras sin dolor ni desajustes',
+        'Recuperación inmediata del soporte labial y facial, rejuveneciendo la expresión del rostro',
+        'Rehabilitación integral fija de la arcada: seguridad total para sonreír, hablar y socializar'
       ],
       idealFor: [
-        'Sonrisa gingival (exceso de encía al sonreír)',
-        'Dientes pequeños en relación al marco de los labios',
-        'Asimetrías notorias en la curva de la sonrisa',
-        'Personas que buscan un rejuvenecimiento dental integral'
+        'Personas que han perdido todos los dientes de una arcada (superior o inferior)',
+        'Pacientes que tienen dientes con pronóstico clínico no favorable',
+        'Personas que utilizan prótesis removibles y buscan una alternativa fija definitiva',
+        'Pacientes que buscan una transformación completa con máxima estabilidad funcional'
       ],
       beforeAfter: {
         beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762894/foto7_antes.png',
         afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762895/foto7_despues.png',
-        caseTitle: 'Armonización de Sonrisa y Arco Bimaxilar',
-        description: 'Corrección de desgaste y aplanamiento de bordes con carillas cerámicas para devolver luminosidad, amplitud y equilibrio al rostro.',
-        technique: 'Diseño de Sonrisa Cerámico',
-        focus: 'Armonización Facial & Simetría',
-        units: 'Diseño de Sonrisa Cerámico',
-        timeframe: 'Armonización Facial & Simetría'
-      },
-      badge: 'Bespoke Design'
+        caseTitle: 'Rehabilitación Fija de Arcada Completa sobre Implantes',
+        description: 'Transformación total de arcada mediante prótesis híbrida atornillada sobre implantes de titanio, devolviendo el soporte labial, la mordida y la plenitud de la sonrisa.',
+        technique: 'Prótesis Híbrida CAD/CAM sobre Implantes',
+        focus: 'Soporte Facial & Estabilidad Fija'
+      }
     },
     {
-      id: 'proceso-transformacion',
-      slug: 'proceso-transformacion',
-      title: 'Proceso de Transformación de Sonrisa',
-      subtitle: 'The Smile Makeover Journey',
-      tagline: 'Una experiencia clínica privada, transparente y predecible',
-      shortDescription: 'Un recorrido asistido en 4 fases diseñado para garantizar que cada detalle de tu nueva sonrisa se planifique, apruebe y ejecute con la máxima precisión.',
+      id: 'carillas-porcelana',
+      slug: 'carillas-porcelana',
+      title: 'Carillas de Porcelana',
+      subtitle: 'Porcelain Veneers & Feldspathic Artistry',
+      badge: 'Microestética & Mínima Invasión',
+      tagline: 'Diseñamos una sonrisa personalizada respetando tus rasgos, proporciones y características dentales para conseguir un resultado armónico y natural.',
+      shortDescription: 'Finas láminas de cerámica diseñadas individualmente para modificar características estéticas de los dientes anteriores (color, forma, tamaño, proporción y simetría) con mínima invasión biológica.',
       detailedDescription: [
-        'Transformar tu sonrisa en Odontogamma Oriente es un viaje exclusivo donde tú eres el protagonista. Desde la primera consulta de diagnóstico, eliminamos la incertidumbre permitiéndote ver y sentir cómo lucirá tu sonrisa definitiva.',
-        'Integramos escaneo intraoral 3D sin pastas invasivas, simulación virtual computarizada y fabricación robotizada combinada con terminado manual de artista.',
-        'Nos aseguramos de que no solo obtengas una estética sublime, sino también una mordida funcional, estable y completamente cómoda.'
+        'Las carillas de porcelana son finas láminas de cerámica diseñadas individualmente para modificar de manera armónica las características estéticas de los dientes anteriores. Permiten mejorar de forma definitiva el color, forma, tamaño, proporción, simetría y pequeñas alteraciones de posición o espacios interdentales, según cada caso.',
+        'Materiales de Primera Línea: Los materiales más utilizados en nuestra clínica incluyen Disilicato de Litio (excelente estética, translucidez natural y amplias posibilidades de caracterización óptica), Cerámicas Feldespáticas (extraordinaria capacidad estética y estratificación artesanal para casos de máxima exigencia biomimética) y Cerámicas Reforzadas seleccionadas según las necesidades mecánicas y funcionales del paciente.',
+        'En Odontogamma Oriente concebimos cada diseño de carillas bajo protocolos de mínima invasión biológica, preservando el esmalte dental vivo para asegurar una adhesión micrométrica indestructible y una longevidad superior a 15 años sin manchas ni pérdida de brillo.'
       ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2000&q=85',
+      materials: [
+        'Disilicato de Litio: Excelente estética, notable translucidez y amplias posibilidades de caracterización óptica.',
+        'Cerámicas Feldespáticas: Excepcional capacidad estética, textura superficial y naturalidad en casos seleccionados.',
+        'Cerámicas Reforzadas: Diversos sistemas cerámicos seleccionados según las cargas oclusales y necesidades de cada paciente.'
+      ],
+      materialGroups: [
+        {
+          category: 'Disilicato de Litio',
+          items: ['Máxima versatilidad estética y translucidez viva', 'Amplia gama de caracterización para mimetismo exacto']
+        },
+        {
+          category: 'Cerámicas Feldespáticas',
+          items: ['Estratificación manual capa por capa por ceramistas maestros', 'Microtextura y reflectancia idéntica al esmalte natural']
+        },
+        {
+          category: 'Cerámicas Reforzadas',
+          items: ['Sistemas cerámicos de alta tenacidad a la flexión', 'Seleccionados según oclusión y biomecánica dental']
+        }
+      ],
+      heroImageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=2000&q=85',
       galleryImages: [
-        'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80'
-      ],
-      highlights: [
-        'Fase 1: Consulta diagnóstica, fotos de estudio y escaneo 3D',
-        'Fase 2: Simulación digital y prueba en boca estética (Mock-up)',
-        'Fase 3: Confección de élite en laboratorio de vanguardia',
-        'Fase 4: Cementación definitiva bajo aislamiento y pulido'
-      ],
-      idealFor: [
-        'Pacientes que desean una transformación dental completa y definitiva',
-        'Personas que valoran la predictibilidad y quieren ver el resultado antes de comenzar',
-        'Casos complejos con restauraciones previas desadaptadas o desgastadas'
-      ],
-      beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762884/foto6_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762885/foto6_despues.png',
-        caseTitle: 'Microestética & Nivelación de Bordes Incisales',
-        description: 'Carillas de porcelana ultradelgadas con estratificación de esmalte para máxima translucidez y feminidad de la sonrisa.',
-        technique: 'Láminas Cerámicas de Precisión',
-        focus: 'Nivelación Incisal & Simetría',
-        units: 'Láminas Cerámicas de Precisión',
-        timeframe: 'Nivelación Incisal & Simetría'
-      },
-      badge: 'Experiencia Total'
-    },
-    {
-      id: 'aclaramiento-laser',
-      slug: 'aclaramiento-laser',
-      title: 'Aclaramiento Dental Avanzado',
-      subtitle: 'Advanced Laser Teeth Brightening',
-      tagline: 'Luminosidad pura y blancura natural sin dolor ni sensibilidad',
-      shortDescription: 'Protocolos combinados en clínica y casa con luz fría fotocatalizada que desintegran pigmentos orgánicos profundos respetando la matriz biológica del diente.',
-      detailedDescription: [
-        'A diferencia de los blanqueamientos agresivos que deshidratan el diente y generan sensibilidad insoportable, nuestro protocolo de aclaramiento avanzado utiliza tecnología de fotocatálisis con agentes remineralizantes.',
-        'Logramos devolver la luminosidad juvenil y blancura armónica sin erosionar el esmalte ni alterar la vitalidad pulpar.',
-        'Incluimos férulas termoformadas a medida y geles de mantenimiento para prolongar la pureza de tu sonrisa por años.'
-      ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2000&q=85',
-      galleryImages: [
+        'https://res.cloudinary.com/ffvpll33/image/upload/v1790029060/648985706_17911045683163425_7279892063267287894_n.jpg',
         'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1000&q=80'
+        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80'
       ],
       highlights: [
-        'Tecnología de luz fría con agentes bio-protectores',
-        'Cero dolor y máxima protección del esmalte dental',
-        'Aclaramiento profundo y luminoso en una sola sesión',
-        'Kit exclusivo para mantenimiento y brillo duradero'
+        'Corrección armónica de color, forma, tamaño, proporción y simetría dental',
+        'Técnica de mínima invasión que preserva íntegro el esmalte biológico del paciente',
+        'Materiales cerámicos de ultra alta gama: Disilicato de litio y Cerámicas feldespáticas',
+        'Inmunidad frente a tinciones y manchas de café, vino, té o tabaco'
       ],
       idealFor: [
-        'Dientes oscurecidos por café, té, mate, vino tinto o tabaco',
-        'Preparación estética previa a la colocación de carillas',
-        'Pacientes con eventos especiales que buscan resultados inmediatos'
+        'Dientes con alteraciones de forma, bordes irregulares o asimetrías',
+        'Cambios de coloración intrínseca o manchas que no responden a otros tratamientos',
+        'Desgastes dentales seleccionados en bordes incisales',
+        'Espacios interdentales (diastemas) o pequeñas discrepancias estéticas de posición',
+        'Pacientes que desean una transformación estética armónica respetando sus rasgos faciales'
       ],
       beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762828/foto1_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762829/foto1_despues.png',
-        caseTitle: 'Alineación Óptica & Laminados Cerámicos',
-        description: 'Corrección de apiñamiento leve anterior y elevación de luminosidad mediante carillas cerámicas de preparación mínima.',
-        technique: 'Láminas Cerámicas de Contacto',
-        focus: 'Alineación Óptica & Salud Gingival',
-        units: 'Láminas Cerámicas de Contacto',
-        timeframe: 'Alineación Óptica & Salud Gingival'
+        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
+        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
+        caseTitle: 'Rejuvenecimiento Dental & Carillas Cerámicas',
+        description: 'Restauración anatómica de bordes incisales desgastados. Mediante láminas cerámicas personalizadas, se devolvió la longitud, textura y reflectancia natural para una sonrisa rejuvenecida y armónica.',
+        technique: 'Carillas de Cerámica Pura',
+        focus: 'Restauración Anatómica & Volumen'
       }
     }
   ]);
 
-  /**
-   * Galería de transformaciones clínicas reales (Antes / Después)
-   * Casos clínicos certificados de Odontogamma Oriente alojados en Cloudinary
-   */
   private readonly casesData = signal<CaseStudy[]>([
     {
       id: 'caso-01',

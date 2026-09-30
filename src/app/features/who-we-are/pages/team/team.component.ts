@@ -28,11 +28,11 @@ export class TeamComponent {
   protected readonly members: TeamMember[] = [
     {
       name: 'Dr. Jaime Arcila Cano',
-      role: 'Director Médico & Especialista en Estética',
+      role: 'Especialista en Estética Dental',
       specialty: 'Diseño de Sonrisa Biomimético',
       bio: 'Lidera la dirección clínica, la visión artística y la personalización integral de cada sonrisa en Odontogamma Oriente.',
       imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789758166/624512340_18106700200685547_1543458093715588057_n.jpg',
-      credentials: ['Director Clínico', 'Rehabilitación Oral & Estética', 'Odontogamma Oriente']
+      credentials: ['Especialista en Estética', 'Rehabilitación Oral & Estética', 'Odontogamma Oriente']
     },
     {
       name: 'Equipo Odontogamma',

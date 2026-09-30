@@ -49,7 +49,7 @@ export class ChiefDoctorComponent {
   // Credenciales y membresías académicas
   protected readonly credentials: Credential[] = [
     {
-      institution: 'Dirección Médica & Fundador',
+      institution: 'Especialista en Estética & Fundador',
       role: 'Odontogamma Oriente',
       detail: 'Líder en diseño de sonrisa cerámico de alta complejidad en Antioquia.'
     },

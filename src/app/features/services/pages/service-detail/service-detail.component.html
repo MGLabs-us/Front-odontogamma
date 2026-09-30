@@ -100,6 +100,36 @@
             }
           </div>
         </div>
+
+        <!-- Materiales Principales & Bioingeniería -->
+        @if (item.materialGroups && item.materialGroups.length > 0) {
+          <div class="pt-8 border-t border-og-border">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-og-electric border border-og-electric/20 text-[10px] uppercase font-mono font-bold tracking-widest mb-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-og-cyan animate-pulse"></span>
+              Materiales Clínicos Principales
+            </div>
+            <h3 class="text-xl sm:text-2xl font-editorial font-medium text-slate-900 mb-4">
+              Bioingeniería y Sistemas Restauradores
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              @for (group of item.materialGroups; track group.category) {
+                <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200/90 flex flex-col justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider font-bold text-slate-900 block mb-2">
+                    {{ group.category }}
+                  </span>
+                  <ul class="space-y-1.5">
+                    @for (m of group.items; track m) {
+                      <li class="flex items-start gap-2 text-xs text-slate-700 leading-snug">
+                        <span class="text-og-electric font-bold">•</span>
+                        <span>{{ m }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </div>
+        }
       </div>
 
       <!-- Columna Derecha: ¿Para Quién es Ideal? (Candidatos) & Contacto Rápido -->

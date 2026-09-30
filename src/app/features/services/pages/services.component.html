@@ -83,6 +83,22 @@
             </ul>
           </div>
 
+          <!-- Materiales Principales -->
+          @if (service.materialGroups && service.materialGroups.length > 0) {
+            <div class="mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-og-electric font-bold block mb-2">
+                Materiales Principales:
+              </span>
+              <div class="flex flex-wrap gap-2">
+                @for (group of service.materialGroups; track group.category) {
+                  <span class="px-3 py-1 rounded-full bg-white border border-slate-200/90 text-[11px] font-medium text-slate-700 shadow-xs">
+                    {{ group.category }}
+                  </span>
+                }
+              </div>
+            </div>
+          }
+
           <!-- Acciones -->
           <div class="flex flex-wrap gap-4 pt-4 border-t border-og-border">
             <app-luxury-button

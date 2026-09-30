@@ -1,3 +1,8 @@
+export interface ServiceMaterialGroup {
+  category: string;
+  items: string[];
+}
+
 /**
  * Modelo completo para tratamientos y servicios clínicos individuales de Odontogamma Oriente
  */
@@ -13,6 +18,8 @@ export interface ServiceItem {
   galleryImages: string[];
   highlights: string[];
   idealFor: string[];
+  materials?: string[];
+  materialGroups?: ServiceMaterialGroup[];
   beforeAfter: {
     beforeImageUrl: string;
     afterImageUrl: string;

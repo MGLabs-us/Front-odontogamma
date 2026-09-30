@@ -1,22 +1,14 @@
 import {
   Component,
-  inject,
   ChangeDetectionStrategy,
   AfterViewInit,
-  OnInit,
-  OnDestroy,
   ViewChild,
-  ElementRef,
-  signal,
-  computed,
-  PLATFORM_ID
+  ElementRef
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PortfolioService } from '../../../core/services/portfolio.service';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
 import { BeforeAfterSliderComponent } from '../../../shared/components/before-after-slider/before-after-slider.component';
-import { SectionHeaderComponent } from '../../../shared/components/section-header/section-header.component';
 import { Tilt3dDirective } from '../../../shared/directives/tilt-3d.directive';
 
 export interface PhilosophyPillar {
@@ -32,9 +24,9 @@ export interface PhilosophyPillar {
 }
 
 /**
- * Página Principal (Landing Page) inspirada en la estética editorial de Apa Aesthetic.
- * Presenta el Hero cinemático con perspectiva 3D, pilares interactivos con profundidad espacial,
- * casos interactivos antes/después y galería tridimensional de micro-detalle.
+ * Página Principal (Landing Page) optimizada, limpia y sin redundancias.
+ * Mantiene la máxima elegancia editorial, perspectiva 3D, 1 caso destacado interactivo
+ * y tiempos de carga instantáneos.
  */
 @Component({
   selector: 'app-home',
@@ -44,94 +36,27 @@ export interface PhilosophyPillar {
     RouterLink,
     LuxuryButtonComponent,
     BeforeAfterSliderComponent,
-    SectionHeaderComponent,
     Tilt3dDirective
   ],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+export class HomeComponent implements AfterViewInit {
   @ViewChild('heroVideo') private heroVideo?: ElementRef<HTMLVideoElement>;
-  private readonly portfolioService = inject(PortfolioService);
-  private readonly platformId = inject(PLATFORM_ID);
 
-  // Slider de tratamientos de firma interactivo ("corredizo" con avance automático)
-  protected readonly activeServiceIndex = signal<number>(0);
-  protected readonly isAutoplayPaused = signal<boolean>(false);
-  private autoplayTimer: ReturnType<typeof setInterval> | null = null;
-  private readonly AUTOPLAY_INTERVAL_MS = 6000;
-
-  // Señal calculada para el procedimiento actualmente visible
-  protected readonly activeService = computed(() => {
-    const list = this.services();
-    return list[this.activeServiceIndex()] ?? list[0];
-  });
-
-  public ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.startAutoplay();
+  // Único caso de transformación destacado para la home
+  protected readonly featuredCase = {
+    title: 'Rejuvenecimiento Dental & Carillas Cerámicas',
+    categoryLabel: 'Carillas de Porcelana',
+    description: 'Restauración anatómica de bordes incisales desgastados. Mediante láminas cerámicas personalizadas, se devolvió la longitud, textura y reflectancia natural para una sonrisa rejuvenecida y armónica.',
+    beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
+    afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
+    details: {
+      treatment: 'Carillas de Cerámica Pura',
+      focus: 'Restauración Anatómica & Mínima Invasión',
+      result: 'Textura y Brillo Natural'
     }
-  }
-
-  public ngOnDestroy(): void {
-    this.stopAutoplay();
-  }
-
-  public setService(index: number): void {
-    this.activeServiceIndex.set(index);
-    this.restartAutoplay();
-  }
-
-  public nextService(): void {
-    const count = this.services().length;
-    if (count > 0) {
-      this.activeServiceIndex.update(curr => (curr + 1) % count);
-    }
-    this.restartAutoplay();
-  }
-
-  public prevService(): void {
-    const count = this.services().length;
-    if (count > 0) {
-      this.activeServiceIndex.update(curr => (curr - 1 + count) % count);
-    }
-    this.restartAutoplay();
-  }
-
-  public pauseAutoplay(): void {
-    this.isAutoplayPaused.set(true);
-    this.stopAutoplay();
-  }
-
-  public resumeAutoplay(): void {
-    this.isAutoplayPaused.set(false);
-    this.startAutoplay();
-  }
-
-  private startAutoplay(): void {
-    this.stopAutoplay();
-    this.autoplayTimer = setInterval(() => {
-      if (!this.isAutoplayPaused()) {
-        const count = this.services().length;
-        if (count > 0) {
-          this.activeServiceIndex.update(curr => (curr + 1) % count);
-        }
-      }
-    }, this.AUTOPLAY_INTERVAL_MS);
-  }
-
-  private stopAutoplay(): void {
-    if (this.autoplayTimer) {
-      clearInterval(this.autoplayTimer);
-      this.autoplayTimer = null;
-    }
-  }
-
-  private restartAutoplay(): void {
-    if (isPlatformBrowser(this.platformId) && !this.isAutoplayPaused()) {
-      this.startAutoplay();
-    }
-  }
+  };
 
   public ngAfterViewInit(): void {
     const video = this.heroVideo?.nativeElement;
@@ -144,7 +69,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         const playPromise = video.play();
         if (playPromise !== undefined) {
           playPromise.catch(() => {
-            // Si la política del navegador bloquea el autoplay tras restaurar pestaña
             const onWakeup = () => {
               video.play().catch(() => {});
               window.removeEventListener('click', onWakeup);
@@ -165,48 +89,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         triggerPlayback();
       }
     }
-  }
-
-  // Signals reactivas obtenidas del servicio central
-  protected readonly services = this.portfolioService.services;
-  protected readonly featuredCases = this.portfolioService.featuredCases;
-  protected readonly allCases = this.portfolioService.cases;
-
-  // Estado del visualizador tridimensional de casos de transformación
-  protected readonly selectedCaseCategory = signal<string>('todos');
-  protected readonly activeCompareView = signal<Record<string, 'after' | 'before'>>({});
-
-  // Categorías disponibles para filtrar la galería tridimensional
-  protected readonly galleryCategories = [
-    { id: 'todos', label: 'Todos los Casos' },
-    { id: 'carillas', label: 'Carillas & Lentes' },
-    { id: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
-    { id: 'rehabilitacion', label: 'Rehabilitación' }
-  ];
-
-  // Casos filtrados para la galería de alta definición
-  protected readonly filteredCases = computed(() => {
-    const cat = this.selectedCaseCategory();
-    const cases = this.allCases();
-    if (cat === 'todos') {
-      return cases.slice(0, 6);
-    }
-    return cases.filter(c => c.category === cat);
-  });
-
-  public setCategory(categoryId: string): void {
-    this.selectedCaseCategory.set(categoryId);
-  }
-
-  public toggleCaseView(caseId: string): void {
-    this.activeCompareView.update(map => {
-      const current = map[caseId] ?? 'after';
-      return { ...map, [caseId]: current === 'after' ? 'before' : 'after' };
-    });
-  }
-
-  public getCaseCurrentView(caseId: string): 'after' | 'before' {
-    return this.activeCompareView()[caseId] ?? 'after';
   }
 
   // Pilares de filosofía estética con fotografías reales de Odontogamma y redacción concisa

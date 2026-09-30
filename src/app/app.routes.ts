@@ -38,7 +38,7 @@ export const routes: Routes = [
               import('./features/who-we-are/pages/chief-doctor/chief-doctor.component').then(
                 m => m.ChiefDoctorComponent
               ),
-            title: 'Dr. Jaime Arcila Cano — Director Clínico | Odontogamma Oriente'
+            title: 'Dr. Jaime Arcila Cano — Especialista en Estética | Odontogamma Oriente'
           },
           {
             path: 'our-team',
@@ -58,11 +58,8 @@ export const routes: Routes = [
           },
           {
             path: 'brand-partners',
-            loadComponent: () =>
-              import('./features/who-we-are/pages/brand-partners/brand-partners.component').then(
-                m => m.BrandPartnersComponent
-              ),
-            title: 'Brand Partners & Medios | Odontogamma Oriente'
+            redirectTo: 'about-us',
+            pathMatch: 'full'
           }
         ]
       },
