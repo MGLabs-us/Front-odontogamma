@@ -54,6 +54,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('heroVideo') private heroVideo?: ElementRef<HTMLVideoElement>;
   private readonly portfolioService = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
+  protected readonly heroVideoUrl = this.portfolioService.getHeroVideoUrl();
+  protected readonly heroPosterUrl = this.portfolioService.getHeroPosterUrl();
 
   // Slider de tratamientos de firma interactivo ("corredizo" con avance automático)
   protected readonly activeServiceIndex = signal<number>(0);

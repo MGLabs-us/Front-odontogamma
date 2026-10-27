@@ -9,10 +9,10 @@ export const environment = {
   location: 'El Carmen de Viboral, Antioquia, Colombia',
   cloudinary: {
     cloudName: 'ffvpll33',
+    mediaCloudName: 'u81t66ol',
     apiKey: '379846884563928',
     uploadPreset: 'odontogamma_preset',
     defaultFolder: 'odontogamma',
     mediaBaseUrl: 'https://res.cloudinary.com/ffvpll33'
   }
 };
-

@@ -1,6 +1,8 @@
+import { environment } from '../../../environments/environment';
+
 /**
  * Manifiesto Centralizado de Activos Multimedia en Cloudinary para Odontogamma Oriente.
- * Cloud Name: ffvpll33
+ * Los medios optimizados del sitio se guardan en la cuenta configurada en el entorno.
  *
  * Estructura de carpetas en Cloudinary:
  * - odontogamma/videos/
@@ -13,12 +15,17 @@
 
 export const CLOUDINARY_FOLDERS = {
   VIDEOS: 'odontogamma/videos',
+  SITE_MEDIA: 'odontogamma/site',
   SERVICES: 'odontogamma/servicios',
   TRANSFORMATIONS: 'odontogamma/transformaciones',
   CLINIC: 'odontogamma/sede-llanogrande',
   TEAM: 'odontogamma/equipo',
   PATIENT_UPLOADS: 'odontogamma/valoraciones-virtuales'
 } as const;
+
+const siteMediaBaseUrl = `https://res.cloudinary.com/${environment.cloudinary.mediaCloudName}`;
+const heroVideoUrl = `${siteMediaBaseUrl}/video/upload/q_auto,ac_none/${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop.webm`;
+const heroPosterUrl = `${siteMediaBaseUrl}/image/upload/f_auto,q_auto/${CLOUDINARY_FOLDERS.SITE_MEDIA}/images/hero-poster.webp`;
 
 /**
  * Catálogo de identificadores públicos de recursos en Cloudinary con sus URLs de respaldo.
@@ -27,12 +34,12 @@ export const CLOUDINARY_FOLDERS = {
 export const CLOUDINARY_ASSETS_MANIFEST = {
   // Video Principal del Hero & Póster
   hero: {
-    videoPublicId: 'VIdeo_1',
-    posterPublicId: 'VIdeo_1',
-    videoUrl: 'https://res.cloudinary.com/ffvpll33/video/upload/v1789691342/VIdeo_1.mp4',
-    posterUrl: 'https://res.cloudinary.com/ffvpll33/video/upload/so_0,w_1280,q_auto,f_jpg/v1789691342/VIdeo_1.jpg',
-    fallbackVideoUrl: '/videos/hero-loop.mp4',
-    fallbackPosterUrl: '/videos/hero-poster.jpg'
+    videoPublicId: `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop`,
+    posterPublicId: `${CLOUDINARY_FOLDERS.SITE_MEDIA}/images/hero-poster`,
+    videoUrl: heroVideoUrl,
+    posterUrl: heroPosterUrl,
+    fallbackVideoUrl: heroVideoUrl,
+    fallbackPosterUrl: heroPosterUrl
   },
 
   // Sede El Carmen de Viboral & Espacios de Confort
@@ -84,4 +91,3 @@ export const CLOUDINARY_ASSETS_MANIFEST = {
     }
   }
 } as const;
-

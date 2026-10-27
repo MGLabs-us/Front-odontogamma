@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 
 interface PatientStory {
   id: string;
@@ -36,6 +37,8 @@ interface VideoTestimonial {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent {
+  protected readonly videoTestimonialUrl = CLOUDINARY_ASSETS_MANIFEST.hero.fallbackVideoUrl;
+
   // Modal de video simulado interactivo
   protected readonly activeVideo = signal<VideoTestimonial | null>(null);
 
@@ -123,4 +126,3 @@ export class TestimonialsComponent {
     this.activeVideo.set(null);
   }
 }
-
