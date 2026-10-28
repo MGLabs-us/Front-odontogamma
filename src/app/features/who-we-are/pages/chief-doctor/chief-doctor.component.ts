@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 
 interface Credential {
   institution: string;
@@ -22,11 +24,13 @@ interface DoctorSignaturePrinciple {
 @Component({
   selector: 'app-chief-doctor',
   standalone: true,
-  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent],
+  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
   templateUrl: './chief-doctor.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChiefDoctorComponent {
+  protected readonly secondaryImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.team.doctorAtWork;
+
   // Principios de firma del Dr. Jaime Arcila
   protected readonly signaturePrinciples: DoctorSignaturePrinciple[] = [
     {
@@ -70,4 +74,3 @@ export class ChiefDoctorComponent {
     }
   ];
 }
-

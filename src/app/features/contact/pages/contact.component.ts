@@ -2,6 +2,7 @@ import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
 
 /**
  * Vista de Contacto y Agendamiento de Valoración Privada.
@@ -16,6 +17,8 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultTall;
+
   protected readonly formSubmitted = signal<boolean>(false);
 
   protected formData = {

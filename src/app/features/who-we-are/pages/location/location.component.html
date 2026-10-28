@@ -5,7 +5,7 @@
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
     <img
-      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85"
+      [src]="heroImageUrl"
       alt="Sede Odontogamma Oriente en El Carmen de Viboral"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
@@ -45,7 +45,7 @@
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-medium text-white border border-white/30 rounded-xs hover:border-white hover:text-white transition-all duration-300 backdrop-blur-sm"
       >
-        Ver en Google Maps ↗
+        Ver en Google Maps <app-arrow-mark direction="external" />
       </a>
     </div>
   </div>
@@ -144,6 +144,25 @@
 </section>
 
 <!-- ================================================================= -->
+<!-- VIDEOS VERTICALES (REELS) DE LA BIBLIOTECA DE CLOUDINARY          -->
+<!-- ================================================================= -->
+<section class="py-24 px-6 md:px-12 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="La sede en movimiento"
+        title="Conoce Odontogamma Oriente por dentro"
+        subtitle="Un vistazo en video a la recepción, los consultorios y la atención diaria en El Carmen de Viboral."
+        align="center"
+      />
+    </div>
+    <div class="mt-12">
+      <app-video-reel [videos]="clinicReels" />
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
 <!-- 4. CÓMO LLEGAR: RUTAS Y TIEMPOS DE TRASLADO                       -->
 <!-- ================================================================= -->
 <section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
@@ -207,4 +226,3 @@
     </div>
   </div>
 </section>
-

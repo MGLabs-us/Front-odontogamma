@@ -5,7 +5,7 @@
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
     <img
-      src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2200&q=85"
+      [src]="heroImageUrl"
       alt="Galería de Casos Clínicos Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
@@ -36,6 +36,7 @@
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="md"
+        [arrow]="true"
       >
         Subir Mis Fotos para Valoración Gratuita
       </app-luxury-button>
@@ -211,11 +212,6 @@
     
     <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
     <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
-      <img
-        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
-        alt="Marca de agua ortodoncia y alineación"
-        class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
-      />
       <!-- Velo difuminador hacia la izquierda -->
       <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
     </div>
@@ -225,12 +221,7 @@
 
     <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
-        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
-          Diagnóstico Virtual & Ortodoncia Digital
-        </span>
-      </div>
+      <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
         Tu Sonrisa es tu Mayor Carta de Presentación
       </h3>
@@ -245,9 +236,10 @@
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="md"
+        [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Subir Fotos para Valoración →
+        Subir Fotos para Valoración
       </app-luxury-button>
       <app-luxury-button
         routerLink="/contacto"
@@ -260,4 +252,3 @@
     </div>
   </div>
 </section>
-

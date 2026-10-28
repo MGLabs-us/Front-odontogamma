@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
+import { VideoReelComponent } from '../../../../shared/components/video-reel/video-reel.component';
 
 interface FacilitySpace {
   title: string;
@@ -24,36 +27,40 @@ interface TravelRoute {
 @Component({
   selector: 'app-location',
   standalone: true,
-  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent],
+  imports: [VideoReelComponent, CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, ArrowMarkComponent],
   templateUrl: './location.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LocationComponent {
+  protected readonly clinicReels = CLOUDINARY_ASSETS_MANIFEST.videos.clinic;
+
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.reception;
+
   // Espacios de la clínica
   protected readonly spaces: FacilitySpace[] = [
     {
       title: 'Lounge Privado de Recepción',
       category: 'Hospitalidad & Calma',
       description: 'Un vestíbulo sereno diseñado para disipar cualquier estrés dental. Barra de café de especialidad del Oriente, agua infusionada y atmósfera musical acústica.',
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85'
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.loungeSofa
     },
     {
       title: 'Suites Clínicas Panorámicas',
       category: 'Tecnología & Confort',
       description: 'Consultorios con ventanales a la naturaleza, sillones ergonómicos con memoria de forma y pantallas multimedia para visualizar tu diseño 3D en tiempo real.',
-      imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85'
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultSuite
     },
     {
       title: 'Laboratorio Digital In-Situ',
       category: 'Artesanía & Precisión',
       description: 'Área dedicada a la colorimetría con luz natural y ajustes finos de cerámica en el mismo momento de la cita, reduciendo tiempos de espera.',
-      imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85'
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.printedModel
     },
     {
       title: 'Suite de Recuperación Post-Tratamiento',
       category: 'Privacidad Absoluta',
       description: 'Espacio privado para descansar tras sesiones de transformación de sonrisa, con salida directa discreta al área de estacionamiento VIP.',
-      imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85'
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultGlass
     }
   ];
 
@@ -79,4 +86,3 @@ export class LocationComponent {
     }
   ];
 }
-

@@ -4,6 +4,8 @@ import { CaseStudy } from '../models/case-study.model';
 import { CloudinaryService } from './cloudinary.service';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../constants/cloudinary-assets.manifest';
 
+const IMG = CLOUDINARY_ASSETS_MANIFEST.images;
+
 /**
  * Servicio centralizado para gestionar el catálogo de servicios clínicos,
  * testimonios y casos de transformación de Odontogamma Oriente,
@@ -30,11 +32,11 @@ export class PortfolioService {
         'Nuestro protocolo mínimamente invasivo preserva la mayor cantidad de estructura dental sana, logrando una adhesión micrométrica al esmalte que garantiza una longevidad superior a los 15 años sin manchas ni pérdida de brillo.',
         'Cada tratamiento comienza con un estudio biométrico digital y una prueba estética física (mock-up) para que puedas apreciar y aprobar tu nueva sonrisa antes de realizar cualquier procedimiento definitivo.'
       ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=2000&q=85',
+      heroImageUrl: IMG.smiles.veneers,
       galleryImages: [
-        'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=80'
+        IMG.smiles.natural,
+        IMG.lab.modelsGreen,
+        IMG.smiles.side
       ],
       highlights: [
         'Espesor ultrafino (0.2 a 0.4 mm) sin desgaste agresivo',
@@ -49,8 +51,8 @@ export class PortfolioService {
         'Pacientes que buscan una sonrisa radiante con acabado 100% natural'
       ],
       beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
+        beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155004/foto3_antes.png',
+        afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155003/foto3_despues.png',
         caseTitle: 'Rejuvenecimiento Dental con Carillas Feldespáticas',
         description: 'Paciente con desgaste en bordes incisales y pérdida de longitud dental. Se diseñaron láminas cerámicas con textura microlineal y translucidez incisal personalizada.',
         technique: 'Carillas Cerámicas Feldespáticas',
@@ -72,11 +74,11 @@ export class PortfolioService {
         'Analizamos las proporciones áureas de tu rostro mediante fotografía macroscópica de estudio y modelado 3D para diseñar una sonrisa que te reste años y potencie tu seguridad.',
         'Combinamos recontorneo gingival con láser de diodo, microestética del esmalte y diseño digital para esculpir un resultado perfectamente equilibrado.'
       ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2000&q=85',
+      heroImageUrl: IMG.smiles.macro,
       galleryImages: [
-        'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=80'
+        IMG.patients.furCoat,
+        IMG.patients.closeUp,
+        IMG.patients.blackBackdrop
       ],
       highlights: [
         'Análisis biométrico facial tridimensional',
@@ -91,8 +93,8 @@ export class PortfolioService {
         'Personas que buscan un rejuvenecimiento dental integral'
       ],
       beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762894/foto7_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762895/foto7_despues.png',
+        beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto7_antes.png',
+        afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto7_despues.png',
         caseTitle: 'Armonización de Sonrisa y Arco Bimaxilar',
         description: 'Corrección de desgaste y aplanamiento de bordes con carillas cerámicas para devolver luminosidad, amplitud y equilibrio al rostro.',
         technique: 'Diseño de Sonrisa Cerámico',
@@ -114,11 +116,11 @@ export class PortfolioService {
         'Integramos escaneo intraoral 3D sin pastas invasivas, simulación virtual computarizada y fabricación robotizada combinada con terminado manual de artista.',
         'Nos aseguramos de que no solo obtengas una estética sublime, sino también una mordida funcional, estable y completamente cómoda.'
       ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2000&q=85',
+      heroImageUrl: IMG.clinic.consultPanoramic,
       galleryImages: [
-        'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80'
+        IMG.lab.instruments,
+        IMG.patients.treatmentCollage,
+        IMG.lab.dentures
       ],
       highlights: [
         'Fase 1: Consulta diagnóstica, fotos de estudio y escaneo 3D',
@@ -132,8 +134,8 @@ export class PortfolioService {
         'Casos complejos con restauraciones previas desadaptadas o desgastadas'
       ],
       beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762884/foto6_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762885/foto6_despues.png',
+        beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155003/foto6_antes.png',
+        afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto6_despues.png',
         caseTitle: 'Microestética & Nivelación de Bordes Incisales',
         description: 'Carillas de porcelana ultradelgadas con estratificación de esmalte para máxima translucidez y feminidad de la sonrisa.',
         technique: 'Láminas Cerámicas de Precisión',
@@ -155,11 +157,11 @@ export class PortfolioService {
         'Logramos devolver la luminosidad juvenil y blancura armónica sin erosionar el esmalte ni alterar la vitalidad pulpar.',
         'Incluimos férulas termoformadas a medida y geles de mantenimiento para prolongar la pureza de tu sonrisa por años.'
       ],
-      heroImageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=2000&q=85',
+      heroImageUrl: IMG.campaigns.whitening,
       galleryImages: [
-        'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-        'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1000&q=80'
+        IMG.campaigns.whiteningLaser,
+        IMG.smiles.profile,
+        IMG.patients.blackBackdropCollage
       ],
       highlights: [
         'Tecnología de luz fría con agentes bio-protectores',
@@ -173,8 +175,8 @@ export class PortfolioService {
         'Pacientes con eventos especiales que buscan resultados inmediatos'
       ],
       beforeAfter: {
-        beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762828/foto1_antes.png',
-        afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762829/foto1_despues.png',
+        beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/foto1_antes.png',
+        afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/foto1_despues.png',
         caseTitle: 'Alineación Óptica & Laminados Cerámicos',
         description: 'Corrección de apiñamiento leve anterior y elevación de luminosidad mediante carillas cerámicas de preparación mínima.',
         technique: 'Láminas Cerámicas de Contacto',
@@ -196,8 +198,8 @@ export class PortfolioService {
       category: 'carillas',
       categoryLabel: 'Carillas de Porcelana',
       description: 'Restauración anatómica de bordes incisales desgastados. Mediante láminas cerámicas personalizadas, se devolvió la longitud, textura y reflectancia natural para una sonrisa rejuvenecida y armónica.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762856/foto3_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762857/foto3_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155004/foto3_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155003/foto3_despues.png',
       details: {
         treatment: 'Carillas de Cerámica Pura',
         focus: 'Restauración Anatómica & Volumen',
@@ -211,8 +213,8 @@ export class PortfolioService {
       category: 'diseno-sonrisa',
       categoryLabel: 'Diseño de Sonrisa',
       description: 'Transformación armónica del arco dental devolviendo amplitud a la línea de la sonrisa. El diseño biométrico equilibra las proporciones del rostro con máxima naturalidad.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762894/foto7_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762895/foto7_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto7_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto7_despues.png',
       details: {
         treatment: 'Diseño de Sonrisa Cerámico',
         focus: 'Armonización Facial & Simetría',
@@ -226,8 +228,8 @@ export class PortfolioService {
       category: 'carillas',
       categoryLabel: 'Carillas Cerámicas',
       description: 'Corrección de microfracturas, asimetría de bordes incisales y tono irregular. Se colocaron láminas ultrafinas que devuelven la continuidad y suavidad a la línea de la sonrisa.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762884/foto6_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762885/foto6_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155003/foto6_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto6_despues.png',
       details: {
         treatment: 'Láminas Cerámicas Ultrafinas',
         focus: 'Nivelación Incisal & Simetría',
@@ -241,8 +243,8 @@ export class PortfolioService {
       category: 'diseno-sonrisa',
       categoryLabel: 'Diseño de Sonrisa',
       description: 'Solución estética para leves apiñamientos y discrepancias de ejes axiales sin recurrir a desgastes invasivos, optimizando la reflexión de la luz para una sonrisa uniforme.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762828/foto1_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762829/foto1_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/foto1_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/foto1_despues.png',
       details: {
         treatment: 'Láminas Cerámicas de Contacto',
         focus: 'Alineación Óptica & Ejes',
@@ -256,8 +258,8 @@ export class PortfolioService {
       category: 'carillas',
       categoryLabel: 'Lentes Cerámicos',
       description: 'Cierre armonioso del espacio interincisal optimizando las proporciones dentales. Se emplearon lentes cerámicos de contacto que preservan la estructura dental intacta.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762873/foto5_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762874/foto5_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155003/foto5_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155004/foto5_despues.png',
       details: {
         treatment: 'Lentes Cerámicos Sin Desgaste',
         focus: 'Cierre de Espacio Interdental',
@@ -271,8 +273,8 @@ export class PortfolioService {
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación & Implantes',
       description: 'Reemplazo de pieza anterior ausente mediante implante dental y corona cerámica personalizada, logrando una integración de encía natural e imperceptible frente a los dientes contiguos.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762902/foto8_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762907/foto8_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155002/foto8_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155001/foto8_despues.png',
       details: {
         treatment: 'Implante & Corona Cerámica Pura',
         focus: 'Perfil de Emergencia y Simetría',
@@ -286,8 +288,8 @@ export class PortfolioService {
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación Oral',
       description: 'Sustitución de restauraciones antiguas desajustadas por estructuras cerámicas biomiméticas de alta resistencia, devolviendo función masticatoria, soporte labial y estética.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762839/foto2_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762845/foto2_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155004/foto2_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155004/foto2_despues.png',
       details: {
         treatment: 'Cerámica Biomimética Sin Metal',
         focus: 'Sellado Marginal & Biocompatibilidad',
@@ -301,8 +303,8 @@ export class PortfolioService {
       category: 'rehabilitacion',
       categoryLabel: 'Rehabilitación Oral',
       description: 'Recuperación anatómica y estructural de diente anterior fracturado mediante restauración cerámica pura, eliminando sombras antiestéticas y devolviendo la anatomía original.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762916/foto9_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762917/foto9_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155001/foto9_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155001/foto9_despues.png',
       details: {
         treatment: 'Corona Cerámica Monolítica',
         focus: 'Recuperación Estructural & Función',
@@ -316,8 +318,8 @@ export class PortfolioService {
       category: 'ortodoncia',
       categoryLabel: 'Ortodoncia & Alineación',
       description: 'Corrección de maloclusión y apiñamiento severo devolviendo la amplitud del arco superior, simetría funcional y una estética luminosa y radiante.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762819/cropped_teeth_after.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/cropped_teeth.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/cropped_teeth_after.png',
       details: {
         treatment: 'Alineación y Expansión de Arco',
         focus: 'Corrección de Apiñamiento',
@@ -331,8 +333,8 @@ export class PortfolioService {
       category: 'carillas',
       categoryLabel: 'Carillas & Biomimética',
       description: 'Acondicionamiento y adhesión cerámica de alta precisión. La estratificación de capas reproduce fielmente la opalescencia y vitalidad de la dentición natural.',
-      beforeImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762918/foto10_antes.png',
-      afterImageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789762920/foto10_despues.png',
+      beforeImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155001/foto10_antes.png',
+      afterImageUrl: 'https://res.cloudinary.com/u81t66ol/image/upload/v1793155000/foto10_despues.png',
       details: {
         treatment: 'Estratificación Cerámica',
         focus: 'Microtextura & Mimetismo',
@@ -366,25 +368,6 @@ export class PortfolioService {
       return this.casesData();
     }
     return this.casesData().filter(c => c.category === category);
-  }
-
-  /**
-   * Obtiene la URL del video cinemático del Hero optimizado para streaming en Cloudinary.
-   */
-  getHeroVideoUrl(): string {
-    return this.cloudinaryService.buildOptimizedVideoUrl(
-      CLOUDINARY_ASSETS_MANIFEST.hero.fallbackVideoUrl
-    );
-  }
-
-  /**
-   * Obtiene la URL del póster de respaldo del Hero optimizado en Cloudinary.
-   */
-  getHeroPosterUrl(): string {
-    return this.cloudinaryService.buildOptimizedImageUrl(
-      CLOUDINARY_ASSETS_MANIFEST.hero.fallbackPosterUrl,
-      { width: 1920, quality: 'auto', format: 'auto' }
-    );
   }
 
   /**

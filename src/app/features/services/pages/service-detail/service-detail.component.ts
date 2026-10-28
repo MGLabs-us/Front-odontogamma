@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../../../core/services/portfolio.service';
 import { BeforeAfterSliderComponent } from '../../../../shared/components/before-after-slider/before-after-slider.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
+import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
 
 /**
  * Vista detallada de un tratamiento individual en Odontogamma Oriente.
@@ -14,7 +16,7 @@ import { LuxuryButtonComponent } from '../../../../shared/components/luxury-butt
 @Component({
   selector: 'app-service-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, BeforeAfterSliderComponent, LuxuryButtonComponent],
+  imports: [CommonModule, RouterLink, BeforeAfterSliderComponent, LuxuryButtonComponent, ArrowMarkComponent, EditorialLabelComponent],
   templateUrl: './service-detail.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -29,4 +31,3 @@ export class ServiceDetailComponent {
     return this.portfolioService.getServiceBySlug(this.slug());
   });
 }
-

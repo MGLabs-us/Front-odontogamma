@@ -5,7 +5,7 @@
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
     <img
-      src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2200&q=85"
+      [src]="heroImageUrl"
       alt="Valoración Estética Digital Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
@@ -36,16 +36,16 @@
         href="#formulario-valoracion"
         class="inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white bg-og-electric hover:bg-slate-900 transition-all duration-300 rounded-xs shadow-glow hover:shadow-elevated"
       >
-        Llenar Formulario y Subir Fotos ↓
+        Llenar Formulario y Subir Fotos <app-arrow-mark direction="down" />
       </a>
       <a
-        href="https://wa.me/573000000000?text=Hola,%20quisiera%20asesoría%20para%20mi%20valoración%20virtual%20en%20Odontogamma%20Oriente."
+        href="https://wa.me/573217209420?text=Hola,%20quisiera%20asesoría%20para%20mi%20valoración%20virtual%20en%20Odontogamma%20Oriente."
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium text-white border border-white/30 rounded-xs hover:border-white hover:text-white transition-all duration-300 backdrop-blur-sm"
       >
         <span>Hablar con Concierge</span>
-        <span class="text-sm">↗</span>
+        <app-arrow-mark direction="external" />
       </a>
     </div>
   </div>
@@ -381,7 +381,8 @@
             @if (isSubmitting()) {
               <span>Enviando fotografías...</span>
             } @else {
-              <span>Enviar para Valoración Gratuita →</span>
+              <span>Enviar para Valoración Gratuita</span>
+              <app-arrow-mark />
             }
           </button>
         </div>
@@ -412,8 +413,7 @@
       routerLink="/nuestro-trabajo/antes-y-despues"
       class="text-xs uppercase tracking-[0.2em] font-medium text-og-electric hover:underline"
     >
-      Ver Galería de Casos Clínicos Terminados →
+      Ver Galería de Casos Clínicos Terminados <app-arrow-mark />
     </a>
   </div>
 </section>
-

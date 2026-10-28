@@ -157,7 +157,7 @@ export class BrandLogoComponent {
   getContainerClasses(): string {
     switch (this.variant) {
       case 'navbar':
-        return 'w-36 sm:w-44 md:w-50 py-0.5';
+        return 'w-32 sm:w-36 lg:w-40';
       case 'footer':
         return 'w-52 sm:w-60 md:w-64 py-1';
       case 'hero':
@@ -171,7 +171,7 @@ export class BrandLogoComponent {
   getSvgClasses(): string {
     switch (this.variant) {
       case 'navbar':
-        return 'max-h-7 sm:max-h-8 md:max-h-9 mb-1';
+        return 'max-h-5 sm:max-h-6 mb-0.5';
       case 'footer':
         return 'max-h-9 sm:max-h-11 md:max-h-12 mb-1.5';
       case 'hero':
@@ -185,7 +185,7 @@ export class BrandLogoComponent {
   getTitleClasses(): string {
     switch (this.variant) {
       case 'navbar':
-        return 'text-xs sm:text-sm md:text-base';
+        return 'text-[11px] sm:text-xs lg:text-[13px]';
       case 'footer':
         return 'text-base sm:text-lg md:text-xl';
       case 'hero':
@@ -199,7 +199,7 @@ export class BrandLogoComponent {
   getSubtitleClasses(): string {
     switch (this.variant) {
       case 'navbar':
-        return 'text-[8px] sm:text-[9px] md:text-[10px]';
+        return 'text-[7px] sm:text-[8px]';
       case 'footer':
         return 'text-[9px] sm:text-[10px] md:text-xs';
       case 'hero':

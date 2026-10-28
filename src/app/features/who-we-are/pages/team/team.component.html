@@ -5,7 +5,7 @@
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
     <img
-      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2200&q=85"
+      [src]="heroImageUrl"
       alt="Equipo Clínico Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
@@ -84,10 +84,9 @@
 
           <!-- Insignia Flotante Superior en Cristal -->
           <div class="absolute top-4 left-4 z-10">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-white shadow-md">
-              <span class="w-2 h-2 rounded-full bg-og-cyan animate-pulse"></span>
+            <app-editorial-label tone="dark" class="absolute top-4 left-4 z-10">
               {{ member.specialty }}
-            </span>
+            </app-editorial-label>
           </div>
 
           <!-- Identificación al Pie de la Fotografía -->
@@ -109,10 +108,7 @@
 
           <div class="flex flex-wrap gap-2.5 pt-4 border-t border-slate-100">
             @for (cred of member.credentials; track cred) {
-              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-700">
-                <span class="w-1.5 h-1.5 rounded-full bg-og-electric"></span>
-                {{ cred }}
-              </span>
+              <app-editorial-label tone="muted">{{ cred }}</app-editorial-label>
             }
           </div>
         </div>

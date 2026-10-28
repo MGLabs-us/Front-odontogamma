@@ -1,25 +1,37 @@
 @if (chat.isOpen()) {
-  <div class="chat-panel">
-    <header>
-      <span>Asistente</span>
-      <button (click)="chat.toggle()">✕</button>
+  <section class="chat-panel" role="dialog" aria-labelledby="chat-title">
+    <header class="chat-header">
+      <span id="chat-title">Asistente</span>
+      <button class="chat-close" type="button" aria-label="Cerrar asistente" (click)="chat.toggle()">✕</button>
     </header>
 
-    <div class="messages">
+    <div class="chat-messages" role="log" aria-live="polite">
       @for (m of chat.messages(); track $index) {
-        <div class="msg" [class.user]="m.from === 'user'">{{ m.text }}</div>
+        <div class="chat-message" [class.chat-message--user]="m.from === 'user'">{{ m.text }}</div>
       }
     </div>
 
-    <form (ngSubmit)="send()">
+    <form class="chat-form" (ngSubmit)="send()">
       <input
+        class="chat-input"
         [ngModel]="draft()"
         (ngModelChange)="draft.set($event)"
         name="draft"
         placeholder="Escribe un mensaje..." />
-      <button type="submit">Enviar</button>
+      <button class="chat-submit" type="submit">Enviar</button>
     </form>
-  </div>
+  </section>
 }
 
-<button class="chat-fab" (click)="chat.toggle()">💬</button>
+<button
+  class="chat-fab"
+  type="button"
+  [attr.aria-expanded]="chat.isOpen()"
+  [attr.aria-label]="chat.isOpen() ? 'Cerrar asistente' : 'Abrir asistente'"
+  (click)="chat.toggle()"
+>
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none">
+    <path d="M5 18.5 3.75 21l3.7-1.08A9 9 0 1 0 5 18.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+  </svg>
+</button>

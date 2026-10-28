@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 
 interface ValuePillar {
   number: string;
@@ -24,11 +26,14 @@ interface Milestone {
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent],
+  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
   templateUrl: './about-us.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutUsComponent {
+  protected readonly secondaryImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.lab.gloves;
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.team.directorAndAssistant;
+
   // Pilares de la filosofía Odontogamma
   protected readonly pillars: ValuePillar[] = [
     {
@@ -73,4 +78,3 @@ export class AboutUsComponent {
     }
   ];
 }
-

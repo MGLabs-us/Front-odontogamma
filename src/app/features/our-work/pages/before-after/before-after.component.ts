@@ -5,6 +5,8 @@ import { PortfolioService } from '../../../../core/services/portfolio.service';
 import { BeforeAfterSliderComponent } from '../../../../shared/components/before-after-slider/before-after-slider.component';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
+import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 
 interface FilterCategory {
   key: string;
@@ -23,12 +25,15 @@ interface FilterCategory {
     RouterLink,
     BeforeAfterSliderComponent,
     SectionHeaderComponent,
-    LuxuryButtonComponent
+    LuxuryButtonComponent,
+    EditorialLabelComponent
   ],
   templateUrl: './before-after.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BeforeAfterComponent {
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.smiles.dark;
+
   private readonly portfolioService = inject(PortfolioService);
 
   // Lista de casos clínicos provista por el servicio centralizado
@@ -61,4 +66,3 @@ export class BeforeAfterComponent {
     this.selectedCategory.set(categoryKey);
   }
 }
-

@@ -19,12 +19,7 @@
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16 reveal-init reveal-fade-up">
       
       <!-- Insignia del Procedimiento -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xs bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-og-cyan"></span>
-        <span class="text-[10px] md:text-xs tracking-[0.3em] uppercase text-white font-medium">
-          {{ item.subtitle }}
-        </span>
-      </div>
+      <app-editorial-label tone="dark" class="mb-6">{{ item.subtitle }}</app-editorial-label>
 
       <!-- Título de Impacto -->
       <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
@@ -150,13 +145,13 @@
             Resuelve dudas sobre tiempos, costos y agenda tu cita directamente con nuestro equipo.
           </p>
           <a
-            [href]="'https://wa.me/573000000000?text=Hola,%20deseo%20más%20información%20sobre%20el%20tratamiento%20de%20' + item.title + '%20en%20Odontogamma%20Oriente.'"
+            [href]="'https://wa.me/573217209420?text=Hola,%20deseo%20más%20información%20sobre%20el%20tratamiento%20de%20' + item.title + '%20en%20Odontogamma%20Oriente.'"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-og-electric hover:text-og-headline transition-colors"
           >
             <span>Chatear por WhatsApp</span>
-            <span>→</span>
+            <app-arrow-mark />
           </a>
         </div>
 
@@ -308,4 +303,3 @@
     </div>
   </section>
 }
-

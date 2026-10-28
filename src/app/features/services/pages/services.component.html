@@ -2,7 +2,7 @@
 <section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
     <img
-      src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=2200&q=85"
+      [src]="heroImageUrl"
       alt="Tratamientos de Firma Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105"
     />
@@ -169,17 +169,31 @@
   </div>
 </section>
 
+<!-- ================================================================= -->
+<!-- VIDEOS VERTICALES (REELS) DE LA BIBLIOTECA DE CLOUDINARY          -->
+<!-- ================================================================= -->
+<section class="py-24 px-6 md:px-12 bg-slate-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal-init reveal-fade-up">
+      <app-section-header
+        kicker="El proceso explicado"
+        title="Conoce tu tratamiento con el Dr. Jaime Arcila"
+        subtitle="Videos cortos para resolver tus dudas sobre carillas de porcelana y transformación de sonrisa."
+        align="center"
+      />
+    </div>
+    <div class="mt-12">
+      <app-video-reel [videos]="doctorReels" />
+    </div>
+  </div>
+</section>
+
 <!-- Banner con Marca de Agua de Ortodoncia & Diagnóstico Virtual -->
 <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
     
     <!-- Marca de Agua de Ortodoncia en Segundo Plano -->
     <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
-      <img
-        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
-        alt="Marca de agua ortodoncia y estética dental"
-        class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
-      />
       <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
     </div>
 
@@ -188,12 +202,7 @@
 
     <!-- Contenido Textual -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
-        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
-          Diagnóstico Virtual & Ortodoncia Digital
-        </span>
-      </div>
+      <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
         Tu Sonrisa es tu Mayor Carta de Presentación
       </h3>
@@ -208,11 +217,11 @@
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="md"
+        [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Subir Fotos para Valoración →
+        Subir Fotos para Valoración
       </app-luxury-button>
     </div>
   </div>
 </section>
-

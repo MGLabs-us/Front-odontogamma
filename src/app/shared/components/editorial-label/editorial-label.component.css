@@ -1,0 +1,31 @@
+:host {
+  display: inline-flex;
+  min-height: 1.5rem;
+  align-items: center;
+  gap: 0.6rem;
+  border: 0;
+  padding: 0.15rem 0;
+  color: var(--og-blue-deep);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.og-editorial-label__rule {
+  width: 1.1rem;
+  height: 1px;
+  flex: 0 0 auto;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+:host(.og-editorial-label--dark) {
+  color: #fffefa;
+}
+
+:host(.og-editorial-label--muted) {
+  color: var(--og-muted);
+}

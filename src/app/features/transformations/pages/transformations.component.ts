@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../../../core/services/portfolio.service';
 import { BeforeAfterSliderComponent } from '../../../shared/components/before-after-slider/before-after-slider.component';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
 
 /**
  * Galería interactiva de Antes y Después con filtros por categoría
@@ -16,6 +17,8 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransformationsComponent {
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.smiles.withLogo;
+
   private readonly portfolioService = inject(PortfolioService);
 
   protected readonly categories = [

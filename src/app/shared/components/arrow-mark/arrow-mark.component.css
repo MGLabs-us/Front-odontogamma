@@ -1,0 +1,36 @@
+:host {
+  display: inline-flex;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transition: transform 180ms ease;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+:host-context(a:hover),
+:host-context(button:hover),
+:host-context(app-luxury-button:hover) {
+  transform: translateX(2px);
+}
+
+:host([direction='down']:hover) {
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    transition: none;
+  }
+}

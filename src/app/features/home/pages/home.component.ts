@@ -2,11 +2,8 @@ import {
   Component,
   inject,
   ChangeDetectionStrategy,
-  AfterViewInit,
   OnInit,
   OnDestroy,
-  ViewChild,
-  ElementRef,
   signal,
   computed,
   PLATFORM_ID
@@ -18,6 +15,10 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
 import { BeforeAfterSliderComponent } from '../../../shared/components/before-after-slider/before-after-slider.component';
 import { SectionHeaderComponent } from '../../../shared/components/section-header/section-header.component';
 import { Tilt3dDirective } from '../../../shared/directives/tilt-3d.directive';
+import { EditorialLabelComponent } from '../../../shared/components/editorial-label/editorial-label.component';
+import { ArrowMarkComponent } from '../../../shared/components/arrow-mark/arrow-mark.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
+import { VideoReelComponent } from '../../../shared/components/video-reel/video-reel.component';
 
 export interface PhilosophyPillar {
   number: string;
@@ -33,7 +34,7 @@ export interface PhilosophyPillar {
 
 /**
  * Página Principal (Landing Page) inspirada en la estética editorial de Apa Aesthetic.
- * Presenta el Hero cinemático con perspectiva 3D, pilares interactivos con profundidad espacial,
+ * Presenta el Hero editorial con perspectiva 3D, pilares interactivos con profundidad espacial,
  * casos interactivos antes/después y galería tridimensional de micro-detalle.
  */
 @Component({
@@ -45,17 +46,21 @@ export interface PhilosophyPillar {
     LuxuryButtonComponent,
     BeforeAfterSliderComponent,
     SectionHeaderComponent,
-    Tilt3dDirective
+    Tilt3dDirective,
+    EditorialLabelComponent,
+    ArrowMarkComponent,
+    VideoReelComponent
   ],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('heroVideo') private heroVideo?: ElementRef<HTMLVideoElement>;
+export class HomeComponent implements OnInit, OnDestroy {
+  protected readonly storyReels = CLOUDINARY_ASSETS_MANIFEST.videos.testimonials;
+
   private readonly portfolioService = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
-  protected readonly heroVideoUrl = this.portfolioService.getHeroVideoUrl();
-  protected readonly heroPosterUrl = this.portfolioService.getHeroPosterUrl();
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweater;
+  protected readonly heroBackgroundImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.lobby;
 
   // Slider de tratamientos de firma interactivo ("corredizo" con avance automático)
   protected readonly activeServiceIndex = signal<number>(0);
@@ -135,40 +140,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  public ngAfterViewInit(): void {
-    const video = this.heroVideo?.nativeElement;
-    if (video) {
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-
-      const triggerPlayback = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Si la política del navegador bloquea el autoplay tras restaurar pestaña
-            const onWakeup = () => {
-              video.play().catch(() => {});
-              window.removeEventListener('click', onWakeup);
-              window.removeEventListener('touchstart', onWakeup);
-              window.removeEventListener('scroll', onWakeup);
-            };
-            window.addEventListener('click', onWakeup, { once: true, passive: true });
-            window.addEventListener('touchstart', onWakeup, { once: true, passive: true });
-            window.addEventListener('scroll', onWakeup, { once: true, passive: true });
-          });
-        }
-      };
-
-      if (video.readyState >= 2) {
-        triggerPlayback();
-      } else {
-        video.addEventListener('loadeddata', triggerPlayback, { once: true });
-        triggerPlayback();
-      }
-    }
-  }
-
   // Signals reactivas obtenidas del servicio central
   protected readonly services = this.portfolioService.services;
   protected readonly featuredCases = this.portfolioService.featuredCases;
@@ -220,7 +191,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       title: 'Biomimética y Alta Precisión',
       subtitle: 'Tus Dientes Intactos: Belleza Sin Dolor',
       description: 'Láminas cerámicas ultrafinas (0.2 a 0.3 mm) modeladas con magnificación microscópica que preservan tu esmalte biológico vivo sin desgastes invasivos.',
-      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1790029060/648985706_17911045683163425_7279892063267287894_n.jpg',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.modelsBlue,
       link: '/servicios/carillas-porcelana',
       linkText: 'Conocer Carillas de Porcelana'
     },
@@ -231,7 +202,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       title: 'Confort Clínico Cero Dolor',
       subtitle: 'Olvídate del Miedo al Odontólogo',
       description: 'Suites privadas insonorizadas en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
-      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757935/483860361_18025060961656101_7267703078192937477_n.jpg',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.receptionFront,
       link: '/who-we-are/our-location',
       linkText: 'Explorar Nuestra Sede'
     },
@@ -242,7 +213,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       title: 'Sonrisas de Firma y Confianza',
       subtitle: 'Resultados que Transforman Vidas',
       description: 'Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.',
-      imageUrl: 'https://res.cloudinary.com/ffvpll33/image/upload/v1789757984/485992449_646326938135326_7644290108229838413_n.jpg',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.smilingStudio,
       link: '/nuestro-trabajo/antes-y-despues',
       linkText: 'Ver Casos Clínicos'
     }

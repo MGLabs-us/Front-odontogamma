@@ -5,8 +5,8 @@
   <!-- Fotografía Real de la Clínica en Máxima Fidelidad (Sin textos invasivos encima) -->
   <div class="absolute inset-0 z-0">
     <img
-      src="https://res.cloudinary.com/ffvpll33/image/upload/v1789757905/467016403_18011053835656101_6993562505798444797_n.jpg"
-      alt="Odontogamma Oriente - Espacio Clínico de Alta Gama"
+      [src]="heroImageUrl"
+      alt="El Dr. Jaime Arcila y su asistente sonriendo frente al logo de Odontogamma Oriente"
       class="w-full h-full object-cover object-center"
     />
     <!-- Velo sutil de degradado solo en la base inferior para transición orgánica -->
@@ -31,7 +31,7 @@
         <!-- Imagen Editorial Secundaria -->
         <div class="relative overflow-hidden rounded-xs border border-og-border shadow-elevated bg-slate-200 aspect-[4/5]">
           <img
-            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85"
+            [src]="secondaryImageUrl"
             alt="Mano experta y precisión cerámica"
             loading="lazy"
             class="w-full h-full object-cover"
@@ -149,11 +149,6 @@
   
   <!-- Marca de agua fotográfica sutil de ortodoncia en fondo -->
   <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
-    <img
-      src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
-      alt="Marca de agua trayectoria"
-      class="w-full h-full object-cover object-center filter grayscale contrast-150 opacity-[0.04] scale-110"
-    />
     <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/95"></div>
   </div>
 
@@ -196,11 +191,6 @@
     
     <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
     <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
-      <img
-        src="https://res.cloudinary.com/ffvpll33/image/upload/v1789762818/cropped_teeth.png"
-        alt="Marca de agua ortodoncia y alineación"
-        class="w-full h-full object-cover object-right filter grayscale contrast-150 mix-blend-luminosity scale-110 group-hover:scale-105 transition-transform duration-700"
-      />
       <!-- Velo difuminador hacia la izquierda -->
       <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
     </div>
@@ -210,12 +200,7 @@
 
     <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-og-electric/25 mb-3 shadow-xs">
-        <span class="w-2 h-2 rounded-full bg-og-electric animate-pulse"></span>
-        <span class="text-xs sm:text-sm uppercase tracking-[0.25em] text-og-electric font-mono font-bold">
-          Diagnóstico Virtual & Ortodoncia Digital
-        </span>
-      </div>
+      <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
         Tu Sonrisa es tu Mayor Carta de Presentación
       </h3>
@@ -230,9 +215,10 @@
         routerLink="/nuestro-trabajo/valoracion-virtual"
         variant="primary"
         size="md"
+        [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Subir Fotos para Valoración →
+        Subir Fotos para Valoración
       </app-luxury-button>
       <app-luxury-button
         routerLink="/contacto"
@@ -245,4 +231,3 @@
     </div>
   </div>
 </section>
-

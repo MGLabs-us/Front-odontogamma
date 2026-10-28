@@ -1,259 +1,133 @@
-<!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED TESTIMONIOS                 -->
-<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-  <!-- Fotografía de Fondo Completo Editorial -->
-  <div class="absolute inset-0 z-0">
+<section class="relative min-h-[78vh] flex items-center justify-center overflow-hidden bg-slate-950">
+  <div class="absolute inset-0">
     <img
-      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2200&q=85"
-      alt="Historias Reales de Pacientes Odontogamma Oriente"
-      class="w-full h-full object-cover object-top scale-105 animate-subtle-zoom"
+      [src]="heroImageUrl"
+      alt="Retrato de una paciente sonriendo"
+      class="w-full h-full object-cover object-center scale-105"
+      fetchpriority="high"
     />
-    <!-- Velo neutral para preservar los colores naturales de la fotografía -->
-    <div class="absolute inset-0 bg-black/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/55 to-slate-950/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/20"></div>
   </div>
 
-  <!-- Contenido Hero -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-semibold block mb-4">
-      Vidas Transformadas · Experiencias Reales
-    </span>
+  <div class="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 pt-28 pb-16">
+    <div class="max-w-3xl reveal-init reveal-fade-up">
+      <app-editorial-label tone="dark" class="mb-5">
+        Odontogamma Oriente · El Carmen de Viboral
+      </app-editorial-label>
 
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
-      La Seguridad de Sonreír: <br />
-      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
-        Historias de Pacientes
-      </span>
-    </h1>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-medium text-white tracking-tight leading-[1.08] mb-6">
+        La confianza de sonreír:
+        <span class="block italic font-normal text-og-cyan">experiencias reales</span>
+      </h1>
 
-    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
-      Detrás de cada carilla hay una historia humana de superación, confianza renovada y libertad de expresión. Descubre lo que dicen quienes confiaron su sonrisa a las manos del Dr. Jaime Arcila Cano.
-    </p>
+      <p class="text-base sm:text-lg text-slate-100 max-w-2xl leading-relaxed mb-9">
+        Conoce la sede, al equipo y las experiencias que algunos pacientes han querido compartir en video.
+      </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <app-luxury-button
-        routerLink="/nuestro-trabajo/valoracion-virtual"
-        variant="primary"
-        size="md"
-      >
-        Iniciar Mi Valoración Gratuita
-      </app-luxury-button>
-      <app-luxury-button
-        routerLink="/nuestro-trabajo/antes-y-despues"
-        variant="outline"
-        size="md"
-        class="border-white/30 text-white hover:border-white hover:text-white"
-      >
-        Ver Casos de Antes y Después
-      </app-luxury-button>
+      <div class="flex flex-wrap items-center gap-4">
+        <app-luxury-button
+          routerLink="/nuestro-trabajo/valoracion-virtual"
+          variant="primary"
+          size="md"
+          [arrow]="true"
+        >
+          Iniciar Mi Valoración Gratuita
+        </app-luxury-button>
+        <app-luxury-button
+          routerLink="/nuestro-trabajo/antes-y-despues"
+          variant="outline"
+          size="md"
+          class="border-white/30 text-white hover:border-white hover:text-white"
+        >
+          Ver Casos de Antes y Después
+        </app-luxury-button>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- 3. HISTORIAS EDITORIALES DE PACIENTES -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+<section class="py-24 md:py-28 px-6 md:px-12 max-w-7xl mx-auto">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Vivencias Reales"
-      title="Relatos en Primera Persona"
-      subtitle="Pacientes que transformaron su vida cotidiana, profesional y personal con nosotros."
+      kicker="La experiencia Odontogamma"
+      title="Un espacio para cuidar de tu sonrisa"
+      subtitle="Una mirada a los espacios y momentos que hacen parte de cada visita."
       align="center"
     />
   </div>
 
-  <div class="space-y-16 mt-16">
-    @for (story of stories; track story.id; let i = $index) {
-      <article
-        class="bg-white border border-og-border rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-10"
-      >
-        
-        <!-- Retrato del Paciente (alternado según índice) -->
-        <div
-          [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-100'"
-          class="lg:col-span-5"
-          [class.lg:order-2]="i % 2 !== 0"
-        >
-          <div class="relative aspect-[3/4] overflow-hidden rounded-xs bg-slate-100 shadow-md">
-            <img
-              [src]="story.imageUrl"
-              [alt]="story.patientName"
-              loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-            
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="text-[10px] uppercase tracking-wider text-white font-semibold block mb-0.5 font-mono">
-                {{ story.treatment }}
-              </span>
-              <span class="text-xs text-slate-200 block font-light">
-                {{ story.city }}
-              </span>
-            </div>
-          </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+    @for (moment of moments; track moment.id) {
+      <article class="group bg-white border border-og-border overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300">
+        <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+          <img
+            [src]="moment.imageUrl"
+            [alt]="moment.alt"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
         </div>
-
-        <!-- Narrativa Editorial del Paciente -->
-        <div
-          [class]="i % 2 === 0 ? 'reveal-init reveal-fade-right delay-200' : 'reveal-init reveal-fade-left delay-200'"
-          class="lg:col-span-7 space-y-6"
-          [class.lg:order-1]="i % 2 !== 0"
-        >
-          <div class="flex items-center gap-3">
-            <span class="text-xs uppercase tracking-[0.2em] text-og-electric font-semibold">
-              {{ story.profession }}
-            </span>
-            <span class="text-slate-300">•</span>
-            <span class="text-xs text-og-slate font-light">{{ story.patientName }}</span>
-          </div>
-
-          <blockquote class="text-2xl sm:text-3xl font-editorial font-light text-og-headline leading-tight italic">
-            {{ story.quote }}
-          </blockquote>
-
-          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
-            {{ story.fullStory }}
-          </p>
-
-          <div class="p-4 bg-slate-50 border-l-2 border-og-cyan rounded-r-xs">
-            <span class="text-[10px] uppercase tracking-wider text-og-headline font-semibold block mb-1">
-              Logro Clínico & Personal:
-            </span>
-            <span class="text-xs text-og-electric font-semibold font-mono">
-              ✦ {{ story.highlight }}
-            </span>
-          </div>
+        <div class="p-5">
+          <h2 class="text-lg font-editorial font-medium text-og-headline mb-2">{{ moment.title }}</h2>
+          <p class="text-sm text-og-slate leading-relaxed">{{ moment.description }}</p>
         </div>
-
       </article>
     }
   </div>
 </section>
 
-<!-- ================================================================= -->
-<!-- 4. SECCIÓN DE VIDEO-TESTIMONIOS EN FORMATO REEL                   -->
-<!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
+<section class="py-24 bg-slate-50 border-y border-og-border">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
-        kicker="En Movimiento"
-        title="Momentos Capturados en Video"
-        subtitle="La espontaneidad de mirarse por primera vez al espejo y la emoción de sonreír sin miedo."
+        kicker="En sus propias palabras"
+        title="Experiencias compartidas por pacientes"
+        subtitle="Escucha directamente a quienes decidieron compartir su experiencia con la clínica."
         align="center"
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
-      @for (video of videoTestimonials; track video.id; let i = $index) {
-        <div
-          (click)="openVideoModal(video)"
-          [class]="i % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (i % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-          class="group relative aspect-[9/16] bg-black rounded-xs overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 cursor-pointer"
-        >
-          <img
-            [src]="video.thumbnailUrl"
-            [alt]="video.title"
-            loading="lazy"
-            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+    <div class="mt-14">
+      <app-video-reel [videos]="testimonialReels" />
+    </div>
 
-          <!-- Botón de Reproducción Flotante -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-og-cyan transition-all duration-300 shadow-xl">
-              <span class="text-xl translate-x-0.5">▶</span>
-            </div>
-          </div>
-
-          <!-- Información del Video -->
-          <div class="absolute bottom-6 left-6 right-6 text-white">
-            <span class="px-2.5 py-0.5 bg-black/60 backdrop-blur-sm text-[10px] uppercase font-mono rounded-xs inline-block mb-2">
-              {{ video.duration }} · {{ video.treatment }}
-            </span>
-            <h4 class="text-base font-editorial font-light text-white leading-snug">
-              {{ video.title }}
-            </h4>
-            <span class="text-xs text-slate-300 block mt-1 font-light">
-              {{ video.patient }}
-            </span>
-          </div>
-        </div>
-      }
+    <div class="max-w-4xl mx-auto mt-16">
+      <article class="bg-white border border-og-border shadow-subtle overflow-hidden">
+        <video
+          [src]="interview.videoUrl"
+          [poster]="interview.posterUrl"
+          controls
+          playsinline
+          preload="none"
+          class="w-full aspect-video bg-slate-950 object-cover"
+          [attr.aria-label]="interview.title"
+        ></video>
+        <h2 class="p-5 text-lg font-editorial font-medium text-og-headline">{{ interview.title }}</h2>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ================================================================= -->
-<!-- 5. MODAL DE VIDEO TESTIMONIAL                                     -->
-<!-- ================================================================= -->
-@if (activeVideo()) {
-  <div class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-    <div class="bg-slate-900 border border-slate-700 rounded-sm max-w-2xl w-full p-6 text-white relative shadow-2xl">
-      <button
-        type="button"
-        (click)="closeVideoModal()"
-        class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl font-light cursor-pointer"
-        aria-label="Cerrar video"
-      >
-        ✕
-      </button>
-
-      <span class="text-[10px] uppercase tracking-wider text-white font-mono block mb-1">
-        Testimonio Clínico · {{ activeVideo()?.treatment }}
-      </span>
-      <h3 class="text-2xl font-editorial font-light text-white mb-4">
-        {{ activeVideo()?.title }}
-      </h3>
-
-      <div class="relative aspect-video bg-black rounded-xs overflow-hidden flex items-center justify-center mb-4">
-        <video
-          [src]="videoTestimonialUrl"
-          controls
-          autoplay
-          playsinline
-          class="w-full h-full object-cover"
-        ></video>
-      </div>
-
-      <div class="flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10">
-        <span>Paciente: {{ activeVideo()?.patient }}</span>
-        <button
-          type="button"
-          (click)="closeVideoModal()"
-          class="text-white hover:underline uppercase tracking-wider text-[11px]"
-        >
-          Cerrar ventana
-        </button>
-      </div>
-    </div>
-  </div>
-}
-
-<!-- ================================================================= -->
-<!-- 6. CIERRE EDITORIAL / CTA (ESTÉTICA AESTHETIC)                    -->
-<!-- ================================================================= -->
 <section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
   <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
     <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
-      Tu Historia es la Siguiente
+      Tu historia comienza aquí
     </span>
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
-      Comienza Tu Propia Transformación Hoy
+      Hablemos de tu sonrisa
     </h2>
     <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
-      Envía tus fotografías desde la comodidad de tu casa y recibe un análisis estético preliminar gratuito por correo electrónico.
+      Envía tus fotografías desde casa y recibe una valoración estética preliminar.
     </p>
 
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <app-luxury-button
-        routerLink="/nuestro-trabajo/valoracion-virtual"
-        variant="primary"
-        size="md"
-      >
-        Iniciar Valoración Virtual Gratuita
-      </app-luxury-button>
-    </div>
+    <app-luxury-button
+      routerLink="/nuestro-trabajo/valoracion-virtual"
+      variant="primary"
+      size="md"
+      [arrow]="true"
+    >
+      Iniciar Valoración Virtual
+    </app-luxury-button>
   </div>
 </section>

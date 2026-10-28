@@ -1,16 +1,17 @@
 import { Component, input, output, ChangeDetectionStrategy, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ArrowMarkComponent } from '../arrow-mark/arrow-mark.component';
 
 /**
- * Botón con microinteracción y acabados de lujo editorial.
+ * Botón de marca para navegación y acciones principales.
  * Soporta navegación interna (routerLink), externa (href) o disparador de eventos (clicked).
  * Utiliza un único slot de proyección (<ng-content />) para evitar la pérdida de texto en Angular.
  */
 @Component({
   selector: 'app-luxury-button',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ArrowMarkComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'inline-block'
@@ -37,6 +38,11 @@ import { CommonModule } from '@angular/common';
         @if (label()) {
           <span>{{ label() }}</span>
         }
+        @if (arrow()) {
+          <span class="og-button__arrow" aria-hidden="true">
+            <app-arrow-mark />
+          </span>
+        }
       </span>
     </a>
   `
@@ -50,6 +56,7 @@ export class LuxuryButtonComponent {
   public readonly href = input<string | null>(null);
   public readonly target = input<string>('_self');
   public readonly disabled = input<boolean>(false);
+  public readonly arrow = input<boolean>(false);
 
   // Emisor de evento al hacer clic
   public readonly clicked = output<MouseEvent>();
@@ -83,28 +90,11 @@ export class LuxuryButtonComponent {
    * Clases dinámicas calculadas según variante y tamaño
    */
   protected buttonClasses(): string {
-    const base = 'group relative inline-flex items-center justify-center font-sans uppercase tracking-wider font-semibold transition-all duration-300 overflow-hidden cursor-pointer select-none text-center w-full';
-
-    const sizeClasses = {
-      sm: 'px-5 py-2.5 text-xs rounded-full',
-      md: 'px-8 py-3.5 text-xs sm:text-sm rounded-full',
-      lg: 'px-10 py-4 text-sm sm:text-base rounded-full'
-    }[this.size()];
-
-    const variantClasses = {
-      // Azul eléctrico característico de Odontogamma con elevación - LETRAS BLANCAS
-      primary: 'bg-og-electric text-white hover:bg-slate-900 hover:text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
-      // Noche editorial (Azul oscuro profundo) - LETRAS BLANCAS
-      dark: 'bg-slate-950 text-white hover:bg-og-electric hover:text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
-      // Fondo blanco mármol - LETRAS OSCURAS para contraste nítido sobre blanco
-      secondary: 'bg-white text-slate-900 border border-slate-200 hover:border-og-electric hover:text-og-electric shadow-sm hover:shadow-md hover:-translate-y-0.5',
-      // Borde transparente: hereda el color del contenedor (blanco en hero oscuro, oscuro en claro)
-      outline: 'bg-transparent text-inherit border border-current hover:border-og-cyan hover:text-og-cyan hover:-translate-y-0.5'
-    }[this.variant()];
-
-    const stateClasses = this.disabled() ? 'opacity-50 cursor-not-allowed pointer-events-none' : '';
-
-    return `${base} ${sizeClasses} ${variantClasses} ${stateClasses}`;
+    return [
+      'og-button',
+      `og-button--${this.variant()}`,
+      `og-button--${this.size()}`,
+      this.disabled() ? 'og-button--disabled' : '',
+    ].filter(Boolean).join(' ');
   }
 }
-

@@ -1,431 +1,139 @@
-<header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out animate-nav-down"
-  [class.py-3]="isScrolled()"
-  [class.py-4]="!isScrolled()"
->
-  <!-- Fondo Royal Sapphire de alta costura:
-       - Cuando está arriba estático: difumina suavemente la parte de abajo hacia la foto/video.
-       - Cuando se mueve / scroll: se quita el difuminado y queda la barra sólida con borde inferior. -->
-  <div class="pointer-events-none absolute inset-0 navbar-royal-sapphire">
-    <!-- Destello superior sutil de cristal platino -->
-    <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative z-10">
-    
-    <!-- Logotipo Oficial Odontogamma Oriente: Muelita Superior Centrada + Alas Aerodinámicas + Tipografía Cinzel -->
-    <a
-      routerLink="/"
-      class="group select-none py-1 transition-transform duration-300 hover:scale-[1.02] flex items-center shrink-0"
-      aria-label="Odontogamma Oriente"
-    >
+<header class="nav-header" [class.is-scrolled]="isScrolled()" [class.is-open]="mobileMenuOpen()">
+  <div class="nav-inner">
+    <!-- Logotipo oficial -->
+    <a routerLink="/" class="nav-brand" aria-label="Odontogamma Oriente" (click)="closeMobileMenu()">
       <app-brand-logo variant="navbar" [theme]="'dark'"></app-brand-logo>
     </a>
 
-    <!-- Enlaces de Navegación Editorial Desktop con texto blanco y desplegable de alta gama -->
-    <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
-      
-      <!-- ITEM 1: LO QUE HACEMOS con Menú Desplegable Flotante -->
-      <div class="relative group/dropdown py-2">
-        <button
-          type="button"
-          class="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/90 group-hover/dropdown:text-og-cyan transition-colors duration-200 py-1.5 cursor-pointer relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-og-cyan group-hover/dropdown:after:w-full after:transition-all after:duration-300"
-        >
-          <span>Lo Que Hacemos</span>
-          <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/dropdown:rotate-180 text-og-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
+    <!-- Navegación de escritorio -->
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      @for (group of groups; track group.id) {
+        <div class="nav-group">
+          <button type="button" class="nav-link" aria-haspopup="true">
+            <span>{{ group.label }}</span>
+            <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
 
-        <!-- Dropdown Flotante con Glassmorphism & Royal Sapphire -->
-        <div class="absolute left-0 top-full pt-3 w-80 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible -translate-y-2 group-hover/dropdown:translate-y-0 transition-all duration-300 pointer-events-none group-hover/dropdown:pointer-events-auto z-50">
-          <div class="dropdown-royal-sapphire rounded-sm p-3 space-y-1 relative overflow-hidden shadow-2xl">
-            <!-- Destello de iluminación superior #1E90FF -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#1E90FF]/20 to-transparent"></div>
-            <!-- Borde superior de brillo blanco -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            
-            <!-- Carillas de Porcelana -->
-            <a
-              routerLink="/servicios/carillas-porcelana"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Carillas de Porcelana
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Láminas feldespáticas ultrafinas de alta precisión
-                </span>
-              </div>
-            </a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-panel">
+              @for (item of group.items; track item.link) {
+                <a
+                  [routerLink]="item.link"
+                  routerLinkActive="is-active"
+                  class="nav-dropdown-item"
+                  [class.is-highlight]="item.highlight"
+                >
+                  <span class="nav-dropdown-dot"></span>
+                  <span class="nav-dropdown-text">
+                    <span class="nav-dropdown-title">
+                      {{ item.label }}
+                      @if (item.highlight) {
+                        <span class="nav-badge">Gratis</span>
+                      }
+                    </span>
+                    <span class="nav-dropdown-desc">{{ item.description }}</span>
+                  </span>
+                </a>
+              }
 
-            <!-- Odontología Cosmética -->
-            <a
-              routerLink="/servicios/odontologia-cosmetica"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Odontología Cosmética
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Arquitectura facial y armonización de sonrisa
-                </span>
-              </div>
-            </a>
-
-            <!-- Proceso de Transformación -->
-            <a
-              routerLink="/servicios/proceso-transformacion"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Proceso de Transformación
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  El viaje de tu nueva sonrisa paso a paso
-                </span>
-              </div>
-            </a>
-
-            <!-- Aclaramiento Dental Láser -->
-            <a
-              routerLink="/servicios/aclaramiento-laser"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Aclaramiento Dental Láser
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Luz fría fotocatalizada sin sensibilidad
-                </span>
-              </div>
-            </a>
-
-            <!-- Enlace inferior al catálogo global -->
-            <div class="pt-2 mt-1 border-t border-white/10 px-3 pb-1">
-              <a
-                routerLink="/servicios"
-                class="text-[10px] uppercase tracking-[0.25em] font-medium text-og-cyan hover:text-white flex items-center justify-between transition-colors"
-              >
-                <span>Ver Todos los Tratamientos</span>
-                <span>→</span>
-              </a>
+              @if (group.footer; as footer) {
+                <a [routerLink]="footer.link" class="nav-dropdown-footer">
+                  <span>{{ footer.label }}</span>
+                  <app-arrow-mark />
+                </a>
+              }
             </div>
-
           </div>
         </div>
-      </div>
+      }
 
-      <!-- ITEM 2: QUIÉNES SOMOS con Menú Desplegable Flotante -->
-      <div class="relative group/whoDropdown py-2">
-        <button
-          type="button"
-          class="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/90 group-hover/whoDropdown:text-og-cyan transition-colors duration-200 py-1.5 cursor-pointer relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-og-cyan group-hover/whoDropdown:after:w-full after:transition-all after:duration-300"
-        >
-          <span>Quiénes Somos</span>
-          <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/whoDropdown:rotate-180 text-og-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
+      <a routerLink="/contacto" routerLinkActive="is-active" class="nav-link">
+        <span>Contacto</span>
+      </a>
 
-        <!-- Dropdown Flotante Quiénes Somos -->
-        <div class="absolute left-0 top-full pt-3 w-84 opacity-0 invisible group-hover/whoDropdown:opacity-100 group-hover/whoDropdown:visible -translate-y-2 group-hover/whoDropdown:translate-y-0 transition-all duration-300 pointer-events-none group-hover/whoDropdown:pointer-events-auto z-50">
-          <div class="dropdown-royal-sapphire rounded-sm p-3 space-y-1 relative overflow-hidden shadow-2xl">
-            <!-- Destello de iluminación superior #1E90FF -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#1E90FF]/20 to-transparent"></div>
-            <!-- Borde superior de brillo blanco -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            
-            <!-- 1. Sobre Nosotros -->
-            <a
-              routerLink="/who-we-are/about-us"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Sobre Nosotros
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Nuestra historia
-                </span>
-              </div>
-            </a>
-
-            <!-- 2. Dr. en Jefe -->
-            <a
-              routerLink="/who-we-are/dr-jaime-arcila"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Especilista en odontología estética y restauradora
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Dr. Jaime Arcila Cano
-                </span>
-              </div>
-            </a>
-
-            <!-- 3. Nuestro Equipo -->
-            <a
-              routerLink="/who-we-are/our-team"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Nuestro Equipo
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Especialistas multidisciplinarios
-                </span>
-              </div>
-            </a>
-
-            <!-- 4. Nuestra Sede -->
-            <a
-              routerLink="/who-we-are/our-location"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Nuestra Sede
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Sede Oriente en El Carmen de Viboral
-                </span>
-              </div>
-            </a>
-
-            <!-- 5. Marcas Aliadas -->
-
-
-          </div>
-        </div>
-      </div>
-
-      <!-- ITEM 3: NUESTRO TRABAJO con Menú Desplegable Flotante -->
-      <div class="relative group/workDropdown py-2">
-        <button
-          type="button"
-          class="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/90 group-hover/workDropdown:text-og-cyan transition-colors duration-200 py-1.5 cursor-pointer relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-og-cyan group-hover/workDropdown:after:w-full after:transition-all after:duration-300"
-        >
-          <span>Nuestro Trabajo</span>
-          <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/workDropdown:rotate-180 text-og-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
-
-        <!-- Dropdown Flotante Nuestro Trabajo -->
-        <div class="absolute left-0 top-full pt-3 w-88 opacity-0 invisible group-hover/workDropdown:opacity-100 group-hover/workDropdown:visible -translate-y-2 group-hover/workDropdown:translate-y-0 transition-all duration-300 pointer-events-none group-hover/workDropdown:pointer-events-auto z-50">
-          <div class="dropdown-royal-sapphire rounded-sm p-3 space-y-1 relative overflow-hidden shadow-2xl">
-            <!-- Destello de iluminación superior #1E90FF -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-[#1E90FF]/20 to-transparent"></div>
-            <!-- Borde superior de brillo blanco -->
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            
-            <!-- 1. Antes y Después -->
-            <a
-              routerLink="/nuestro-trabajo/antes-y-despues"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Antes y Después
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Galería fotográfica con comparador interactivo
-                </span>
-              </div>
-            </a>
-
-            <!-- 2. Testimonios de Pacientes -->
-            <a
-              routerLink="/nuestro-trabajo/testimonios"
-              class="group/item flex items-start gap-3 p-3 rounded-xs hover:bg-white/10 transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-og-cyan mt-1.5 shrink-0 group-hover/item:scale-125 transition-transform"></div>
-              <div>
-                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors block">
-                  Testimonios de Pacientes
-                </span>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Historias reales de confianza y bienestar recuperado
-                </span>
-              </div>
-            </a>
-
-            <!-- 3. Valoración Virtual Gratuita (Destacada) -->
-            <a
-              routerLink="/nuestro-trabajo/valoracion-virtual"
-              class="group/item flex items-start gap-3 p-3 rounded-xs bg-gradient-to-r from-og-electric/20 to-transparent border border-og-cyan/30 hover:border-og-cyan transition-colors"
-            >
-              <div class="w-2 h-2 rounded-full bg-emerald-400 mt-1.5 shrink-0 animate-pulse"></div>
-              <div>
-                <div class="flex items-center gap-2">
-                  <span class="text-xs uppercase tracking-[0.18em] font-semibold text-white group-hover/item:text-og-cyan transition-colors">
-                    Valoración Virtual
-                  </span>
-                  <span class="px-1.5 py-0.5 bg-emerald-500/80 text-white text-[9px] uppercase tracking-wider font-mono rounded-xs">
-                    Gratis
-                  </span>
-                </div>
-                <span class="text-[11px] text-slate-300 font-light block leading-snug mt-0.5">
-                  Sube fotos de tus dientes y recibe diagnóstico preliminar
-                </span>
-              </div>
-            </a>
-
-          </div>
-        </div>
-      </div>
-
+      <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta">
+        <span>Valoración Gratis</span>
+      </a>
     </nav>
 
-    <!-- Botón Menú Hamburguesa en Móvil -->
+    <!-- Botón de menú móvil -->
     <button
       type="button"
+      class="nav-toggle"
       (click)="toggleMobileMenu()"
-      class="lg:hidden p-2 text-white hover:text-og-cyan focus:outline-hidden transition-colors"
-      aria-label="Abrir menú de navegación"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-controls="nav-mobile-panel"
+      [attr.aria-label]="mobileMenuOpen() ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
     >
       @if (!mobileMenuOpen()) {
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       } @else {
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       }
     </button>
   </div>
 
-  <!-- Menú Móvil Desplegable con Transición Suave y Fondo Royal Sapphire -->
+  <!-- Panel móvil -->
   @if (mobileMenuOpen()) {
-    <div class="lg:hidden fixed inset-x-0 top-full bg-gradient-to-b from-[#133A6F]/98 via-[#0F2F5E]/98 to-[#091D3B]/98 backdrop-blur-2xl border-b border-white/20 text-white shadow-2xl py-8 px-8 flex flex-col gap-6 animate-fadeIn relative overflow-hidden">
-      <!-- Resplandor ambiental superior -->
-      <div class="pointer-events-none absolute top-0 left-0 right-0 h-24 bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(30,144,255,0.32),transparent_70%)]"></div>
-      
-      <!-- Acordeón Móvil 1: Lo Que Hacemos -->
-      <div>
-        <button
-          type="button"
-          (click)="toggleMobileServices()"
-          class="w-full flex items-center justify-between text-xs uppercase tracking-[0.25em] text-white hover:text-og-cyan transition-colors py-1"
-        >
-          <span>Lo Que Hacemos</span>
-          <svg class="w-4 h-4 transition-transform duration-200 text-og-cyan" [class.rotate-180]="mobileServicesOpen()" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
+    <div id="nav-mobile-panel" class="nav-mobile">
+      @for (group of groups; track group.id) {
+        <div class="nav-mobile-group">
+          <button
+            type="button"
+            class="nav-mobile-trigger"
+            (click)="toggleMobileGroup(group.id)"
+            [attr.aria-expanded]="openMobileGroup() === group.id"
+          >
+            <span>{{ group.label }}</span>
+            <svg
+              class="nav-chevron"
+              [class.is-flipped]="openMobileGroup() === group.id"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
 
-        @if (mobileServicesOpen()) {
-          <div class="pl-4 pt-3 space-y-3 flex flex-col border-l border-white/15 my-2 animate-fadeIn">
-            <a routerLink="/servicios/carillas-porcelana" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Carillas de Porcelana
-            </a>
-            <a routerLink="/servicios/odontologia-cosmetica" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Odontología Cosmética
-            </a>
-            <a routerLink="/servicios/proceso-transformacion" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Proceso de Transformación
-            </a>
-            <a routerLink="/servicios/aclaramiento-laser" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Aclaramiento Dental Láser
-            </a>
-            <a routerLink="/servicios" (click)="closeMobileMenu()" class="text-[10px] uppercase tracking-widest text-og-cyan pt-1">
-              Ver Todos los Tratamientos →
-            </a>
-          </div>
-        }
-      </div>
+          @if (openMobileGroup() === group.id) {
+            <div class="nav-mobile-sub animate-fadeIn">
+              @for (item of group.items; track item.link) {
+                <a
+                  [routerLink]="item.link"
+                  routerLinkActive="is-active"
+                  class="nav-mobile-link"
+                  [class.is-highlight]="item.highlight"
+                  (click)="closeMobileMenu()"
+                >
+                  {{ item.label }}
+                </a>
+              }
+              @if (group.footer; as footer) {
+                <a [routerLink]="footer.link" class="nav-mobile-link is-footer" (click)="closeMobileMenu()">
+                  {{ footer.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+      }
 
-      <!-- Acordeón Móvil 2: Quiénes Somos -->
-      <div>
-        <button
-          type="button"
-          (click)="toggleMobileWhoWeAre()"
-          class="w-full flex items-center justify-between text-xs uppercase tracking-[0.25em] text-white hover:text-og-cyan transition-colors py-1"
-        >
-          <span>Quiénes Somos</span>
-          <svg class="w-4 h-4 transition-transform duration-200 text-og-cyan" [class.rotate-180]="mobileWhoWeAreOpen()" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
+      <a routerLink="/contacto" class="nav-mobile-trigger" (click)="closeMobileMenu()">
+        <span>Contacto</span>
+      </a>
 
-        @if (mobileWhoWeAreOpen()) {
-          <div class="pl-4 pt-3 space-y-3 flex flex-col border-l border-white/15 my-2 animate-fadeIn">
-            <a routerLink="/who-we-are/about-us" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Sobre Nosotros
-            </a>
-            <a routerLink="/who-we-are/dr-jaime-arcila" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Dr. en Jefe (Dr. Jaime Arcila)
-            </a>
-            <a routerLink="/who-we-are/our-team" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Nuestro Equipo
-            </a>
-            <a routerLink="/who-we-are/our-location" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Nuestra Sede (El Carmen de Viboral)
-            </a>
-            <a routerLink="/who-we-are/brand-partners" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Marcas Aliadas & Medios
-            </a>
-          </div>
-        }
-      </div>
-
-      <!-- Acordeón Móvil 3: Nuestro Trabajo -->
-      <div>
-        <button
-          type="button"
-          (click)="toggleMobileOurWork()"
-          class="w-full flex items-center justify-between text-xs uppercase tracking-[0.25em] text-white hover:text-og-cyan transition-colors py-1"
-        >
-          <span>Nuestro Trabajo</span>
-          <svg class="w-4 h-4 transition-transform duration-200 text-og-cyan" [class.rotate-180]="mobileOurWorkOpen()" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
-
-        @if (mobileOurWorkOpen()) {
-          <div class="pl-4 pt-3 space-y-3 flex flex-col border-l border-white/15 my-2 animate-fadeIn">
-            <a routerLink="/nuestro-trabajo/antes-y-despues" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Antes y Después
-            </a>
-            <a routerLink="/nuestro-trabajo/testimonios" (click)="closeMobileMenu()" class="text-xs tracking-wider text-slate-300 hover:text-og-cyan">
-              • Testimonios de Pacientes
-            </a>
-            <a routerLink="/nuestro-trabajo/valoracion-virtual" (click)="closeMobileMenu()" class="text-xs tracking-wider text-emerald-300 hover:text-white font-medium">
-              ✦ Valoración Virtual Gratuita
-            </a>
-          </div>
-        }
-      </div>
-
-      <div class="pt-4 border-t border-white/10">
-        <app-luxury-button
-          routerLink="/nuestro-trabajo/valoracion-virtual"
-          (clicked)="closeMobileMenu()"
-          variant="primary"
-          size="md"
-          class="w-full text-center"
-        >
-          Iniciar Valoración Gratuita
-        </app-luxury-button>
-      </div>
+      <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta is-block" (click)="closeMobileMenu()">
+        <span>Iniciar Valoración Gratuita</span>
+      </a>
     </div>
   }
 </header>

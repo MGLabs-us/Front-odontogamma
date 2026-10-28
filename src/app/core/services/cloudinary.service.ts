@@ -9,21 +9,22 @@ import {
 
 /**
  * Servicio centralizado para la gestión, optimización y carga de medios en Cloudinary.
- * Adaptado para Odontogamma Oriente (cloud: ffvpll33).
+ * Media is delivered from u81t66ol; patient uploads stay on the existing account until its preset is migrated.
  */
 @Injectable({
   providedIn: 'root'
 })
 export class CloudinaryService {
-  private readonly cloudName = environment.cloudinary.cloudName;
+  private readonly mediaCloudName = environment.cloudinary.mediaCloudName;
+  private readonly uploadCloudName = environment.cloudinary.uploadCloudName;
   private readonly uploadPreset = environment.cloudinary.uploadPreset;
-  private readonly baseUrl = `https://res.cloudinary.com/${this.cloudName}`;
+  private readonly baseUrl = `https://res.cloudinary.com/${this.mediaCloudName}`;
 
   /**
    * Obtiene el nombre de la nube configurada.
    */
   public getCloudName(): string {
-    return this.cloudName;
+    return this.mediaCloudName;
   }
 
   /**
@@ -184,7 +185,7 @@ export class CloudinaryService {
     file: File | Blob,
     folder: string = `${environment.cloudinary.defaultFolder}/valoraciones-virtuales`
   ): Promise<CloudinaryDirectUploadResponse> {
-    const uploadUrl = `https://api.cloudinary.com/v1_1/${this.cloudName}/image/upload`;
+    const uploadUrl = `https://api.cloudinary.com/v1_1/${this.uploadCloudName}/image/upload`;
     const formData = new FormData();
 
     formData.append('file', file);
@@ -302,4 +303,3 @@ export class CloudinaryService {
     return url;
   }
 }
-

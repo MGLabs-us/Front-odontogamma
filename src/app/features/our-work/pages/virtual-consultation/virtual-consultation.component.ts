@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
 import { CloudinaryService } from '../../../../core/services/cloudinary.service';
+import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
+import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 
 export interface UploadedDentalPhoto {
   file: File;
@@ -34,12 +36,15 @@ interface PhotoGuideStep {
     FormsModule,
     RouterLink,
     SectionHeaderComponent,
-    LuxuryButtonComponent
+    LuxuryButtonComponent,
+    ArrowMarkComponent
   ],
   templateUrl: './virtual-consultation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VirtualConsultationComponent {
+  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.patients.furCoatSmile;
+
   private readonly cloudinaryService = inject(CloudinaryService);
   // Datos del formulario de contacto y valoración
   protected formData = {
@@ -67,21 +72,21 @@ export class VirtualConsultationComponent {
       step: 'Foto 01',
       title: 'Sonrisa Natural de Frente',
       description: 'Una toma frontal con buena luz natural donde se aprecien tus labios relajados y tus dientes en una sonrisa espontánea.',
-      imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redHairPortrait,
       tip: 'Evita sombras fuertes y no utilices filtros de belleza.'
     },
     {
       step: 'Foto 02',
       title: 'Sonrisa de Perfil / Tres Cuartos',
       description: 'Permite al Dr. Jaime Arcila analizar la proyección dental, el perfil labial y cómo armoniza la sonrisa con tu nariz y mentón.',
-      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweaterSide,
       tip: 'Gira levemente la cabeza unos 45 grados mirando hacia la cámara.'
     },
     {
       step: 'Foto 03',
       title: 'Primer Plano de los Dientes',
       description: 'Un acercamiento claro donde se observe el borde de los dientes superiores e inferiores en oclusión (mordiendo normalmente).',
-      imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.smiles.wide,
       tip: 'Enfoca nítidamente la zona dental con buena iluminación diurna.'
     }
   ];
@@ -233,4 +238,3 @@ export class VirtualConsultationComponent {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
   }
 }
-

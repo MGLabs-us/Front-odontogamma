@@ -1,0 +1,13 @@
+{
+  "name": "Odontogamma Oriente",
+  "short_name": "Odontogamma",
+  "description": "Odontología estética y diseño de sonrisa en el Oriente Antioqueño.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#233f4d",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
