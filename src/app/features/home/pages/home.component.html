@@ -88,12 +88,18 @@
             <!-- Resplandor Perimetral Neón Zafiro -->
             <div class="pointer-events-none absolute -inset-1 bg-gradient-to-b from-og-cyan/30 via-transparent to-og-electric/30 rounded-[28px] blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
 
-            <img
-              [src]="heroImageUrl"
-              alt="Paciente sonriendo en Odontogamma Oriente"
-              fetchpriority="high"
+            <video
+              [src]="heroVideo.videoUrl"
+              [poster]="heroVideo.posterUrl"
+              [attr.aria-label]="heroVideo.title"
+              autoplay
+              muted
+              [muted]="true"
+              loop
+              playsinline
+              preload="auto"
               class="w-full h-full object-cover object-center relative z-10 transition-transform duration-700 ease-out group-hover:scale-105"
-            />
+            ></video>
 
             <!-- Velo sutil inferior con viñeta para dar contraste cinematográfico -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none z-20"></div>

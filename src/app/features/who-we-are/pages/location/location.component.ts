@@ -45,9 +45,9 @@ export class LocationComponent {
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.loungeSofa
     },
     {
-      title: 'Suites Clínicas Panorámicas',
-      category: 'Tecnología & Confort',
-      description: 'Consultorios con ventanales a la naturaleza, sillones ergonómicos con memoria de forma y pantallas multimedia para visualizar tu diseño 3D en tiempo real.',
+      title: 'Nuestro Consultorio',
+      category: 'Atención & Confort',
+      description: 'Un consultorio equipado con sillón ergonómico y los equipos necesarios para tu valoración y tratamiento, en un ambiente cómodo y limpio.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultSuite
     },
     {
@@ -55,12 +55,6 @@ export class LocationComponent {
       category: 'Artesanía & Precisión',
       description: 'Área dedicada a la colorimetría con luz natural y ajustes finos de cerámica en el mismo momento de la cita, reduciendo tiempos de espera.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.printedModel
-    },
-    {
-      title: 'Suite de Recuperación Post-Tratamiento',
-      category: 'Privacidad Absoluta',
-      description: 'Espacio privado para descansar tras sesiones de transformación de sonrisa, con salida directa discreta al área de estacionamiento VIP.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultGlass
     }
   ];
 

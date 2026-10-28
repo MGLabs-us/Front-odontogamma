@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly portfolioService = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
-  protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweater;
+  protected readonly heroVideo = CLOUDINARY_ASSETS_MANIFEST.videos.hero;
   protected readonly heroBackgroundImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.lobby;
 
   // Slider de tratamientos de firma interactivo ("corredizo" con avance automático)
@@ -154,7 +154,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     { id: 'todos', label: 'Todos los Casos' },
     { id: 'carillas', label: 'Carillas & Lentes' },
     { id: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
-    { id: 'rehabilitacion', label: 'Rehabilitación' }
+    { id: 'rehabilitacion', label: 'Rehabilitación' },
+    { id: 'ortodoncia', label: 'Ortodoncia' }
   ];
 
   // Casos filtrados para la galería de alta definición
@@ -162,7 +163,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const cat = this.selectedCaseCategory();
     const cases = this.allCases();
     if (cat === 'todos') {
-      return cases.slice(0, 6);
+      return cases;
     }
     return cases.filter(c => c.category === cat);
   });
@@ -201,7 +202,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
       title: 'Confort Clínico Cero Dolor',
       subtitle: 'Olvídate del Miedo al Odontólogo',
-      description: 'Suites privadas insonorizadas en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
+      description: 'Una sede acogedora en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.receptionFront,
       link: '/who-we-are/our-location',
       linkText: 'Explorar Nuestra Sede'

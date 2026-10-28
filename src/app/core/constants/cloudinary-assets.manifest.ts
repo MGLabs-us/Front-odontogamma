@@ -165,6 +165,13 @@ const videos = {
     video('sede-consulta', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/img-6844`, 'Atención en consultorio', 'Procedimiento real en nuestros consultorios.'),
     video('carillas-ceramica', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/6d3666e3-1aed-472c-9372-10278c6633d8`, 'Carillas listas para colocar', 'Láminas cerámicas elaboradas a medida.')
   ],
+  /** Video principal del hero de Home (el mismo `hero-loop` de la rama develop). */
+  hero: video(
+    'hero-loop',
+    `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop`,
+    'Odontogamma Oriente, clínica de odontología estética'
+    ,'Video de bienvenida de Odontogamma Oriente.'
+  ),
   interviews: [
     video(
       'entrevista-paciente',

@@ -25,7 +25,7 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
               [src]="item.videoUrl"
               [poster]="item.posterUrl"
               [attr.aria-label]="item.title"
-              class="absolute inset-0 w-full h-full object-cover bg-black"
+              class="reel-video absolute inset-0 w-full h-full object-contain bg-black"
               controls
               autoplay
               playsinline
@@ -65,6 +65,11 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
     </div>
   `,
   styles: `
+    /* En pantalla completa el video se muestra entero, sin recortar */
+    .reel-video:fullscreen {
+      object-fit: contain;
+    }
+
     .reel-track {
       scrollbar-width: thin;
       scrollbar-color: rgb(183 207 210 / 55%) transparent;

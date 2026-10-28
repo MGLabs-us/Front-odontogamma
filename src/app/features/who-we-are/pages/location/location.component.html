@@ -64,7 +64,7 @@
     />
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
     @for (space of spaces; track space.title; let i = $index) {
       <div
         [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
@@ -107,17 +107,9 @@
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-left delay-100">
-        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">01</span>
-        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entrada & Parking VIP</h4>
-        <p class="text-xs text-og-slate font-light leading-relaxed">
-          Estacionamiento privado con acceso directo y discreto al interior de la clínica para salvaguardar tu privacidad.
-        </p>
-      </div>
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-200">
-        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">02</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">01</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Concierge de Traslados</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
           Coordinación de transporte privado desde el Aeropuerto JMC y los principales hoteles de Medellín y El Carmen de Viboral.
@@ -125,7 +117,7 @@
       </div>
 
       <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-300">
-        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">03</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">02</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entorno Anti-Estrés</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
           Aromaterapia sutil, insonorización acústica y vista a jardines verdes para una experiencia médica relajante.
@@ -133,7 +125,7 @@
       </div>
 
       <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-400">
-        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">04</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-og-cyan font-semibold block mb-2 font-mono">03</span>
         <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Atención Bilingüe</h4>
         <p class="text-xs text-og-slate font-light leading-relaxed">
           Personal clínico y de hospitalidad fluido en inglés para atender a nuestros pacientes internacionales sin barreras.
@@ -212,7 +204,7 @@
       Ven a Conocer la Experiencia en Persona
     </h2>
     <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
-      Te esperamos en nuestras suites privadas de El Carmen de Viboral para diseñar la sonrisa que siempre soñaste.
+      Te esperamos en nuestra sede de El Carmen de Viboral para diseñar la sonrisa que siempre soñaste.
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">

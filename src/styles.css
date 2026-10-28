@@ -306,7 +306,8 @@ video {
   padding: 1rem 1rem 0;
   pointer-events: none;
   transition: padding 280ms ease;
-  animation: navSlideDown 360ms ease-out both;
+  /* `backwards` (no `both`): un transform persistente convertiría al header en el bloque contenedor del panel fixed móvil */
+  animation: navSlideDown 360ms ease-out backwards;
 }
 
 .nav-header.is-scrolled {
