@@ -70,3 +70,6 @@ desktop.ini
 .sass-cache/
 /connect.lock
 /libpeerconnection.log
+
+# Registros de los scripts de conversión
+scripts/*.log
