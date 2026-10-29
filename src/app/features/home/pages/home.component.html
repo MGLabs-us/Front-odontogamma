@@ -1,7 +1,7 @@
 <!-- ================================================================= -->
 <!-- 1. HERO BANNER PRINCIPAL (Editorial Split & Video Showcase 3D)    -->
 <!-- ================================================================= -->
-<section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-20 lg:pt-24 pb-12">
+<section class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-32 sm:pt-28 lg:pt-24 pb-24 lg:pb-12">
   
   <!-- Fotografía de Fondo Completo con Tono Azulado de Alta Costura -->
   <div class="absolute inset-0 z-0 overflow-hidden">
@@ -128,7 +128,7 @@
   </div>
 
   <!-- Indicador sutil de Desplazamiento Inferior -->
-  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
     <span class="text-[9px] uppercase tracking-[0.35em] font-mono text-white/80">Descubre Más</span>
     <div class="w-[1px] h-5 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
@@ -233,44 +233,6 @@
 
         </div>
       }
-    </div>
-
-    <!-- Banner de Incitación con Marca de Agua de Ortodoncia & Estética Blanco Luxury -->
-    <div class="mt-16 p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-200 relative overflow-hidden group">
-      
-      <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
-      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
-        <!-- Velo difuminador hacia la izquierda para legibilidad perfecta del texto -->
-        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-white/40"></div>
-      </div>
-
-      <!-- Resplandor azul zafiro interactivo de esquina -->
-      <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
-
-      <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
-      <div class="text-center lg:text-left relative z-10 max-w-2xl">
-        <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
-        <h4 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
-          Tu Sonrisa es tu Mayor Carta de Presentación
-        </h4>
-        <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 leading-relaxed">
-          Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.
-        </p>
-      </div>
-
-      <!-- Botón de Conversión Destacado con Sombra Zafiro -->
-      <div class="relative z-10 shrink-0">
-        <app-luxury-button
-          routerLink="/nuestro-trabajo/valoracion-virtual"
-          variant="primary"
-          size="md"
-          [arrow]="true"
-          class="shadow-glow font-semibold text-white whitespace-nowrap"
-        >
-          Subir Fotos para Valoración
-        </app-luxury-button>
-      </div>
     </div>
 
   </div>
@@ -445,7 +407,7 @@
     </div>
 
     <!-- Grid de Tarjetas 3D con Fotografía Protagónica y Alternancia Antes / Después -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 perspective-1000">
+    <div class="gallery-track flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-10 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 perspective-1000">
       @for (caseItem of filteredCases(); track caseItem.id; let idx = $index) {
         <div
           appTilt3d
@@ -453,7 +415,7 @@
           [scale]="1.02"
           [glare]="true"
           [glareMaxOpacity]="0.14"
-          class="group rounded-[30px] bg-white p-5 border border-slate-200/90 hover:border-og-electric/50 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 flex flex-col justify-between preserve-3d shimmer-sheen"
+          class="group shrink-0 snap-center w-[82vw] sm:w-[60vw] md:w-auto rounded-[30px] bg-white p-5 border border-slate-200/90 hover:border-og-electric/50 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 flex flex-col justify-between preserve-3d shimmer-sheen"
         >
           <div class="preserve-3d">
             <!-- Marco Fotográfico Principal con Zoom Óptico y Transición Suave -->
@@ -803,18 +765,10 @@
         <!-- Botones de Acción -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
           <app-luxury-button
-            routerLink="/nuestro-trabajo/valoracion-virtual"
-            variant="primary"
-            size="md"
-            [arrow]="true"
-            class="w-full sm:w-auto shadow-glow font-semibold text-white"
-          >
-            Diagnóstico de Ortodoncia Gratuito
-          </app-luxury-button>
-          <app-luxury-button
             routerLink="/nuestro-trabajo/antes-y-despues"
             variant="outline"
             size="md"
+            [arrow]="true"
             class="w-full sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
           >
             Ver Casos de Alineación
@@ -926,105 +880,87 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- 6. BANNER DE AGENDAMIENTO & VALORACIÓN VIRTUAL                    -->
+<!-- 6. CTA ÚNICO DE VALORACIÓN: VIDEO + WHATSAPP + OPCIONES            -->
 <!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-sky-50/40 border-t border-slate-200/80">
-  
-  <!-- Marca de agua fotográfica sutil de sonrisa y arquitectura clínica -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
-    <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/90"></div>
-  </div>
-
-  <!-- Acentos lumínicos zafiro suaves -->
+<section class="py-24 md:py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-sky-50/40 border-t border-slate-200/80">
   <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse,rgba(41,182,246,0.15)_0%,transparent_70%)] blur-3xl z-0"></div>
 
-  <div class="max-w-5xl mx-auto relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-14 reveal-init reveal-fade-up">
-      <span class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-og-electric block mb-3 font-mono">
-        Comienza tu Transformación
-      </span>
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 mb-5 leading-tight">
-        Elige Cómo Iniciar tu Diagnóstico
-      </h2>
-      <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mx-auto">
-        Sube las fotos de tus dientes para una evaluación virtual sin costo, o agenda una cita presencial exclusiva en nuestra sede de El Carmen de Viboral.
-      </p>
+  <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center reveal-init reveal-fade-up">
+    <div class="mx-auto w-[68vw] max-w-[280px] md:max-w-[300px] aspect-[9/16] overflow-hidden rounded-[28px] bg-og-dark border border-slate-200 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.35)]">
+      <video
+        [src]="invitationVideo.videoUrl"
+        [poster]="invitationVideo.posterUrl"
+        [attr.aria-label]="invitationVideo.title"
+        class="w-full h-full object-cover bg-black"
+        controls
+        playsinline
+        preload="metadata"
+      ></video>
     </div>
 
-    <!-- 2 Tarjetas Interactivas de Diagnóstico (Virtual vs Presencial) con Estética Blanco Luxury -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 perspective-1000">
-      
-      <!-- Opción A: Valoración Virtual -->
-      <div
-        appTilt3d
-        [maxTilt]="6"
-        [scale]="1.02"
-        [glare]="true"
-        [glareMaxOpacity]="0.12"
-        class="group p-8 sm:p-10 rounded-[32px] bg-white border border-slate-200/90 hover:border-og-electric/60 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_65px_-12px_rgba(0,114,206,0.22)] transition-all duration-500 flex flex-col justify-between preserve-3d"
-      >
-        <div>
-          <div class="w-12 h-12 rounded-2xl bg-sky-50 text-og-electric flex items-center justify-center mb-6 group-hover:bg-og-electric group-hover:text-white transition-colors duration-300 shadow-xs">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
-              <path d="M12 18h.01"/>
-            </svg>
-          </div>
-          <app-editorial-label class="mb-3">Sin costo · Desde tu celular</app-editorial-label>
-          <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-slate-900 mb-3">
-            Valoración Virtual
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
-            Envía 3 fotos de tu sonrisa tomadas desde tu teléfono y recibe en menos de 24 horas el criterio preliminar del Dr. Jaime Arcila Cano.
-          </p>
-        </div>
-        <app-luxury-button
-          routerLink="/nuestro-trabajo/valoracion-virtual"
-          variant="primary"
-          size="md"
-          [arrow]="true"
-          [arrow]="true"
-          class="w-full font-semibold text-white shadow-glow"
-        >
-          Iniciar Valoración Virtual
-        </app-luxury-button>
-      </div>
+    <div class="text-center md:text-left">
+      <app-editorial-label class="mb-4">Comienza tu transformación</app-editorial-label>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-medium text-slate-900 mb-4 leading-tight">
+        Agenda tu valoración <span class="italic text-og-electric">sin costo</span>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+        Elige la vía que te quede más cómoda. En todas te atiende el equipo del Dr. Jaime Arcila Cano.
+      </p>
 
-      <!-- Opción B: Cita Presencial en Sede El Carmen de Viboral -->
-      <div
-        appTilt3d
-        [maxTilt]="6"
-        [scale]="1.02"
-        [glare]="true"
-        [glareMaxOpacity]="0.12"
-        class="group p-8 sm:p-10 rounded-[32px] bg-gradient-to-b from-white to-slate-50/70 border border-slate-200/90 hover:border-slate-900 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_65px_-12px_rgba(15,23,42,0.2)] transition-all duration-500 flex flex-col justify-between preserve-3d"
-      >
-        <div>
-          <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300 shadow-xs">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>
-            </svg>
-          </div>
-          <app-editorial-label tone="muted" class="mb-3">Atelier privado · El Carmen de Viboral</app-editorial-label>
-          <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-slate-900 mb-3">
-            Cita Presencial en Sede
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
-            Agenda una consulta clínica presencial con escaneo intraoral 3D, fotografía de estudio y diseño personalizado de sonrisa en El Carmen de Viboral.
-          </p>
-        </div>
-        <app-luxury-button
-          routerLink="/contacto"
-          variant="secondary"
-          size="md"
-          [arrow]="true"
-          [arrow]="true"
-          class="w-full font-semibold"
-        >
-          Agendar Cita en Sede
-        </app-luxury-button>
-      </div>
+      <ul class="flex flex-col gap-3 text-left">
+        <!-- WhatsApp: vía principal, también para conocer la experiencia completa -->
+        <li>
+          <a
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-og-dark text-white shadow-glow hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <span class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm sm:text-base font-semibold">Escríbenos por WhatsApp</span>
+              <span class="block text-xs sm:text-sm text-white/75 leading-snug">Respuesta directa y todos los detalles de la experiencia.</span>
+            </span>
+            <app-arrow-mark />
+          </a>
+        </li>
 
+        <!-- Valoración virtual -->
+        <li>
+          <a
+            routerLink="/nuestro-trabajo/valoracion-virtual"
+            class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-og-electric/60 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <span class="w-11 h-11 rounded-xl bg-sky-50 text-og-electric flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm sm:text-base font-semibold text-slate-900">Valoración virtual</span>
+              <span class="block text-xs sm:text-sm text-slate-600 leading-snug">Envía 3 fotos desde tu celular y recibe criterio del Dr. en menos de 24 horas.</span>
+            </span>
+            <app-arrow-mark />
+          </a>
+        </li>
+
+        <!-- Cita presencial -->
+        <li>
+          <a
+            routerLink="/contacto"
+            class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-900 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <span class="w-11 h-11 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm sm:text-base font-semibold text-slate-900">Cita en sede</span>
+              <span class="block text-xs sm:text-sm text-slate-600 leading-snug">Escaneo 3D y diseño de sonrisa en El Carmen de Viboral.</span>
+            </span>
+            <app-arrow-mark />
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

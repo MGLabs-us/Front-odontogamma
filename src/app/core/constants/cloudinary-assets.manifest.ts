@@ -108,6 +108,7 @@ const images = {
   patients: {
     blackBackdrop: site('5af85abf-ad5c-4972-8502-c46350589608', 1800),
     smilingStudio: site('59b69c3b-6507-40d2-bf31-061de0351d6d'),
+    studioPortrait: site('dsc0918'),
     furCoat: site('76ba30f5-2a5d-4300-9a09-afec83ab79d6'),
     furCoatSmile: site('17bafcc2-999a-4efc-9793-ac0de0680f3f'),
     mirror: site('999fe688-653a-4433-8fd1-49b40100a099'),
@@ -171,6 +172,13 @@ const videos = {
     `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop`,
     'Odontogamma Oriente, clínica de odontología estética'
     ,'Video de bienvenida de Odontogamma Oriente.'
+  ),
+  /** Video de invitación del Dr. Jaime Arcila: agenda tu valoración por WhatsApp. */
+  invitation: video(
+    'invitacion-experiencia',
+    `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/invitacion-experiencia`,
+    'Vive la experiencia Odontogamma',
+    'El Dr. Jaime Arcila te invita a conocer los detalles de la experiencia.'
   ),
   interviews: [
     video(

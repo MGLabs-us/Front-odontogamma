@@ -14,7 +14,7 @@ import { ArrowMarkComponent } from '../arrow-mark/arrow-mark.component';
   imports: [CommonModule, RouterLink, ArrowMarkComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'inline-block'
+    'class': 'inline-block rounded-full'
   },
   template: `
     <a

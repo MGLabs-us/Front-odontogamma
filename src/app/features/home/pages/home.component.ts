@@ -59,6 +59,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly portfolioService = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
+  protected readonly invitationVideo = CLOUDINARY_ASSETS_MANIFEST.videos.invitation;
+  protected readonly whatsappUrl =
+    'https://wa.me/573217209420?text=Hola,%20vi%20el%20video%20y%20quiero%20conocer%20los%20detalles%20de%20la%20experiencia%20en%20Odontogamma%20Oriente.';
   protected readonly heroVideo = CLOUDINARY_ASSETS_MANIFEST.videos.hero;
   protected readonly heroBackgroundImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.lobby;
 
@@ -214,7 +217,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       title: 'Sonrisas de Firma y Confianza',
       subtitle: 'Resultados que Transforman Vidas',
       description: 'Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.smilingStudio,
+      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.studioPortrait,
       link: '/nuestro-trabajo/antes-y-despues',
       linkText: 'Ver Casos Clínicos'
     }
