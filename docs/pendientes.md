@@ -1,3 +1,5 @@
+Pero
+
 # Pendientes del proyecto
 
 Última actualización: 29 de octubre de 2026.
@@ -30,10 +32,5 @@
 
 ## Después del primer deploy
 
-- [ ] Reiniciar el contenedor una vez si el volumen de nginx no existía (`docker compose up -d --force-recreate odontogamma`). El workflow lo hace solo en cada deploy.
-- [ ] `curl -sI https://www.odontogammaoriente.com` debe dar `301` a la versión sin `www`.
-- [ ] `curl -sI https://odontogamma.mglabs.us | grep -i x-robots` debe mostrar `noindex, nofollow` (ya verificado).
-- [ ] Cloudflare: apagar Rocket Loader y la minificación automática de HTML y JS (rompen la hidratación de Angular).
-- [ ] Google Search Console: crear la propiedad `odontogammaoriente.com` y enviar `https://odontogammaoriente.com/sitemap.xml`.
+- [ ] Search Console (la propiedad ya está creada): enviar `https://odontogammaoriente.com/sitemap.xml` en Indexación > Sitemaps y, con la URL Inspection, pedir indexación de la home y de `/servicios`.
 - [ ] Probar el enlace en WhatsApp y en el depurador de Facebook para ver la imagen de vista previa.
-- [ ] Añadir cabeceras 301 en nginx para cualquier ruta antigua que aparezca en Search Console.
