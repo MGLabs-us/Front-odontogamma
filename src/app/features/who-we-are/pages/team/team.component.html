@@ -1,10 +1,8 @@
-<!-- ================================================================= -->
 <!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED NUESTRO EQUIPO              -->
-<!-- ================================================================= -->
-<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+<section class="relative min-h-[52dvh] sm:min-h-[75dvh] flex items-center justify-center overflow-hidden">
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
-    <img
+    <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
       alt="Equipo Clínico Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
@@ -16,18 +14,18 @@
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-semibold block mb-4">
-      Especialistas de Alta Gama
+    <span class="text-xs sm:text-xs uppercase tracking-[0.18em] text-white font-semibold block mb-4">
+      Especialistas clínicos
     </span>
 
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.08] mb-6">
       Mentes Maestras <br />
-      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
+      <span class="italic font-medium text-og-cyan">
         y Manos Artesanales
       </span>
     </h1>
 
-    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed mb-10">
       Un colectivo interdisciplinario de odontólogos estéticos, ceramistas maestros y coordinadores de experiencia dedicados a un solo propósito: crear sonrisas irrepetibles con el máximo confort y precisión.
     </p>
 
@@ -37,47 +35,46 @@
         variant="primary"
         size="md"
       >
-        Conoce al Equipo en Persona
+        Conoce al equipo en persona
       </app-luxury-button>
       <app-luxury-button
-        routerLink="/who-we-are/our-location"
+        routerLink="/quienes-somos/sede"
         variant="outline"
         size="md"
         class="border-white/30 text-white hover:border-white hover:text-white"
       >
-        Descubre Nuestra Clínica
+        Descubre nuestra clínica
       </app-luxury-button>
     </div>
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 2. CATÁLOGO EDITORIAL DE INTEGRANTES DEL EQUIPO                   -->
-<!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+<section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="El Colectivo Clínico"
-      title="Especialistas Dedicados a Tu Transformación"
+      kicker="El colectivo clínico"
+      title="Especialistas dedicados a tu transformación"
       subtitle="Cada miembro aporta un área específica de maestría para que tu sonrisa sea tratada con visión de 360 grados."
       align="center"
     />
   </div>
 
   <!-- Grid de Gran Formato: Fotos Grandes que Sobresalen (2 Columnas de Alto Impacto) -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-16">
+  <div class="rail-md grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-16">
     @for (member of members; track member.imageUrl; let i = $index) {
       <div
         [class]="i % 2 === 0 ? 'reveal-init reveal-fade-up delay-100' : 'reveal-init reveal-fade-up delay-200'"
-        class="group bg-white border border-slate-200/90 rounded-[32px] sm:rounded-[40px] p-5 sm:p-7 overflow-hidden shadow-[0_20px_50px_-15px_rgba(16,75,150,0.08)] hover:shadow-[0_30px_70px_-15px_rgba(0,114,206,0.2)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between"
+        class="group bg-white border border-slate-200/90 rounded-4xl p-5 sm:p-7 overflow-hidden shadow-[0_20px_50px_-15px_rgba(35,63,77,0.08)] hover:shadow-[0_30px_70px_-15px_rgba(35,63,77,0.2)] hover:-translate-y-2.5 transition duration-500 flex flex-col justify-between"
       >
         <!-- Fotografía en Gran Formato (Protagonista Visual Absoluta) -->
-        <div class="relative w-full aspect-[4/5] sm:aspect-[1/1] md:aspect-[4/5] rounded-[24px] sm:rounded-[30px] overflow-hidden bg-slate-100 shadow-md">
+        <div class="relative w-full aspect-[4/5] sm:aspect-[1/1] md:aspect-[4/5] rounded-3xl overflow-hidden bg-slate-100 shadow-md">
           <img
             [src]="member.imageUrl"
             [alt]="member.role"
             loading="lazy"
-            class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+      decoding="async"
+            class="w-full h-full object-cover object-center transition-transform duration-500 ease-brand group-hover:scale-105"
           />
           <!-- Velo degradado sutil inferior para legibilidad -->
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none"></div>
@@ -91,7 +88,7 @@
 
           <!-- Identificación al Pie de la Fotografía -->
           <div class="absolute bottom-5 inset-x-5 z-10">
-            <span class="text-xs sm:text-sm font-mono tracking-wider uppercase text-sky-200 font-bold block mb-1">
+            <span class="text-xs sm:text-sm font-mono tracking-wider uppercase text-og-cyan font-bold block mb-1">
               {{ member.role }}
             </span>
             <h3 class="text-2xl sm:text-3xl font-editorial font-medium text-white drop-shadow-md">
@@ -118,65 +115,61 @@
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 3. LA VENTAJA DE LA SINERGIA INTERDISCIPLINARIA                   -->
-<!-- ================================================================= -->
-<section class="py-24 bg-slate-50 border-y border-og-border overflow-hidden">
+<section class="py-16 md:py-24 bg-slate-50 border-y border-og-border overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
       <div class="reveal-init reveal-fade-left delay-100">
-        <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-3">
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
           Sinergia en un Mismo Espacio
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-light text-og-headline mb-6 leading-tight">
-          Por Qué un Equipo Completo Hace la Diferencia
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline mb-6 leading-tight">
+          Por qué un equipo completo hace la diferencia
         </h2>
-        <p class="text-sm md:text-base text-og-slate font-light leading-relaxed mb-6">
+        <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed mb-6">
           En la odontología tradicional, el odontólogo toma un molde y lo envía a un laboratorio distante que jamás ve al paciente. En Odontogamma Oriente, el maestro ceramista, el periodoncista y el doctor trabajan juntos en la misma clínica.
         </p>
-        <p class="text-sm md:text-base text-og-slate font-light leading-relaxed">
+        <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed">
           Esto permite evaluar el tono de la piel en vivo bajo luz natural, calibrar el diseño de sonrisa en tiempo real y ajustar cada detalle milimétrico antes de la cementación definitiva.
         </p>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-100">
+        <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-100">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">01</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Evaluación en Vivo</h4>
-          <p class="text-xs text-og-slate font-light">El ceramista participa en la sesión de colorimetría con luz polarizada.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Evaluación en vivo</h4>
+          <p class="text-xs text-og-slate font-normal">El ceramista participa en la sesión de colorimetría con luz polarizada.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-200">
+        <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-right delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">02</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Salud Gingival</h4>
-          <p class="text-xs text-og-slate font-light">Encías sanas y simétricas antes de colocar la primera carilla.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Salud gingival</h4>
+          <p class="text-xs text-og-slate font-normal">Encías sanas y simétricas antes de colocar la primera carilla.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-up delay-200">
+        <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">03</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Oclusión Segura</h4>
-          <p class="text-xs text-og-slate font-light">Armonización de mordida para evitar fracturas o desgastes prematuros.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Oclusión segura</h4>
+          <p class="text-xs text-og-slate font-normal">Armonización de mordida para evitar fracturas o desgastes prematuros.</p>
         </div>
-        <div class="p-6 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-right delay-300">
+        <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-right delay-300">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">04</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Concierge Privado</h4>
-          <p class="text-xs text-og-slate font-light">Atención prioritaria y agenda confidencial de principio a fin.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Concierge privado</h4>
+          <p class="text-xs text-og-slate font-normal">Atención prioritaria y agenda confidencial de principio a fin.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 4. CIERRE CONVERSIÓN EQUIPO (ESTÉTICA AESTHETIC)                   -->
-<!-- ================================================================= -->
-<section class="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-t border-slate-200/80">
-  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-10 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-og-electric block mb-3 font-semibold font-mono">
-      Tu Equipo Médico Exclusivo
+<section class="py-16 md:py-32 px-6 md:px-12 bg-og-marble relative overflow-hidden border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-6 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
+    <span class="text-xs uppercase tracking-[0.18em] text-og-electric block mb-3 font-semibold font-mono">
+      Tu equipo médico
     </span>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-light text-og-headline mb-5">
-      Empieza Tu Experiencia en Buenas Manos
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-normal text-og-headline mb-5">
+      Empieza tu experiencia en buenas manos
     </h2>
-    <p class="text-sm sm:text-base text-og-slate font-light max-w-xl mx-auto leading-relaxed mb-8">
+    <p class="text-sm sm:text-base text-og-slate font-normal max-w-xl mx-auto leading-relaxed mb-8">
       Conversemos sobre tus expectativas estéticas y creemos juntos un plan a tu medida.
     </p>
 

@@ -34,17 +34,17 @@ export class ChiefDoctorComponent {
   // Principios de firma del Dr. Jaime Arcila
   protected readonly signaturePrinciples: DoctorSignaturePrinciple[] = [
     {
-      title: 'Odontología Emocional',
+      title: 'Odontología emocional',
       quote: '«No cambiamos sólo dientes; devolvemos la seguridad de sonreír al mundo sin reservas.»',
       description: 'Cada paciente llega con una historia, inseguridades previas o anhelos personales. El primer paso jamás es el taladro; es la escucha empática y el entendimiento profundo de su objetivo de vida.'
     },
     {
-      title: 'Mínima Invasión Biomimética',
+      title: 'Mínima invasión biomimética',
       quote: '«El mayor logro de un odontólogo estético no es lo que desgasta, sino lo que logra preservar intacto.»',
       description: 'Mediante magnificación óptica y adhesión química de última generación, trabajamos sobre espesores milimétricos, respetando la estructura biológica viva del diente natural.'
     },
     {
-      title: 'Armonía Facial Global',
+      title: 'Armonía facial global',
       quote: '«Una sonrisa perfecta aislada puede verse falsa; la verdadera belleza radica en cómo se integra con los ojos, los labios y la expresión.»',
       description: 'El diseño se analiza desde la tridimensionalidad del rostro en movimiento dinámico, considerando la fonética, la curva labial y la proyección del tercio inferior de la cara.'
     }

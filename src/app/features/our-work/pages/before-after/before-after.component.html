@@ -1,10 +1,8 @@
-<!-- ================================================================= -->
 <!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED ANTES & DESPUÉS             -->
-<!-- ================================================================= -->
-<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+<section class="relative min-h-[52dvh] sm:min-h-[75dvh] flex items-center justify-center overflow-hidden">
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
-    <img
+    <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
       alt="Galería de Casos Clínicos Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
@@ -16,18 +14,18 @@
 
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white font-semibold block mb-4">
+    <span class="text-xs sm:text-xs uppercase tracking-[0.18em] text-white font-semibold block mb-4">
       Casos Clínicos Reales · Sin Filtros
     </span>
 
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.08] mb-6">
       El Arte de lo Imperceptible: <br />
-      <span class="italic font-normal bg-gradient-to-r from-white via-slate-100 to-og-cyan bg-clip-text text-transparent">
-        Antes y Después
+      <span class="italic font-medium text-og-cyan">
+        Antes y después
       </span>
     </h1>
 
-    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed mb-10">
       Desliza con tu dedo o cursor sobre cada caso para descubrir la transición entre el estado inicial y la armonía definitiva alcanzada con nuestras técnicas de mínima invasión.
     </p>
 
@@ -38,7 +36,7 @@
         size="md"
         [arrow]="true"
       >
-        Subir Mis Fotos para Valoración Gratuita
+        Iniciar valoración gratuita
       </app-luxury-button>
       <app-luxury-button
         routerLink="/nuestro-trabajo/testimonios"
@@ -46,27 +44,25 @@
         size="md"
         class="border-white/30 text-white hover:border-white hover:text-white"
       >
-        Leer Testimonios de Pacientes
+        Leer testimonios de pacientes
       </app-luxury-button>
     </div>
   </div>
 
   <!-- Indicador sutil de scroll -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-70">
-    <span class="text-[9px] uppercase tracking-[0.3em] text-white/80 font-mono">Desliza para Explorar</span>
+    <span class="text-xs uppercase tracking-[0.18em] text-white/80 font-mono">Desliza para explorar</span>
     <div class="w-[1px] h-8 bg-gradient-to-b from-og-cyan to-transparent"></div>
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 2. GALERÍA DE CASOS CON SLIDERS INTERACTIVOS Y FILTROS            -->
-<!-- ================================================================= -->
-<section class="py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  
+<section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Evidencia Fotográfica"
-      title="Transformaciones de Firma"
+      kicker="Evidencia fotográfica"
+      title="Transformaciones de firma"
       subtitle="Resultados clínicos documentados bajo luz polarizada y fotografía macroscópica de alta definición."
       align="center"
     />
@@ -78,7 +74,7 @@
       <button
         type="button"
         (click)="setCategory(tab.key)"
-        class="px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-all duration-200 cursor-pointer rounded-xs border"
+        class="px-5 py-2.5 text-xs uppercase tracking-[0.14em] transition duration-300 cursor-pointer rounded-2xl border"
         [class.bg-og-electric]="selectedCategory() === tab.key"
         [class.text-white]="selectedCategory() === tab.key"
         [class.border-og-electric]="selectedCategory() === tab.key"
@@ -94,16 +90,16 @@
   </div>
 
   <!-- Grid de Casos Clínicos -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+  <div class="rail-md grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
     @for (caseItem of filteredCases(); track caseItem.id; let i = $index) {
       <div
         [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
-        class="group bg-white border border-og-border p-6 sm:p-8 rounded-xs shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
+        class="group bg-white border border-og-border p-6 sm:p-8 rounded-2xl shadow-subtle hover:shadow-elevated transition duration-300 flex flex-col justify-between"
       >
-        
+
         <div>
           <!-- Comparador Interactivo Antes / Después -->
-          <div class="overflow-hidden rounded-xs">
+          <div class="overflow-hidden rounded-2xl">
             <app-before-after-slider
               [beforeImage]="caseItem.beforeImageUrl"
               [afterImage]="caseItem.afterImageUrl"
@@ -114,13 +110,13 @@
 
           <!-- Contenido del Caso -->
           <div class="mt-6">
-            <span class="text-[10px] tracking-[0.25em] uppercase text-og-electric font-semibold block mb-1">
+            <span class="text-xs tracking-[0.18em] uppercase text-og-electric font-semibold block mb-1">
               {{ caseItem.categoryLabel }}
             </span>
-            <h3 class="text-2xl font-editorial font-light text-og-headline mb-3 leading-snug">
+            <h3 class="text-2xl font-editorial font-normal text-og-headline mb-3 leading-snug">
               {{ caseItem.title }}
             </h3>
-            <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+            <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed mb-6">
               {{ caseItem.description }}
             </p>
           </div>
@@ -153,23 +149,16 @@
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 3. BANNER INFORMATIVO: LA DIFERENCIA BIOLÓGICA (ROYAL SAPPHIRE)   -->
-<!-- ================================================================= -->
-<section class="py-28 bg-gradient-to-b from-[#07172E] via-[#0D2A54] to-[#07162C] text-white border-y border-white/15 relative overflow-hidden">
-  
-  <!-- Acentos lumínicos de fondo -->
-  <div class="pointer-events-none absolute -top-32 -left-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(41,182,246,0.2)_0%,transparent_70%)] blur-3xl animate-float-slow"></div>
-  <div class="pointer-events-none absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,114,206,0.3)_0%,transparent_70%)] blur-3xl animate-float-delayed"></div>
-
+<section class="py-16 md:py-28 bg-og-dark text-white border-y border-white/15 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7 reveal-init reveal-fade-left delay-100">
-        <span class="text-xs font-mono font-bold tracking-[0.25em] uppercase text-white block mb-3">
-          Compromiso Clínico
+        <span class="text-xs font-mono font-bold tracking-[0.18em] uppercase text-white block mb-3">
+          Compromiso clínico
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-medium text-white mb-6 leading-tight">
-          Por Qué Nuestras Carillas Lucen Indetectables
+          Por qué nuestras carillas lucen indetectables
         </h2>
         <p class="text-base text-slate-200 font-normal leading-relaxed mb-4">
           La gran mayoría de los tratamientos estéticos fallan porque lucen como una barra sólida, opaca y sin vida. En Odontogamma Oriente, el Dr. Jaime Arcila modela cada pieza respetando la microtextura horizontal y vertical del esmalte.
@@ -179,8 +168,8 @@
         </p>
       </div>
 
-      <div class="lg:col-span-5 bg-slate-900/80 backdrop-blur-2xl p-8 border border-white/20 rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.6)] reveal-init reveal-fade-right delay-200">
-        <h4 class="text-xl font-editorial font-semibold text-white mb-5">Garantías de Tratamiento</h4>
+      <div class="lg:col-span-5 bg-slate-900/80 backdrop-blur-2xl p-8 border border-white/20 rounded-3xl shadow-[0_20px_50px_rgba(14,28,35,0.45)] reveal-init reveal-fade-right delay-200">
+        <h4 class="text-xl font-editorial font-semibold text-white mb-5">Garantías de tratamiento</h4>
         <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200">
           <li class="flex items-start gap-3">
             <span class="text-emerald-300 font-bold text-sm">✓</span>
@@ -204,24 +193,18 @@
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- 4. BANNER CON MARCA DE AGUA DE ORTODONCIA & VALORACIÓN VIRTUAL    -->
-<!-- ================================================================= -->
 <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  <div class="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
-    
+  <div class="p-6 md:p-12 rounded-4xl bg-og-card border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(35,63,77,0.2)] transition duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
+
     <!-- Marca de Agua de Ortodoncia de Alta Fidelidad en Segundo Plano -->
-    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-500 select-none z-0">
       <!-- Velo difuminador hacia la izquierda -->
       <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
     </div>
-
-    <!-- Resplandor azul zafiro interactivo de esquina -->
-    <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
-
     <!-- Contenido Textual con Jerarquía Editorial de Prestigio -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
+      <app-editorial-label class="mb-3">Diagnóstico virtual & ortodoncia digital</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
         Tu Sonrisa es tu Mayor Carta de Presentación
       </h3>
@@ -239,7 +222,7 @@
         [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Subir Fotos para Valoración
+        Iniciar valoración gratuita
       </app-luxury-button>
       <app-luxury-button
         routerLink="/contacto"

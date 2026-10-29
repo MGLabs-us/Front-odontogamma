@@ -19,6 +19,7 @@ import { EditorialLabelComponent } from '../../../shared/components/editorial-la
 import { ArrowMarkComponent } from '../../../shared/components/arrow-mark/arrow-mark.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
 import { VideoReelComponent } from '../../../shared/components/video-reel/video-reel.component';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 
 export interface PhilosophyPillar {
   number: string;
@@ -40,7 +41,7 @@ export interface PhilosophyPillar {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
+  imports: [IconComponent, 
     CommonModule,
     RouterLink,
     LuxuryButtonComponent,
@@ -154,9 +155,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   // Categorías disponibles para filtrar la galería tridimensional
   protected readonly galleryCategories = [
-    { id: 'todos', label: 'Todos los Casos' },
-    { id: 'carillas', label: 'Carillas & Lentes' },
-    { id: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
+    { id: 'todos', label: 'Todos los casos' },
+    { id: 'carillas', label: 'Carillas & lentes' },
+    { id: 'diseno-sonrisa', label: 'Diseño de sonrisa' },
     { id: 'rehabilitacion', label: 'Rehabilitación' },
     { id: 'ortodoncia', label: 'Ortodoncia' }
   ];
@@ -190,36 +191,36 @@ export class HomeComponent implements OnInit, OnDestroy {
   protected readonly pillars: PhilosophyPillar[] = [
     {
       number: '01',
-      badge: 'Dirección Médica',
+      badge: 'Dirección médica',
       categoryTag: 'BIOMIMÉTICA & PRECISIÓN',
-      title: 'Biomimética y Alta Precisión',
-      subtitle: 'Tus Dientes Intactos: Belleza Sin Dolor',
+      title: 'Biomimética y alta precisión',
+      subtitle: 'Tus dientes intactos: belleza sin dolor',
       description: 'Láminas cerámicas ultrafinas (0.2 a 0.3 mm) modeladas con magnificación microscópica que preservan tu esmalte biológico vivo sin desgastes invasivos.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.modelsBlue,
       link: '/servicios/carillas-porcelana',
-      linkText: 'Conocer Carillas de Porcelana'
+      linkText: 'Conocer carillas de porcelana'
     },
     {
       number: '02',
-      badge: 'Experiencia Sensorial',
+      badge: 'Experiencia sensorial',
       categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
-      title: 'Confort Clínico Cero Dolor',
-      subtitle: 'Olvídate del Miedo al Odontólogo',
+      title: 'Confort clínico cero dolor',
+      subtitle: 'Olvídate del miedo al odontólogo',
       description: 'Una sede acogedora en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.receptionFront,
-      link: '/who-we-are/our-location',
-      linkText: 'Explorar Nuestra Sede'
+      link: '/quienes-somos/sede',
+      linkText: 'Explorar nuestra sede'
     },
     {
       number: '03',
-      badge: 'Resultados Reales',
+      badge: 'Resultados reales',
       categoryTag: 'EVIDENCIA CLÍNICA & PRESTIGIO',
-      title: 'Sonrisas de Firma y Confianza',
-      subtitle: 'Resultados que Transforman Vidas',
+      title: 'Sonrisas de firma y confianza',
+      subtitle: 'Resultados que transforman vidas',
       description: 'Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.studioPortrait,
       link: '/nuestro-trabajo/antes-y-despues',
-      linkText: 'Ver Casos Clínicos'
+      linkText: 'Ver casos clínicos'
     }
   ];
 }

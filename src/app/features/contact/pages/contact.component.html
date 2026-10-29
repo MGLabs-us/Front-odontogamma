@@ -1,7 +1,7 @@
 <!-- Encabezado de Página Editorial con Fotografía Arquitectónica -->
-<section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden bg-slate-950">
+<section class="relative min-h-[40dvh] sm:min-h-[55dvh] flex items-center justify-center overflow-hidden bg-slate-950">
   <div class="absolute inset-0 z-0">
-    <img
+    <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
       alt="Atención Privada Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105"
@@ -11,33 +11,33 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-32 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-white block mb-4">
-      Atención Privada & Exclusiva
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-28 pb-16 reveal-init reveal-fade-up">
+    <span class="text-xs font-semibold tracking-[0.18em] uppercase text-white block mb-4">
+      Atención privada
     </span>
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
-      Agenda tu Valoración
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.1] mb-6">
+      Agenda tu valoración
     </h1>
-    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed">
       Inicia tu experiencia clínica en Odontogamma Oriente. Nos comunicaremos contigo para coordinar una cita reservada exclusivamente para ti.
     </p>
   </div>
 </section>
 
 <!-- Contenido Principal: Formulario y Canales de Concierge -->
-<section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-    
+<section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+
     <!-- Columna Izquierda: Información de Sede & Concierge -->
     <div class="lg:col-span-5 space-y-8">
       <div class="reveal-init reveal-fade-left delay-100">
-        <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-2">
-          Contacto Inmediato
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-2">
+          Contacto inmediato
         </span>
-        <h2 class="text-3xl font-editorial font-light text-og-headline mb-4">
-          Atención Concierge
+        <h2 class="text-3xl font-editorial font-normal text-og-headline mb-4">
+          Atención directa
         </h2>
-        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+        <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed mb-6">
           Si prefieres una atención ágil e instantánea, nuestro equipo de coordinación está disponible vía WhatsApp para responder tus dudas sobre tratamientos, disponibilidad y ubicación.
         </p>
 
@@ -46,7 +46,7 @@
           href="https://wa.me/573217209420?text=Hola,%20deseo%20solicitar%20información%20y%20agendar%20una%20cita%20con%20el%20Dr.%20Jaime%20Arcila%20en%20Odontogamma%20Oriente."
           target="_blank"
           rel="noopener noreferrer"
-          class="block p-6 bg-white border border-og-border rounded-xs shadow-subtle hover:shadow-elevated hover:border-emerald-500/50 transition-all duration-300 group"
+          class="block p-6 bg-white border border-og-border rounded-2xl shadow-subtle hover:shadow-elevated hover:border-emerald-500/50 transition duration-300 group"
         >
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -55,13 +55,13 @@
               </svg>
             </div>
             <div>
-              <span class="text-[10px] tracking-[0.2em] uppercase font-semibold text-emerald-600 block">
-                Canal Prioritario
+              <span class="text-xs tracking-[0.14em] uppercase font-semibold text-emerald-600 block">
+                Canal prioritario
               </span>
               <span class="text-sm font-semibold text-og-headline group-hover:text-emerald-700 transition-colors">
-                Chatear con WhatsApp Concierge
+                Escribir por WhatsApp
               </span>
-              <span class="text-xs text-og-slate block font-light">
+              <span class="text-xs text-og-slate block font-normal">
                 Respuesta directa y personalizada
               </span>
             </div>
@@ -70,17 +70,17 @@
       </div>
 
       <!-- Información de Ubicación -->
-      <div class="p-8 bg-white border border-og-border rounded-xs shadow-subtle reveal-init reveal-fade-left delay-200">
+      <div class="p-8 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-left delay-200">
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-4">
           Ubicación de la Clínica
         </h3>
-        
-        <div class="space-y-4 text-xs sm:text-sm text-og-slate font-light">
+
+        <div class="space-y-4 text-xs sm:text-sm text-og-slate font-normal">
           <div>
             <span class="font-medium text-og-headline block">Sede Odontogamma Oriente:</span>
             <span>Oriente Antioqueño, Colombia.</span>
           </div>
-          
+
           <div>
             <span class="font-medium text-og-headline block">Horarios de Consulta:</span>
             <span>Lunes a Viernes: 8:00 AM – 6:00 PM</span><br />
@@ -97,20 +97,18 @@
 
     <!-- Columna Derecha: Formulario de Solicitud de Cita -->
     <div class="lg:col-span-7 reveal-init reveal-fade-right delay-150">
-      <div class="p-8 md:p-12 bg-white border border-og-border rounded-xs shadow-elevated">
-        
+      <div class="p-6 md:p-12 bg-white border border-og-border rounded-2xl shadow-elevated">
+
         @if (formSubmitted()) {
           <!-- Mensaje de Confirmación Elegante -->
           <div class="text-center py-12 animate-fadeIn">
             <div class="w-16 h-16 rounded-full bg-og-electric/10 text-og-electric flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
+              <app-icon name="check" class="w-8 h-8"></app-icon>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-editorial font-light text-og-headline mb-3">
-              Solicitud Recibida
+            <h3 class="text-2xl sm:text-3xl font-editorial font-normal text-og-headline mb-3">
+              Solicitud recibida
             </h3>
-            <p class="text-xs sm:text-sm text-og-slate font-light max-w-md mx-auto leading-relaxed mb-8">
+            <p class="text-xs sm:text-sm text-og-slate font-normal max-w-md mx-auto leading-relaxed mb-8">
               Gracias, <strong>{{ formData.name }}</strong>. Nuestro equipo de coordinación clínica se comunicará contigo al teléfono <strong>{{ formData.phone }}</strong> para confirmar los detalles de tu cita con el Dr. Jaime Arcila.
             </p>
             <app-luxury-button
@@ -118,18 +116,18 @@
               variant="outline"
               size="sm"
             >
-              Enviar Otra Solicitud
+              Enviar otra solicitud
             </app-luxury-button>
           </div>
         } @else {
           <!-- Formulario de Agendamiento -->
-          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-2">
-            Solicitud en Línea
+          <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-2">
+            Solicitud en línea
           </span>
-          <h2 class="text-3xl font-editorial font-light text-og-headline mb-2">
-            Reserva de Consulta
+          <h2 class="text-3xl font-editorial font-normal text-og-headline mb-2">
+            Reserva de consulta
           </h2>
-          <p class="text-xs text-og-slate font-light mb-8">
+          <p class="text-xs text-og-slate font-normal mb-8">
             Completa tus datos básicos para ponernos en contacto contigo. Sin registros ni contraseñas.
           </p>
 
@@ -146,7 +144,7 @@
                 [(ngModel)]="formData.name"
                 name="name"
                 placeholder="Ej. María Fernanda Gómez"
-                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xs focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
+                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
               />
             </div>
 
@@ -163,13 +161,13 @@
                   [(ngModel)]="formData.phone"
                   name="phone"
                   placeholder="Ej. +57 300 123 4567"
-                  class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xs focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
+                  class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
                 />
               </div>
 
               <div>
                 <label for="email" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                  Correo Electrónico
+                  Correo electrónico
                 </label>
                 <input
                   id="email"
@@ -177,7 +175,7 @@
                   [(ngModel)]="formData.email"
                   name="email"
                   placeholder="tu@correo.com"
-                  class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xs focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
+                  class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
                 />
               </div>
             </div>
@@ -185,13 +183,13 @@
             <!-- Tratamiento de Interés -->
             <div>
               <label for="treatment" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                Tratamiento de Interés
+                Tratamiento de interés
               </label>
               <select
                 id="treatment"
                 [(ngModel)]="formData.treatment"
                 name="treatment"
-                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xs focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
+                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
               >
                 <option value="carillas">Carillas Cerámicas de Alta Precisión</option>
                 <option value="diseno-sonrisa">Diseño de Sonrisa & Armonización Facial</option>
@@ -204,7 +202,7 @@
             <!-- Mensaje Adicional -->
             <div>
               <label for="message" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                Comentarios o Preferencias de Horario
+                Comentarios o preferencias de horario
               </label>
               <textarea
                 id="message"
@@ -212,7 +210,7 @@
                 [(ngModel)]="formData.message"
                 name="message"
                 placeholder="Cuéntanos brevemente sobre lo que deseas mejorar en tu sonrisa..."
-                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xs focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors resize-none"
+                class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors resize-none"
               ></textarea>
             </div>
 
@@ -224,7 +222,7 @@
                 size="lg"
                 class="w-full"
               >
-                Enviar Solicitud de Cita
+                Enviar solicitud de cita
               </app-luxury-button>
             </div>
           </form>

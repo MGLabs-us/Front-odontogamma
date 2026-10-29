@@ -15,7 +15,7 @@ interface FilterCategory {
 }
 
 /**
- * Vista interactiva de Antes & Después: Casos clínicos reales con comparador dinámico deslizable.
+ * Vista interactiva de Antes y después: Casos clínicos reales con comparador dinámico deslizable.
  */
 @Component({
   selector: 'app-before-after',
@@ -44,11 +44,11 @@ export class BeforeAfterComponent {
 
   // Categorías de filtro disponibles
   protected readonly categories: FilterCategory[] = [
-    { key: 'all', label: 'Todos los Casos' },
-    { key: 'carillas', label: 'Carillas de Porcelana' },
-    { key: 'diseno-sonrisa', label: 'Diseño de Sonrisa' },
-    { key: 'rehabilitacion', label: 'Rehabilitación & Implantes' },
-    { key: 'ortodoncia', label: 'Ortodoncia & Alineación' }
+    { key: 'all', label: 'Todos los casos' },
+    { key: 'carillas', label: 'Carillas de porcelana' },
+    { key: 'diseno-sonrisa', label: 'Diseño de sonrisa' },
+    { key: 'rehabilitacion', label: 'Rehabilitación & implantes' },
+    { key: 'ortodoncia', label: 'Ortodoncia & alineación' }
   ];
 
   // Casos filtrados computados reactivamente

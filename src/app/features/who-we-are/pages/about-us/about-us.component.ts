@@ -38,22 +38,22 @@ export class AboutUsComponent {
   protected readonly pillars: ValuePillar[] = [
     {
       number: '01',
-      title: 'Biomimética & Mínima Invasión',
-      subtitle: 'Preservación como Máximo Valor',
+      title: 'Biomimética & mínima invasión',
+      subtitle: 'Preservación como máximo valor',
       description: 'Creemos que la mejor estructura dental es la natural. Diseñamos restauraciones ultrafinas de menos de 0.3mm que emulan la flexión, transparencia y esmalte biológico sin desgastes agresivos.',
       highlight: '0.2 - 0.3mm de espesor cerámico'
     },
     {
       number: '02',
-      title: 'Arquitectura Facial & Proporción Áurea',
-      subtitle: 'El Rostro como Lienzo Total',
+      title: 'Arquitectura facial & proporción áurea',
+      subtitle: 'El rostro como lienzo total',
       description: 'Una sonrisa jamás debe verse como un accesorio postizo. Analizamos la fisionomía, la línea labial, el tono de piel y la fonética para que cada carilla dialogue armónicamente con tu personalidad.',
       highlight: 'Análisis Fisiognómico Integral'
     },
     {
       number: '03',
-      title: 'Hospitalidad Médica & Privacidad',
-      subtitle: 'Una Experiencia Sensorial Única',
+      title: 'Hospitalidad médica & privacidad',
+      subtitle: 'Una experiencia sensorial única',
       description: 'Desafiamos el paradigma del consultorio frío. Nuestra sede en el Oriente Antioqueño ha sido concebida como un santuario privado de calma, privacidad confidencial y atención sin prisas.',
       highlight: 'Atención One-to-One Confidencial'
     }
@@ -63,17 +63,17 @@ export class AboutUsComponent {
   protected readonly milestones: Milestone[] = [
     {
       year: 'Fundación',
-      title: 'El Nacimiento de un Concepto',
+      title: 'El nacimiento de un concepto',
       description: 'Establecimiento en el Oriente Antioqueño con la premisa de llevar la odontología cosmética al estándar de las capitales mundiales del diseño.'
     },
     {
       year: 'Innovación',
-      title: 'Ecosistema 100% Digital',
+      title: 'Ecosistema 100% digital',
       description: 'Integración de escáneres intraorales de última generación y planificación tridimensional en tiempo real.'
     },
     {
       year: 'Presente',
-      title: 'Referente de Turismo Dental Selecto',
+      title: 'Referente de turismo dental selecto',
       description: 'Pacientes de todo el país y el exterior eligen nuestra clínica en El Carmen de Viboral por su confidencialidad, entorno natural y resultados de autor.'
     }
   ];

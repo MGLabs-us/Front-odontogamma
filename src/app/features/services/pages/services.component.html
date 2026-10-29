@@ -1,7 +1,7 @@
 <!-- Encabezado de Página Editorial con Fotografía Arquitectónica -->
-<section class="relative min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center overflow-hidden">
+<section class="relative min-h-[40dvh] sm:min-h-[55dvh] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <img
+    <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
       alt="Tratamientos de Firma Odontogamma Oriente"
       class="w-full h-full object-cover object-center scale-105"
@@ -10,39 +10,40 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-32 pb-16 reveal-init reveal-fade-up">
-    <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-white block mb-4">
-      Catálogo Clínico
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-28 pb-16 reveal-init reveal-fade-up">
+    <span class="text-xs font-semibold tracking-[0.18em] uppercase text-white block mb-4">
+      Catálogo clínico
     </span>
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.1] mb-6">
-      Tratamientos de Firma
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.1] mb-6">
+      Tratamientos de firma
     </h1>
-    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-light max-w-2xl mx-auto leading-relaxed">
-      Cada procedimiento combina ciencia biomimética, tecnología digital de vanguardia y un sentido estético refinado para transformar tu sonrisa de por vida.
+    <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed">
+      Cada procedimiento combina ciencia biomimética, tecnología digital y un sentido estético refinado para transformar tu sonrisa de por vida.
     </p>
   </div>
 </section>
 
 <!-- Listado Editorial Detallado de Tratamientos -->
-<section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  <div class="space-y-24">
+<section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+  <div class="space-y-12 md:space-y-24">
     @for (service of services(); track service.id; let i = $index) {
       <div
-        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
         [class.lg:flex-row-reverse]="i % 2 !== 0"
       >
         <!-- Imagen del Tratamiento con enlace directo a vista individual -->
         <a
           [routerLink]="['/servicios', service.slug]"
           [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-100'"
-          class="lg:col-span-6 block relative group overflow-hidden rounded-xs border border-og-border shadow-elevated bg-slate-100 aspect-[16/10]"
+          class="lg:col-span-6 block relative group overflow-hidden rounded-2xl border border-og-border shadow-elevated bg-slate-100 aspect-[16/10]"
           [class.lg:order-2]="i % 2 !== 0"
         >
           <img
             [src]="service.heroImageUrl"
             [alt]="service.title"
             loading="lazy"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      decoding="async"
+            class="w-full h-full object-cover transition-transform duration-500 ease-brand group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         </a>
@@ -53,27 +54,27 @@
           class="lg:col-span-6"
           [class.lg:order-1]="i % 2 !== 0"
         >
-          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block mb-2">
+          <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-2">
             {{ service.subtitle }}
           </span>
-          <h2 class="text-3xl sm:text-4xl font-editorial font-light text-og-headline mb-4 leading-tight">
+          <h2 class="text-3xl sm:text-4xl font-editorial font-normal text-og-headline mb-4 leading-tight">
             <a [routerLink]="['/servicios', service.slug]" class="hover:text-og-electric transition-colors">
               {{ service.title }}
             </a>
           </h2>
-          <p class="text-sm font-medium text-og-slate/80 italic mb-4">
+          <p class="text-sm font-medium text-og-slate/80 mb-4">
             "{{ service.tagline }}"
           </p>
-          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+          <p class="text-sm text-og-slate font-normal leading-relaxed mb-4 md:mb-6 line-clamp-3 md:line-clamp-none">
             {{ service.shortDescription }}
           </p>
 
           <!-- Beneficios y Puntos Clave -->
-          <div class="mb-8">
-            <span class="text-[11px] font-semibold tracking-[0.2em] uppercase text-og-headline block mb-3">
-              Distintivos del Procedimiento:
+          <div class="hidden md:block mb-8">
+            <span class="text-xs font-semibold tracking-[0.14em] uppercase text-og-headline block mb-3">
+              Distintivos del procedimiento:
             </span>
-            <ul class="space-y-2 text-xs sm:text-sm text-og-slate font-light">
+            <ul class="space-y-2 text-xs sm:text-sm text-og-slate font-normal">
               @for (highlight of service.highlights; track highlight) {
                 <li class="flex items-start gap-3">
                   <span class="w-1.5 h-1.5 rounded-full bg-og-electric mt-2 shrink-0"></span>
@@ -90,15 +91,16 @@
               variant="primary"
               size="sm"
             >
-              Ver Tratamiento Completo
+              Ver tratamiento
             </app-luxury-button>
 
             <app-luxury-button
               routerLink="/contacto"
               variant="outline"
               size="sm"
+              class="max-sm:hidden"
             >
-              Agendar Valoración
+              Agendar valoración
             </app-luxury-button>
           </div>
         </div>
@@ -108,58 +110,53 @@
 </section>
 
 <!-- Proceso en 4 Pasos (Royal Sapphire Luxury Journey) -->
-<section class="py-28 bg-gradient-to-b from-[#07172E] via-[#0D2A54] to-[#07162C] text-white border-y border-white/15 relative overflow-hidden">
-  
-  <!-- Acentos lumínicos de fondo -->
-  <div class="pointer-events-none absolute -top-32 -left-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(41,182,246,0.2)_0%,transparent_70%)] blur-3xl animate-float-slow"></div>
-  <div class="pointer-events-none absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,114,206,0.3)_0%,transparent_70%)] blur-3xl animate-float-delayed"></div>
-
+<section class="py-16 md:py-28 bg-og-dark text-white border-y border-white/15 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
         theme="dark"
-        kicker="Tu Experiencia Clínica"
-        title="El Viaje hacia tu Nueva Sonrisa"
+        kicker="Tu experiencia clínica"
+        title="El viaje hacia tu nueva sonrisa"
         subtitle="Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables."
         align="center"
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-left delay-100 flex flex-col justify-between">
+    <div class="mobile-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-left delay-100 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 01</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Consulta y Diálogo</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 01</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Consulta y diálogo</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
             Escuchamos tus expectativas, evaluamos la armonía facial y realizamos fotografías diagnósticas de alta definición.
           </p>
         </div>
       </div>
 
-      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-up delay-200 flex flex-col justify-between">
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-up delay-200 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 02</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Diseño Digital & Prueba</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 02</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Diseño digital & prueba</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
             Modelamos tu sonrisa en 3D y realizamos una prueba estética (mock-up) para que aprecies el resultado antes de comenzar.
           </p>
         </div>
       </div>
 
-      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-up delay-300 flex flex-col justify-between">
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-up delay-300 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 03</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Confección Artesanal</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 03</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Confección artesanal</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
             Los maestros ceramistas elaboran cada lámina de porcelana a mano, asegurando translucidez y naturalidad máxima.
           </p>
         </div>
       </div>
 
-      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-[28px] border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition-all duration-300 reveal-init reveal-fade-right delay-400 flex flex-col justify-between">
+      <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-right delay-400 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.2em] uppercase text-white block mb-3">Paso 04</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Cementación y Entrega</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 04</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Cementación y entrega</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
             Adhesión micrométrica bajo aislamiento absoluto, ajuste de oclusión y pulido de brillo dental final.
           </p>
@@ -169,10 +166,8 @@
   </div>
 </section>
 
-<!-- ================================================================= -->
 <!-- VIDEOS VERTICALES (REELS) DE LA BIBLIOTECA DE CLOUDINARY          -->
-<!-- ================================================================= -->
-<section class="py-24 px-6 md:px-12 bg-slate-50 overflow-hidden">
+<section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
@@ -190,19 +185,13 @@
 
 <!-- Banner con Marca de Agua de Ortodoncia & Diagnóstico Virtual -->
 <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-  <div class="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-white via-slate-50/90 to-sky-50/60 border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(0,114,206,0.2)] transition-all duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
-    
-    <!-- Marca de Agua de Ortodoncia en Segundo Plano -->
-    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-700 select-none z-0">
+  <div class="p-6 md:p-12 rounded-4xl bg-og-card border border-slate-200/90 hover:border-og-electric/50 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-elevated hover:shadow-[0_25px_60px_-15px_rgba(35,63,77,0.2)] transition duration-500 reveal-init reveal-scale delay-100 relative overflow-hidden group">
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-full sm:w-2/3 lg:w-1/2 overflow-hidden opacity-20 group-hover:opacity-35 transition-opacity duration-500 select-none z-0">
       <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
     </div>
-
-    <!-- Resplandor azul zafiro interactivo de esquina -->
-    <div class="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 bg-[radial-gradient(circle,rgba(41,182,246,0.25)_0%,transparent_70%)] blur-2xl z-0"></div>
-
     <!-- Contenido Textual -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <app-editorial-label class="mb-3">Diagnóstico Virtual & Ortodoncia Digital</app-editorial-label>
+      <app-editorial-label class="mb-3">Diagnóstico virtual & ortodoncia digital</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
         Tu Sonrisa es tu Mayor Carta de Presentación
       </h3>
@@ -220,7 +209,7 @@
         [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Subir Fotos para Valoración
+        Iniciar valoración gratuita
       </app-luxury-button>
     </div>
   </div>

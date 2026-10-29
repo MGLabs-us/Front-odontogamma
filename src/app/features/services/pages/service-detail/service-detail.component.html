@@ -1,14 +1,11 @@
 @if (service(); as item) {
-  <!-- ================================================================= -->
   <!-- 1. PRIMER CONTENEDOR: FOTO DE FONDO COMPLETO (HERO EDITORIAL)     -->
-  <!-- ================================================================= -->
-  <section class="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
-    <!-- Imagen a Fondo Completo con Gradientes de Lujo -->
+  <section class="relative min-h-[52dvh] sm:min-h-[75dvh] md:min-h-[90dvh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
     <div class="absolute inset-0 z-0">
-      <img
+      <img loading="lazy" decoding="async"
         [src]="item.heroImageUrl"
         [alt]="item.title + ' - Odontogamma Oriente'"
-        class="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-1000 ease-out"
+        class="w-full h-full object-cover object-center opacity-85 scale-105 transition-transform duration-500 ease-brand"
       />
       <!-- Velo neutral para preservar los colores naturales de la fotografía -->
       <div class="absolute inset-0 bg-black/45"></div>
@@ -17,17 +14,17 @@
 
     <!-- Contenido Central del Hero -->
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16 reveal-init reveal-fade-up">
-      
+
       <!-- Insignia del Procedimiento -->
       <app-editorial-label tone="dark" class="mb-6">{{ item.subtitle }}</app-editorial-label>
 
       <!-- Título de Impacto -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-light text-white tracking-tight leading-[1.08] mb-6">
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.08] mb-6">
         {{ item.title }}
       </h1>
 
       <!-- Frase de Venta / Tagline -->
-      <p class="text-base sm:text-lg md:text-xl text-slate-200 font-light max-w-2xl mx-auto mb-10 leading-relaxed italic">
+      <p class="text-base sm:text-lg md:text-xl text-slate-200 font-normal max-w-2xl mx-auto mb-10 leading-relaxed ">
         "{{ item.tagline }}"
       </p>
 
@@ -38,7 +35,7 @@
           variant="primary"
           size="lg"
         >
-          Agendar Valoración
+          Agendar valoración
         </app-luxury-button>
 
         <app-luxury-button
@@ -47,7 +44,7 @@
           size="lg"
           class="text-white border-white/40 hover:border-white"
         >
-          Ver Antes & Después
+          Ver Antes y después
         </app-luxury-button>
       </div>
 
@@ -55,27 +52,25 @@
 
     <!-- Indicador de Desplazamiento -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 text-white pointer-events-none">
-      <span class="text-[9px] uppercase tracking-[0.3em] font-light">Explorar Tratamiento</span>
+      <span class="text-xs uppercase tracking-[0.18em] font-normal">Explorar tratamiento</span>
       <div class="w-[1px] h-6 bg-gradient-to-b from-white to-transparent"></div>
     </div>
   </section>
 
-  <!-- ================================================================= -->
   <!-- 2. DESCRIPCIÓN EDITORIAL & DISTINTIVOS CLÍNICOS                   -->
-  <!-- ================================================================= -->
-  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-      
+  <section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+
       <!-- Columna Izquierda: La Filosofía y Técnica del Procedimiento -->
       <div class="lg:col-span-7 space-y-6 reveal-init reveal-fade-left delay-100">
-        <span class="text-xs font-semibold tracking-[0.25em] uppercase text-og-electric block">
-          Excelencia Clínica & Artesanía
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block">
+          Excelencia clínica & artesanía
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-light text-og-headline leading-tight">
-          La Ciencia Biomimética Detrás de Tu Nueva Sonrisa
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline leading-tight">
+          La ciencia biomimética detrás de tu nueva sonrisa
         </h2>
 
-        <div class="space-y-4 text-xs sm:text-sm md:text-base text-og-slate font-light leading-relaxed">
+        <div class="space-y-4 text-xs sm:text-sm md:text-base text-og-slate font-normal leading-relaxed">
           @for (paragraph of item.detailedDescription; track $index) {
             <p>{{ paragraph }}</p>
           }
@@ -83,14 +78,14 @@
 
         <!-- Distintivos Técnicos de Odontogamma Oriente -->
         <div class="pt-6 border-t border-og-border">
-          <span class="text-xs font-semibold tracking-[0.2em] uppercase text-og-headline block mb-4">
-            Por Qué Elegir Este Tratamiento en Odontogamma Oriente:
+          <span class="text-xs font-semibold tracking-[0.14em] uppercase text-og-headline block mb-4">
+            Por qué elegir este tratamiento en Odontogamma Oriente:
           </span>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             @for (highlight of item.highlights; track highlight) {
-              <div class="flex items-start gap-3 p-4 bg-white rounded-xs border border-og-border shadow-xs">
+              <div class="flex items-start gap-3 p-4 bg-white rounded-2xl border border-og-border shadow-xs">
                 <span class="w-2 h-2 rounded-full bg-og-electric mt-1.5 shrink-0"></span>
-                <span class="text-xs text-og-headline font-light leading-relaxed">{{ highlight }}</span>
+                <span class="text-xs text-og-headline font-normal leading-relaxed">{{ highlight }}</span>
               </div>
             }
           </div>
@@ -99,25 +94,23 @@
 
       <!-- Columna Derecha: ¿Para Quién es Ideal? (Candidatos) & Contacto Rápido -->
       <div class="lg:col-span-5 space-y-8 reveal-init reveal-fade-right delay-200">
-        
+
         <!-- Tarjeta de Candidatos Ideales -->
-        <div class="p-8 bg-white border border-og-border rounded-xs shadow-elevated">
-          <span class="text-[10px] uppercase tracking-[0.25em] font-semibold text-og-electric block mb-2">
-            Diagnóstico Inicial
+        <div class="p-8 bg-white border border-og-border rounded-2xl shadow-elevated">
+          <span class="text-xs uppercase tracking-[0.18em] font-semibold text-og-electric block mb-2">
+            Diagnóstico inicial
           </span>
-          <h3 class="text-2xl font-editorial font-light text-og-headline mb-4">
+          <h3 class="text-2xl font-editorial font-normal text-og-headline mb-4">
             ¿Es este tratamiento para ti?
           </h3>
-          <p class="text-xs text-og-slate font-light mb-6 leading-relaxed">
+          <p class="text-xs text-og-slate font-normal mb-6 leading-relaxed">
             Recomendado para pacientes que presentan las siguientes características:
           </p>
 
-          <ul class="space-y-3 text-xs text-og-headline font-light mb-8">
+          <ul class="space-y-3 text-xs text-og-headline font-normal mb-8">
             @for (candidate of item.idealFor; track candidate) {
               <li class="flex items-start gap-3">
-                <svg class="w-4 h-4 text-og-electric shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
+                <app-icon name="check" class="w-4 h-4 text-og-electric shrink-0 mt-0.5"></app-icon>
                 <span>{{ candidate }}</span>
               </li>
             }
@@ -129,26 +122,26 @@
             size="md"
             class="w-full text-center"
           >
-            Solicitar Valoración Privada
+            Solicitar valoración privada
           </app-luxury-button>
         </div>
 
         <!-- Tarjeta Concierge Directo -->
-        <div class="card-luxury-aesthetic p-8 rounded-xs text-left">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-og-electric font-semibold block mb-2 font-mono">
-            Atención Inmediata
+        <div class="card-luxury-aesthetic p-8 rounded-2xl text-left">
+          <span class="text-xs uppercase tracking-[0.18em] text-og-electric font-semibold block mb-2 font-mono">
+            Atención inmediata
           </span>
-          <h4 class="text-xl font-editorial font-light text-og-headline mb-2">
-            Consulta con Nuestro Concierge
+          <h4 class="text-xl font-editorial font-normal text-og-headline mb-2">
+            Consulta por WhatsApp
           </h4>
-          <p class="text-xs text-og-slate font-light leading-relaxed mb-6">
+          <p class="text-xs text-og-slate font-normal leading-relaxed mb-6">
             Resuelve dudas sobre tiempos, costos y agenda tu cita directamente con nuestro equipo.
           </p>
           <a
             [href]="'https://wa.me/573217209420?text=Hola,%20deseo%20más%20información%20sobre%20el%20tratamiento%20de%20' + item.title + '%20en%20Odontogamma%20Oriente.'"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-og-electric hover:text-og-headline transition-colors"
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] font-medium text-og-electric hover:text-og-headline transition-colors"
           >
             <span>Chatear por WhatsApp</span>
             <app-arrow-mark />
@@ -160,39 +153,38 @@
     </div>
   </section>
 
-  <!-- ================================================================= -->
   <!-- 3. FOTOS DE REFERENCIA DE LA EMPRESA (GALERÍA CLÍNICA)            -->
-  <!-- ================================================================= -->
-  <section class="py-24 bg-white border-y border-og-border overflow-hidden">
+  <section class="py-16 md:py-24 bg-white border-y border-og-border overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
-        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
-          Galería de Referencia
+      <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal-init reveal-fade-up">
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
+          Galería de referencia
         </span>
-        <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-4">
-          Detalles de Alta Precisión
+        <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-4">
+          Detalles de alta precisión
         </h2>
-        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+        <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed">
           Un vistazo al entorno de confort, la aparatología biométrica y la maestría artesanal con la que creamos sonrisas únicas en el Oriente Antioqueño.
         </p>
       </div>
 
       <!-- Mosaico Editorial de Fotografías -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="rail-md grid grid-cols-1 md:grid-cols-3 gap-8">
         @for (imgUrl of item.galleryImages; track imgUrl; let idx = $index) {
           <div
             [class]="idx % 3 === 0 ? 'reveal-init reveal-fade-left delay-100' : (idx % 3 === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
-            class="group relative overflow-hidden rounded-xs border border-og-border shadow-subtle aspect-[4/3] bg-slate-100"
+            class="group relative overflow-hidden rounded-2xl border border-og-border shadow-subtle aspect-[4/3] bg-slate-100"
           >
             <img
               [src]="imgUrl"
               [alt]="item.title + ' detalle ' + (idx + 1)"
               loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      decoding="async"
+              class="w-full h-full object-cover transition-transform duration-500 ease-brand group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <span class="text-xs uppercase tracking-[0.2em] text-white font-medium">
-                Odontogamma Oriente Clínica
+              <span class="text-xs uppercase tracking-[0.14em] text-white font-medium">
+                Odontogamma Oriente clínica
               </span>
             </div>
           </div>
@@ -201,29 +193,24 @@
     </div>
   </section>
 
-  <!-- ================================================================= -->
   <!-- 4. CASO REAL ANTES & DESPUÉS CON COMPARADOR INTERACTIVO           -->
-  <!-- ================================================================= -->
-  <section id="antes-despues" class="py-28 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F8FAFC] text-og-headline relative overflow-hidden border-t border-slate-200/80">
-    <!-- Acentos lumínicos perla y zafiro sutil -->
-    <div class="pointer-events-none absolute -top-24 -left-20 w-80 h-80 bg-sky-100/60 rounded-full blur-3xl"></div>
-    <div class="pointer-events-none absolute -bottom-24 -right-20 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl"></div>
+  <section id="antes-despues" class="py-16 md:py-28 bg-og-marble text-og-headline relative overflow-hidden border-t border-slate-200/80">
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal-init reveal-fade-up">
-        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3 font-mono">
-          Transformación Real
+
+      <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal-init reveal-fade-up">
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3 font-mono">
+          Transformación real
         </span>
-        <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-4">
-          Antes & Después: {{ item.title }}
+        <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-4">
+          Antes y después: {{ item.title }}
         </h2>
-        <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed">
+        <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed">
           Desliza la barra divisoria interactiva para comparar el estado inicial con el resultado definitivo entregado al paciente.
         </p>
       </div>
 
       <!-- Contenedor del Caso con Slider -->
-      <div class="max-w-4xl mx-auto card-luxury-aesthetic p-6 md:p-10 rounded-xs reveal-init reveal-scale delay-100">
+      <div class="max-w-4xl mx-auto card-luxury-aesthetic p-6 md:p-10 rounded-2xl reveal-init reveal-scale delay-100">
         <app-before-after-slider
           [beforeImage]="item.beforeAfter.beforeImageUrl"
           [afterImage]="item.beforeAfter.afterImageUrl"
@@ -232,13 +219,13 @@
         />
 
         <div class="mt-8">
-          <span class="text-[10px] tracking-[0.25em] uppercase text-og-electric font-semibold block mb-2 font-mono">
-            Caso Clínico Documentado
+          <span class="text-xs tracking-[0.18em] uppercase text-og-electric font-semibold block mb-2 font-mono">
+            Caso clínico documentado
           </span>
-          <h3 class="text-2xl font-editorial text-og-headline font-light mb-3">
+          <h3 class="text-2xl font-editorial text-og-headline font-normal mb-3">
             {{ item.beforeAfter.caseTitle }}
           </h3>
-          <p class="text-xs sm:text-sm text-og-slate font-light leading-relaxed mb-6">
+          <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed mb-6">
             {{ item.beforeAfter.description }}
           </p>
 
@@ -257,18 +244,16 @@
     </div>
   </section>
 
-  <!-- ================================================================= -->
   <!-- 5. LLAMADO A LA ACCIÓN FINAL                                      -->
-  <!-- ================================================================= -->
-  <section class="py-24 px-6 md:px-12 bg-white text-center overflow-hidden">
+  <section class="py-16 md:py-24 px-6 md:px-12 bg-white text-center overflow-hidden">
     <div class="max-w-3xl mx-auto reveal-init reveal-scale delay-100">
-      <span class="text-xs font-semibold tracking-[0.3em] uppercase text-og-electric block mb-3">
-        Tu Próximo Paso
+      <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
+        Tu próximo paso
       </span>
-      <h2 class="text-3xl sm:text-5xl font-editorial font-light text-og-headline mb-6">
+      <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-6">
         Comienza Tu Consulta para {{ item.title }}
       </h2>
-      <p class="text-sm md:text-base text-og-slate font-light leading-relaxed mb-10 max-w-xl mx-auto">
+      <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed mb-10 max-w-xl mx-auto">
         Cada sonrisa es diseñada a medida respetando tu fisionomía facial. Agenda una valoración privada para conocer las posibilidades de tu caso.
       </p>
 
@@ -278,7 +263,7 @@
           variant="primary"
           size="lg"
         >
-          Solicitar Cita de Valoración
+          Solicitar cita de valoración
         </app-luxury-button>
 
         <app-luxury-button
@@ -286,19 +271,19 @@
           variant="secondary"
           size="lg"
         >
-          Ver Todos los Tratamientos
+          Ver todos los tratamientos
         </app-luxury-button>
       </div>
     </div>
   </section>
 } @else {
   <!-- Estado cuando el tratamiento no se encuentra -->
-  <section class="min-h-[70vh] flex items-center justify-center px-6 py-24 text-center">
+  <section class="min-h-[70dvh] flex items-center justify-center px-6 py-16 md:py-24 text-center">
     <div>
       <h2 class="text-3xl font-editorial text-og-headline mb-4">Tratamiento no encontrado</h2>
       <p class="text-sm text-og-slate mb-8">El procedimiento solicitado no existe o fue reubicado.</p>
       <app-luxury-button routerLink="/servicios" variant="primary" size="md">
-        Volver a Tratamientos
+        Volver a tratamientos
       </app-luxury-button>
     </div>
   </section>

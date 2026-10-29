@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/luxury-button.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 
 /**
  * Vista de Contacto y Agendamiento de Valoración Privada.
@@ -12,7 +13,7 @@ import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-a
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, LuxuryButtonComponent],
+  imports: [IconComponent, CommonModule, FormsModule, LuxuryButtonComponent],
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

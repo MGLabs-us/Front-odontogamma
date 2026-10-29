@@ -39,19 +39,19 @@ export class LocationComponent {
   // Espacios de la clínica
   protected readonly spaces: FacilitySpace[] = [
     {
-      title: 'Lounge Privado de Recepción',
+      title: 'Lounge privado de recepción',
       category: 'Hospitalidad & Calma',
       description: 'Un vestíbulo sereno diseñado para disipar cualquier estrés dental. Barra de café de especialidad del Oriente, agua infusionada y atmósfera musical acústica.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.loungeSofa
     },
     {
-      title: 'Nuestro Consultorio',
+      title: 'Nuestro consultorio',
       category: 'Atención & Confort',
       description: 'Un consultorio equipado con sillón ergonómico y los equipos necesarios para tu valoración y tratamiento, en un ambiente cómodo y limpio.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultSuite
     },
     {
-      title: 'Laboratorio Digital In-Situ',
+      title: 'Laboratorio digital in-Situ',
       category: 'Artesanía & Precisión',
       description: 'Área dedicada a la colorimetría con luz natural y ajustes finos de cerámica en el mismo momento de la cita, reduciendo tiempos de espera.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.printedModel

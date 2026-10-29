@@ -7,6 +7,7 @@ import { LuxuryButtonComponent } from '../../../../shared/components/luxury-butt
 import { CloudinaryService } from '../../../../core/services/cloudinary.service';
 import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
+import { IconComponent } from '../../../../shared/components/icon/icon.component';
 
 export interface UploadedDentalPhoto {
   file: File;
@@ -31,7 +32,7 @@ interface PhotoGuideStep {
 @Component({
   selector: 'app-virtual-consultation',
   standalone: true,
-  imports: [
+  imports: [IconComponent, 
     CommonModule,
     FormsModule,
     RouterLink,
@@ -58,33 +59,33 @@ export class VirtualConsultationComponent {
 
   // Opciones de tratamientos de interés
   protected readonly treatmentOptions = [
-    { value: 'carillas-porcelana', label: 'Carillas de Porcelana Feldespática' },
-    { value: 'odontologia-cosmetica', label: 'Odontología Cosmética & Armonización Facial' },
-    { value: 'transformacion-total', label: 'Transformación Completa de Sonrisa' },
-    { value: 'aclaramiento-laser', label: 'Aclaramiento Dental Láser' },
-    { value: 'desgaste-fracturas', label: 'Corrección de Dientes Desgastados o Fracturados' },
-    { value: 'otro', label: 'Otra Consulta o Asesoría Personalizada' }
+    { value: 'carillas-porcelana', label: 'Carillas de porcelana feldespática' },
+    { value: 'odontologia-cosmetica', label: 'Odontología cosmética & armonización facial' },
+    { value: 'transformacion-total', label: 'Transformación completa de sonrisa' },
+    { value: 'aclaramiento-laser', label: 'Aclaramiento dental láser' },
+    { value: 'desgaste-fracturas', label: 'Corrección de dientes desgastados o fracturados' },
+    { value: 'otro', label: 'Otra consulta o asesoría personalizada' }
   ];
 
   // Pasos fotográficos recomendados
   protected readonly photoSteps: PhotoGuideStep[] = [
     {
       step: 'Foto 01',
-      title: 'Sonrisa Natural de Frente',
+      title: 'Sonrisa natural de frente',
       description: 'Una toma frontal con buena luz natural donde se aprecien tus labios relajados y tus dientes en una sonrisa espontánea.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redHairPortrait,
       tip: 'Evita sombras fuertes y no utilices filtros de belleza.'
     },
     {
       step: 'Foto 02',
-      title: 'Sonrisa de Perfil / Tres Cuartos',
+      title: 'Sonrisa de perfil / tres cuartos',
       description: 'Permite al Dr. Jaime Arcila analizar la proyección dental, el perfil labial y cómo armoniza la sonrisa con tu nariz y mentón.',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweaterSide,
       tip: 'Gira levemente la cabeza unos 45 grados mirando hacia la cámara.'
     },
     {
       step: 'Foto 03',
-      title: 'Primer Plano de los Dientes',
+      title: 'Primer plano de los dientes',
       description: 'Un acercamiento claro donde se observe el borde de los dientes superiores e inferiores en oclusión (mordiendo normalmente).',
       imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.smiles.wide,
       tip: 'Enfoca nítidamente la zona dental con buena iluminación diurna.'
