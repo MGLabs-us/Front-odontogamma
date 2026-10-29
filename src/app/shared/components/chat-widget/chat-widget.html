@@ -18,7 +18,7 @@
         (ngModelChange)="draft.set($event)"
         name="draft"
         placeholder="Escribe un mensaje..." />
-      <button class="chat-submit" type="submit">Enviar</button>
+      <button class="chat-submit" type="submit" [disabled]="chat.isSending()">Enviar</button>
     </form>
   </section>
 }

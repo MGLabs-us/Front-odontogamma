@@ -32,5 +32,5 @@ Pero
 
 ## Después del primer deploy
 
-- [ ] Search Console (la propiedad ya está creada): enviar `https://odontogammaoriente.com/sitemap.xml` en Indexación > Sitemaps y, con la URL Inspection, pedir indexación de la home y de `/servicios`.
+- [ ] Search Console: el sitemap se envió el 29 oct 2026 y aparece "No se ha podido obtener", lo normal justo después de enviarlo. Si el 1 de noviembre sigue igual, borrarlo y volver a enviarlo (el archivo responde 200 y lista 14 URLs). Revisar entonces Indexación > Páginas para ver cuántas están indexadas.
 - [ ] Probar el enlace en WhatsApp y en el depurador de Facebook para ver la imagen de vista previa.
