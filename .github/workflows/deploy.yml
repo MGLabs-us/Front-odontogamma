@@ -48,3 +48,25 @@ jobs:
             -e "ssh -i ~/.ssh/id_deploy -p ${VPS_PORT:-22}" \
             dist/odontoGammaOriente/browser/ \
             "$VPS_USER@$VPS_HOST:$VPS_PATH/"
+
+      # El nginx del contenedor vive en el repo (deploy/odontogamma-nginx.conf). Se copia junto a
+      # la carpeta del build, que es donde docker-compose lo monta, y se recrea el contenedor.
+      - name: Update container nginx config
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          VPS_PATH: ${{ secrets.VPS_PATH }}
+        run: |
+          APP_DIR="$(dirname "$VPS_PATH")"
+          SSH="ssh -i ~/.ssh/id_deploy -p ${VPS_PORT:-22}"
+
+          # Si Docker creó una carpeta con el nombre del archivo (volumen apuntando a un archivo inexistente), se quita.
+          $SSH "$VPS_USER@$VPS_HOST" "[ -d '$APP_DIR/odontogamma-nginx.conf' ] && rmdir '$APP_DIR/odontogamma-nginx.conf'; touch '$APP_DIR/odontogamma-nginx.conf'"
+
+          # --inplace conserva el inodo: un volumen de un solo archivo no ve el reemplazo atómico.
+          rsync -az --inplace -e "$SSH" \
+            deploy/odontogamma-nginx.conf \
+            "$VPS_USER@$VPS_HOST:$APP_DIR/odontogamma-nginx.conf"
+
+          $SSH "$VPS_USER@$VPS_HOST" "cd '$APP_DIR' && docker compose up -d --force-recreate odontogamma && sleep 3 && docker ps --filter name=odontogamma_container --filter status=running -q | grep -q ."
