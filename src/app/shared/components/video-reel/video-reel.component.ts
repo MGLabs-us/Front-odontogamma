@@ -42,6 +42,7 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
                 [src]="item.posterUrl"
                 [alt]="item.title"
                 loading="lazy"
+      decoding="async"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <span class="absolute inset-0 bg-gradient-to-t from-og-dark/90 via-og-dark/10 to-og-dark/20"></span>

@@ -12,6 +12,25 @@
   --color-og-silver: #d3d9d7;
   --color-og-border: #e4e6e1;
 
+  /* Grises de marca: reemplazan la escala slate (azulada) de Tailwind para que
+     todo gris de la interfaz comparta el mismo matiz petróleo. */
+  --color-slate-50: #f4f6f4;
+  --color-slate-100: #eaefee;
+  --color-slate-200: #dce3e2;
+  --color-slate-300: #c3cecd;
+  --color-slate-400: #94a3a5;
+  --color-slate-500: #69777a;
+  --color-slate-600: #556467;
+  --color-slate-700: #3f4f54;
+  --color-slate-800: #2f3f45;
+  --color-slate-900: #28383e;
+  --color-slate-950: #1a272c;
+
+  /* Una sola curva de movimiento para toda la interfaz. */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-duration: 300ms;
+
   --font-serif: 'Lora', Georgia, serif;
   --font-editorial: 'Lora', Georgia, serif;
   --font-cinzel: 'Cinzel', Georgia, serif;
@@ -31,11 +50,6 @@
   --og-line: #e4e6e1;
   --og-shadow: 0 14px 36px rgb(40 56 62 / 7%);
   --og-shadow-hover: 0 20px 44px rgb(40 56 62 / 11%);
-  --og-gradient-brand: linear-gradient(135deg, #527b8b, #315a6b);
-  --og-gradient-royal: linear-gradient(135deg, #315a6b, #233f4d);
-  --og-gradient-dodger: linear-gradient(135deg, #668c98, #527b8b);
-  --og-gradient-dark: linear-gradient(180deg, #315a6b, #233f4d);
-  --og-gradient-silver: linear-gradient(135deg, #fffefa, #e4e6e1);
   --shadow-subtle: var(--og-shadow);
   --shadow-elevated: var(--og-shadow-hover);
   --shadow-glow: 0 8px 24px rgb(49 90 107 / 18%);
@@ -112,9 +126,9 @@ video {
   align-items: center;
   gap: 0.55rem;
   color: var(--og-blue);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -141,19 +155,18 @@ video {
   padding: 0.8rem 1.5rem;
   color: #fffefa;
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.045em;
-  line-height: 1.25;
+  letter-spacing: 0;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
+    background-color 300ms var(--ease-brand),
+    border-color 300ms var(--ease-brand),
+    box-shadow 300ms var(--ease-brand),
+    color 300ms var(--ease-brand),
+    transform 300ms var(--ease-brand);
 }
 
 .og-button:hover {
@@ -162,19 +175,19 @@ video {
 }
 
 .og-button:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .og-button--sm {
-  min-height: 2.4rem;
-  padding: 0.6rem 1.15rem;
-  font-size: 0.72rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
 }
 
 .og-button--lg {
   min-height: 3.2rem;
   padding: 0.9rem 1.8rem;
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 
 .og-button--primary {
@@ -247,7 +260,6 @@ video {
   background: rgb(255 254 250 / 75%);
 }
 
-.og-card,
 .card-luxury-aesthetic,
 .card-philosophy-aesthetic {
   border: 1px solid var(--og-line);
@@ -256,15 +268,13 @@ video {
   box-shadow: var(--og-shadow);
 }
 
-.og-card,
 .card-philosophy-aesthetic {
   transition:
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    transform 220ms ease;
+    border-color 300ms var(--ease-brand),
+    box-shadow 300ms var(--ease-brand),
+    transform 300ms var(--ease-brand);
 }
 
-.og-card:hover,
 .card-philosophy-aesthetic:hover {
   border-color: #c7d5d4;
   box-shadow: var(--og-shadow-hover);
@@ -282,9 +292,7 @@ video {
 
 .container-luxury-dark,
 .footer-luxury {
-  background:
-    radial-gradient(ellipse at 85% 0%, rgb(183 207 210 / 11%), transparent 42%),
-    linear-gradient(145deg, #315a6b, #233f4d);
+  background: var(--color-og-dark);
 }
 
 .container-luxury-dark {
@@ -305,9 +313,9 @@ video {
   z-index: 50;
   padding: 1rem 1rem 0;
   pointer-events: none;
-  transition: padding 280ms ease;
+  transition: padding 300ms var(--ease-brand);
   /* `backwards` (no `both`): un transform persistente convertiría al header en el bloque contenedor del panel fixed móvil */
-  animation: navSlideDown 360ms ease-out backwards;
+  animation: navSlideDown 360ms var(--ease-brand) backwards;
 }
 
 .nav-header.is-scrolled {
@@ -332,7 +340,7 @@ video {
   box-shadow: 0 18px 40px rgb(14 28 35 / 22%), inset 0 1px 0 rgb(255 255 255 / 10%);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  transition: background 280ms ease, box-shadow 280ms ease, padding 280ms ease;
+  transition: background 300ms var(--ease-brand), box-shadow 300ms var(--ease-brand), padding 300ms var(--ease-brand);
 }
 
 .nav-header.is-scrolled .nav-inner,
@@ -346,7 +354,7 @@ video {
   align-items: center;
   flex-shrink: 0;
   transform-origin: left center;
-  transition: transform 280ms ease;
+  transition: transform 300ms var(--ease-brand);
 }
 
 .nav-header.is-scrolled .nav-brand {
@@ -376,14 +384,13 @@ video {
   padding: 0.6rem 0.95rem;
   border: 0;
   border-radius: 9999px;
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: rgb(255 255 255 / 82%);
   background: transparent;
   cursor: pointer;
-  transition: background 200ms ease, color 200ms ease;
+  transition: background 300ms var(--ease-brand), color 300ms var(--ease-brand);
 }
 
 .nav-link:hover,
@@ -403,7 +410,7 @@ video {
   width: 0.8rem;
   height: 0.8rem;
   color: var(--color-og-cyan);
-  transition: transform 260ms ease;
+  transition: transform 300ms var(--ease-brand);
 }
 
 .nav-group:hover .nav-chevron,
@@ -423,7 +430,7 @@ video {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -0.5rem) scale(0.98);
-  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+  transition: opacity 300ms var(--ease-brand), transform 300ms var(--ease-brand), visibility 300ms;
 }
 
 .nav-group:hover .nav-dropdown,
@@ -454,7 +461,7 @@ video {
   gap: 0.9rem;
   padding: 0.75rem 0.9rem;
   border-radius: 1rem;
-  transition: background 180ms ease, transform 180ms ease;
+  transition: background 300ms var(--ease-brand), transform 300ms var(--ease-brand);
 }
 
 .nav-dropdown-item:hover,
@@ -468,7 +475,7 @@ video {
 }
 
 .nav-dropdown-item.is-highlight {
-  background: linear-gradient(120deg, rgb(183 207 210 / 22%), rgb(183 207 210 / 6%));
+  background: rgb(183 207 210 / 16%);
 }
 
 .nav-dropdown-dot {
@@ -481,11 +488,10 @@ video {
   border-right: 1px solid rgb(255 255 255 / 16%);
   font-family: var(--font-editorial);
   font-size: 0.82rem;
-  font-style: italic;
   line-height: 1;
   font-variant-numeric: lining-nums;
   color: rgb(183 207 210 / 70%);
-  transition: color 200ms ease, border-color 200ms ease;
+  transition: color 300ms var(--ease-brand), border-color 300ms var(--ease-brand);
 }
 
 .nav-dropdown-item:hover .nav-dropdown-dot,
@@ -516,7 +522,7 @@ video {
 }
 
 .nav-dropdown-desc {
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.4;
   color: rgb(255 255 255 / 66%);
@@ -526,7 +532,7 @@ video {
   padding: 0.1rem 0.5rem;
   border-radius: 9999px;
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -542,12 +548,12 @@ video {
   padding: 0.8rem 0.9rem;
   border-radius: 1rem;
   background: rgb(255 255 255 / 6%);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-og-cyan);
-  transition: background 180ms ease, color 180ms ease;
+  transition: background 300ms var(--ease-brand), color 300ms var(--ease-brand);
 }
 
 .nav-dropdown-footer:hover {
@@ -562,13 +568,12 @@ video {
   margin-left: 0.5rem;
   padding: 0.85rem 1.4rem;
   border-radius: 1.2rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--color-og-dark);
   background: #f7f6f2;
-  transition: background 220ms ease, transform 220ms ease;
+  transition: background 300ms var(--ease-brand), transform 300ms var(--ease-brand);
 }
 
 .nav-cta:hover {
@@ -594,7 +599,7 @@ video {
   border-radius: 1.1rem;
   background: rgb(255 255 255 / 12%);
   cursor: pointer;
-  transition: background 200ms ease;
+  transition: background 300ms var(--ease-brand);
 }
 
 .nav-toggle:hover {
@@ -618,10 +623,46 @@ video {
   overflow-y: auto;
   pointer-events: auto;
   color: #fff;
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(183 207 210 / 16%), transparent 55%),
-    linear-gradient(170deg, #233f4d, #16272f);
-  animation: fadeIn 240ms ease-out both;
+  background: var(--color-og-dark);
+  animation: fadeIn 300ms var(--ease-brand) both;
+}
+
+/* Los enlaces del panel móvil entran uno tras otro, en orden de lectura */
+.nav-mobile > * {
+  animation: navItemIn 500ms var(--ease-brand) both;
+}
+
+.nav-mobile > :nth-child(1) { animation-delay: 60ms; }
+.nav-mobile > :nth-child(2) { animation-delay: 120ms; }
+.nav-mobile > :nth-child(3) { animation-delay: 180ms; }
+.nav-mobile > :nth-child(4) { animation-delay: 240ms; }
+.nav-mobile > :nth-child(5) { animation-delay: 300ms; }
+
+@keyframes navItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* El icono del menú rota al cambiar entre abrir y cerrar */
+.nav-toggle svg {
+  animation: navIconIn 300ms var(--ease-brand) both;
+}
+
+@keyframes navIconIn {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -665,7 +706,7 @@ video {
   padding: 0.7rem 0;
   font-size: 1rem;
   color: rgb(255 255 255 / 76%);
-  transition: color 180ms ease;
+  transition: color 300ms var(--ease-brand);
 }
 
 .nav-mobile-link:hover,
@@ -680,15 +721,14 @@ video {
 
 .nav-mobile-link.is-footer {
   margin-top: 0.3rem;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-og-cyan);
 }
 
-.glass-panel,
-.glass-panel-dark {
+.glass-panel {
   border: 1px solid rgb(255 255 255 / 26%);
   border-radius: 1rem;
   backdrop-filter: blur(14px);
@@ -698,7 +738,7 @@ video {
 .photo-frame-3d {
   border-radius: 1rem;
   box-shadow: var(--og-shadow);
-  transition: box-shadow 220ms ease;
+  transition: box-shadow 300ms var(--ease-brand);
 }
 
 .photo-frame-3d:hover {
@@ -732,10 +772,6 @@ video {
   }
 }
 
-.animate-nav-down {
-  animation: navSlideDown 320ms ease-out both;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -749,34 +785,25 @@ video {
 
 .animate-fadeIn,
 .animate-slide-fade {
-  animation: fadeIn 360ms ease-out both;
-}
-
-.animate-float-slow,
-.animate-float-delayed {
-  animation: none;
-}
-
-.shimmer-sheen::before {
-  display: none;
+  animation: fadeIn 360ms var(--ease-brand) both;
 }
 
 .reveal-init {
   opacity: 0;
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 700ms var(--ease-brand), transform 700ms var(--ease-brand);
   will-change: opacity, transform;
 }
 
 .reveal-fade-up {
-  transform: translateY(1rem);
+  transform: translateY(1.5rem);
 }
 
 .reveal-fade-left {
-  transform: translateX(-1rem);
+  transform: translateX(-1.5rem);
 }
 
 .reveal-fade-right {
-  transform: translateX(1rem);
+  transform: translateX(1.5rem);
 }
 
 .reveal-scale {
@@ -788,11 +815,10 @@ video {
   transform: translate(0) scale(1) !important;
 }
 
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 160ms; }
-.delay-300 { transition-delay: 220ms; }
-.delay-400 { transition-delay: 280ms; }
-.delay-500 { transition-delay: 340ms; }
+.delay-100 { transition-delay: 300ms; }
+.delay-200 { transition-delay: 300ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 300ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -805,18 +831,121 @@ video {
   }
 
   .reveal-init {
-    opacity: 1;
-    transform: none;
+    transform: none !important;
+    transition: opacity 300ms linear !important;
   }
 }
 
 /* Enlaces del footer */
 .footer-link {
+  display: inline-block;
   color: rgb(203 213 225);
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition: color 300ms var(--ease-brand), transform 300ms var(--ease-brand);
 }
 
 .footer-link:hover {
   color: #fff;
-  padding-left: 0.25rem;
+  transform: translateX(0.25rem);
+}
+
+/* ==========================================================================
+   Móvil: las listas de tarjetas se recorren de lado en vez de apilarse
+   ========================================================================== */
+@media (max-width: 1023.98px) {
+  .mobile-rail {
+    display: flex;
+    gap: 1rem;
+    margin-inline: -1.5rem;
+    padding: 0.25rem 1.5rem 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 1.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .mobile-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-rail > * {
+    flex: 0 0 min(84%, 22rem);
+    scroll-snap-align: start;
+  }
+
+  /* Los elementos fuera de pantalla no se pueden "revelar" por scroll vertical */
+  .mobile-rail .reveal-init,
+  .mobile-rail > .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Igual que .mobile-rail, pero solo por debajo de 768px (listas de 3 columnas en tablet)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .rail-md {
+    display: flex;
+    gap: 1rem;
+    margin-inline: -1.5rem;
+    padding: 0.25rem 1.5rem 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 1.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .rail-md::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rail-md > * {
+    flex: 0 0 min(84%, 22rem);
+    scroll-snap-align: start;
+  }
+
+  /* Los elementos fuera de pantalla no se pueden "revelar" por scroll vertical */
+  .rail-md .reveal-init,
+  .rail-md > .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fila de filtros que se desplaza en móvil y se centra en pantallas amplias */
+.chip-row {
+  display: flex;
+  gap: 0.625rem;
+  margin-inline: -1.5rem;
+  padding-inline: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+.chip-row > * {
+  flex: none;
+}
+
+@media (min-width: 768px) {
+  .chip-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+  }
+}
+
+.gallery-track {
+  scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
 }

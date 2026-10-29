@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrandLogoComponent } from '../../../shared/components/brand-logo/brand-logo.component';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 
 interface SocialLink {
   readonly name: string;
@@ -17,7 +18,7 @@ interface SocialLink {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink, BrandLogoComponent],
+  imports: [IconComponent, CommonModule, RouterLink, BrandLogoComponent],
   templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

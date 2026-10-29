@@ -1,6 +1,7 @@
 import { Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditorialLabelComponent } from '../editorial-label/editorial-label.component';
+import { IconComponent } from '../icon/icon.component';
 
 /**
  * Comparador interactivo de Antes y Después con arrastre táctil y mouse.
@@ -9,7 +10,7 @@ import { EditorialLabelComponent } from '../editorial-label/editorial-label.comp
 @Component({
   selector: 'app-before-after-slider',
   standalone: true,
-  imports: [CommonModule, EditorialLabelComponent],
+  imports: [IconComponent, CommonModule, EditorialLabelComponent],
   templateUrl: './before-after-slider.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

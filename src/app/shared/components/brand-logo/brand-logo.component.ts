@@ -20,7 +20,7 @@ export type BrandLogoVariant = 'navbar' | 'footer' | 'full' | 'hero';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
-      class="inline-flex flex-col items-center select-none transition-all duration-300 group"
+      class="inline-flex flex-col items-center select-none transition-colors duration-300 group"
       [ngClass]="getContainerClasses()"
     >
       <!-- ==================== ISOTIPO: MUELITA ENCIMA CON ALAS ==================== -->
@@ -35,25 +35,25 @@ export type BrandLogoVariant = 'navbar' | 'footer' | 'full' | 'hero';
           <defs>
             <!-- Gradiente para el modo cromático de la marca -->
             <linearGradient id="ogBrandLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#0072CE' : '#FFFFFF'" />
-              <stop offset="60%" [attr.stop-color]="theme === 'light' ? '#104B96' : '#E0F2FE'" />
-              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#0B356D' : (monochrome ? '#FFFFFF' : '#29B6F6')" />
+              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#315a6b' : '#FFFFFF'" />
+              <stop offset="60%" [attr.stop-color]="theme === 'light' ? '#233f4d' : '#dbe8e9'" />
+              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#233f4d' : (monochrome ? '#FFFFFF' : '#b7cfd2')" />
             </linearGradient>
 
             <linearGradient id="ogWingLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#29B6F6' : (monochrome ? '#FFFFFF' : '#29B6F6')" [attr.stop-opacity]="theme === 'light' ? '0.7' : (monochrome ? '0.4' : '0.25')" />
-              <stop offset="60%" [attr.stop-color]="theme === 'light' ? '#0072CE' : '#BAE6FD'" />
-              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#104B96' : '#FFFFFF'" />
+              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#b7cfd2' : (monochrome ? '#FFFFFF' : '#b7cfd2')" [attr.stop-opacity]="theme === 'light' ? '0.7' : (monochrome ? '0.4' : '0.25')" />
+              <stop offset="60%" [attr.stop-color]="theme === 'light' ? '#315a6b' : '#b7cfd2'" />
+              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#233f4d' : '#FFFFFF'" />
             </linearGradient>
 
             <linearGradient id="ogWingRight" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#104B96' : '#FFFFFF'" />
-              <stop offset="40%" [attr.stop-color]="theme === 'light' ? '#0072CE' : '#BAE6FD'" />
-              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#29B6F6' : (monochrome ? '#FFFFFF' : '#29B6F6')" [attr.stop-opacity]="theme === 'light' ? '0.7' : (monochrome ? '0.4' : '0.25')" />
+              <stop offset="0%" [attr.stop-color]="theme === 'light' ? '#233f4d' : '#FFFFFF'" />
+              <stop offset="40%" [attr.stop-color]="theme === 'light' ? '#315a6b' : '#b7cfd2'" />
+              <stop offset="100%" [attr.stop-color]="theme === 'light' ? '#b7cfd2' : (monochrome ? '#FFFFFF' : '#b7cfd2')" [attr.stop-opacity]="theme === 'light' ? '0.7' : (monochrome ? '0.4' : '0.25')" />
             </linearGradient>
 
             <filter id="ogLogoGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="1" stdDeviation="1.5" [attr.flood-color]="theme === 'light' ? '#0072CE' : (monochrome ? '#FFFFFF' : '#29B6F6')" [attr.flood-opacity]="theme === 'light' ? '0.2' : (monochrome ? '0.25' : '0.4')" />
+              <feDropShadow dx="0" dy="1" stdDeviation="1.5" [attr.flood-color]="theme === 'light' ? '#315a6b' : (monochrome ? '#FFFFFF' : '#b7cfd2')" [attr.flood-opacity]="theme === 'light' ? '0.2' : (monochrome ? '0.25' : '0.4')" />
             </filter>
           </defs>
 

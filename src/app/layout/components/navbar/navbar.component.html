@@ -11,9 +11,7 @@
         <div class="nav-group">
           <button type="button" class="nav-link" aria-haspopup="true">
             <span>{{ group.label }}</span>
-            <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
+            <app-icon name="chevron-down" class="nav-chevron"></app-icon>
           </button>
 
           <div class="nav-dropdown">
@@ -54,7 +52,7 @@
       </a>
 
       <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta">
-        <span>Valoración Gratis</span>
+        <span>Valoración gratuita</span>
       </a>
     </nav>
 
@@ -68,13 +66,9 @@
       [attr.aria-label]="mobileMenuOpen() ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
     >
       @if (!mobileMenuOpen()) {
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+        <app-icon name="menu" class="w-6 h-6"></app-icon>
       } @else {
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <app-icon name="close" class="w-6 h-6"></app-icon>
       }
     </button>
   </div>
@@ -91,17 +85,7 @@
             [attr.aria-expanded]="openMobileGroup() === group.id"
           >
             <span>{{ group.label }}</span>
-            <svg
-              class="nav-chevron"
-              [class.is-flipped]="openMobileGroup() === group.id"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
+            <app-icon name="chevron-down" class="nav-chevron" [class.is-flipped]="openMobileGroup() === group.id"></app-icon>
           </button>
 
           @if (openMobileGroup() === group.id) {
@@ -132,7 +116,7 @@
       </a>
 
       <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta is-block" (click)="closeMobileMenu()">
-        <span>Iniciar Valoración Gratuita</span>
+        <span>Iniciar valoración gratuita</span>
       </a>
     </div>
   }

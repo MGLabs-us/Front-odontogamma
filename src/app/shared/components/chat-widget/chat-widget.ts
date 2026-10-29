@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChatService } from '../../services/chat';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-chat-widget',
-  imports: [FormsModule],
+  imports: [IconComponent, FormsModule],
   templateUrl: './chat-widget.html',
   styleUrl: './chat-widget.css',
 })

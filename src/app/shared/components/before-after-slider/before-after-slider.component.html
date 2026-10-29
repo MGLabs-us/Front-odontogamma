@@ -7,9 +7,10 @@
     [src]="afterImage()"
     [alt]="alt() + ' - Resultado Final'"
     loading="lazy"
-    class="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+      decoding="async"
+    class="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-500 ease-brand group-hover:scale-[1.02]"
   />
-  
+
   <div class="absolute top-4 right-4 z-10 pointer-events-none">
     <app-editorial-label tone="dark">
       {{ afterLabel() }}
@@ -25,9 +26,10 @@
       [src]="beforeImage()"
       [alt]="alt() + ' - Estado Inicial'"
       loading="lazy"
-      class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-brand group-hover:scale-[1.02]"
     />
-    
+
     <div class="absolute top-4 left-4 z-10 pointer-events-none">
       <app-editorial-label tone="dark">
         {{ beforeLabel() }}
@@ -36,24 +38,20 @@
   </div>
 
   <div
-    class="absolute top-0 bottom-0 w-px bg-white/90 shadow-[0_0_8px_rgba(40,56,62,0.3)] z-20 pointer-events-none transition-opacity duration-200"
+    class="absolute top-0 bottom-0 w-px bg-white/90 shadow-[0_0_8px_rgba(40,56,62,0.3)] z-20 pointer-events-none transition-opacity duration-300"
     [style.left.%]="sliderPosition()"
   >
     <div
-      class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-og-card text-og-headline shadow-md flex items-center justify-center border border-og-deep transition-all duration-200"
+      class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-og-card text-og-headline shadow-md flex items-center justify-center border border-og-deep transition duration-300"
       [class.scale-125]="isDragging()"
       [class.ring-4]="isDragging()"
       [class.ring-og-cyan/40]="isDragging()"
       [class.group-hover:scale-110]="!isDragging()"
     >
       <div class="flex items-center justify-center gap-0.5 text-og-deep">
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="m14 18-6-6 6-6" />
-        </svg>
+        <app-icon name="chevron-left" class="w-3.5 h-3.5"></app-icon>
         <div class="w-px h-3.5 bg-og-silver rounded-full"></div>
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="m10 6 6 6-6 6" />
-        </svg>
+        <app-icon name="chevron-right" class="w-3.5 h-3.5"></app-icon>
       </div>
     </div>
   </div>

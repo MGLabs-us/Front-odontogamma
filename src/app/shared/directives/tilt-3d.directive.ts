@@ -105,7 +105,7 @@ export class Tilt3dDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(
       this.glareElement,
       'background',
-      'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, rgba(41,182,246,0.18) 35%, transparent 70%)'
+      'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, rgba(183,207,210,0.18) 35%, transparent 70%)'
     );
     this.renderer.setStyle(this.glareElement, 'opacity', '0');
     this.renderer.setStyle(this.glareElement, 'transform', 'translate3d(0, 0, 0)');
