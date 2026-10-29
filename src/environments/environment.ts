@@ -4,6 +4,7 @@
  */
 export const environment = {
   production: true,
+  siteUrl: 'https://odontogammaoriente.com',
   clinicName: 'Odontogamma Oriente',
   clinicDirector: 'Dr. Jaime Arcila Cano',
   location: 'El Carmen de Viboral, Antioquia, Colombia',

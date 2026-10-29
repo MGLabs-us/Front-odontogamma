@@ -1,9 +1,16 @@
-<div class="min-h-screen flex flex-col bg-og-marble text-og-headline selection:bg-og-electric selection:text-white">
+<div class="min-h-dvh flex flex-col bg-og-marble text-og-headline selection:bg-og-electric selection:text-white">
+  <a
+    href="#contenido"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-og-dark"
+  >
+    Saltar al contenido
+  </a>
+
   <!-- Barra de navegación con backdrop-blur y azul de marca -->
   <app-navbar />
 
   <!-- Contenido principal inyectado por el enrutador de Angular -->
-  <main class="flex-1">
+  <main id="contenido" tabindex="-1" class="flex-1 outline-none">
     <router-outlet />
   </main>
 

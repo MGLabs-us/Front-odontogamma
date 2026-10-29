@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SeoService } from './core/services/seo.service';
 import { ChatWidget } from './shared/components/chat-widget/chat-widget';
 
 /**
@@ -13,4 +14,8 @@ import { ChatWidget } from './shared/components/chat-widget/chat-widget';
   template: '<router-outlet /><app-chat-widget />',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {}
+export class App {
+  constructor() {
+    inject(SeoService).init();
+  }
+}
