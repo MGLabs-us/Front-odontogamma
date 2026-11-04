@@ -64,15 +64,30 @@
 
       </div>
 
-      <!-- Columna Derecha: Showcase del Video con Perspectiva 3D Tilt y Proporción Cómoda -->
+      <!-- Columna Derecha: video del Dr. Jaime Arcila en marco orgánico (solo decorativo, sin controles) -->
       <div class="lg:col-span-5 flex justify-center reveal-init reveal-scale delay-100">
 
-        <div class="relative w-full max-w-[420px] lg:max-w-[450px] xl:max-w-[480px]">
+        <div class="hero-blob relative w-[68%] max-w-[250px] sm:max-w-[360px] lg:w-full lg:max-w-[470px] aspect-[4/5]">
 
-          <!-- Contenedor Maestro 3D Tilt con Resplandor Especular y Sombra Espacial -->
-          <div
-            class="relative w-full aspect-[16/10] sm:aspect-[4/5] max-h-[240px] sm:max-h-[490px] lg:max-h-[520px] rounded-3xl overflow-hidden border border-white/25 shadow-[0_30px_70px_-15px_rgba(14,28,35,0.45)] bg-slate-900 group"
-          >
+          <!-- Resplandor suave detrás del marco -->
+          <div class="absolute inset-[8%] rounded-full bg-og-cyan/25 blur-3xl pointer-events-none"></div>
+
+          <!-- Contorno doble de la forma (línea fina desplazada, como en la guía visual) -->
+          <svg class="absolute -inset-[4%] w-[108%] h-[108%] overflow-visible pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path class="hero-blob-outline" vector-effect="non-scaling-stroke" d="M 0,52 C 2,36 45,4 78,0 C 92,0 100,8 99,25 C 98,50 95,78 86,92 C 80,100 70,100 60,96 C 25,84 0,72 0,52 Z" />
+          </svg>
+
+          <!-- Definición de la forma (coordenadas relativas 0-1) -->
+          <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="hero-blob-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0.52 C 0.02,0.36 0.45,0.04 0.78,0 C 0.92,0 1,0.08 0.99,0.25 C 0.98,0.5 0.95,0.78 0.86,0.92 C 0.8,1 0.7,1 0.6,0.96 C 0.25,0.84 0,0.72 0,0.52 Z" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <!-- Video recortado con la forma orgánica -->
+          <div class="hero-blob-clip absolute inset-0 overflow-hidden bg-og-dark shadow-2xl">
             <video
               [src]="heroVideo.videoUrl"
               [poster]="heroVideo.posterUrl"
@@ -82,28 +97,15 @@
               [muted]="true"
               loop
               playsinline
+              disablepictureinpicture
+              disableremoteplayback
               preload="auto"
-              class="w-full h-full object-cover object-center relative z-10 transition-transform duration-500 ease-brand group-hover:scale-105"
+              tabindex="-1"
+              class="w-full h-full object-cover object-[50%_35%] pointer-events-none select-none"
             ></video>
-
-            <!-- Velo sutil inferior con viñeta para dar contraste cinematográfico -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none z-20"></div>
-
-            <!-- Etiqueta editorial superior -->
-            <div class="absolute top-4 left-4 z-30 pointer-events-none">
-              <app-editorial-label tone="dark">
-                Una experiencia personal
-              </app-editorial-label>
-            </div>
-
-            <div class="hidden sm:block absolute bottom-4 inset-x-4 p-4 rounded-2xl bg-og-dark/85 backdrop-blur-xl border border-white/15 text-white pointer-events-none z-30 shadow-lg">
-              <span class="text-xs uppercase tracking-[0.18em] text-white/75 font-semibold block mb-1">Odontogamma Oriente</span>
-              <span class="text-sm font-editorial font-medium text-slate-100">Cuidado pensado para ti</span>
-            </div>
-
+            <!-- Velo petróleo sutil para integrarlo con la paleta de la página -->
+            <div class="absolute inset-0 bg-gradient-to-t from-og-dark/35 via-transparent to-og-dark/10 pointer-events-none"></div>
           </div>
-
-
 
         </div>
 

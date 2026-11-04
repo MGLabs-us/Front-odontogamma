@@ -133,13 +133,6 @@ video {
   text-transform: uppercase;
 }
 
-.og-eyebrow::before {
-  width: 1.15rem;
-  height: 1px;
-  background: currentColor;
-  content: '';
-}
-
 .og-eyebrow--dark {
   color: #fffefa;
 }
@@ -948,4 +941,15 @@ video {
 
 .gallery-track::-webkit-scrollbar {
   display: none;
+}
+
+/* Video del hero: la forma orgánica vive en un <clipPath> SVG (objectBoundingBox) dentro de home.component.html */
+.hero-blob-clip {
+  clip-path: url(#hero-blob-clip);
+}
+
+.hero-blob-outline {
+  fill: none;
+  stroke: rgb(255 255 255 / 45%);
+  stroke-width: 1.25px;
 }

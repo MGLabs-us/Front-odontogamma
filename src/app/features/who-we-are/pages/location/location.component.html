@@ -1,12 +1,21 @@
 <!-- 1. PRIMER CONTENEDOR: HERO FULL-BLEED NUESTRA SEDE               -->
-<section class="relative min-h-[52dvh] sm:min-h-[75dvh] flex items-center justify-center overflow-hidden">
+<section class="relative min-h-dvh flex items-center justify-center overflow-hidden">
   <!-- Fotografía de Fondo Completo Editorial -->
   <div class="absolute inset-0 z-0">
-    <img loading="lazy" decoding="async"
-      [src]="heroImageUrl"
-      alt="Sede Odontogamma Oriente en El Carmen de Viboral"
-      class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
-    />
+    <video
+      [src]="heroVideo.videoUrl"
+      [poster]="heroImageUrl"
+      [attr.aria-label]="heroVideo.title"
+      autoplay
+      muted
+      [muted]="true"
+      loop
+      playsinline
+      disablepictureinpicture
+      preload="auto"
+      tabindex="-1"
+      class="w-full h-full object-cover object-center pointer-events-none select-none"
+    ></video>
     <!-- Velo neutral para preservar los colores naturales de la fotografía -->
     <div class="absolute inset-0 bg-black/45"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30"></div>
