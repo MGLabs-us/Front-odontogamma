@@ -49,13 +49,11 @@ jobs:
           VPS_PATH: ${{ secrets.VPS_PATH }}
           SSHPASS: ${{ secrets.VPS_PASSWORD }}
         run: |
-          rsync -rlt  z --delete --omit-dir-times --chmod=D775,F664 \
+          rsync -rltz --delete --omit-dir-times --chmod=D775,F664 \
             -e "sshpass -e ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no" \
             dist/odontoGammaOriente/browser/ \
             "$VPS_USER@$VPS_HOST:$VPS_PATH/"
 
-      # El nginx del contenedor vive en el repo (deploy/odontogamma-nginx.conf). Se escribe en el
-      # mismo archivo que monta docker-compose (mismo inodo) y se recrea el contenedor.
       - name: Update container nginx config
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
