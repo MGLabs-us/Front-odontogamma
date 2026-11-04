@@ -1,34 +1,66 @@
 @if (chat.isOpen()) {
   <section class="chat-panel" role="dialog" aria-labelledby="chat-title">
     <header class="chat-header">
-      <span id="chat-title">Asistente</span>
-      <button class="chat-close" type="button" aria-label="Cerrar asistente" (click)="chat.toggle()">✕</button>
+      <span id="chat-title">{{ 'chat.title' | transloco }}</span>
+      <button class="chat-close" type="button" [attr.aria-label]="'chat.close' | transloco" (click)="chat.toggle()">✕</button>
     </header>
 
-    <div class="chat-messages" role="log" aria-live="polite">
+    <div #messagesEl class="chat-messages" role="log" aria-live="polite">
       @for (m of chat.messages(); track $index) {
-        <div class="chat-message" [class.chat-message--user]="m.from === 'user'">{{ m.text }}</div>
+        <div class="chat-message" [class.chat-message--user]="m.from === 'user'">{{ m.key ? (m.key | transloco) : m.text }}</div>
+      }
+
+      <!-- Animación de "escribiendo..." mientras llega la respuesta -->
+      @if (chat.isSending()) {
+        <div class="chat-message chat-typing" role="status" [attr.aria-label]="'chat.typing' | transloco">
+          <span class="chat-typing__dot"></span>
+          <span class="chat-typing__dot"></span>
+          <span class="chat-typing__dot"></span>
+        </div>
       }
     </div>
 
-    <form class="chat-form" (ngSubmit)="send()">
+    <form class="chat-form" autocomplete="off" (ngSubmit)="send()">
       <input
         class="chat-input"
         [ngModel]="draft()"
         (ngModelChange)="draft.set($event)"
         name="draft"
-        placeholder="Escribe un mensaje..." />
-      <button class="chat-submit" type="submit" [disabled]="chat.isSending()">Enviar</button>
+        autocomplete="off"
+        autocorrect="off"
+        enterkeyhint="send"
+        [placeholder]="'chat.placeholder' | transloco" />
+      <button class="chat-submit" type="submit" [disabled]="chat.isSending()">{{ 'chat.send' | transloco }}</button>
     </form>
   </section>
 }
 
+@if (teaserVisible() && !chat.isOpen()) {
+  <div class="chat-teaser" role="note">
+    <button type="button" class="chat-teaser__body" (click)="openFromTeaser()">
+      <span class="chat-teaser__title">{{ 'chat.teaserTitle' | transloco }}</span>
+      <span class="chat-teaser__text">{{ 'chat.teaserText' | transloco }}</span>
+    </button>
+    <button type="button" class="chat-teaser__close" [attr.aria-label]="'chat.teaserClose' | transloco" (click)="dismissTeaser()">✕</button>
+  </div>
+}
+
 <button
   class="chat-fab"
+  [class.chat-fab--attention]="!chat.hasBeenOpened()"
   type="button"
   [attr.aria-expanded]="chat.isOpen()"
-  [attr.aria-label]="chat.isOpen() ? 'Cerrar asistente' : 'Abrir asistente'"
+  [attr.aria-label]="(chat.isOpen() ? 'chat.close' : 'chat.open') | transloco"
   (click)="chat.toggle()"
 >
-  <app-icon name="chat" ></app-icon>
+  <!-- Diente del logo oficial de Odontogamma, en blanco y sin fondo -->
+  <svg class="chat-fab__tooth" viewBox="120 0 40 72" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M 140 7 C 133 3, 125 5, 123 15 C 121 24, 124 33, 127 45 C 129 55, 131 67, 133 69 C 135 70, 137 61, 138 52 C 139 44, 140 40, 140 40 C 140 40, 141 44, 142 52 C 143 61, 145 70, 147 69 C 149 67, 151 55, 153 45 C 156 33, 159 24, 157 15 C 155 5, 147 3, 140 7 Z M 140 14 C 145 10, 150 11, 151 18 C 152 25, 150 34, 147 42 C 145 49, 144 54, 143 57 C 143 54, 142 46, 141 41 C 140 37, 140 37, 139 41 C 138 46, 137 54, 137 57 C 136 54, 135 49, 133 42 C 130 34, 128 25, 129 18 C 130 11, 135 10, 140 14 Z"
+    />
+  </svg>
+  <!-- Punto verde de "disponible" -->
+  <span class="chat-fab__status" aria-hidden="true"></span>
 </button>
