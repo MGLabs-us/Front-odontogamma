@@ -1,0 +1,108 @@
+{
+  "virtual": {
+    "hero": {
+      "valoracionEsteticaDigitalOdontogamma": "Odontogamma Oriente digital smile evaluation",
+      "consultaPreliminar100Gratuita": "100% free, confidential preliminary consultation",
+      "descubreElPotencial": "Discover the potential",
+      "deTuNuevaSonrisa": "of your new smile",
+      "sube3FotografiasDe": "Upload 3 photos of your teeth from your phone. Dr. Jaime Arcila Cano will personally review your case and email you a preliminary cosmetic evaluation with realistic options.",
+      "llenarFormularioYSubir": "Fill out the form and upload photos",
+      "hablarPorWhatsapp": "Chat on WhatsApp"
+    },
+    "success": {
+      "solicitudRecibidaConExito": "Request received",
+      "graciasPorConfiarEn": "Thank you for trusting Odontogamma Oriente!",
+      "paciente": "Patient:",
+      "fotosAdjuntas": "Photos attached:",
+      "tratamientoDeInteres": "Treatment of interest:",
+      "enviarOtraSolicitud": "Send another request",
+      "verCasosDeAntes": "See before and after cases",
+      "message": "We've received your details and photos. <strong>Dr. Jaime Arcila Cano</strong> and our clinical team will study the proportions of your smile and email a preliminary cosmetic feasibility report to <strong>{{ email }}</strong> within <strong>24 to 48 business hours</strong>.",
+      "filesCount": "{{ count }} file(s)"
+    },
+    "guide": {
+      "guiaSencilla": "Simple guide",
+      "comoTomarTusFotos": "How to take your photos in 3 steps",
+      "paraQueElDr": "So Dr. Jaime Arcila can evaluate your teeth accurately, follow these simple tips with your phone camera.",
+      "consejo": "Tip:",
+      "items": [
+        {
+          "step": "Photo 01",
+          "title": "Natural smile, straight on",
+          "description": "A front-facing shot in good natural light, with relaxed lips and a spontaneous smile showing your teeth.",
+          "tip": "Avoid harsh shadows and don't use beauty filters."
+        },
+        {
+          "step": "Photo 02",
+          "title": "Smile in profile / three-quarter view",
+          "description": "This lets Dr. Jaime Arcila assess how your teeth project, your lip profile and how your smile works with your nose and chin.",
+          "tip": "Turn your head slightly, about 45 degrees, while looking at the camera."
+        },
+        {
+          "step": "Photo 03",
+          "title": "Close-up of your teeth",
+          "description": "A clear close-up showing the edges of your upper and lower teeth while biting down normally.",
+          "tip": "Focus sharply on your teeth in good daylight."
+        }
+      ]
+    },
+    "form": {
+      "evaluacionEsteticaPersonalizada": "Personalized cosmetic evaluation",
+      "completaTusDatosY": "Enter your details and upload your photos",
+      "todaLaInformacionY": "All information and photos you share are treated with strict medical and professional confidentiality.",
+      "1TusDatosDe": "1. Your contact details",
+      "nombreCompleto": "Full name *",
+      "ejValentinaGomezRestrepo": "e.g. Jane Smith",
+      "correoElectronicoDondeRecibiras": "Email (where we'll send your evaluation) *",
+      "tucorreoEjemploCom": "you@example.com",
+      "telefonoWhatsapp": "Phone / WhatsApp *",
+      "ciudadYPaisDe": "City and country of residence",
+      "ejMedellinColombiaMiami": "e.g. Miami, USA / Medellín, Colombia",
+      "2TuSonrisaDeseada": "2. Your ideal smile",
+      "tratamientoOServicioDe": "Treatment or service of interest",
+      "queEsLoQue": "What would you most like to change or improve about your smile?",
+      "cuentanosBrevementeSiSientes": "Tell us briefly: are your teeth worn, does a gap bother you, would you like a different shade, or do you want a smile that suits your whole face?",
+      "3FotografiasDeTu": "3. Photos of your teeth",
+      "arrastraTusFotosAqui": "Drag your photos here or click to choose them",
+      "formatosPermitidosJpgPng": "Accepted formats: JPG, PNG, WEBP (up to 6 images)",
+      "fotosListasParaEnviar": "Photos ready to send:",
+      "eliminarEstaFoto": "Remove this photo",
+      "alEnviarAceptasQue": "By submitting, you agree to have your case reviewed by Dr. Jaime Arcila Cano's clinical team.",
+      "enviandoFotografias": "Uploading photos...",
+      "enviarParaValoracionGratuita": "Submit for my free evaluation",
+      "options": [
+        {
+          "label": "Feldspathic porcelain veneers"
+        },
+        {
+          "label": "Cosmetic dentistry & facial harmonization"
+        },
+        {
+          "label": "Complete smile makeover"
+        },
+        {
+          "label": "Laser teeth whitening"
+        },
+        {
+          "label": "Repair of worn or fractured teeth"
+        },
+        {
+          "label": "Something else / personalized advice"
+        }
+      ],
+      "photoCounter": "({{ count }}/6 photos)"
+    },
+    "faq": {
+      "dudasHabituales": "Common questions",
+      "tieneAlgunCostoO": "Is there any cost or commitment?",
+      "absolutamenteNingunoLaValoracion": "None at all. The virtual evaluation is our gift to you, so you can get an honest opinion from a cosmetic dentistry specialist before traveling or booking an in-person visit.",
+      "verGaleriaDeCasos": "View the case gallery"
+    },
+    "errors": {
+      "invalidFiles": "Please upload valid image files only (.jpg, .png, .webp).",
+      "tooManyPhotos": "You can upload up to 6 photos for the preliminary evaluation.",
+      "missingFields": "Please enter your name, email and phone number (with WhatsApp).",
+      "noPhotos": "Please attach at least one photo of your teeth so we can do the evaluation."
+    }
+  }
+}

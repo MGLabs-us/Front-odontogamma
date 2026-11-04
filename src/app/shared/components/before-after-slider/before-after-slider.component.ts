@@ -1,6 +1,7 @@
 import { Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditorialLabelComponent } from '../editorial-label/editorial-label.component';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { IconComponent } from '../icon/icon.component';
 
 /**
@@ -10,7 +11,7 @@ import { IconComponent } from '../icon/icon.component';
 @Component({
   selector: 'app-before-after-slider',
   standalone: true,
-  imports: [IconComponent, CommonModule, EditorialLabelComponent],
+  imports: [TranslocoPipe, IconComponent, CommonModule, EditorialLabelComponent],
   templateUrl: './before-after-slider.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -18,10 +19,10 @@ export class BeforeAfterSliderComponent {
   // Inputs tipados con Signals
   public readonly beforeImage = input.required<string>();
   public readonly afterImage = input.required<string>();
-  public readonly beforeLabel = input<string>('Antes');
-  public readonly afterLabel = input<string>('Después');
+  public readonly beforeLabel = input<string | undefined>(undefined);
+  public readonly afterLabel = input<string | undefined>(undefined);
   public readonly aspectRatio = input<string>('aspect-[4/3]');
-  public readonly alt = input<string>('Transformación dental Odontogamma');
+  public readonly alt = input<string>('Odontogamma Oriente');
 
   // Posición del divisor (0 a 100%)
   protected readonly sliderPosition = signal<number>(50);

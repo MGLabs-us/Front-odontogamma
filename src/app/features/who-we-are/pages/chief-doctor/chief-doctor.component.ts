@@ -1,10 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
 import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { RoutePipe } from '../../../../core/i18n/route.pipe';
+import { I18nService } from '../../../../core/i18n/i18n.service';
 
 interface Credential {
   institution: string;
@@ -24,53 +27,17 @@ interface DoctorSignaturePrinciple {
 @Component({
   selector: 'app-chief-doctor',
   standalone: true,
-  imports: [CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
+  imports: [TranslocoPipe, RoutePipe, CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
   templateUrl: './chief-doctor.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChiefDoctorComponent {
+  private readonly i18n = inject(I18nService);
   protected readonly secondaryImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.team.doctorAtWork;
 
   // Principios de firma del Dr. Jaime Arcila
-  protected readonly signaturePrinciples: DoctorSignaturePrinciple[] = [
-    {
-      title: 'Odontología emocional',
-      quote: '«No cambiamos sólo dientes; devolvemos la seguridad de sonreír al mundo sin reservas.»',
-      description: 'Cada paciente llega con una historia, inseguridades previas o anhelos personales. El primer paso jamás es el taladro; es la escucha empática y el entendimiento profundo de su objetivo de vida.'
-    },
-    {
-      title: 'Mínima invasión biomimética',
-      quote: '«El mayor logro de un odontólogo estético no es lo que desgasta, sino lo que logra preservar intacto.»',
-      description: 'Mediante magnificación óptica y adhesión química de última generación, trabajamos sobre espesores milimétricos, respetando la estructura biológica viva del diente natural.'
-    },
-    {
-      title: 'Armonía facial global',
-      quote: '«Una sonrisa perfecta aislada puede verse falsa; la verdadera belleza radica en cómo se integra con los ojos, los labios y la expresión.»',
-      description: 'El diseño se analiza desde la tridimensionalidad del rostro en movimiento dinámico, considerando la fonética, la curva labial y la proyección del tercio inferior de la cara.'
-    }
-  ];
+  protected readonly signaturePrinciples = computed<DoctorSignaturePrinciple[]>(() => this.i18n.obj<DoctorSignaturePrinciple[]>('doctor.principles.items'));
 
   // Credenciales y membresías académicas
-  protected readonly credentials: Credential[] = [
-    {
-      institution: 'Dirección Médica & Fundador',
-      role: 'Odontogamma Oriente',
-      detail: 'Líder en diseño de sonrisa cerámico de alta complejidad en Antioquia.'
-    },
-    {
-      institution: 'Rehabilitación Oral & Alta Estética',
-      role: 'Especialización Clínica Avanzada',
-      detail: 'Entrenamiento continuado con referentes mundiales de la escuela europea y norteamericana.'
-    },
-    {
-      institution: 'Odontología Digital 3D',
-      role: 'Certificación en Flujos Ópticos Cad/Cam',
-      detail: 'Dominio de escaneo intraoral, encerado diagnóstico virtual y diseño asistido por computadora.'
-    },
-    {
-      institution: 'Sociedades Científicas',
-      role: 'Miembro Activo',
-      detail: 'Compromiso riguroso con la actualización científica en biomateriales cerámicos de última generación.'
-    }
-  ];
+  protected readonly credentials = computed<Credential[]>(() => this.i18n.obj<Credential[]>('doctor.career.items'));
 }

@@ -1,0 +1,220 @@
+{
+  "services": {
+    "list": {
+      "hero": {
+        "tratamientosDeFirmaOdontogamma": "Tratamientos de firma de Odontogamma Oriente",
+        "catalogoClinico": "Catálogo clínico",
+        "tratamientosDeFirma": "Tratamientos de firma",
+        "cadaProcedimientoCombinaCiencia": "Cada procedimiento combina ciencia biomimética, tecnología digital y un sentido estético refinado para transformar tu sonrisa de por vida."
+      },
+      "list": {
+        "distintivosDelProcedimiento": "Distintivos del procedimiento:",
+        "verTratamiento": "Ver tratamiento",
+        "agendarValoracion": "Agendar valoración"
+      },
+      "process": {
+        "tuExperienciaClinica": "Tu experiencia clínica",
+        "elViajeHaciaTu": "El viaje hacia tu nueva sonrisa",
+        "unProcesoMeticulosoConcebido": "Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables.",
+        "paso01": "Paso 01",
+        "consultaYDialogo": "Consulta y diálogo",
+        "escuchamosTusExpectativasEvaluamos": "Escuchamos tus expectativas, evaluamos la armonía facial y realizamos fotografías diagnósticas de alta definición.",
+        "paso02": "Paso 02",
+        "disenoDigitalPrueba": "Diseño digital & prueba",
+        "modelamosTuSonrisaEn": "Modelamos tu sonrisa en 3D y realizamos una prueba estética (mock-up) para que aprecies el resultado antes de comenzar.",
+        "paso03": "Paso 03",
+        "confeccionArtesanal": "Confección artesanal",
+        "losMaestrosCeramistasElaboran": "Los maestros ceramistas elaboran cada lámina de porcelana a mano, asegurando translucidez y naturalidad máxima.",
+        "paso04": "Paso 04",
+        "cementacionYEntrega": "Cementación y entrega",
+        "adhesionMicrometricaBajoAislamiento": "Adhesión micrométrica bajo aislamiento absoluto, ajuste de oclusión y pulido de brillo dental final."
+      },
+      "reels": {
+        "elProcesoExplicado": "El proceso explicado",
+        "conoceTuTratamientoCon": "Conoce tu tratamiento con el Dr. Jaime Arcila",
+        "videosCortosParaResolver": "Videos cortos para resolver tus dudas sobre carillas de porcelana y transformación de sonrisa."
+      },
+      "cta": {
+        "diagnosticoVirtualOrtodonciaDigital": "Diagnóstico virtual & ortodoncia digital",
+        "tuSonrisaEsTu": "Tu sonrisa es tu mejor carta de presentación",
+        "descubreEnMenosDe": "Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.",
+        "iniciarValoracionGratuita": "Iniciar valoración gratuita"
+      }
+    },
+    "detail": {
+      "hero": {
+        "agendarValoracion": "Agendar valoración",
+        "verAntesYDespues": "Ver antes y después",
+        "explorarTratamiento": "Explorar tratamiento"
+      },
+      "overview": {
+        "excelenciaClinicaArtesania": "Excelencia clínica & artesanía",
+        "laCienciaBiomimeticaDetras": "La ciencia biomimética detrás de tu nueva sonrisa",
+        "porQueElegirEste": "Por qué elegir este tratamiento en Odontogamma Oriente:",
+        "diagnosticoInicial": "Diagnóstico inicial",
+        "esEsteTratamientoPara": "¿Es este tratamiento para ti?",
+        "recomendadoParaPacientesQue": "Recomendado para pacientes que presentan las siguientes características:",
+        "solicitarValoracionPrivada": "Solicitar valoración privada",
+        "atencionInmediata": "Atención inmediata",
+        "consultaPorWhatsapp": "Consulta por WhatsApp",
+        "resuelveDudasSobreTiempos": "Resuelve dudas sobre tiempos, costos y agenda tu cita directamente con nuestro equipo.",
+        "chatearPorWhatsapp": "Chatear por WhatsApp"
+      },
+      "gallery": {
+        "galeriaDeReferencia": "Galería de referencia",
+        "detallesDeAltaPrecision": "Detalles de alta precisión",
+        "unVistazoAlEntorno": "Un vistazo al entorno de confort, la aparatología biométrica y la maestría artesanal con la que creamos sonrisas únicas en el Oriente Antioqueño.",
+        "odontogammaOrienteClinica": "Clínica Odontogamma Oriente",
+        "imageAlt": "{{ title }}, detalle {{ n }}"
+      },
+      "case": {
+        "transformacionReal": "Transformación real",
+        "deslizaLaBarraDivisoria": "Desliza la barra divisoria interactiva para comparar el estado inicial con el resultado definitivo entregado al paciente.",
+        "casoClinicoDocumentado": "Caso clínico documentado",
+        "clinicaOdontogammaOriente": "• Clínica: Odontogamma Oriente",
+        "beforeAfterTitle": "Antes y después: {{ title }}",
+        "technique": "• Técnica: {{ value }}",
+        "focus": "• Enfoque: {{ value }}"
+      },
+      "cta": {
+        "tuProximoPaso": "Tu próximo paso",
+        "cadaSonrisaEsDisenada": "Cada sonrisa es diseñada a medida respetando tu fisionomía facial. Agenda una valoración privada para conocer las posibilidades de tu caso.",
+        "solicitarCitaDeValoracion": "Solicitar cita de valoración",
+        "verTodosLosTratamientos": "Ver todos los tratamientos",
+        "startConsultation": "Comienza tu consulta para {{ title }}"
+      },
+      "notFound": {
+        "tratamientoNoEncontrado": "Tratamiento no encontrado",
+        "elProcedimientoSolicitadoNo": "El procedimiento solicitado no existe o fue reubicado.",
+        "volverATratamientos": "Volver a tratamientos"
+      }
+    },
+    "items": {
+      "carillas-porcelana": {
+        "title": "Carillas de porcelana",
+        "subtitle": "Carillas de porcelana y artesanía feldespática",
+        "tagline": "Mínima invasión biológica, máxima naturalidad",
+        "shortDescription": "Láminas ultrafinas de cerámica feldespática modeladas a mano por maestros ceramistas para recrear la translucidez, opalescencia y textura del esmalte dental más puro.",
+        "detailedDescription": [
+          "En Odontogamma Oriente concebimos las carillas de porcelana como piezas de alta relojería. A diferencia de las carillas convencionales o las resinas compuestas, cada carilla se estratifica capa por capa utilizando polvos cerámicos importados que reproducen fielmente los matices tridimensionales de un diente natural.",
+          "Nuestro protocolo mínimamente invasivo preserva la mayor cantidad de estructura dental sana, logrando una adhesión micrométrica al esmalte que favorece una larga durabilidad, con resultados estables, sin manchas y sin pérdida de brillo con el cuidado adecuado.",
+          "Cada tratamiento comienza con un estudio biométrico digital y una prueba estética física (mock-up) para que puedas apreciar y aprobar tu nueva sonrisa antes de realizar cualquier procedimiento definitivo."
+        ],
+        "highlights": [
+          "Espesor ultrafino (0.2 a 0.4 mm) sin desgaste agresivo",
+          "Estratificación artesanal por ceramistas de clase mundial",
+          "Alta resistencia a las pigmentaciones de café, vino o tabaco",
+          "Excelente biocompatibilidad con los tejidos gingivales"
+        ],
+        "idealFor": [
+          "Dientes desgastados, fracturados o con bordes irregulares",
+          "Espacios interdentales (diastemas) y asimetrías de forma",
+          "Pigmentaciones profundas resistentes a aclaramiento químico",
+          "Pacientes que buscan una sonrisa radiante con acabado 100% natural"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Rejuvenecimiento dental con carillas feldespáticas",
+          "description": "Paciente con desgaste en bordes incisales y pérdida de longitud dental. Se diseñaron láminas cerámicas con textura microlineal y translucidez incisal personalizada.",
+          "technique": "Carillas cerámicas feldespáticas",
+          "focus": "Restauración de bordes y longitud",
+          "units": "Carillas cerámicas feldespáticas",
+          "timeframe": "Restauración de bordes y longitud"
+        },
+        "badge": "Firma de la clínica"
+      },
+      "odontologia-cosmetica": {
+        "title": "Odontología cosmética",
+        "subtitle": "Odontología cosmética y arquitectura facial",
+        "tagline": "Armonía estética que realza los rasgos de tu rostro",
+        "shortDescription": "Planificación integral que fusiona la arquitectura de los labios, el marco facial y la línea de la sonrisa para lograr un rejuvenecimiento dental sutil y elegante.",
+        "detailedDescription": [
+          "La odontología cosmética de alta gama va más allá de alinear dientes: se enfoca en cómo tu sonrisa interactúa con los ojos, los labios y la gesticulación al hablar y reír.",
+          "Analizamos las proporciones áureas de tu rostro mediante fotografía macroscópica de estudio y modelado 3D para diseñar una sonrisa que te reste años y potencie tu seguridad.",
+          "Combinamos recontorneo gingival con láser de diodo, microestética del esmalte y diseño digital para esculpir un resultado perfectamente equilibrado."
+        ],
+        "highlights": [
+          "Análisis biométrico facial tridimensional",
+          "Gingivoplastia láser sin sangrado ni suturas",
+          "Prueba en boca (mock-up estético) antes de iniciar",
+          "Corrección milimétrica del corredor bucal y exposición dental"
+        ],
+        "idealFor": [
+          "Sonrisa gingival (exceso de encía al sonreír)",
+          "Dientes pequeños en relación al marco de los labios",
+          "Asimetrías notorias en la curva de la sonrisa",
+          "Personas que buscan un rejuvenecimiento dental integral"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Armonización de sonrisa y arco bimaxilar",
+          "description": "Corrección de desgaste y aplanamiento de bordes con carillas cerámicas para devolver luminosidad, amplitud y equilibrio al rostro.",
+          "technique": "Diseño de sonrisa cerámico",
+          "focus": "Armonización facial y simetría",
+          "units": "Diseño de sonrisa cerámico",
+          "timeframe": "Armonización facial y simetría"
+        },
+        "badge": "Diseño a medida"
+      },
+      "proceso-transformacion": {
+        "title": "Proceso de transformación de sonrisa",
+        "subtitle": "El camino de la transformación de tu sonrisa",
+        "tagline": "Una experiencia clínica privada, transparente y predecible",
+        "shortDescription": "Un recorrido asistido en 4 fases diseñado para garantizar que cada detalle de tu nueva sonrisa se planifique, apruebe y ejecute con la máxima precisión.",
+        "detailedDescription": [
+          "Transformar tu sonrisa en Odontogamma Oriente es un viaje exclusivo donde tú eres el protagonista. Desde la primera consulta de diagnóstico, eliminamos la incertidumbre permitiéndote ver y sentir cómo lucirá tu sonrisa definitiva.",
+          "Integramos escaneo intraoral 3D sin pastas invasivas, simulación virtual computarizada y fabricación robotizada combinada con terminado manual de artista.",
+          "Nos aseguramos de que no solo obtengas una estética sublime, sino también una mordida funcional, estable y completamente cómoda."
+        ],
+        "highlights": [
+          "Fase 1: consulta diagnóstica, fotos de estudio y escaneo 3D",
+          "Fase 2: simulación digital y prueba en boca estética (mock-up)",
+          "Fase 3: confección de élite en laboratorio de vanguardia",
+          "Fase 4: cementación definitiva bajo aislamiento y pulido"
+        ],
+        "idealFor": [
+          "Pacientes que desean una transformación dental completa y definitiva",
+          "Personas que valoran la predictibilidad y quieren ver el resultado antes de comenzar",
+          "Casos complejos con restauraciones previas desadaptadas o desgastadas"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Microestética y nivelación de bordes incisales",
+          "description": "Carillas de porcelana ultradelgadas con estratificación de esmalte para máxima translucidez y feminidad de la sonrisa.",
+          "technique": "Láminas cerámicas de precisión",
+          "focus": "Nivelación incisal y simetría",
+          "units": "Láminas cerámicas de precisión",
+          "timeframe": "Nivelación incisal y simetría"
+        },
+        "badge": "Experiencia completa"
+      },
+      "aclaramiento-laser": {
+        "title": "Aclaramiento dental avanzado",
+        "subtitle": "Aclaramiento dental avanzado con luz fría",
+        "tagline": "Luminosidad pura y blancura natural sin dolor ni sensibilidad",
+        "shortDescription": "Protocolos combinados en clínica y casa con luz fría fotocatalizada que desintegran pigmentos orgánicos profundos respetando la matriz biológica del diente.",
+        "detailedDescription": [
+          "A diferencia de los blanqueamientos agresivos que deshidratan el diente y generan sensibilidad insoportable, nuestro protocolo de aclaramiento avanzado utiliza tecnología de fotocatálisis con agentes remineralizantes.",
+          "Logramos devolver la luminosidad juvenil y blancura armónica sin erosionar el esmalte ni alterar la vitalidad pulpar.",
+          "Incluimos férulas termoformadas a medida y geles de mantenimiento para prolongar la pureza de tu sonrisa por años."
+        ],
+        "highlights": [
+          "Tecnología de luz fría con agentes bioprotectores",
+          "Procedimiento cómodo y máxima protección del esmalte dental",
+          "Aclaramiento profundo y luminoso en una sola sesión",
+          "Kit exclusivo para mantenimiento y brillo duradero"
+        ],
+        "idealFor": [
+          "Dientes oscurecidos por café, té, mate, vino tinto o tabaco",
+          "Preparación estética previa a la colocación de carillas",
+          "Pacientes con eventos especiales que buscan resultados inmediatos"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Alineación óptica y carillas cerámicas",
+          "description": "Corrección de apiñamiento leve anterior y elevación de luminosidad mediante carillas cerámicas de preparación mínima.",
+          "technique": "Láminas cerámicas de contacto",
+          "focus": "Alineación óptica y salud gingival",
+          "units": "Láminas cerámicas de contacto",
+          "timeframe": "Alineación óptica y salud gingival"
+        }
+      }
+    }
+  }
+}

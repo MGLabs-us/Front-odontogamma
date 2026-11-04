@@ -37,10 +37,9 @@ const videoPoster = (publicId: string, width = 600): string =>
 
 export type MediaOrientation = 'vertical' | 'landscape';
 
+/** El título y el pie de cada video salen del diccionario: `videos.<id>.title` y `videos.<id>.caption`. */
 export interface VideoAsset {
   id: string;
-  title: string;
-  caption: string;
   orientation: MediaOrientation;
   videoUrl: string;
   posterUrl: string;
@@ -49,14 +48,10 @@ export interface VideoAsset {
 const video = (
   id: string,
   publicId: string,
-  title: string,
-  caption: string,
   orientation: MediaOrientation = 'vertical',
   transformation?: string
 ): VideoAsset => ({
   id,
-  title,
-  caption,
   orientation,
   videoUrl: videoUrl(publicId, transformation),
   posterUrl: videoPoster(publicId, transformation ? 900 : 600)
@@ -151,56 +146,32 @@ const images = {
  */
 const videos = {
   testimonials: [
-    video('ivonn', 'VIdeo_9', 'Ivonn, paciente de Odontogamma', 'Cliente Odontogamma Oriente.'),
-    video('christopher', 'VIdeo_8', 'Christopher, paciente', 'Cliente Odontogamma Oriente.'),
-    video('sonrisa-segura', 'VIdeo_4', 'Una paciente comparte su resultado', 'Paciente Odontogamma Oriente.')
+    video('ivonn', 'VIdeo_9'),
+    video('christopher', 'VIdeo_8'),
+    video('sonrisa-segura', 'VIdeo_4')
   ],
   doctor: [
-    video('veneers-colombia', 'VIdeo_2', 'Carillas de porcelana en Colombia', 'El Dr. Jaime Arcila explica el proceso de carillas de porcelana en Colombia.'),
-    video('veneers-seguridad', 'VIdeo_6', 'Seguridad y confianza', 'Seguridad y confianza en tu tratamiento de carillas.'),
-    video('veneers-viaje', 'VIdeo_5', 'Tu viaje a Colombia', 'Procedimiento y tiempos explicados por el Dr. Jaime Arcila.'),
-    video('veneers-semana', 'VIdeo_7', 'Transforma tu sonrisa en una semana', 'Visita Colombia con el Dr. Jaime Arcila.')
+    video('veneers-colombia', 'VIdeo_2'),
+    video('veneers-seguridad', 'VIdeo_6'),
+    video('veneers-viaje', 'VIdeo_5'),
+    video('veneers-semana', 'VIdeo_7')
   ],
   clinic: [
-    video('sede-entrada', 'VIdeo_3', 'Bienvenida a la clínica', 'Así te recibimos al llegar.'),
-    video('sede-consulta', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/img-6844`, 'Atención en consultorio', 'Procedimiento real en nuestros consultorios.'),
-    video('carillas-ceramica', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/6d3666e3-1aed-472c-9372-10278c6633d8`, 'Carillas listas para colocar', 'Láminas cerámicas elaboradas a medida.')
+    video('sede-entrada', 'VIdeo_3'),
+    video('sede-consulta', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/img-6844`),
+    video('carillas-ceramica', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/6d3666e3-1aed-472c-9372-10278c6633d8`)
   ],
   /**
    * Video principal del hero de Home: el Dr. Jaime Arcila (vertical 1080x1920, H.264).
    * Se sirve con calidad máxima (`q_auto:best`) porque es un video muy visual.
    */
-  hero: video(
-    'hero-doctor',
-    `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-doctor`,
-    'El Dr. Jaime Arcila en la consulta de Odontogamma Oriente',
-    'Video de presentación del Dr. Jaime Arcila Cano.',
-    'vertical',
-    'f_mp4,q_auto:best,w_1080,c_limit'
-  ),
+  hero: video('hero-doctor', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-doctor`, 'vertical', 'f_mp4,q_auto:best,w_1080,c_limit'),
   /** Video de ambiente de la sede (antes en el hero de Home); ahora fondo del hero de "Nuestra sede". Es el mismo contenido que `VIdeo_1`, por eso éste ya no se lista en `clinic`. */
-  clinicLoop: video(
-    'hero-loop',
-    `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop`,
-    'Odontogamma Oriente, clínica de odontología estética',
-    'Video de bienvenida de Odontogamma Oriente.',
-    'landscape'
-  ),
+  clinicLoop: video('hero-loop', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/hero-loop`),
   /** Video de invitación del Dr. Jaime Arcila: agenda tu valoración por WhatsApp. */
-  invitation: video(
-    'invitacion-experiencia',
-    `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/invitacion-experiencia`,
-    'Vive la experiencia Odontogamma',
-    'El Dr. Jaime Arcila te invita a conocer los detalles de la experiencia.'
-  ),
+  invitation: video('invitacion-experiencia', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/invitacion-experiencia`),
   interviews: [
-    video(
-      'entrevista-paciente',
-      `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/img-6881`,
-      'Una paciente comparte su experiencia',
-      'Entrevista en la sede de El Carmen de Viboral.',
-      'landscape'
-    )
+    video('entrevista-paciente', `${CLOUDINARY_FOLDERS.SITE_MEDIA}/videos/img-6881`, 'landscape')
   ]
 } as const;
 

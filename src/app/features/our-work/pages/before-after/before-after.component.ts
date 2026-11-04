@@ -7,6 +7,9 @@ import { SectionHeaderComponent } from '../../../../shared/components/section-he
 import { LuxuryButtonComponent } from '../../../../shared/components/luxury-button/luxury-button.component';
 import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { RoutePipe } from '../../../../core/i18n/route.pipe';
+import { I18nService } from '../../../../core/i18n/i18n.service';
 
 interface FilterCategory {
   key: string;
@@ -20,7 +23,7 @@ interface FilterCategory {
 @Component({
   selector: 'app-before-after',
   standalone: true,
-  imports: [
+  imports: [TranslocoPipe, RoutePipe, 
     CommonModule,
     RouterLink,
     BeforeAfterSliderComponent,
@@ -32,6 +35,7 @@ interface FilterCategory {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BeforeAfterComponent {
+  private readonly i18n = inject(I18nService);
   protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.smiles.dark;
 
   private readonly portfolioService = inject(PortfolioService);
@@ -43,13 +47,16 @@ export class BeforeAfterComponent {
   protected readonly selectedCategory = signal<string>('all');
 
   // Categorías de filtro disponibles
-  protected readonly categories: FilterCategory[] = [
-    { key: 'all', label: 'Todos los casos' },
-    { key: 'carillas', label: 'Carillas de porcelana' },
-    { key: 'diseno-sonrisa', label: 'Diseño de sonrisa' },
-    { key: 'rehabilitacion', label: 'Rehabilitación & implantes' },
-    { key: 'ortodoncia', label: 'Ortodoncia & alineación' }
+  private readonly categoriesBase = [
+    { key: 'all' },
+    { key: 'carillas' },
+    { key: 'diseno-sonrisa' },
+    { key: 'rehabilitacion' },
+    { key: 'ortodoncia' }
   ];
+  protected readonly categories = computed<FilterCategory[]>(() =>
+    this.i18n.obj<FilterCategory[]>('beforeAfter.gallery.categories').map((text, i) => ({ ...text, ...this.categoriesBase[i] }) as FilterCategory)
+  );
 
   // Casos filtrados computados reactivamente
   protected readonly filteredCases = computed(() => {

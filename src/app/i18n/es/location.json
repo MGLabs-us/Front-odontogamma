@@ -1,0 +1,80 @@
+{
+  "location": {
+    "hero": {
+      "orienteAntioquenoElCarmen": "Oriente Antioqueño · El Carmen de Viboral",
+      "unSantuarioDeCalma": "Un santuario de calma,",
+      "privacidadYNaturaleza": "Privacidad y naturaleza",
+      "disenadaParaTransformarTu": "Diseñada para transformar tu experiencia médica en un momento de absoluto bienestar. A minutos del Aeropuerto Internacional JMC y en el corazón campestre más exclusivo de Antioquia.",
+      "programarVisitaPrivada": "Programar visita privada",
+      "verEnGoogleMaps": "Ver en Google Maps"
+    },
+    "spaces": {
+      "arquitecturaBienestar": "Arquitectura & bienestar",
+      "espaciosConcebidosParaEl": "Espacios concebidos para el confort supremo",
+      "cadaRinconDeNuestra": "Cada rincón de nuestra clínica combina líneas contemporáneas, luz natural y tecnología médica silenciosa.",
+      "items": [
+        {
+          "title": "Lounge privado de recepción",
+          "category": "Hospitalidad & calma",
+          "description": "Un vestíbulo sereno diseñado para disipar cualquier estrés dental. Barra de café de especialidad del Oriente, agua infusionada y atmósfera musical acústica."
+        },
+        {
+          "title": "Nuestro consultorio",
+          "category": "Atención & confort",
+          "description": "Un consultorio equipado con sillón ergonómico y los equipos necesarios para tu valoración y tratamiento, en un ambiente cómodo y limpio."
+        },
+        {
+          "title": "Laboratorio digital in situ",
+          "category": "Artesanía & precisión",
+          "description": "Área dedicada a la colorimetría con luz natural y ajustes finos de cerámica en el mismo momento de la cita, reduciendo tiempos de espera."
+        }
+      ]
+    },
+    "amenities": {
+      "hospitalidadDeAltoNivel": "Hospitalidad de alto nivel",
+      "detallesQueDefinenLa": "Detalles que definen la experiencia Odontogamma",
+      "conciergeDeTraslados": "Concierge de traslados",
+      "coordinacionDeTransportePrivado": "Coordinación de transporte privado desde el Aeropuerto JMC y los principales hoteles de Medellín y El Carmen de Viboral.",
+      "entornoAntiEstres": "Entorno antiestrés",
+      "aromaterapiaSutilInsonorizacionAcustica": "Aromaterapia sutil, insonorización acústica y vista a jardines verdes para una experiencia médica relajante.",
+      "atencionBilingue": "Atención bilingüe",
+      "personalClinicoYDe": "Personal clínico y de hospitalidad fluido en inglés para atender a nuestros pacientes internacionales sin barreras."
+    },
+    "reels": {
+      "laSedeEnMovimiento": "La sede en movimiento",
+      "conoceOdontogammaOrientePor": "Conoce Odontogamma Oriente por dentro",
+      "unVistazoEnVideo": "Un vistazo en video a la recepción, los consultorios y la atención diaria en El Carmen de Viboral."
+    },
+    "access": {
+      "accesibilidadPrivilegiada": "Accesibilidad privilegiada",
+      "tuViajeANuestra": "Tu viaje a nuestra sede",
+      "ubicacionEstrategicaYDescongestionada": "Ubicación estratégica y descongestionada en el corazón del Oriente Antioqueño.",
+      "items": [
+        {
+          "origin": "Desde el Aeropuerto Internacional JMC",
+          "time": "15 minutos",
+          "route": "Vía El Carmen de Viboral / Rionegro",
+          "description": "Conexión ultrarrápida para pacientes nacionales e internacionales que viajan por turismo médico."
+        },
+        {
+          "origin": "Desde Medellín (El Poblado / Laureles)",
+          "time": "35 minutos",
+          "route": "Por el Túnel de Oriente",
+          "description": "Acceso directo y fluido sin tráfico urbano, disfrutando del clima fresco del altiplano."
+        },
+        {
+          "origin": "Entorno de El Carmen de Viboral & Rionegro",
+          "time": "5 a 10 minutos",
+          "route": "Corredor gastronómico y residencial",
+          "description": "Ubicación privilegiada en la zona campestre más exclusiva del departamento."
+        }
+      ]
+    },
+    "cta": {
+      "orienteAntioqueno": "Oriente Antioqueño",
+      "venAConocerLa": "Ven a conocer la experiencia en persona",
+      "teEsperamosEnNuestra": "Te esperamos en nuestra sede de El Carmen de Viboral para diseñar la sonrisa que siempre soñaste.",
+      "agendarCitaPrivada": "Agendar cita privada"
+    }
+  }
+}

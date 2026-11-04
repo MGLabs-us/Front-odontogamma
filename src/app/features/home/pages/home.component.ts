@@ -1,13 +1,4 @@
-import {
-  Component,
-  inject,
-  ChangeDetectionStrategy,
-  OnInit,
-  OnDestroy,
-  signal,
-  computed,
-  PLATFORM_ID
-} from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, OnInit, OnDestroy, signal, computed, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../../core/services/portfolio.service';
@@ -20,6 +11,16 @@ import { ArrowMarkComponent } from '../../../shared/components/arrow-mark/arrow-
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
 import { VideoReelComponent } from '../../../shared/components/video-reel/video-reel.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { WhatsappPipe } from '../../../core/i18n/whatsapp.pipe';
+import { RoutePipe } from '../../../core/i18n/route.pipe';
+import { RouteKey } from '../../../core/i18n/route-map';
+import { I18nService } from '../../../core/i18n/i18n.service';
+
+interface GalleryCategory {
+  id: string;
+  label: string;
+}
 
 export interface PhilosophyPillar {
   number: string;
@@ -29,7 +30,8 @@ export interface PhilosophyPillar {
   subtitle: string;
   description: string;
   imageUrl: string;
-  link: string;
+  route: RouteKey;
+  serviceId?: string;
   linkText: string;
 }
 
@@ -41,7 +43,7 @@ export interface PhilosophyPillar {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [IconComponent, 
+  imports: [TranslocoPipe, RoutePipe, WhatsappPipe, IconComponent, 
     CommonModule,
     RouterLink,
     LuxuryButtonComponent,
@@ -56,13 +58,12 @@ export interface PhilosophyPillar {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  private readonly i18n = inject(I18nService);
   protected readonly storyReels = CLOUDINARY_ASSETS_MANIFEST.videos.testimonials;
 
   private readonly portfolioService = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
   protected readonly invitationVideo = CLOUDINARY_ASSETS_MANIFEST.videos.invitation;
-  protected readonly whatsappUrl =
-    'https://wa.me/573217209420?text=Hola,%20vi%20el%20video%20y%20quiero%20conocer%20los%20detalles%20de%20la%20experiencia%20en%20Odontogamma%20Oriente.';
   protected readonly heroVideo = CLOUDINARY_ASSETS_MANIFEST.videos.hero;
   protected readonly heroBackgroundImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.lobby;
 
@@ -154,13 +155,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   protected readonly activeCompareView = signal<Record<string, 'after' | 'before'>>({});
 
   // Categorías disponibles para filtrar la galería tridimensional
-  protected readonly galleryCategories = [
-    { id: 'todos', label: 'Todos los casos' },
-    { id: 'carillas', label: 'Carillas & lentes' },
-    { id: 'diseno-sonrisa', label: 'Diseño de sonrisa' },
-    { id: 'rehabilitacion', label: 'Rehabilitación' },
-    { id: 'ortodoncia', label: 'Ortodoncia' }
+  private readonly galleryCategoriesBase = [
+    { id: 'todos' },
+    { id: 'carillas' },
+    { id: 'diseno-sonrisa' },
+    { id: 'rehabilitacion' },
+    { id: 'ortodoncia' }
   ];
+  protected readonly galleryCategories = computed<GalleryCategory[]>(() =>
+    this.i18n.obj<GalleryCategory[]>('home.gallery.categories').map((text, i) => ({ ...text, ...this.galleryCategoriesBase[i] }))
+  );
 
   // Casos filtrados para la galería de alta definición
   protected readonly filteredCases = computed(() => {
@@ -188,39 +192,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   // Pilares de filosofía estética con fotografías reales de Odontogamma y redacción concisa
-  protected readonly pillars: PhilosophyPillar[] = [
-    {
-      number: '01',
-      badge: 'Dirección médica',
-      categoryTag: 'BIOMIMÉTICA & PRECISIÓN',
-      title: 'Biomimética y alta precisión',
-      subtitle: 'Tus dientes intactos: belleza sin dolor',
-      description: 'Láminas cerámicas ultrafinas (0.2 a 0.3 mm) modeladas con magnificación microscópica que preservan tu esmalte biológico vivo sin desgastes invasivos.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.modelsBlue,
-      link: '/servicios/carillas-porcelana',
-      linkText: 'Conocer carillas de porcelana'
-    },
-    {
-      number: '02',
-      badge: 'Experiencia sensorial',
-      categoryTag: 'CONFORT CLÍNICO & CERO DOLOR',
-      title: 'Confort clínico cero dolor',
-      subtitle: 'Olvídate del miedo al odontólogo',
-      description: 'Una sede acogedora en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.receptionFront,
-      link: '/quienes-somos/sede',
-      linkText: 'Explorar nuestra sede'
-    },
-    {
-      number: '03',
-      badge: 'Resultados reales',
-      categoryTag: 'EVIDENCIA CLÍNICA & PRESTIGIO',
-      title: 'Sonrisas de firma y confianza',
-      subtitle: 'Resultados que transforman vidas',
-      description: 'Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.studioPortrait,
-      link: '/nuestro-trabajo/antes-y-despues',
-      linkText: 'Ver casos clínicos'
-    }
+  private readonly pillarsBase = [
+    { number: '01', imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.lab.modelsBlue, route: 'service-detail' as RouteKey, serviceId: 'carillas-porcelana' },
+    { number: '02', imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.receptionFront, route: 'location' as RouteKey },
+    { number: '03', imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.studioPortrait, route: 'before-after' as RouteKey }
   ];
+  protected readonly pillars = computed<PhilosophyPillar[]>(() =>
+    this.i18n.obj<PhilosophyPillar[]>('home.philosophy.items').map((text, i) => ({ ...text, ...this.pillarsBase[i] }) as PhilosophyPillar)
+  );
 }

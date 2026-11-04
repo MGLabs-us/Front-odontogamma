@@ -1,0 +1,76 @@
+{
+  "cases": {
+    "items": {
+      "caso-01": {
+        "title": "Rejuvenecimiento dental y carillas cerámicas",
+        "categoryLabel": "Carillas de porcelana",
+        "description": "Restauración anatómica de bordes incisales desgastados. Mediante láminas cerámicas personalizadas, se devolvió la longitud, textura y reflectancia natural para una sonrisa rejuvenecida y armónica.",
+        "details": {
+          "treatment": "Carillas de cerámica pura",
+          "focus": "Restauración anatómica y volumen",
+          "result": "Textura y brillo natural"
+        }
+      },
+      "caso-03": {
+        "title": "Microestética y nivelación de bordes incisales",
+        "categoryLabel": "Carillas cerámicas",
+        "description": "Corrección de microfracturas, asimetría de bordes incisales y tono irregular. Se colocaron láminas ultrafinas que devuelven la continuidad y suavidad a la línea de la sonrisa.",
+        "details": {
+          "treatment": "Láminas cerámicas ultrafinas",
+          "focus": "Nivelación incisal y simetría",
+          "result": "Contorno suave y translucidez"
+        }
+      },
+      "caso-04": {
+        "title": "Alineación óptica y estética de contacto",
+        "categoryLabel": "Diseño de sonrisa",
+        "description": "Solución estética para leves apiñamientos y discrepancias de ejes axiales sin recurrir a desgastes invasivos, optimizando la reflexión de la luz para una sonrisa uniforme.",
+        "details": {
+          "treatment": "Láminas cerámicas de contacto",
+          "focus": "Alineación óptica y ejes",
+          "result": "Sonrisa uniforme y salud gingival"
+        }
+      },
+      "caso-05": {
+        "title": "Cierre de diastema central con carillas de contacto",
+        "categoryLabel": "Carillas de contacto",
+        "description": "Cierre armonioso del espacio interincisal optimizando las proporciones dentales. Se emplearon carillas cerámicas de contacto, ultrafinas, que preservan la estructura dental intacta.",
+        "details": {
+          "treatment": "Carillas de contacto sin desgaste",
+          "focus": "Cierre de espacio interdental",
+          "result": "Proporción áurea y continuidad"
+        }
+      },
+      "caso-07": {
+        "title": "Rehabilitación fija anterior libre de metal",
+        "categoryLabel": "Rehabilitación oral",
+        "description": "Sustitución de restauraciones antiguas desajustadas por estructuras cerámicas biomiméticas de alta resistencia, devolviendo función masticatoria, soporte labial y estética.",
+        "details": {
+          "treatment": "Cerámica biomimética sin metal",
+          "focus": "Sellado marginal y biocompatibilidad",
+          "result": "Firmeza funcional y salud de encía"
+        }
+      },
+      "caso-08": {
+        "title": "Reconstrucción de diente fracturado",
+        "categoryLabel": "Rehabilitación oral",
+        "description": "Recuperación anatómica y estructural de diente anterior fracturado mediante restauración cerámica pura, eliminando sombras antiestéticas y devolviendo la anatomía original.",
+        "details": {
+          "treatment": "Corona cerámica monolítica",
+          "focus": "Recuperación estructural y función",
+          "result": "Mimetismo óptico y firmeza"
+        }
+      },
+      "caso-09": {
+        "title": "Alineación de apiñamiento y expansión de arco",
+        "categoryLabel": "Ortodoncia y alineación",
+        "description": "Corrección de maloclusión y apiñamiento severo devolviendo la amplitud del arco superior, simetría funcional y una estética luminosa y radiante.",
+        "details": {
+          "treatment": "Alineación y expansión de arco",
+          "focus": "Corrección de apiñamiento",
+          "result": "Oclusión balanceada y amplitud"
+        }
+      }
+    }
+  }
+}

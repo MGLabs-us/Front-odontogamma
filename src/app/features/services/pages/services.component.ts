@@ -7,6 +7,9 @@ import { LuxuryButtonComponent } from '../../../shared/components/luxury-button/
 import { EditorialLabelComponent } from '../../../shared/components/editorial-label/editorial-label.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../core/constants/cloudinary-assets.manifest';
 import { VideoReelComponent } from '../../../shared/components/video-reel/video-reel.component';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { RoutePipe } from '../../../core/i18n/route.pipe';
+import { I18nService } from '../../../core/i18n/i18n.service';
 
 /**
  * Catálogo editorial de tratamientos y procedimientos clínicos de Odontogamma Oriente.
@@ -14,11 +17,12 @@ import { VideoReelComponent } from '../../../shared/components/video-reel/video-
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [VideoReelComponent, CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
+  imports: [TranslocoPipe, RoutePipe, VideoReelComponent, CommonModule, RouterLink, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
   templateUrl: './services.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServicesComponent {
+  private readonly i18n = inject(I18nService);
   protected readonly doctorReels = CLOUDINARY_ASSETS_MANIFEST.videos.doctor;
 
   protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.smiles.natural;

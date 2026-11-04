@@ -1,0 +1,95 @@
+{
+  "team": {
+    "hero": {
+      "equipoClinicoOdontogammaOriente": "Clinical team at Odontogamma Oriente",
+      "especialistasClinicos": "Clinical specialists",
+      "mentesMaestras": "Brilliant minds",
+      "yManosArtesanales": "and skilled hands",
+      "unColectivoInterdisciplinarioDe": "A multidisciplinary group of cosmetic dentists, master ceramists and patient coordinators with one purpose: creating one-of-a-kind smiles with maximum comfort and precision.",
+      "conoceAlEquipoEn": "Meet the team in person",
+      "descubreNuestraClinica": "Discover our clinic"
+    },
+    "members": {
+      "elColectivoClinico": "The clinical team",
+      "especialistasDedicadosATu": "Specialists dedicated to your transformation",
+      "cadaMiembroAportaUn": "Each member brings a distinct area of expertise, so your smile gets a true 360-degree approach.",
+      "items": [
+        {
+          "name": "Dr. Jaime Arcila Cano",
+          "role": "Medical director & cosmetic dentistry specialist",
+          "specialty": "Biomimetic smile design",
+          "bio": "Leads the clinical direction, artistic vision and fully personalized design of every smile at Odontogamma Oriente.",
+          "credentials": [
+            "Clinical director",
+            "Oral rehabilitation & aesthetics",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical care & dental aesthetics",
+          "specialty": "Precision dentistry",
+          "bio": "A key part of the multidisciplinary team that supports Dr. Jaime Arcila in every design and aesthetic restoration.",
+          "credentials": [
+            "Personal attention",
+            "Biomimetics and comfort",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical assistance & biomaterials",
+          "specialty": "Precision in every procedure",
+          "bio": "Committed to the most rigorous clinical protocols and to the patient's comfort at every appointment.",
+          "credentials": [
+            "Comprehensive care",
+            "Cutting-edge protocols",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical coordination & patient care",
+          "specialty": "Dental health and harmony",
+          "bio": "Guides each patient through every clinical stage, ensuring a warm, friendly and pain-free experience.",
+          "credentials": [
+            "Dedicated care",
+            "Patient experience",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Coordination & VIP hospitality",
+          "specialty": "Patient experience & scheduling",
+          "bio": "Coordinates care, appointment times and exclusive support for local and international patients in El Carmen de Viboral.",
+          "credentials": [
+            "VIP support",
+            "End-to-end management",
+            "Odontogamma Oriente"
+          ]
+        }
+      ]
+    },
+    "synergy": {
+      "sinergiaEnUnMismo": "Synergy under one roof",
+      "porQueUnEquipo": "Why a complete team makes the difference",
+      "enLaOdontologiaTradicional": "In traditional dentistry, the dentist takes an impression and sends it to a distant lab that never meets the patient. At Odontogamma Oriente, the master ceramist, the periodontist and the dentist work together in the same clinic.",
+      "estoPermiteEvaluarEl": "That means we can check the shade in person under natural light, fine-tune the smile design in real time and perfect every last detail before final cementation.",
+      "evaluacionEnVivo": "Chairside evaluation",
+      "elCeramistaParticipaEn": "The ceramist joins the shade-matching session under polarized light.",
+      "saludGingival": "Gum health",
+      "enciasSanasYSimetricas": "Healthy, symmetrical gums before the first veneer is placed.",
+      "oclusionSegura": "Secure bite",
+      "armonizacionDeMordidaPara": "Bite balancing to prevent fractures and premature wear.",
+      "conciergePrivado": "Private concierge",
+      "atencionPrioritariaYAgenda": "Priority care and a confidential schedule from start to finish."
+    },
+    "cta": {
+      "tuEquipoMedico": "Your care team",
+      "empiezaTuExperienciaEn": "Start your experience in good hands",
+      "conversemosSobreTusExpectativas": "Let's talk about what you'd like to improve and build a plan that fits you.",
+      "reservarValoracionConEl": "Book a consultation with the team"
+    }
+  }
+}

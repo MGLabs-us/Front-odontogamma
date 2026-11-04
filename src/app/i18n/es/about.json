@@ -1,0 +1,75 @@
+{
+  "about": {
+    "hero": {
+      "elDrJaimeArcila": "El Dr. Jaime Arcila y su asistente sonriendo frente al logo de Odontogamma Oriente",
+      "nuestraHistoria": "Nuestra historia"
+    },
+    "manifesto": {
+      "manoExpertaYPrecision": "Mano experta y precisión cerámica",
+      "artesaniaQuirurgica": "Artesanía quirúrgica",
+      "laVerdaderaPerfeccionEs": "«La verdadera perfección es aquella que luce natural y vive en armonía con tu ser.»",
+      "nuestraEsencia": "Nuestra esencia",
+      "dondeLaCienciaMedica": "Donde la ciencia médica se une a la estética",
+      "odontogammaOrienteNacioCon": "Odontogamma Oriente nació con una visión clara: liberar a nuestros pacientes de las sonrisas genéricas, opacas y artificiales. Guiados por la escuela de alta estética internacional, concebimos cada diseño como una pieza única hecha a la medida de los rasgos de quien la porta.",
+      "ubicadosEnElApacible": "Ubicados en el apacible entorno del Oriente Antioqueño, brindamos un refugio clínico donde el tiempo, la confidencialidad y la minuciosidad artesanal son la norma indiscutible. No creemos en tratamientos apresurados; creemos en transformaciones trascendentes.",
+      "tecnologiaIntraoral3d": "Tecnología Intraoral 3D",
+      "escaneoDigitalOpticoSin": "Escaneo digital óptico sin moldes incómodos de silicona.",
+      "laboratorioMaestroAsociado": "Laboratorio maestro asociado",
+      "estratificacionCeramicaIndividualCon": "Estratificación cerámica individual con polvos de feldspato suizo."
+    },
+    "pillars": {
+      "nuestrosFundamentos": "Nuestros fundamentos",
+      "losPilaresDeLa": "Los pilares de la experiencia Odontogamma",
+      "tresPrincipiosInnegociablesQue": "Tres principios innegociables que orientan cada decisión clínica y artística en nuestra práctica.",
+      "items": [
+        {
+          "title": "Biomimética & mínima invasión",
+          "subtitle": "Preservación como máximo valor",
+          "description": "Creemos que la mejor estructura dental es la natural. Diseñamos restauraciones ultrafinas de menos de 0.3mm que emulan la flexión, transparencia y esmalte biológico sin desgastes agresivos.",
+          "highlight": "0.2 - 0.3mm de espesor cerámico"
+        },
+        {
+          "title": "Arquitectura facial & proporción áurea",
+          "subtitle": "El rostro como lienzo total",
+          "description": "Una sonrisa jamás debe verse como un accesorio postizo. Analizamos la fisionomía, la línea labial, el tono de piel y la fonética para que cada carilla dialogue armónicamente con tu personalidad.",
+          "highlight": "Análisis fisiognómico integral"
+        },
+        {
+          "title": "Hospitalidad médica & privacidad",
+          "subtitle": "Una experiencia sensorial única",
+          "description": "Desafiamos el paradigma del consultorio frío. Nuestra sede en el Oriente Antioqueño ha sido concebida como un santuario privado de calma, privacidad confidencial y atención sin prisas.",
+          "highlight": "Atención personalizada y confidencial"
+        }
+      ]
+    },
+    "timeline": {
+      "evolucionContinua": "Evolución continua",
+      "laTrayectoriaDeUna": "La trayectoria de una visión",
+      "dePionerosEnLa": "De pioneros en la región a clínica insignia de odontología cosmética avanzada.",
+      "items": [
+        {
+          "year": "Fundación",
+          "title": "El nacimiento de un concepto",
+          "description": "Establecimiento en el Oriente Antioqueño con la premisa de llevar la odontología cosmética al estándar de las capitales mundiales del diseño."
+        },
+        {
+          "year": "Innovación",
+          "title": "Ecosistema 100% digital",
+          "description": "Integración de escáneres intraorales de última generación y planificación tridimensional en tiempo real."
+        },
+        {
+          "year": "Presente",
+          "title": "Referente de turismo dental selecto",
+          "description": "Pacientes de todo el país y el exterior eligen nuestra clínica en El Carmen de Viboral por su confidencialidad, entorno natural y resultados de autor."
+        }
+      ]
+    },
+    "cta": {
+      "diagnosticoVirtualOrtodonciaDigital": "Diagnóstico virtual & ortodoncia digital",
+      "tuSonrisaEsTu": "Tu sonrisa es tu mejor carta de presentación",
+      "descubreEnMenosDe": "Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.",
+      "iniciarValoracionGratuita": "Iniciar valoración gratuita",
+      "citaEnElCarmen": "Cita en El Carmen de Viboral"
+    }
+  }
+}

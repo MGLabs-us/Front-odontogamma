@@ -1,15 +1,21 @@
 <header class="nav-header" [class.is-scrolled]="isScrolled()" [class.is-open]="mobileMenuOpen()">
   <div class="nav-inner">
     <!-- Logotipo oficial -->
-    <a routerLink="/" class="nav-brand" aria-label="Odontogamma Oriente" (click)="closeMobileMenu()">
+    <a [routerLink]="'home' | route" class="nav-brand" aria-label="Odontogamma Oriente" (click)="closeMobileMenu()">
       <app-brand-logo variant="navbar" [theme]="'dark'"></app-brand-logo>
     </a>
 
     <!-- Navegación de escritorio -->
-    <nav class="nav-desktop" aria-label="Navegación principal">
-      @for (group of groups; track group.id) {
-        <div class="nav-group">
-          <button type="button" class="nav-link" aria-haspopup="true">
+    <nav class="nav-desktop" [attr.aria-label]="'nav.ariaMain' | transloco">
+      @for (group of groups(); track group.id) {
+        <div class="nav-group" [class.is-open]="isOpen(group.id)" (mouseenter)="hover(group.id)" (mouseleave)="unhover(group.id)">
+          <button
+            type="button"
+            class="nav-link"
+            aria-haspopup="true"
+            [attr.aria-expanded]="isOpen(group.id)"
+            (click)="togglePinned(group.id)"
+          >
             <span>{{ group.label }}</span>
             <app-icon name="chevron-down" class="nav-chevron"></app-icon>
           </button>
@@ -22,13 +28,14 @@
                   routerLinkActive="is-active"
                   class="nav-dropdown-item"
                   [class.is-highlight]="item.highlight"
+                  (click)="closeDesktopMenus()"
                 >
                   <span class="nav-dropdown-dot"></span>
                   <span class="nav-dropdown-text">
                     <span class="nav-dropdown-title">
                       {{ item.label }}
                       @if (item.highlight) {
-                        <span class="nav-badge">Gratis</span>
+                        <span class="nav-badge">{{ 'nav.free' | transloco }}</span>
                       }
                     </span>
                     <span class="nav-dropdown-desc">{{ item.description }}</span>
@@ -37,7 +44,7 @@
               }
 
               @if (group.footer; as footer) {
-                <a [routerLink]="footer.link" class="nav-dropdown-footer">
+                <a [routerLink]="footer.link" class="nav-dropdown-footer" (click)="closeDesktopMenus()">
                   <span>{{ footer.label }}</span>
                   <app-arrow-mark />
                 </a>
@@ -47,12 +54,48 @@
         </div>
       }
 
-      <a routerLink="/contacto" routerLinkActive="is-active" class="nav-link">
-        <span>Contacto</span>
+      <a [routerLink]="'contact' | route" routerLinkActive="is-active" class="nav-link">
+        <span>{{ 'nav.contact' | transloco }}</span>
       </a>
 
-      <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta">
-        <span>Valoración gratuita</span>
+      <!-- Selector de idioma -->
+      <div class="nav-group nav-lang" [class.is-open]="isOpen(langGroupId)" (mouseenter)="hover(langGroupId)" (mouseleave)="unhover(langGroupId)">
+        <button
+          type="button"
+          class="nav-link"
+          aria-haspopup="true"
+          [attr.aria-expanded]="isOpen(langGroupId)"
+          [attr.aria-label]="'nav.language' | transloco"
+          (click)="togglePinned(langGroupId)"
+        >
+          <app-icon name="globe" class="nav-globe"></app-icon>
+          <span>{{ langShort[i18n.lang()] }}</span>
+          <app-icon name="chevron-down" class="nav-chevron"></app-icon>
+        </button>
+
+        <div class="nav-dropdown nav-dropdown--compact">
+          <div class="nav-dropdown-panel">
+            @for (l of i18n.langs; track l) {
+              <button
+                type="button"
+                class="nav-dropdown-item"
+                [class.is-active]="l === i18n.lang()"
+                [attr.lang]="langHtml[l]"
+                [attr.aria-current]="l === i18n.lang() ? 'true' : null"
+                (click)="switchLang(l)"
+              >
+                <app-flag [lang]="l"></app-flag>
+                <span class="nav-dropdown-text">
+                  <span class="nav-dropdown-title">{{ langLabel[l] }}</span>
+                </span>
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <a [routerLink]="'virtual-consultation' | route" class="nav-cta">
+        <span>{{ 'nav.cta' | transloco }}</span>
       </a>
     </nav>
 
@@ -63,7 +106,7 @@
       (click)="toggleMobileMenu()"
       [attr.aria-expanded]="mobileMenuOpen()"
       aria-controls="nav-mobile-panel"
-      [attr.aria-label]="mobileMenuOpen() ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
+      [attr.aria-label]="(mobileMenuOpen() ? 'nav.closeMenu' : 'nav.openMenu') | transloco"
     >
       @if (!mobileMenuOpen()) {
         <app-icon name="menu" class="w-6 h-6"></app-icon>
@@ -76,7 +119,7 @@
   <!-- Panel móvil -->
   @if (mobileMenuOpen()) {
     <div id="nav-mobile-panel" class="nav-mobile">
-      @for (group of groups; track group.id) {
+      @for (group of groups(); track group.id) {
         <div class="nav-mobile-group">
           <button
             type="button"
@@ -111,12 +154,29 @@
         </div>
       }
 
-      <a routerLink="/contacto" class="nav-mobile-trigger" (click)="closeMobileMenu()">
-        <span>Contacto</span>
+      <a [routerLink]="'contact' | route" class="nav-mobile-trigger" (click)="closeMobileMenu()">
+        <span>{{ 'nav.contact' | transloco }}</span>
       </a>
 
-      <a routerLink="/nuestro-trabajo/valoracion-virtual" class="nav-cta is-block" (click)="closeMobileMenu()">
-        <span>Iniciar valoración gratuita</span>
+      <!-- Idioma (móvil) -->
+      <div class="nav-mobile-lang" role="group" [attr.aria-label]="'nav.language' | transloco">
+        @for (l of i18n.langs; track l) {
+          <button
+            type="button"
+            class="nav-mobile-lang-btn"
+            [class.is-active]="l === i18n.lang()"
+            [attr.lang]="langHtml[l]"
+            [attr.aria-pressed]="l === i18n.lang()"
+            (click)="switchLang(l)"
+          >
+            <app-flag [lang]="l"></app-flag>
+            <span>{{ langLabel[l] }}</span>
+          </button>
+        }
+      </div>
+
+      <a [routerLink]="'virtual-consultation' | route" class="nav-cta is-block" (click)="closeMobileMenu()">
+        <span>{{ 'nav.ctaFull' | transloco }}</span>
       </a>
     </div>
   }

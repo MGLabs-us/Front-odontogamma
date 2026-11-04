@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -8,12 +8,21 @@ import { CloudinaryService } from '../../../../core/services/cloudinary.service'
 import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { WhatsappPipe } from '../../../../core/i18n/whatsapp.pipe';
+import { RoutePipe } from '../../../../core/i18n/route.pipe';
+import { I18nService } from '../../../../core/i18n/i18n.service';
 
 export interface UploadedDentalPhoto {
   file: File;
   previewUrl: string;
   name: string;
   sizeFormatted: string;
+}
+
+interface TreatmentOption {
+  value: string;
+  label: string;
 }
 
 interface PhotoGuideStep {
@@ -32,7 +41,7 @@ interface PhotoGuideStep {
 @Component({
   selector: 'app-virtual-consultation',
   standalone: true,
-  imports: [IconComponent, 
+  imports: [TranslocoPipe, RoutePipe, WhatsappPipe, IconComponent, 
     CommonModule,
     FormsModule,
     RouterLink,
@@ -44,6 +53,7 @@ interface PhotoGuideStep {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VirtualConsultationComponent {
+  private readonly i18n = inject(I18nService);
   protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.patients.furCoatSmile;
 
   private readonly cloudinaryService = inject(CloudinaryService);
@@ -58,39 +68,27 @@ export class VirtualConsultationComponent {
   };
 
   // Opciones de tratamientos de interés
-  protected readonly treatmentOptions = [
-    { value: 'carillas-porcelana', label: 'Carillas de porcelana feldespática' },
-    { value: 'odontologia-cosmetica', label: 'Odontología cosmética & armonización facial' },
-    { value: 'transformacion-total', label: 'Transformación completa de sonrisa' },
-    { value: 'aclaramiento-laser', label: 'Aclaramiento dental láser' },
-    { value: 'desgaste-fracturas', label: 'Corrección de dientes desgastados o fracturados' },
-    { value: 'otro', label: 'Otra consulta o asesoría personalizada' }
+  private readonly treatmentOptionsBase = [
+    { value: 'carillas-porcelana' },
+    { value: 'odontologia-cosmetica' },
+    { value: 'transformacion-total' },
+    { value: 'aclaramiento-laser' },
+    { value: 'desgaste-fracturas' },
+    { value: 'otro' }
   ];
+  protected readonly treatmentOptions = computed<TreatmentOption[]>(() =>
+    this.i18n.obj<TreatmentOption[]>('virtual.form.options').map((text, i) => ({ ...text, ...this.treatmentOptionsBase[i] }))
+  );
 
   // Pasos fotográficos recomendados
-  protected readonly photoSteps: PhotoGuideStep[] = [
-    {
-      step: 'Foto 01',
-      title: 'Sonrisa natural de frente',
-      description: 'Una toma frontal con buena luz natural donde se aprecien tus labios relajados y tus dientes en una sonrisa espontánea.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redHairPortrait,
-      tip: 'Evita sombras fuertes y no utilices filtros de belleza.'
-    },
-    {
-      step: 'Foto 02',
-      title: 'Sonrisa de perfil / tres cuartos',
-      description: 'Permite al Dr. Jaime Arcila analizar la proyección dental, el perfil labial y cómo armoniza la sonrisa con tu nariz y mentón.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweaterSide,
-      tip: 'Gira levemente la cabeza unos 45 grados mirando hacia la cámara.'
-    },
-    {
-      step: 'Foto 03',
-      title: 'Primer plano de los dientes',
-      description: 'Un acercamiento claro donde se observe el borde de los dientes superiores e inferiores en oclusión (mordiendo normalmente).',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.smiles.wide,
-      tip: 'Enfoca nítidamente la zona dental con buena iluminación diurna.'
-    }
+  private readonly photoStepsBase = [
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redHairPortrait },
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.redSweaterSide },
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.smiles.wide }
   ];
+  protected readonly photoSteps = computed<PhotoGuideStep[]>(() =>
+    this.i18n.obj<PhotoGuideStep[]>('virtual.guide.items').map((text, i) => ({ ...text, ...this.photoStepsBase[i] }) as PhotoGuideStep)
+  );
 
   // Lista de fotografías subidas con previsualización
   protected readonly uploadedPhotos = signal<UploadedDentalPhoto[]>([]);
@@ -145,14 +143,14 @@ export class VirtualConsultationComponent {
     const validImages = files.filter(f => f.type.startsWith('image/'));
 
     if (validImages.length === 0) {
-      this.errorMessage.set('Por favor sube únicamente archivos de imagen válidos (.jpg, .png, .webp).');
+      this.errorMessage.set(this.i18n.t('virtual.errors.invalidFiles'));
       return;
     }
 
     const currentPhotos = [...this.uploadedPhotos()];
 
     if (currentPhotos.length + validImages.length > 6) {
-      this.errorMessage.set('Puedes subir un máximo de 6 fotografías para la valoración preliminar.');
+      this.errorMessage.set(this.i18n.t('virtual.errors.tooManyPhotos'));
       return;
     }
 
@@ -183,12 +181,12 @@ export class VirtualConsultationComponent {
    */
   protected async submitConsultation(): Promise<void> {
     if (!this.formData.fullName || !this.formData.email || !this.formData.phone) {
-      this.errorMessage.set('Por favor completa tu nombre, correo electrónico y teléfono con WhatsApp.');
+      this.errorMessage.set(this.i18n.t('virtual.errors.missingFields'));
       return;
     }
 
     if (this.uploadedPhotos().length === 0) {
-      this.errorMessage.set('Por favor adjunta al menos una fotografía de tus dientes para que podamos realizar la evaluación.');
+      this.errorMessage.set(this.i18n.t('virtual.errors.noPhotos'));
       return;
     }
 
@@ -214,6 +212,16 @@ export class VirtualConsultationComponent {
       this.isSuccess.set(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+
+  /** Escapa texto del usuario antes de insertarlo en un mensaje traducido con HTML (`[innerHTML]`). */
+  protected esc(value: string): string {
+    return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  protected serviceInterestLabel(): string {
+    return this.treatmentOptions().find(o => o.value === this.formData.serviceInterest)?.label ?? '';
   }
 
   protected resetForm(): void {

@@ -15,19 +15,21 @@ Pero
 
 - [ ] **Páginas legales**: política de privacidad y tratamiento de datos (Ley 1581, Habeas Data), y términos. Se recogen fotos dentales, que son datos sensibles. Hacerlo antes de promocionar el sitio.
 - [ ] **Aviso de cookies**, si se agregan analíticas o píxeles.
-- [ ] **Dirección de la sede**: agregarla al `Dentist` de `src/index.html` (calle y coordenadas mejoran el SEO local).
 - [ ] **Preguntas frecuentes**: 6 a 12 preguntas con respuesta en texto plano (¿duele?, ¿cuánto dura?, ¿cómo se paga?).
 - [ ] **Afirmaciones a confirmar**: "más de 15 años", "maestros ceramistas", "clase mundial", "casos certificados" (`portfolio.service.ts` y plantillas).
-- [ ] **Precios**: descartado por ahora; decisión del cliente.
+- [ ] **Videos con voz en español**: el video de invitación del Dr. y los testimonios están hablados en español; en inglés faltan subtítulos o versiones dobladas.
+- [ ] **Backend del chat**: la función de Supabase recibe `language` (`en-US`, `en-GB` o `es`) en cada mensaje; hay que hacer que responda en ese idioma.
+- [ ] **Revisión de las traducciones** al inglés por una persona nativa o por el cliente (`src/app/i18n/en-us` y `en-gb`).
+- [ ] **Search Console**: tras el deploy, reenviar `sitemap.xml` (ahora lista 42 URLs con hreflang). Regenerarlo con `npm run build && npm run sitemap` cuando cambien las rutas.
 
 ## Técnico
 
-- [ ] Traducir los subtítulos en inglés de los tratamientos (`portfolio.service.ts`: "Porcelain Veneers & Feldspathic Artistry", etc.).
+- [x] Traducir los subtítulos de los tratamientos (ahora viven en `src/app/i18n/<idioma>/services.json`).
 - [ ] Agregar `width` y `height` a las imágenes (hoy llevan `loading="lazy"`, pero no dimensiones).
 - [ ] Decidir si se quita el tilt 3D de la home (4 tarjetas con `appTilt3d`). Solo funciona con mouse.
 - [ ] Subir el tamaño del texto "ORIENTE" del logo en la barra (mide 7 a 8 px).
 - [ ] Escribir un `README.md` propio del proyecto (el actual es el de la plantilla de Angular).
-- [ ] Correr `ng test` y revisar los specs del chat.
+- [x] Correr `ng test` y revisar los specs del chat.
 - [ ] Revisar en celular real la home, la sección de ortodoncia y las secciones oscuras.
 
 ## Después del primer deploy

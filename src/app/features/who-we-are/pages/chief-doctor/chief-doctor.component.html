@@ -11,36 +11,36 @@
       <!-- Columna Izquierda: Presentación Editorial & Acciones -->
       <div class="lg:col-span-7 text-center lg:text-left reveal-init reveal-fade-up">
 
-        <app-editorial-label tone="dark" class="mb-6">Director clínico & fundador</app-editorial-label>
+        <app-editorial-label tone="dark" class="mb-6">{{ 'doctor.hero.directorClinicoFundador' | transloco }}</app-editorial-label>
 
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-editorial font-medium text-white tracking-tight leading-[1.08] mb-6">
-          Dr. Jaime <br />
+          {{ 'doctor.hero.drJaime' | transloco }} <br />
           <span class="italic font-medium text-og-cyan">
-            Arcila Cano
+            {{ 'doctor.hero.arcilaCano' | transloco }}
           </span>
         </h1>
 
         <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-          Especialista en odontología estética biomimética en el Oriente Antioqueño. Su práctica se fundamenta en la máxima preservación biológica, la microescultura cerámica de alta fidelidad y la transformación integral de la sonrisa.
+          {{ 'doctor.hero.especialistaEnOdontologiaEstetica' | transloco }}
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
           <app-luxury-button
-            routerLink="/contacto"
+            [routerLink]="'contact' | route"
             variant="primary"
             size="md"
             class="w-full sm:w-auto shadow-glow font-semibold"
           >
-            Agendar cita privada
+            {{ 'doctor.hero.agendarCitaPrivada' | transloco }}
           </app-luxury-button>
 
           <app-luxury-button
-            routerLink="/nuestro-trabajo/antes-y-despues"
+            [routerLink]="'before-after' | route"
             variant="outline"
             size="md"
             class="w-full sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
           >
-            Ver casos clínicos
+            {{ 'doctor.hero.verCasosClinicos' | transloco }}
           </app-luxury-button>
         </div>
 
@@ -52,7 +52,7 @@
           <!-- Fotografía Real del Dr. Jaime Arcila -->
           <img loading="lazy" decoding="async"
             src="https://res.cloudinary.com/u81t66ol/image/upload/v1793155000/628032151_18503251906073838_8830790894546818104_n.jpg"
-            alt="Dr. Jaime Arcila Cano - Director Clínico Odontogamma Oriente"
+            [alt]="'doctor.hero.drJaimeArcilaCano' | transloco"
             class="w-full h-full object-cover object-center relative z-10 transition-transform duration-500 ease-brand group-hover:scale-105"
           />
 
@@ -62,12 +62,12 @@
           <!-- Insignia Flotante Inferior en Cristal -->
           <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 flex items-center justify-between text-white pointer-events-none z-30 shadow-lg">
             <div>
-              <span class="text-xs uppercase tracking-[0.18em] text-white font-mono font-bold block">Dirección médica</span>
-              <span class="text-sm font-editorial font-medium">Dr. Jaime Arcila Cano</span>
+              <span class="text-xs uppercase tracking-[0.18em] text-white font-mono font-bold block">{{ 'doctor.hero.direccionMedica' | transloco }}</span>
+              <span class="text-sm font-editorial font-medium">{{ 'doctor.hero.drJaimeArcilaCano2' | transloco }}</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-xs text-slate-300 font-mono uppercase tracking-wider">El Carmen de Viboral</span>
+              <span class="text-xs text-slate-300 font-mono uppercase tracking-wider">{{ 'doctor.hero.elCarmenDeViboral' | transloco }}</span>
             </div>
           </div>
 
@@ -86,7 +86,7 @@
       <div class="relative overflow-hidden rounded-2xl border border-og-border shadow-elevated aspect-[3/4] bg-slate-100">
         <img
           [src]="secondaryImageUrl"
-          alt="Atención clínica en Odontogamma Oriente"
+          [alt]="'doctor.story.atencionClinicaEnOdontogamma' | transloco"
           loading="lazy"
       decoding="async"
           class="w-full h-full object-cover"
@@ -95,10 +95,10 @@
 
         <div class="absolute bottom-6 left-6 right-6 text-white">
           <span class="text-xs uppercase tracking-[0.18em] text-white font-mono font-bold block mb-1">
-            Enfoque artesanal
+            {{ 'doctor.story.enfoqueArtesanal' | transloco }}
           </span>
           <p class="text-sm font-editorial font-normal text-slate-200">
-            «La tecnología 3D es el mapa, pero la mano sensible del especialista es la que da vida y naturalidad a la carilla.»
+            {{ 'doctor.story.laTecnologia3dEs' | transloco }}
           </p>
         </div>
       </div>
@@ -106,31 +106,31 @@
 
     <div class="lg:col-span-7 space-y-6 reveal-init reveal-fade-right delay-200">
       <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block">
-        Visión médica
+        {{ 'doctor.story.visionMedica' | transloco }}
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline leading-tight">
-        «Una Sonrisa no Debe Gritar que es Nueva; Debe Susurrar Elegancia y Salud»
+        {{ 'doctor.story.unaSonrisaNoDebe' | transloco }}
       </h2>
       <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed">
-        Durante más de una década de práctica clínica en Antioquia, el Dr. Jaime Arcila Cano ha perfeccionado un método que huye de los dientes artificiales, planos y excesivamente blancos que saturan el mercado.
+        {{ 'doctor.story.duranteMasDeUna' | transloco }}
       </p>
       <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed">
-        Su pasión por la escultura y la arquitectura se traslada al sillón dental: cada diente posee microtextura superficial, translucidez en el borde incisal, mamelones internos y una ligera variación cromática que mimetiza a la perfección la dentición natural juvenil.
+        {{ 'doctor.story.suPasionPorLa' | transloco }}
       </p>
 
       <!-- Checklist de compromisos clínicos -->
       <div class="space-y-3 pt-4 border-t border-og-border">
         <div class="flex items-center gap-3 text-xs sm:text-sm text-og-headline font-medium">
           <span class="w-2 h-2 rounded-full bg-og-electric"></span>
-          <span>Diagnóstico digital fotográfico previo con prueba estética en vivo (Mock-up)</span>
+          <span>{{ 'doctor.story.diagnosticoDigitalFotograficoPrevio' | transloco }}</span>
         </div>
         <div class="flex items-center gap-3 text-xs sm:text-sm text-og-headline font-medium">
           <span class="w-2 h-2 rounded-full bg-og-electric"></span>
-          <span>Preservación absoluta del esmalte con preparaciones guiadas por microscopía</span>
+          <span>{{ 'doctor.story.preservacionAbsolutaDelEsmalte' | transloco }}</span>
         </div>
         <div class="flex items-center gap-3 text-xs sm:text-sm text-og-headline font-medium">
           <span class="w-2 h-2 rounded-full bg-og-electric"></span>
-          <span>Garantía de biocompatibilidad y estabilidad oclusal a largo plazo</span>
+          <span>{{ 'doctor.story.garantiaDeBiocompatibilidadY' | transloco }}</span>
         </div>
       </div>
     </div>
@@ -143,15 +143,15 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
-        kicker="Filosofía clínica"
-        title="Principios innegociables de autor"
-        subtitle="La base científica y humanista que sustenta cada caso tratado por el Dr. Jaime Arcila Cano."
+        [kicker]="'doctor.principles.filosofiaClinica' | transloco"
+        [title]="'doctor.principles.principiosInnegociablesDeAutor' | transloco"
+        [subtitle]="'doctor.principles.laBaseCientificaY' | transloco"
         align="center"
       />
     </div>
 
     <div class="rail-md grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-      @for (principle of signaturePrinciples; track principle.title; let i = $index) {
+      @for (principle of signaturePrinciples(); track principle.title; let i = $index) {
         <div
           [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
           class="bg-white p-8 sm:p-10 border border-og-border rounded-2xl shadow-subtle hover:shadow-elevated transition duration-300 flex flex-col justify-between"
@@ -177,15 +177,15 @@
 <section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Formación de élite"
-      title="Credenciales y especialización"
-      subtitle="Un compromiso ininterrumpido con la educación médica continua y los avances de la odontología global."
+      [kicker]="'doctor.career.formacionDeElite' | transloco"
+      [title]="'doctor.career.credencialesYEspecializacion' | transloco"
+      [subtitle]="'doctor.career.unCompromisoIninterrumpidoCon' | transloco"
       align="center"
     />
   </div>
 
   <div class="mobile-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-    @for (cred of credentials; track cred.institution; let i = $index) {
+    @for (cred of credentials(); track cred.institution; let i = $index) {
       <div
         [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : (i === 2 ? 'reveal-init reveal-fade-up delay-300' : 'reveal-init reveal-fade-right delay-400'))"
         class="p-6 border border-og-border bg-white rounded-2xl hover:border-og-electric/50 transition-colors"
@@ -208,30 +208,30 @@
 <section class="py-16 md:py-32 px-6 md:px-12 bg-og-marble relative overflow-hidden border-t border-slate-200/80">
   <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-6 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
     <span class="text-xs uppercase tracking-[0.18em] text-og-electric block mb-3 font-semibold font-mono">
-      Atención personalizada
+      {{ 'doctor.cta.atencionPersonalizada' | transloco }}
     </span>
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-normal text-og-headline mb-5">
-      Diseña Tu Sonrisa Directamente con el Dr. Arcila
+      {{ 'doctor.cta.disenaTuSonrisaDirectamente' | transloco }}
     </h2>
     <p class="text-sm sm:text-base text-og-slate font-normal max-w-xl mx-auto leading-relaxed mb-8">
-      Las valoraciones se atienden bajo agenda limitada y confidencial para garantizar tiempo exclusivo a cada paciente.
+      {{ 'doctor.cta.lasValoracionesSeAtienden' | transloco }}
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        [routerLink]="'contact' | route"
         variant="primary"
         size="md"
       >
-        Agendar cita privada
+        {{ 'doctor.cta.agendarCitaPrivada' | transloco }}
       </app-luxury-button>
       <app-luxury-button
-        routerLink="/quienes-somos/equipo"
+        [routerLink]="'team' | route"
         variant="outline"
         size="md"
         class="border-slate-300 text-og-headline hover:border-og-electric hover:text-og-electric"
       >
-        Conocer al equipo completo
+        {{ 'doctor.cta.conocerAlEquipoCompleto' | transloco }}
       </app-luxury-button>
     </div>
   </div>

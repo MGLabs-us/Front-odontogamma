@@ -15,7 +15,8 @@ export type IconName =
   | 'mobile'
   | 'calendar'
   | 'upload'
-  | 'compare';
+  | 'compare'
+  | 'globe';
 
 /**
  * Set de iconos propio de Odontogamma Oriente.
@@ -71,6 +72,10 @@ export type IconName =
         }
         @case ('upload') { <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5" /> }
         @case ('compare') { <path d="M12 3v18M8 8l-4 4 4 4M16 8l4 4-4 4" /> }
+        @case ('globe') {
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.6 2.4 3.9 5.4 3.9 9s-1.3 6.6-3.9 9c-2.6-2.4-3.9-5.4-3.9-9S9.4 5.4 12 3Z" />
+        }
       }
     </svg>
   `

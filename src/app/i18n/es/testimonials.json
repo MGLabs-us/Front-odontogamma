@@ -1,0 +1,50 @@
+{
+  "testimonials": {
+    "page": {
+      "retratoDeUnaPaciente": "Retrato de una paciente sonriendo",
+      "odontogammaOrienteElCarmen": "Odontogamma Oriente · El Carmen de Viboral",
+      "laConfianzaDeSonreir": "La confianza de sonreír:",
+      "experienciasReales": "experiencias reales",
+      "conoceLaSedeAl": "Conoce la sede, al equipo y las experiencias que algunos pacientes han querido compartir en video.",
+      "iniciarValoracionGratuita": "Iniciar valoración gratuita",
+      "verCasosDeAntes": "Ver casos de antes y después",
+      "laExperienciaOdontogamma": "La experiencia Odontogamma",
+      "unEspacioParaCuidar": "Un espacio para cuidar de tu sonrisa",
+      "unaMiradaALos": "Una mirada a los espacios y momentos que hacen parte de cada visita.",
+      "enSusPropiasPalabras": "En sus propias palabras",
+      "experienciasCompartidasPorPacientes": "Experiencias compartidas por pacientes",
+      "escuchaDirectamenteAQuienes": "Escucha directamente a quienes decidieron compartir su experiencia con la clínica.",
+      "tuHistoriaComienzaAqui": "Tu historia comienza aquí",
+      "hablemosDeTuSonrisa": "Hablemos de tu sonrisa",
+      "enviaTusFotografiasDesde": "Envía tus fotografías desde casa y recibe una valoración estética preliminar."
+    },
+    "moments": {
+      "items": [
+        {
+          "id": "mirror",
+          "title": "Un momento para mirarte de nuevo",
+          "description": "Una experiencia personal, acompañada por el equipo de la clínica.",
+          "alt": "Paciente observando su sonrisa frente a un espejo"
+        },
+        {
+          "id": "lounge",
+          "title": "Un espacio para sentirte bien",
+          "description": "Ambientes tranquilos que hacen parte de la experiencia en la sede.",
+          "alt": "Sala de espera de la clínica Odontogamma Oriente"
+        },
+        {
+          "id": "treatment-room",
+          "title": "Tecnología y atención clínica",
+          "description": "Espacios preparados para acompañar cada consulta.",
+          "alt": "Consultorio odontológico de la sede"
+        },
+        {
+          "id": "reception",
+          "title": "Te recibimos en El Carmen de Viboral",
+          "description": "Un equipo y una sede pensados para atenderte con cercanía.",
+          "alt": "Fachada de la clínica Odontogamma Oriente"
+        }
+      ]
+    }
+  }
+}

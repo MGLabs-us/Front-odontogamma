@@ -5,7 +5,7 @@
   <!-- Imagen 'DESPUÉS' (Fondo Completo) -->
   <img
     [src]="afterImage()"
-    [alt]="alt() + ' - Resultado Final'"
+    [alt]="('slider.altAfter' | transloco: { alt: alt() })"
     loading="lazy"
       decoding="async"
     class="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-500 ease-brand group-hover:scale-[1.02]"
@@ -13,7 +13,7 @@
 
   <div class="absolute top-4 right-4 z-10 pointer-events-none">
     <app-editorial-label tone="dark">
-      {{ afterLabel() }}
+      {{ afterLabel() ?? ('slider.after' | transloco) }}
     </app-editorial-label>
   </div>
 
@@ -24,7 +24,7 @@
   >
     <img
       [src]="beforeImage()"
-      [alt]="alt() + ' - Estado Inicial'"
+      [alt]="('slider.altBefore' | transloco: { alt: alt() })"
       loading="lazy"
       decoding="async"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-brand group-hover:scale-[1.02]"
@@ -32,7 +32,7 @@
 
     <div class="absolute top-4 left-4 z-10 pointer-events-none">
       <app-editorial-label tone="dark">
-        {{ beforeLabel() }}
+        {{ beforeLabel() ?? ('slider.before' | transloco) }}
       </app-editorial-label>
     </div>
   </div>
@@ -68,6 +68,6 @@
     (touchstart)="onPointerDown()"
     (touchend)="onPointerUp()"
     class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0"
-    [attr.aria-label]="'Comparar antes y después de ' + alt()"
+    [attr.aria-label]="'slider.compare' | transloco: { alt: alt() }"
   />
 </div>

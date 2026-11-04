@@ -1,0 +1,108 @@
+{
+  "virtual": {
+    "hero": {
+      "valoracionEsteticaDigitalOdontogamma": "Valoración estética digital de Odontogamma Oriente",
+      "consultaPreliminar100Gratuita": "Consulta preliminar 100% gratuita y confidencial",
+      "descubreElPotencial": "Descubre el potencial",
+      "deTuNuevaSonrisa": "de tu nueva sonrisa",
+      "sube3FotografiasDe": "Sube 3 fotografías de tus dientes desde tu teléfono móvil. El Dr. Jaime Arcila Cano revisará personalmente tu caso y te enviará una evaluación estética preliminar con opciones viables directo a tu correo electrónico.",
+      "llenarFormularioYSubir": "Llenar formulario y subir fotos",
+      "hablarPorWhatsapp": "Hablar por WhatsApp"
+    },
+    "success": {
+      "solicitudRecibidaConExito": "Solicitud recibida con éxito",
+      "graciasPorConfiarEn": "¡Gracias por confiar en Odontogamma Oriente!",
+      "paciente": "Paciente:",
+      "fotosAdjuntas": "Fotos adjuntas:",
+      "tratamientoDeInteres": "Tratamiento de interés:",
+      "enviarOtraSolicitud": "Enviar otra solicitud",
+      "verCasosDeAntes": "Ver casos de antes y después",
+      "message": "Hemos recibido tus datos y fotografías correctamente. El <strong>Dr. Jaime Arcila Cano</strong> y nuestro equipo clínico estudiarán las proporciones de tu sonrisa y te responderán con un informe de viabilidad estética preliminar al correo <strong>{{ email }}</strong> en un plazo máximo de <strong>24 a 48 horas laborales</strong>.",
+      "filesCount": "{{ count }} archivo(s)"
+    },
+    "guide": {
+      "guiaSencilla": "Guía sencilla",
+      "comoTomarTusFotos": "Cómo tomar tus fotos en 3 pasos",
+      "paraQueElDr": "Para que el Dr. Jaime Arcila pueda evaluar con exactitud tu dentadura, sigue estas recomendaciones básicas con la cámara de tu celular.",
+      "consejo": "Consejo:",
+      "items": [
+        {
+          "step": "Foto 01",
+          "title": "Sonrisa natural de frente",
+          "description": "Una toma frontal con buena luz natural donde se aprecien tus labios relajados y tus dientes en una sonrisa espontánea.",
+          "tip": "Evita sombras fuertes y no utilices filtros de belleza."
+        },
+        {
+          "step": "Foto 02",
+          "title": "Sonrisa de perfil / tres cuartos",
+          "description": "Permite al Dr. Jaime Arcila analizar la proyección dental, el perfil labial y cómo armoniza la sonrisa con tu nariz y mentón.",
+          "tip": "Gira levemente la cabeza unos 45 grados mirando hacia la cámara."
+        },
+        {
+          "step": "Foto 03",
+          "title": "Primer plano de los dientes",
+          "description": "Un acercamiento claro donde se observe el borde de los dientes superiores e inferiores en oclusión (mordiendo normalmente).",
+          "tip": "Enfoca nítidamente la zona dental con buena iluminación diurna."
+        }
+      ]
+    },
+    "form": {
+      "evaluacionEsteticaPersonalizada": "Evaluación estética personalizada",
+      "completaTusDatosY": "Completa tus datos y sube tus fotos",
+      "todaLaInformacionY": "Toda la información y las fotografías compartidas son tratadas con estricta confidencialidad médica y profesional.",
+      "1TusDatosDe": "1. Tus datos de contacto",
+      "nombreCompleto": "Nombre completo *",
+      "ejValentinaGomezRestrepo": "Ej. Valentina Gómez Restrepo",
+      "correoElectronicoDondeRecibiras": "Correo electrónico (donde recibirás la valoración) *",
+      "tucorreoEjemploCom": "tucorreo@ejemplo.com",
+      "telefonoWhatsapp": "Teléfono / WhatsApp *",
+      "ciudadYPaisDe": "Ciudad y país de residencia",
+      "ejMedellinColombiaMiami": "Ej. Medellín, Colombia / Miami, EE.UU.",
+      "2TuSonrisaDeseada": "2. Tu sonrisa deseada",
+      "tratamientoOServicioDe": "Tratamiento o servicio de interés",
+      "queEsLoQue": "¿Qué es lo que más te gustaría transformar o mejorar de tu sonrisa?",
+      "cuentanosBrevementeSiSientes": "Cuéntanos brevemente: si sientes tus dientes desgastados, si te incomoda algún espacio, si deseas un cambio de color o si buscas armonizar toda tu fisionomía...",
+      "3FotografiasDeTu": "3. Fotografías de tu dentadura",
+      "arrastraTusFotosAqui": "Arrastra tus fotos aquí o haz clic para seleccionarlas",
+      "formatosPermitidosJpgPng": "Formatos permitidos: JPG, PNG, WEBP (hasta 6 imágenes)",
+      "fotosListasParaEnviar": "Fotos listas para enviar:",
+      "eliminarEstaFoto": "Eliminar esta foto",
+      "alEnviarAceptasQue": "Al enviar, aceptas que tu caso sea evaluado por el equipo clínico del Dr. Jaime Arcila Cano.",
+      "enviandoFotografias": "Enviando fotografías...",
+      "enviarParaValoracionGratuita": "Enviar para valoración gratuita",
+      "options": [
+        {
+          "label": "Carillas de porcelana feldespática"
+        },
+        {
+          "label": "Odontología cosmética & armonización facial"
+        },
+        {
+          "label": "Transformación completa de sonrisa"
+        },
+        {
+          "label": "Aclaramiento dental láser"
+        },
+        {
+          "label": "Corrección de dientes desgastados o fracturados"
+        },
+        {
+          "label": "Otra consulta o asesoría personalizada"
+        }
+      ],
+      "photoCounter": "({{ count }}/6 fotos)"
+    },
+    "faq": {
+      "dudasHabituales": "Dudas habituales",
+      "tieneAlgunCostoO": "¿Tiene algún costo o compromiso?",
+      "absolutamenteNingunoLaValoracion": "Absolutamente ninguno. La valoración virtual es una cortesía para que conozcas la opinión honesta de un especialista en alta estética dental antes de viajar o programar una cita física.",
+      "verGaleriaDeCasos": "Ver galería de casos clínicos"
+    },
+    "errors": {
+      "invalidFiles": "Por favor sube únicamente archivos de imagen válidos (.jpg, .png, .webp).",
+      "tooManyPhotos": "Puedes subir un máximo de 6 fotografías para la valoración preliminar.",
+      "missingFields": "Por favor completa tu nombre, correo electrónico y teléfono con WhatsApp.",
+      "noPhotos": "Por favor adjunta al menos una fotografía de tus dientes para que podamos realizar la evaluación."
+    }
+  }
+}

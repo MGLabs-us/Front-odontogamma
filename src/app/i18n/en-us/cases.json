@@ -1,0 +1,76 @@
+{
+  "cases": {
+    "items": {
+      "caso-01": {
+        "title": "Dental rejuvenation & ceramic veneers",
+        "categoryLabel": "Porcelain veneers",
+        "description": "Anatomical restoration of worn incisal edges. Custom ceramic laminates restored natural length, texture and light reflection for a rejuvenated, harmonious smile.",
+        "details": {
+          "treatment": "Pure ceramic veneers",
+          "focus": "Anatomical restoration & volume",
+          "result": "Natural texture and shine"
+        }
+      },
+      "caso-03": {
+        "title": "Micro-aesthetics & incisal edge leveling",
+        "categoryLabel": "Ceramic veneers",
+        "description": "Correction of micro-fractures, uneven incisal edges and irregular shade. Ultra-thin laminates restore continuity and a smooth line to the smile.",
+        "details": {
+          "treatment": "Ultra-thin ceramic laminates",
+          "focus": "Incisal leveling & symmetry",
+          "result": "Soft contour and translucency"
+        }
+      },
+      "caso-04": {
+        "title": "Optical alignment & contact aesthetics",
+        "categoryLabel": "Smile design",
+        "description": "A cosmetic solution for mild crowding and tooth-axis discrepancies without invasive reduction, optimizing how light reflects for a uniform smile.",
+        "details": {
+          "treatment": "Ultra-thin no-prep laminates",
+          "focus": "Optical alignment & axes",
+          "result": "Uniform smile and gum health"
+        }
+      },
+      "caso-05": {
+        "title": "Midline diastema closure with no-prep veneers",
+        "categoryLabel": "No-prep veneers",
+        "description": "A graceful closure of the gap between the front teeth, optimizing tooth proportions. Ultra-thin no-prep ceramic veneers were used, keeping the natural tooth structure intact.",
+        "details": {
+          "treatment": "No-prep veneers, no tooth reduction",
+          "focus": "Closing the gap between teeth",
+          "result": "Golden proportion and continuity"
+        }
+      },
+      "caso-07": {
+        "title": "Metal-free fixed anterior rehabilitation",
+        "categoryLabel": "Oral rehabilitation",
+        "description": "Old, poorly fitting restorations replaced with high-strength biomimetic ceramic structures, restoring chewing function, lip support and aesthetics.",
+        "details": {
+          "treatment": "Metal-free biomimetic ceramic",
+          "focus": "Marginal seal & biocompatibility",
+          "result": "Functional strength and gum health"
+        }
+      },
+      "caso-08": {
+        "title": "Reconstruction of a fractured tooth",
+        "categoryLabel": "Oral rehabilitation",
+        "description": "Anatomical and structural recovery of a fractured front tooth with a pure ceramic restoration, eliminating unsightly shadows and restoring the original anatomy.",
+        "details": {
+          "treatment": "Monolithic ceramic crown",
+          "focus": "Structural recovery & function",
+          "result": "A natural look and strength"
+        }
+      },
+      "caso-09": {
+        "title": "Correction of crowding & arch expansion",
+        "categoryLabel": "Orthodontics & alignment",
+        "description": "Correction of malocclusion and severe crowding, restoring width to the upper arch, functional symmetry and a bright, radiant smile.",
+        "details": {
+          "treatment": "Alignment and arch expansion",
+          "focus": "Crowding correction",
+          "result": "Balanced bite and width"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "footer": {
+    "brand": {
+      "odontogammaOriente": "Odontogamma Oriente",
+      "odontologiaEsteticaYDiseno": "Odontología estética y diseño de sonrisa en el Oriente Antioqueño, bajo la dirección del Dr. Jaime Arcila Cano.",
+      "siguenos": "Síguenos",
+      "redesSociales": "Redes sociales"
+    },
+    "about": {
+      "quienesSomos": "Quiénes somos",
+      "inicio": "Inicio",
+      "sobreNosotros": "Sobre nosotros",
+      "drJaimeArcilaCano": "Dr. Jaime Arcila Cano",
+      "equipoClinico": "Equipo clínico",
+      "nuestraSede": "Nuestra sede"
+    },
+    "work": {
+      "nuestroTrabajo": "Nuestro trabajo",
+      "antesYDespues": "Antes y después",
+      "testimoniosDePacientes": "Testimonios de pacientes",
+      "valoracionVirtualGratuita": "Valoración virtual gratuita",
+      "catalogoDeProcedimientos": "Catálogo de procedimientos",
+      "agendarValoracionPresencial": "Agendar valoración presencial"
+    },
+    "contact": {
+      "sedeAtencion": "Sede & atención",
+      "elCarmenDeViboral": "Cl. 30 #33-80, El Carmen de Viboral, Antioquia, Colombia.",
+      "atencionConCitaPrevia": "Atención con cita previa.",
+      "lunesAViernes8": "Lunes a viernes: 8:00 AM – 6:00 PM",
+      "sabados800Am": "Sábados: 8:00 AM – 1:00 PM"
+    },
+    "credits": {
+      "odontogammaOrienteDrJaime": "Odontogamma Oriente. Dr. Jaime Arcila Cano. Todos los derechos reservados.",
+      "odontologiaDePrecisionArte": "Odontología de precisión & arte"
+    }
+  },
+  "videos": {
+    "entrevista-paciente": {
+      "title": "Una paciente comparte su experiencia",
+      "caption": "Entrevista en la sede de El Carmen de Viboral."
+    },
+    "invitacion-experiencia": {
+      "title": "Vive la experiencia Odontogamma",
+      "caption": "El Dr. Jaime Arcila te invita a conocer los detalles de la experiencia."
+    },
+    "hero-loop": {
+      "title": "Odontogamma Oriente, clínica de odontología estética",
+      "caption": "Video de bienvenida de Odontogamma Oriente."
+    },
+    "hero-doctor": {
+      "title": "El Dr. Jaime Arcila en la consulta de Odontogamma Oriente",
+      "caption": "Video de presentación del Dr. Jaime Arcila Cano."
+    },
+    "carillas-ceramica": {
+      "title": "Carillas listas para colocar",
+      "caption": "Láminas cerámicas elaboradas a medida."
+    },
+    "sede-consulta": {
+      "title": "Atención en consultorio",
+      "caption": "Procedimiento real en nuestros consultorios."
+    },
+    "sede-entrada": {
+      "title": "Bienvenida a la clínica",
+      "caption": "Así te recibimos al llegar."
+    },
+    "veneers-semana": {
+      "title": "Transforma tu sonrisa en una semana",
+      "caption": "Visita Colombia con el Dr. Jaime Arcila."
+    },
+    "veneers-viaje": {
+      "title": "Tu viaje a Colombia",
+      "caption": "Procedimiento y tiempos explicados por el Dr. Jaime Arcila."
+    },
+    "veneers-seguridad": {
+      "title": "Seguridad y confianza",
+      "caption": "Seguridad y confianza en tu tratamiento de carillas."
+    },
+    "veneers-colombia": {
+      "title": "Carillas de porcelana en Colombia",
+      "caption": "El Dr. Jaime Arcila explica el proceso de carillas de porcelana en Colombia."
+    },
+    "sonrisa-segura": {
+      "title": "Una paciente comparte su resultado",
+      "caption": "Paciente Odontogamma Oriente."
+    },
+    "christopher": {
+      "title": "Christopher, paciente",
+      "caption": "Paciente de Odontogamma Oriente."
+    },
+    "ivonn": {
+      "title": "Ivonn, paciente de Odontogamma",
+      "caption": "Paciente de Odontogamma Oriente."
+    },
+    "play": "Reproducir video: {{ title }}"
+  },
+  "chat": {
+    "title": "Asistente",
+    "close": "Cerrar asistente",
+    "open": "Abrir asistente",
+    "placeholder": "Escribe un mensaje...",
+    "send": "Enviar",
+    "greeting": "¡Hola! ¿En qué te puedo ayudar?",
+    "fallback": "No pude responder en este momento. Escríbenos por WhatsApp o a marketingodontogamma@gmail.com",
+    "typing": "Pensando...",
+    "teaserTitle": "¿Tienes alguna duda?",
+    "teaserText": "Chatea con nuestro asistente virtual",
+    "teaserClose": "Cerrar aviso"
+  },
+  "slider": {
+    "before": "Antes",
+    "after": "Después",
+    "altAfter": "{{ alt }} - resultado final",
+    "altBefore": "{{ alt }} - estado inicial",
+    "compare": "Comparar antes y después de {{ alt }}"
+  },
+  "whatsapp": {
+    "contact": "Hola, deseo solicitar información y agendar una cita con el Dr. Jaime Arcila en Odontogamma Oriente.",
+    "virtual": "Hola, quisiera asesoría para mi valoración virtual en Odontogamma Oriente.",
+    "video": "Hola, vi el video y quiero conocer los detalles de la experiencia en Odontogamma Oriente.",
+    "appointment": "Hola, deseo solicitar una cita de valoración con el Dr. Jaime Arcila en Odontogamma Oriente.",
+    "treatment": "Hola, deseo más información sobre el tratamiento de {{ title }} en Odontogamma Oriente."
+  },
+  "nav": {
+    "ariaMain": "Navegación principal",
+    "contact": "Contacto",
+    "cta": "Valoración gratuita",
+    "ctaFull": "Iniciar valoración gratuita",
+    "free": "Gratis",
+    "language": "Idioma",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
+    "services": {
+      "label": "Lo que hacemos",
+      "footer": "Ver todos los tratamientos",
+      "items": {
+        "veneers": {
+          "label": "Carillas de porcelana",
+          "description": "Láminas feldespáticas ultrafinas de alta precisión"
+        },
+        "cosmetic": {
+          "label": "Odontología cosmética",
+          "description": "Arquitectura facial y armonización de sonrisa"
+        },
+        "process": {
+          "label": "Proceso de transformación",
+          "description": "El viaje de tu nueva sonrisa paso a paso"
+        },
+        "whitening": {
+          "label": "Aclaramiento dental láser",
+          "description": "Luz fría fotocatalizada sin sensibilidad"
+        }
+      }
+    },
+    "who": {
+      "label": "Quiénes somos",
+      "items": {
+        "about": {
+          "label": "Sobre nosotros",
+          "description": "Nuestra historia"
+        },
+        "doctor": {
+          "label": "Dr. Jaime Arcila Cano",
+          "description": "Especialista en odontología estética y restauradora"
+        },
+        "team": {
+          "label": "Nuestro equipo",
+          "description": "Especialistas multidisciplinarios"
+        },
+        "location": {
+          "label": "Nuestra sede",
+          "description": "Sede Oriente en El Carmen de Viboral"
+        }
+      }
+    },
+    "work": {
+      "label": "Nuestro trabajo",
+      "items": {
+        "beforeAfter": {
+          "label": "Antes y después",
+          "description": "Galería fotográfica con comparador interactivo"
+        },
+        "testimonials": {
+          "label": "Testimonios de pacientes",
+          "description": "Historias reales en foto y video"
+        },
+        "virtual": {
+          "label": "Valoración virtual",
+          "description": "Sube fotos de tus dientes y recibe un diagnóstico preliminar"
+        }
+      }
+    }
+  },
+  "meta": {
+    "defaultDescription": "Odontología estética, carillas de porcelana y diseño de sonrisa en El Carmen de Viboral, Oriente Antioqueño.",
+    "home": {
+      "title": "Odontología estética y carillas en El Carmen de Viboral | Odontogamma Oriente",
+      "description": "Carillas de porcelana, diseño de sonrisa y odontología estética de mínima invasión en el Oriente Antioqueño. Agenda una valoración gratuita con el Dr. Jaime Arcila Cano."
+    },
+    "about": {
+      "title": "Sobre nosotros | Odontogamma Oriente",
+      "description": "Conoce la clínica Odontogamma Oriente en El Carmen de Viboral: nuestra historia, nuestra forma de atender y por qué los pacientes confían en nosotros."
+    },
+    "doctor": {
+      "title": "Dr. Jaime Arcila Cano, odontólogo estético | Odontogamma Oriente",
+      "description": "Trayectoria, formación y enfoque clínico del Dr. Jaime Arcila Cano, director de Odontogamma Oriente y especialista en odontología estética."
+    },
+    "team": {
+      "title": "Equipo clínico | Odontogamma Oriente",
+      "description": "Los especialistas que te atienden en Odontogamma Oriente: odontología estética, rehabilitación oral y acompañamiento durante todo el tratamiento."
+    },
+    "location": {
+      "title": "Sede en El Carmen de Viboral, cómo llegar | Odontogamma Oriente",
+      "description": "Dirección, horarios y cómo llegar a la clínica Odontogamma Oriente en El Carmen de Viboral, Antioquia. Atención con cita previa."
+    },
+    "services": {
+      "title": "Tratamientos de odontología estética | Odontogamma Oriente",
+      "description": "Carillas de porcelana, diseño de sonrisa y rehabilitación estética. Conoce cada tratamiento, para quién es y cómo es el proceso."
+    },
+    "serviceDetail": {
+      "title": "Tratamiento | Odontogamma Oriente",
+      "description": "Detalle del tratamiento: en qué consiste, para quién es y cómo es el proceso en Odontogamma Oriente.",
+      "pageTitle": "{{ title }} en El Carmen de Viboral | Odontogamma Oriente"
+    },
+    "beforeAfter": {
+      "title": "Antes y después: casos reales de sonrisas | Odontogamma Oriente",
+      "description": "Casos clínicos reales de carillas y diseño de sonrisa. Desliza para comparar el antes y el después de cada paciente."
+    },
+    "testimonials": {
+      "title": "Testimonios de pacientes | Odontogamma Oriente",
+      "description": "Escucha a pacientes de Odontogamma Oriente contar cómo fue su tratamiento y cómo cambió su sonrisa."
+    },
+    "virtual": {
+      "title": "Valoración virtual gratuita con fotos | Odontogamma Oriente",
+      "description": "Envía fotos de tus dientes y recibe una valoración preliminar gratuita del equipo de Odontogamma Oriente, sin salir de casa."
+    },
+    "contact": {
+      "title": "Agendar cita y contacto | Odontogamma Oriente",
+      "description": "Agenda tu cita en Odontogamma Oriente por WhatsApp o formulario. Atendemos en El Carmen de Viboral, de lunes a sábado."
+    },
+    "notFound": {
+      "title": "Página no encontrada | Odontogamma Oriente"
+    }
+  }
+}

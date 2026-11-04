@@ -1,0 +1,54 @@
+{
+  "beforeAfter": {
+    "hero": {
+      "galeriaDeCasosClinicos": "Odontogamma Oriente clinical case gallery",
+      "casosClinicosRealesSin": "Real patient cases · unfiltered",
+      "elArteDeLo": "The art of the imperceptible:",
+      "antesYDespues": "Before and after",
+      "deslizaConTuDedo": "Drag your finger or cursor across each case to see the transformation from the starting point to the final result, achieved with our minimally invasive techniques.",
+      "iniciarValoracionGratuita": "Book your free consultation",
+      "leerTestimoniosDePacientes": "Read patient testimonials",
+      "deslizaParaExplorar": "Scroll to explore"
+    },
+    "gallery": {
+      "evidenciaFotografica": "Photo evidence",
+      "transformacionesDeFirma": "Signature transformations",
+      "resultadosClinicosDocumentadosBajo": "Clinical results documented with polarized light and high-definition macro photography.",
+      "categories": [
+        {
+          "label": "All cases"
+        },
+        {
+          "label": "Porcelain veneers"
+        },
+        {
+          "label": "Smile design"
+        },
+        {
+          "label": "Rehabilitation & implants"
+        },
+        {
+          "label": "Orthodontics & alignment"
+        }
+      ]
+    },
+    "banner": {
+      "compromisoClinico": "Our clinical commitment",
+      "porQueNuestrasCarillas": "Why our veneers look so natural",
+      "laGranMayoriaDe": "Most cosmetic treatments fail because they look like a solid, opaque, lifeless block. At Odontogamma Oriente, Dr. Jaime Arcila shapes every piece to respect the horizontal and vertical micro-texture of natural enamel.",
+      "estoSignificaQueCuando": "This means that when light hits your teeth, it reflects diffusely, just as it does on a young natural tooth, so your veneers look natural and are hard to tell apart from your own teeth.",
+      "garantiasDeTratamiento": "What we stand behind",
+      "esmaltePreservadoMedianteMagnificacion": "Enamel preserved with microscopic magnification",
+      "pruebaEsteticaFisicaPrevia": "A physical aesthetic mock-up first, to approve the design",
+      "ceramicaBiocompatibleQueRespeta": "Biocompatible ceramic that is gentle on your gums",
+      "estabilidadDeColorGarantizada": "Excellent color stability against coffee, wine and food"
+    },
+    "cta": {
+      "diagnosticoVirtualOrtodonciaDigital": "Virtual consultation & digital orthodontics",
+      "tuSonrisaEsTu": "Your smile is your best first impression",
+      "descubreEnMenosDe": "Find out within 24 hours what's possible for your smile with clear aligners, veneers or whitening. Just send 3 photos from your phone.",
+      "iniciarValoracionGratuita": "Book your free consultation",
+      "citaEnElCarmen": "Visit us in El Carmen de Viboral"
+    }
+  }
+}

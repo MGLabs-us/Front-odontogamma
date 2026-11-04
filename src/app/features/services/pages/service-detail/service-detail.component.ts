@@ -8,6 +8,10 @@ import { LuxuryButtonComponent } from '../../../../shared/components/luxury-butt
 import { ArrowMarkComponent } from '../../../../shared/components/arrow-mark/arrow-mark.component';
 import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { WhatsappPipe } from '../../../../core/i18n/whatsapp.pipe';
+import { RoutePipe } from '../../../../core/i18n/route.pipe';
+import { I18nService } from '../../../../core/i18n/i18n.service';
 
 /**
  * Vista detallada de un tratamiento individual en Odontogamma Oriente.
@@ -18,11 +22,12 @@ import { IconComponent } from '../../../../shared/components/icon/icon.component
 @Component({
   selector: 'app-service-detail',
   standalone: true,
-  imports: [IconComponent, CommonModule, RouterLink, BeforeAfterSliderComponent, LuxuryButtonComponent, ArrowMarkComponent, EditorialLabelComponent],
+  imports: [TranslocoPipe, RoutePipe, WhatsappPipe, IconComponent, CommonModule, RouterLink, BeforeAfterSliderComponent, LuxuryButtonComponent, ArrowMarkComponent, EditorialLabelComponent],
   templateUrl: './service-detail.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServiceDetailComponent {
+  private readonly i18n = inject(I18nService);
   private readonly portfolioService = inject(PortfolioService);
   private readonly seo = inject(SeoService);
 
@@ -39,7 +44,7 @@ export class ServiceDetailComponent {
       const service = this.service();
       if (!service) return;
       this.seo.update({
-        title: `${service.title} en El Carmen de Viboral | Odontogamma Oriente`,
+        title: this.i18n.t('meta.serviceDetail.pageTitle', { title: service.title }),
         description: service.shortDescription,
         image: service.heroImageUrl
       });
