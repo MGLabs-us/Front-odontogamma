@@ -30,12 +30,16 @@ jobs:
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_PORT: ${{ secrets.VPS_PORT }}
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq sshpass
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p "${VPS_PORT:-22}" -H "$VPS_HOST" >> ~/.ssh/known_hosts
+          if [ -n "$VPS_KNOWN_HOSTS" ]; then
+            printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -p "${VPS_PORT:-22}" -H "$VPS_HOST" >> ~/.ssh/known_hosts
+          fi
 
       - name: Upload build to VPS
         env:
@@ -43,30 +47,30 @@ jobs:
           VPS_USER: ${{ secrets.VPS_USER }}
           VPS_PORT: ${{ secrets.VPS_PORT }}
           VPS_PATH: ${{ secrets.VPS_PATH }}
+          SSHPASS: ${{ secrets.VPS_PASSWORD }}
         run: |
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_deploy -p ${VPS_PORT:-22}" \
+          rsync -rlt  z --delete --omit-dir-times --chmod=D775,F664 \
+            -e "sshpass -e ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no" \
             dist/odontoGammaOriente/browser/ \
             "$VPS_USER@$VPS_HOST:$VPS_PATH/"
 
-      # El nginx del contenedor vive en el repo (deploy/odontogamma-nginx.conf). Se copia junto a
-      # la carpeta del build, que es donde docker-compose lo monta, y se recrea el contenedor.
+      # El nginx del contenedor vive en el repo (deploy/odontogamma-nginx.conf). Se escribe en el
+      # mismo archivo que monta docker-compose (mismo inodo) y se recrea el contenedor.
       - name: Update container nginx config
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
           VPS_PORT: ${{ secrets.VPS_PORT }}
           VPS_PATH: ${{ secrets.VPS_PATH }}
+          SSHPASS: ${{ secrets.VPS_PASSWORD }}
         run: |
           APP_DIR="$(dirname "$VPS_PATH")"
-          SSH="ssh -i ~/.ssh/id_deploy -p ${VPS_PORT:-22}"
+          SSH="sshpass -e ssh -p ${VPS_PORT:-22} -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
-          # Si Docker creó una carpeta con el nombre del archivo (volumen apuntando a un archivo inexistente), se quita.
+          # Si Docker creó una carpeta con el nombre del archivo, se quita; luego se asegura que el archivo exista.
           $SSH "$VPS_USER@$VPS_HOST" "[ -d '$APP_DIR/odontogamma-nginx.conf' ] && rmdir '$APP_DIR/odontogamma-nginx.conf'; touch '$APP_DIR/odontogamma-nginx.conf'"
 
-          # --inplace conserva el inodo: un volumen de un solo archivo no ve el reemplazo atómico.
-          rsync -az --inplace -e "$SSH" \
-            deploy/odontogamma-nginx.conf \
-            "$VPS_USER@$VPS_HOST:$APP_DIR/odontogamma-nginx.conf"
+          # cat > escribe en el mismo archivo (conserva el inodo del volumen de un solo archivo).
+          $SSH "$VPS_USER@$VPS_HOST" "cat > '$APP_DIR/odontogamma-nginx.conf'" < deploy/odontogamma-nginx.conf
 
           $SSH "$VPS_USER@$VPS_HOST" "cd '$APP_DIR' && docker compose up -d --force-recreate odontogamma && sleep 3 && docker ps --filter name=odontogamma_container --filter status=running -q | grep -q ."
