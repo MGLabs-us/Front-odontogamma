@@ -32,6 +32,7 @@ interface TravelRoute {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LocationComponent {
+  protected readonly heroVideo = CLOUDINARY_ASSETS_MANIFEST.videos.clinicLoop;
   protected readonly clinicReels = CLOUDINARY_ASSETS_MANIFEST.videos.clinic;
 
   protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.clinic.reception;
