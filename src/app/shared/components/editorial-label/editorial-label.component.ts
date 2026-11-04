@@ -12,7 +12,6 @@ export type EditorialLabelTone = 'light' | 'dark' | 'muted';
     '[class.og-editorial-label--muted]': "tone() === 'muted'"
   },
   template: `
-    <span class="og-editorial-label__rule" aria-hidden="true"></span>
     <ng-content />
   `,
   styleUrl: './editorial-label.component.css'
