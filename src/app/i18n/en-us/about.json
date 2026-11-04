@@ -1,0 +1,75 @@
+{
+  "about": {
+    "hero": {
+      "elDrJaimeArcila": "Dr. Jaime Arcila and the clinic assistant smiling in front of the Odontogamma Oriente logo",
+      "nuestraHistoria": "Our story"
+    },
+    "manifesto": {
+      "manoExpertaYPrecision": "Expert hands and ceramic precision",
+      "artesaniaQuirurgica": "Precision craftsmanship",
+      "laVerdaderaPerfeccionEs": "“True perfection looks natural and lives in harmony with who you are.”",
+      "nuestraEsencia": "Who we are",
+      "dondeLaCienciaMedica": "Where medical science meets artistry",
+      "odontogammaOrienteNacioCon": "Odontogamma Oriente was founded with a clear vision: to free our patients from generic, lifeless and artificial-looking smiles. Guided by the international school of high-end cosmetic dentistry, we treat every design as a one-of-a-kind piece, made to suit the features of the person wearing it.",
+      "ubicadosEnElApacible": "Set in the peaceful countryside of Eastern Antioquia, our clinic is a place where time, privacy and meticulous craftsmanship come first. We don't believe in rushed treatments; we believe in transformations that last.",
+      "tecnologiaIntraoral3d": "3D intraoral scanning",
+      "escaneoDigitalOpticoSin": "Digital optical scans, no messy silicone impressions.",
+      "laboratorioMaestroAsociado": "Partner master ceramics lab",
+      "estratificacionCeramicaIndividualCon": "Custom layered ceramics made with Swiss feldspar powders."
+    },
+    "pillars": {
+      "nuestrosFundamentos": "Our principles",
+      "losPilaresDeLa": "The pillars of the Odontogamma experience",
+      "tresPrincipiosInnegociablesQue": "Three non-negotiable principles that guide every clinical and artistic decision we make.",
+      "items": [
+        {
+          "title": "Biomimetics & minimally invasive care",
+          "subtitle": "Preservation above all",
+          "description": "We believe the best tooth structure is the one you were born with. Our ultra-thin restorations, under 0.3 mm, mimic the flexibility, translucency and look of natural enamel without aggressive reduction.",
+          "highlight": "0.2–0.3 mm ceramic thickness"
+        },
+        {
+          "title": "Facial design & golden proportions",
+          "subtitle": "Your whole face is the canvas",
+          "description": "A smile should never look like an accessory. We study your features, lip line, skin tone and the way you speak so every veneer fits naturally with your personality.",
+          "highlight": "Comprehensive facial analysis"
+        },
+        {
+          "title": "Hospitality & privacy",
+          "subtitle": "A one-of-a-kind experience",
+          "description": "We reject the cold, clinical dental office. Our clinic in Eastern Antioquia is designed as a private sanctuary: calm, discreet and never rushed.",
+          "highlight": "Personal, confidential care"
+        }
+      ]
+    },
+    "timeline": {
+      "evolucionContinua": "Always evolving",
+      "laTrayectoriaDeUna": "How our vision grew",
+      "dePionerosEnLa": "From regional pioneers to a flagship clinic for advanced cosmetic dentistry.",
+      "items": [
+        {
+          "year": "Founding",
+          "title": "The birth of a concept",
+          "description": "Founded in Eastern Antioquia with one goal: to bring cosmetic dentistry up to the standard of the world's design capitals."
+        },
+        {
+          "year": "Innovation",
+          "title": "A fully digital workflow",
+          "description": "State-of-the-art intraoral scanners and real-time 3D planning."
+        },
+        {
+          "year": "Today",
+          "title": "A trusted name in dental tourism",
+          "description": "Patients from across Colombia and around the world choose our clinic in El Carmen de Viboral for its privacy, natural setting and signature results."
+        }
+      ]
+    },
+    "cta": {
+      "diagnosticoVirtualOrtodonciaDigital": "Virtual consultation & digital orthodontics",
+      "tuSonrisaEsTu": "Your smile is your best first impression",
+      "descubreEnMenosDe": "Find out within 24 hours what's possible for your smile with clear aligners, veneers or whitening. Just send 3 photos from your phone.",
+      "iniciarValoracionGratuita": "Book your free consultation",
+      "citaEnElCarmen": "Visit us in El Carmen de Viboral"
+    }
+  }
+}

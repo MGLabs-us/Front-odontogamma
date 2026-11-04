@@ -1,0 +1,244 @@
+{
+  "footer": {
+    "brand": {
+      "odontogammaOriente": "Odontogamma Oriente",
+      "odontologiaEsteticaYDiseno": "Cosmetic dentistry and smile design in Eastern Antioquia, led by Dr. Jaime Arcila Cano.",
+      "siguenos": "Follow us",
+      "redesSociales": "Social media"
+    },
+    "about": {
+      "quienesSomos": "Who we are",
+      "inicio": "Home",
+      "sobreNosotros": "About us",
+      "drJaimeArcilaCano": "Dr. Jaime Arcila Cano",
+      "equipoClinico": "Clinical team",
+      "nuestraSede": "Our clinic"
+    },
+    "work": {
+      "nuestroTrabajo": "Our work",
+      "antesYDespues": "Before and after",
+      "testimoniosDePacientes": "Patient testimonials",
+      "valoracionVirtualGratuita": "Free virtual consultation",
+      "catalogoDeProcedimientos": "Treatment catalog",
+      "agendarValoracionPresencial": "Book an in-person consultation"
+    },
+    "contact": {
+      "sedeAtencion": "Clinic & hours",
+      "elCarmenDeViboral": "Cl. 30 #33-80, El Carmen de Viboral, Antioquia, Colombia.",
+      "atencionConCitaPrevia": "By appointment only.",
+      "lunesAViernes8": "Monday to Friday: 8:00 AM – 6:00 PM",
+      "sabados800Am": "Saturday: 8:00 AM – 1:00 PM"
+    },
+    "credits": {
+      "odontogammaOrienteDrJaime": "Odontogamma Oriente. Dr. Jaime Arcila Cano. All rights reserved.",
+      "odontologiaDePrecisionArte": "Precision dentistry & art"
+    }
+  },
+  "videos": {
+    "entrevista-paciente": {
+      "title": "A patient shares their experience",
+      "caption": "Interview at the clinic in El Carmen de Viboral."
+    },
+    "invitacion-experiencia": {
+      "title": "Live the Odontogamma experience",
+      "caption": "Dr. Jaime Arcila invites you to find out more about the experience."
+    },
+    "hero-loop": {
+      "title": "Odontogamma Oriente, cosmetic dentistry clinic",
+      "caption": "Welcome video from Odontogamma Oriente."
+    },
+    "hero-doctor": {
+      "title": "Dr. Jaime Arcila at work at Odontogamma Oriente",
+      "caption": "Introduction video from Dr. Jaime Arcila Cano."
+    },
+    "carillas-ceramica": {
+      "title": "Veneers ready to be placed",
+      "caption": "Custom-made ceramic laminates."
+    },
+    "sede-consulta": {
+      "title": "Care in the treatment room",
+      "caption": "A real procedure in our treatment rooms."
+    },
+    "sede-entrada": {
+      "title": "Welcome to the clinic",
+      "caption": "This is how we welcome you."
+    },
+    "veneers-semana": {
+      "title": "Transform your smile in a week",
+      "caption": "Visit Colombia with Dr. Jaime Arcila."
+    },
+    "veneers-viaje": {
+      "title": "Your trip to Colombia",
+      "caption": "The procedure and timeline, explained by Dr. Jaime Arcila."
+    },
+    "veneers-seguridad": {
+      "title": "Safety and confidence",
+      "caption": "Safety and confidence in your veneer treatment."
+    },
+    "veneers-colombia": {
+      "title": "Porcelain veneers in Colombia",
+      "caption": "Dr. Jaime Arcila explains the porcelain veneer process in Colombia."
+    },
+    "sonrisa-segura": {
+      "title": "A patient shares their result",
+      "caption": "Odontogamma Oriente patient."
+    },
+    "christopher": {
+      "title": "Christopher, patient",
+      "caption": "Odontogamma Oriente patient."
+    },
+    "ivonn": {
+      "title": "Ivonn, Odontogamma patient",
+      "caption": "Odontogamma Oriente patient."
+    },
+    "play": "Play video: {{ title }}"
+  },
+  "chat": {
+    "title": "Chat assistant",
+    "close": "Close assistant",
+    "open": "Open assistant",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "greeting": "Hi! How can I help you today?",
+    "fallback": "Sorry, I can't reply right now. Please message us on WhatsApp or email marketingodontogamma@gmail.com",
+    "typing": "Thinking...",
+    "teaserTitle": "Have a question?",
+    "teaserText": "Chat with our virtual assistant",
+    "teaserClose": "Dismiss"
+  },
+  "slider": {
+    "before": "Before",
+    "after": "After",
+    "altAfter": "{{ alt }} - final result",
+    "altBefore": "{{ alt }} - initial state",
+    "compare": "Compare before and after: {{ alt }}"
+  },
+  "whatsapp": {
+    "contact": "Hello, I'd like more information and to book an appointment with Dr. Jaime Arcila at Odontogamma Oriente.",
+    "virtual": "Hello, I'd like some guidance with my virtual consultation at Odontogamma Oriente.",
+    "video": "Hello, I watched the video and I'd like to know more about the experience at Odontogamma Oriente.",
+    "appointment": "Hello, I'd like to book a consultation with Dr. Jaime Arcila at Odontogamma Oriente.",
+    "treatment": "Hello, I'd like more information about {{ title }} at Odontogamma Oriente."
+  },
+  "nav": {
+    "ariaMain": "Main navigation",
+    "contact": "Contact",
+    "cta": "Free consultation",
+    "ctaFull": "Book your free consultation",
+    "free": "Free",
+    "language": "Language",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "services": {
+      "label": "What we do",
+      "footer": "View all treatments",
+      "items": {
+        "veneers": {
+          "label": "Porcelain veneers",
+          "description": "Ultra-thin, high-precision feldspathic laminates"
+        },
+        "cosmetic": {
+          "label": "Cosmetic dentistry",
+          "description": "Facial design and smile harmonization"
+        },
+        "process": {
+          "label": "Smile makeover process",
+          "description": "Your smile makeover, step by step"
+        },
+        "whitening": {
+          "label": "Laser teeth whitening",
+          "description": "Photocatalyzed cold light, no sensitivity"
+        }
+      }
+    },
+    "who": {
+      "label": "Who we are",
+      "items": {
+        "about": {
+          "label": "About us",
+          "description": "Our story"
+        },
+        "doctor": {
+          "label": "Dr. Jaime Arcila Cano",
+          "description": "Cosmetic and restorative dentistry specialist"
+        },
+        "team": {
+          "label": "Our team",
+          "description": "Multidisciplinary specialists"
+        },
+        "location": {
+          "label": "Our clinic",
+          "description": "Our Oriente clinic in El Carmen de Viboral"
+        }
+      }
+    },
+    "work": {
+      "label": "Our work",
+      "items": {
+        "beforeAfter": {
+          "label": "Before and after",
+          "description": "Photo gallery with interactive comparison slider"
+        },
+        "testimonials": {
+          "label": "Patient testimonials",
+          "description": "Real stories in photos and video"
+        },
+        "virtual": {
+          "label": "Virtual consultation",
+          "description": "Upload photos of your teeth and receive a preliminary evaluation"
+        }
+      }
+    }
+  },
+  "meta": {
+    "defaultDescription": "Cosmetic dentistry, porcelain veneers and smile design in El Carmen de Viboral, Eastern Antioquia, Colombia.",
+    "home": {
+      "title": "Cosmetic Dentistry & Veneers in El Carmen de Viboral, Colombia | Odontogamma Oriente",
+      "description": "Porcelain veneers, smile design and minimally invasive cosmetic dentistry in Eastern Antioquia, Colombia. Book a free consultation with Dr. Jaime Arcila Cano."
+    },
+    "about": {
+      "title": "About Us | Odontogamma Oriente",
+      "description": "Meet the Odontogamma Oriente clinic in El Carmen de Viboral: our story, how we care for patients, and why they trust us."
+    },
+    "doctor": {
+      "title": "Dr. Jaime Arcila Cano, Cosmetic Dentist | Odontogamma Oriente",
+      "description": "Background, training and clinical approach of Dr. Jaime Arcila Cano, director of Odontogamma Oriente and cosmetic dentistry specialist."
+    },
+    "team": {
+      "title": "Our Clinical Team | Odontogamma Oriente",
+      "description": "The specialists who care for you at Odontogamma Oriente: cosmetic dentistry, oral rehabilitation and support throughout your treatment."
+    },
+    "location": {
+      "title": "Our Clinic in El Carmen de Viboral & How to Get Here | Odontogamma Oriente",
+      "description": "Address, hours and directions to Odontogamma Oriente in El Carmen de Viboral, Antioquia, Colombia. By appointment only."
+    },
+    "services": {
+      "title": "Cosmetic Dentistry Treatments | Odontogamma Oriente",
+      "description": "Porcelain veneers, smile design and aesthetic rehabilitation. Learn about each treatment, who it is for and how the process works."
+    },
+    "serviceDetail": {
+      "title": "Treatment | Odontogamma Oriente",
+      "description": "Treatment details: what it involves, who it's for and what the process looks like at Odontogamma Oriente.",
+      "pageTitle": "{{ title }} in El Carmen de Viboral | Odontogamma Oriente"
+    },
+    "beforeAfter": {
+      "title": "Before & After: Real Smile Transformations | Odontogamma Oriente",
+      "description": "Real patient cases of veneers and smile design. Slide to compare each patient's before and after."
+    },
+    "testimonials": {
+      "title": "Patient Testimonials | Odontogamma Oriente",
+      "description": "Hear Odontogamma Oriente patients describe their treatment and how it changed their smile."
+    },
+    "virtual": {
+      "title": "Free Virtual Consultation with Photos | Odontogamma Oriente",
+      "description": "Send photos of your teeth and get a free preliminary evaluation from the Odontogamma Oriente team, without leaving home."
+    },
+    "contact": {
+      "title": "Book an Appointment & Contact | Odontogamma Oriente",
+      "description": "Book your appointment at Odontogamma Oriente by WhatsApp or form. We see patients in El Carmen de Viboral, Monday to Saturday."
+    },
+    "notFound": {
+      "title": "Page Not Found | Odontogamma Oriente"
+    }
+  }
+}

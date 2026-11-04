@@ -1,0 +1,54 @@
+{
+  "beforeAfter": {
+    "hero": {
+      "galeriaDeCasosClinicos": "Galería de casos clínicos de Odontogamma Oriente",
+      "casosClinicosRealesSin": "Casos clínicos reales · sin filtros",
+      "elArteDeLo": "El arte de lo imperceptible:",
+      "antesYDespues": "Antes y después",
+      "deslizaConTuDedo": "Desliza con tu dedo o cursor sobre cada caso para descubrir la transición entre el estado inicial y la armonía definitiva alcanzada con nuestras técnicas de mínima invasión.",
+      "iniciarValoracionGratuita": "Iniciar valoración gratuita",
+      "leerTestimoniosDePacientes": "Leer testimonios de pacientes",
+      "deslizaParaExplorar": "Desliza para explorar"
+    },
+    "gallery": {
+      "evidenciaFotografica": "Evidencia fotográfica",
+      "transformacionesDeFirma": "Transformaciones de firma",
+      "resultadosClinicosDocumentadosBajo": "Resultados clínicos documentados bajo luz polarizada y fotografía macroscópica de alta definición.",
+      "categories": [
+        {
+          "label": "Todos los casos"
+        },
+        {
+          "label": "Carillas de porcelana"
+        },
+        {
+          "label": "Diseño de sonrisa"
+        },
+        {
+          "label": "Rehabilitación & implantes"
+        },
+        {
+          "label": "Ortodoncia & alineación"
+        }
+      ]
+    },
+    "banner": {
+      "compromisoClinico": "Compromiso clínico",
+      "porQueNuestrasCarillas": "Por qué nuestras carillas lucen indetectables",
+      "laGranMayoriaDe": "La gran mayoría de los tratamientos estéticos fallan porque lucen como una barra sólida, opaca y sin vida. En Odontogamma Oriente, el Dr. Jaime Arcila modela cada pieza respetando la microtextura horizontal y vertical del esmalte.",
+      "estoSignificaQueCuando": "Esto significa que, cuando la luz incide sobre tus dientes, se refleja de forma difusa, igual que en un diente natural joven, para que las carillas luzcan naturales y difíciles de distinguir.",
+      "garantiasDeTratamiento": "Garantías de tratamiento",
+      "esmaltePreservadoMedianteMagnificacion": "Esmalte preservado mediante magnificación microscópica",
+      "pruebaEsteticaFisicaPrevia": "Prueba estética física previa (mock-up) para validar el diseño",
+      "ceramicaBiocompatibleQueRespeta": "Cerámica biocompatible que respeta la salud de tus encías",
+      "estabilidadDeColorGarantizada": "Alta estabilidad de color frente a café, vino y alimentos"
+    },
+    "cta": {
+      "diagnosticoVirtualOrtodonciaDigital": "Diagnóstico virtual & ortodoncia digital",
+      "tuSonrisaEsTu": "Tu sonrisa es tu mejor carta de presentación",
+      "descubreEnMenosDe": "Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.",
+      "iniciarValoracionGratuita": "Iniciar valoración gratuita",
+      "citaEnElCarmen": "Cita en El Carmen de Viboral"
+    }
+  }
+}

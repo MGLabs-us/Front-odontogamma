@@ -1,0 +1,220 @@
+{
+  "services": {
+    "list": {
+      "hero": {
+        "tratamientosDeFirmaOdontogamma": "Signature treatments at Odontogamma Oriente",
+        "catalogoClinico": "Clinical catalog",
+        "tratamientosDeFirma": "Signature treatments",
+        "cadaProcedimientoCombinaCiencia": "Every procedure combines biomimetic science, digital technology and a refined sense of aesthetics to transform your smile for life."
+      },
+      "list": {
+        "distintivosDelProcedimiento": "Highlights:",
+        "verTratamiento": "View treatment",
+        "agendarValoracion": "Book a consultation"
+      },
+      "process": {
+        "tuExperienciaClinica": "Your treatment journey",
+        "elViajeHaciaTu": "The path to your new smile",
+        "unProcesoMeticulosoConcebido": "A meticulous process designed to give you peace of mind, predictability and flawless results.",
+        "paso01": "Step 01",
+        "consultaYDialogo": "Consultation and conversation",
+        "escuchamosTusExpectativasEvaluamos": "We listen to what you want, assess facial harmony and take high-definition diagnostic photographs.",
+        "paso02": "Step 02",
+        "disenoDigitalPrueba": "Digital design & preview",
+        "modelamosTuSonrisaEn": "We model your smile in 3D and create a mock-up so you can see the result before we begin.",
+        "paso03": "Step 03",
+        "confeccionArtesanal": "Handcrafted fabrication",
+        "losMaestrosCeramistasElaboran": "Our master ceramists make each porcelain veneer by hand for maximum translucency and a natural look.",
+        "paso04": "Step 04",
+        "cementacionYEntrega": "Bonding and delivery",
+        "adhesionMicrometricaBajoAislamiento": "Micrometric bonding under complete isolation, bite adjustment and a final polish for a natural shine."
+      },
+      "reels": {
+        "elProcesoExplicado": "The process explained",
+        "conoceTuTratamientoCon": "Learn about your treatment with Dr. Jaime Arcila",
+        "videosCortosParaResolver": "Short videos to answer your questions about porcelain veneers and smile transformation."
+      },
+      "cta": {
+        "diagnosticoVirtualOrtodonciaDigital": "Virtual consultation & digital orthodontics",
+        "tuSonrisaEsTu": "Your smile is your best first impression",
+        "descubreEnMenosDe": "Find out within 24 hours what's possible for your smile with clear aligners, veneers or whitening. Just send 3 photos from your phone.",
+        "iniciarValoracionGratuita": "Book your free consultation"
+      }
+    },
+    "detail": {
+      "hero": {
+        "agendarValoracion": "Book a consultation",
+        "verAntesYDespues": "See before and after",
+        "explorarTratamiento": "Explore treatment"
+      },
+      "overview": {
+        "excelenciaClinicaArtesania": "Clinical excellence & craftsmanship",
+        "laCienciaBiomimeticaDetras": "The biomimetic science behind your new smile",
+        "porQueElegirEste": "Why choose this treatment at Odontogamma Oriente:",
+        "diagnosticoInicial": "Initial diagnosis",
+        "esEsteTratamientoPara": "Is this treatment right for you?",
+        "recomendadoParaPacientesQue": "Recommended for patients with the following:",
+        "solicitarValoracionPrivada": "Request a private consultation",
+        "atencionInmediata": "Quick answers",
+        "consultaPorWhatsapp": "Ask us on WhatsApp",
+        "resuelveDudasSobreTiempos": "Get answers about timing and cost, and book your appointment directly with our team.",
+        "chatearPorWhatsapp": "Chat on WhatsApp"
+      },
+      "gallery": {
+        "galeriaDeReferencia": "Reference gallery",
+        "detallesDeAltaPrecision": "Fine detail",
+        "unVistazoAlEntorno": "A look at our comfortable setting, our biometric equipment and the artisan skill behind every one-of-a-kind smile we create in Eastern Antioquia.",
+        "odontogammaOrienteClinica": "Odontogamma Oriente clinic",
+        "imageAlt": "{{ title }}, detail {{ n }}"
+      },
+      "case": {
+        "transformacionReal": "A real transformation",
+        "deslizaLaBarraDivisoria": "Drag the slider to compare the starting point with the final result delivered to the patient.",
+        "casoClinicoDocumentado": "Documented clinical case",
+        "clinicaOdontogammaOriente": "• Clinic: Odontogamma Oriente",
+        "beforeAfterTitle": "Before and after: {{ title }}",
+        "technique": "• Technique: {{ value }}",
+        "focus": "• Focus: {{ value }}"
+      },
+      "cta": {
+        "tuProximoPaso": "Your next step",
+        "cadaSonrisaEsDisenada": "Every smile is custom-designed to suit your facial features. Book a private consultation to see what's possible in your case.",
+        "solicitarCitaDeValoracion": "Request a consultation",
+        "verTodosLosTratamientos": "View all treatments",
+        "startConsultation": "Start your {{ title }} consultation"
+      },
+      "notFound": {
+        "tratamientoNoEncontrado": "Treatment not found",
+        "elProcedimientoSolicitadoNo": "That treatment doesn't exist or has moved.",
+        "volverATratamientos": "Back to treatments"
+      }
+    },
+    "items": {
+      "carillas-porcelana": {
+        "title": "Porcelain veneers",
+        "subtitle": "Porcelain veneers & feldspathic artistry",
+        "tagline": "Minimally invasive, maximally natural",
+        "shortDescription": "Ultra-thin feldspathic ceramic laminates, hand-shaped by master ceramists to recreate the translucency, opalescence and texture of natural enamel at its best.",
+        "detailedDescription": [
+          "At Odontogamma Oriente, we treat porcelain veneers like fine watchmaking. Unlike conventional veneers or composite resin, each veneer is layered one coat at a time with imported ceramic powders that faithfully reproduce the three-dimensional nuances of a natural tooth.",
+          "Our minimally invasive protocol preserves as much healthy tooth structure as possible, creating a micro-precise bond to the enamel for lasting durability, with stable, stain-resistant results that keep their shine with proper care.",
+          "Every treatment begins with a digital smile analysis and a physical mock-up, so you can see and approve your new smile before any permanent work begins."
+        ],
+        "highlights": [
+          "Ultra-thin (0.2 to 0.4 mm), with no aggressive tooth reduction",
+          "Hand-layered by world-class ceramists",
+          "Highly resistant to stains from coffee, wine or tobacco",
+          "Excellent compatibility with gum tissue"
+        ],
+        "idealFor": [
+          "Worn, chipped or uneven teeth",
+          "Gaps between teeth (diastemas) and uneven tooth shapes",
+          "Deep stains that don't respond to whitening",
+          "Patients who want a radiant smile that looks 100% natural"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Dental rejuvenation with feldspathic veneers",
+          "description": "A patient with worn incisal edges and reduced tooth length. Ceramic laminates were designed with fine surface texture and custom edge translucency.",
+          "technique": "Feldspathic ceramic veneers",
+          "focus": "Restored edges and length",
+          "units": "Feldspathic ceramic veneers",
+          "timeframe": "Restored edges and length"
+        },
+        "badge": "Our signature treatment"
+      },
+      "odontologia-cosmetica": {
+        "title": "Cosmetic dentistry",
+        "subtitle": "Cosmetic dentistry & facial design",
+        "tagline": "Aesthetic harmony that enhances your natural features",
+        "shortDescription": "Comprehensive planning that blends the shape of your lips, the frame of your face and your smile line for a subtle, elegant dental rejuvenation.",
+        "detailedDescription": [
+          "High-end cosmetic dentistry goes beyond straightening teeth: it looks at how your smile works with your eyes, your lips and your expressions when you talk and laugh.",
+          "We analyze the golden proportions of your face with studio macro photography and 3D modeling to design a smile that takes years off and boosts your confidence.",
+          "We combine gum contouring with a diode laser, enamel micro-aesthetics and digital design to sculpt a perfectly balanced result."
+        ],
+        "highlights": [
+          "3D facial analysis",
+          "Laser gum contouring with no bleeding or stitches",
+          "A try-in (aesthetic mock-up) before we start",
+          "Precise correction of smile width and tooth display"
+        ],
+        "idealFor": [
+          "Gummy smile (excess gum showing when you smile)",
+          "Teeth that look small for the frame of your lips",
+          "Noticeable asymmetry in your smile line",
+          "Anyone looking for a full smile rejuvenation"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Smile and arch harmonization",
+          "description": "Correction of wear and flattened edges with ceramic veneers, restoring brightness, width and balance to the face.",
+          "technique": "Ceramic smile design",
+          "focus": "Facial harmony & symmetry",
+          "units": "Ceramic smile design",
+          "timeframe": "Facial harmony & symmetry"
+        },
+        "badge": "Custom design"
+      },
+      "proceso-transformacion": {
+        "title": "Smile makeover process",
+        "subtitle": "The path to your smile makeover",
+        "tagline": "A private, transparent and predictable experience",
+        "shortDescription": "A guided 4-phase journey designed so that every detail of your new smile is planned, approved and carried out with the utmost precision.",
+        "detailedDescription": [
+          "Transforming your smile at Odontogamma Oriente is an exclusive journey, and you're the star. From the very first diagnostic visit, we remove the guesswork by letting you see and feel what your final smile will look like.",
+          "We combine 3D intraoral scanning (no messy impression material), computerized virtual simulation and robotic fabrication with an artist's hand finishing.",
+          "We make sure you get not only a beautiful smile, but also a functional, stable and truly comfortable bite."
+        ],
+        "highlights": [
+          "Phase 1: diagnostic consultation, study photos and 3D scan",
+          "Phase 2: digital simulation and mock-up try-in",
+          "Phase 3: elite fabrication in a state-of-the-art lab",
+          "Phase 4: final bonding under isolation, then polishing"
+        ],
+        "idealFor": [
+          "Patients who want a complete, lasting smile transformation",
+          "People who value predictability and want to see the result before they begin",
+          "Complex cases with older restorations that are worn or no longer fit well"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Micro-aesthetics & incisal edge leveling",
+          "description": "Ultra-thin porcelain veneers with enamel layering for maximum translucency and a soft, natural smile.",
+          "technique": "Precision ceramic laminates",
+          "focus": "Incisal leveling & symmetry",
+          "units": "Precision ceramic laminates",
+          "timeframe": "Incisal leveling & symmetry"
+        },
+        "badge": "The full experience"
+      },
+      "aclaramiento-laser": {
+        "title": "Advanced teeth whitening",
+        "subtitle": "Advanced cold-light whitening",
+        "tagline": "Bright, natural-looking whiteness without pain or sensitivity",
+        "shortDescription": "Combined in-office and at-home protocols using photocatalyzed cold light to break down deep organic stains while respecting the tooth's natural structure.",
+        "detailedDescription": [
+          "Unlike harsh bleaching that dehydrates the tooth and causes uncomfortable sensitivity, our advanced whitening protocol uses photocatalysis technology with remineralizing agents.",
+          "We restore youthful brightness and a harmonious shade without eroding enamel or affecting the health of the tooth.",
+          "We include custom-fitted whitening trays and maintenance gels to keep your smile bright for years."
+        ],
+        "highlights": [
+          "Cold-light technology with protective agents",
+          "Comfortable procedure with maximum enamel protection",
+          "Deep, bright whitening in a single visit",
+          "Exclusive maintenance kit for lasting shine"
+        ],
+        "idealFor": [
+          "Teeth stained by coffee, tea, mate, red wine or tobacco",
+          "Cosmetic preparation before veneers",
+          "Patients with a special event coming up who want immediate results"
+        ],
+        "beforeAfter": {
+          "caseTitle": "Optical alignment & ceramic veneers",
+          "description": "Correction of mild crowding in the front teeth and added brightness with minimal-prep ceramic veneers.",
+          "technique": "Ultra-thin no-prep laminates",
+          "focus": "Optical alignment & gum health",
+          "units": "Ultra-thin no-prep laminates",
+          "timeframe": "Optical alignment & gum health"
+        }
+      }
+    }
+  }
+}

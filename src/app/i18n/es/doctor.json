@@ -1,0 +1,84 @@
+{
+  "doctor": {
+    "hero": {
+      "directorClinicoFundador": "Director clínico & fundador",
+      "drJaime": "Dr. Jaime",
+      "arcilaCano": "Arcila Cano",
+      "especialistaEnOdontologiaEstetica": "Especialista en odontología estética biomimética en el Oriente Antioqueño. Su práctica se fundamenta en la máxima preservación biológica, la microescultura cerámica de alta fidelidad y la transformación integral de la sonrisa.",
+      "agendarCitaPrivada": "Agendar cita privada",
+      "verCasosClinicos": "Ver casos clínicos",
+      "drJaimeArcilaCano": "Dr. Jaime Arcila Cano - Director Clínico Odontogamma Oriente",
+      "direccionMedica": "Dirección médica",
+      "drJaimeArcilaCano2": "Dr. Jaime Arcila Cano",
+      "elCarmenDeViboral": "El Carmen de Viboral"
+    },
+    "story": {
+      "atencionClinicaEnOdontogamma": "Atención clínica en Odontogamma Oriente",
+      "enfoqueArtesanal": "Enfoque artesanal",
+      "laTecnologia3dEs": "«La tecnología 3D es el mapa, pero la mano sensible del especialista es la que da vida y naturalidad a la carilla.»",
+      "visionMedica": "Visión médica",
+      "unaSonrisaNoDebe": "«Una sonrisa no debe gritar que es nueva; debe susurrar elegancia y salud»",
+      "duranteMasDeUna": "Durante más de una década de práctica clínica en Antioquia, el Dr. Jaime Arcila Cano ha perfeccionado un método que huye de los dientes artificiales, planos y excesivamente blancos que saturan el mercado.",
+      "suPasionPorLa": "Su pasión por la escultura y la arquitectura se traslada al sillón dental: cada diente posee microtextura superficial, translucidez en el borde incisal, mamelones internos y una ligera variación cromática que mimetiza a la perfección la dentición natural juvenil.",
+      "diagnosticoDigitalFotograficoPrevio": "Diagnóstico digital fotográfico previo con prueba estética en vivo (Mock-up)",
+      "preservacionAbsolutaDelEsmalte": "Preservación absoluta del esmalte con preparaciones guiadas por microscopía",
+      "garantiaDeBiocompatibilidadY": "Garantía de biocompatibilidad y estabilidad oclusal a largo plazo"
+    },
+    "principles": {
+      "filosofiaClinica": "Filosofía clínica",
+      "principiosInnegociablesDeAutor": "Principios innegociables de autor",
+      "laBaseCientificaY": "La base científica y humanista que sustenta cada caso tratado por el Dr. Jaime Arcila Cano.",
+      "items": [
+        {
+          "title": "Odontología emocional",
+          "quote": "«No cambiamos sólo dientes; devolvemos la seguridad de sonreír al mundo sin reservas.»",
+          "description": "Cada paciente llega con una historia, inseguridades previas o anhelos personales. El primer paso jamás es el taladro; es la escucha empática y el entendimiento profundo de su objetivo de vida."
+        },
+        {
+          "title": "Mínima invasión biomimética",
+          "quote": "«El mayor logro de un odontólogo estético no es lo que desgasta, sino lo que logra preservar intacto.»",
+          "description": "Mediante magnificación óptica y adhesión química de última generación, trabajamos sobre espesores milimétricos, respetando la estructura biológica viva del diente natural."
+        },
+        {
+          "title": "Armonía facial global",
+          "quote": "«Una sonrisa perfecta aislada puede verse falsa; la verdadera belleza radica en cómo se integra con los ojos, los labios y la expresión.»",
+          "description": "El diseño se analiza desde la tridimensionalidad del rostro en movimiento dinámico, considerando la fonética, la curva labial y la proyección del tercio inferior de la cara."
+        }
+      ]
+    },
+    "career": {
+      "formacionDeElite": "Formación de élite",
+      "credencialesYEspecializacion": "Credenciales y especialización",
+      "unCompromisoIninterrumpidoCon": "Un compromiso ininterrumpido con la educación médica continua y los avances de la odontología global.",
+      "items": [
+        {
+          "institution": "Dirección médica & fundador",
+          "role": "Odontogamma Oriente",
+          "detail": "Líder en diseño de sonrisa cerámico de alta complejidad en Antioquia."
+        },
+        {
+          "institution": "Rehabilitación oral & alta estética",
+          "role": "Especialización clínica avanzada",
+          "detail": "Entrenamiento continuado con referentes mundiales de la escuela europea y norteamericana."
+        },
+        {
+          "institution": "Odontología digital 3D",
+          "role": "Certificación en flujos ópticos Cad/Cam",
+          "detail": "Dominio de escaneo intraoral, encerado diagnóstico virtual y diseño asistido por computadora."
+        },
+        {
+          "institution": "Sociedades científicas",
+          "role": "Miembro activo",
+          "detail": "Compromiso riguroso con la actualización científica en biomateriales cerámicos de última generación."
+        }
+      ]
+    },
+    "cta": {
+      "atencionPersonalizada": "Atención personalizada",
+      "disenaTuSonrisaDirectamente": "Diseña tu sonrisa directamente con el Dr. Arcila",
+      "lasValoracionesSeAtienden": "Las valoraciones se atienden bajo agenda limitada y confidencial para garantizar tiempo exclusivo a cada paciente.",
+      "agendarCitaPrivada": "Agendar cita privada",
+      "conocerAlEquipoCompleto": "Conocer al equipo completo"
+    }
+  }
+}

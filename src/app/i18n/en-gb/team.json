@@ -1,0 +1,66 @@
+{
+  "team": {
+    "members": {
+      "items": [
+        {
+          "name": "Dr Jaime Arcila Cano",
+          "role": "Medical director & cosmetic dentistry specialist",
+          "specialty": "Biomimetic smile design",
+          "bio": "Leads the clinical direction, artistic vision and fully personalised design of every smile at Odontogamma Oriente.",
+          "credentials": [
+            "Clinical director",
+            "Oral rehabilitation & aesthetics",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical care & dental aesthetics",
+          "specialty": "Precision dentistry",
+          "bio": "A key part of the multidisciplinary team that supports Dr Jaime Arcila in every design and aesthetic restoration.",
+          "credentials": [
+            "Personal attention",
+            "Biomimetics and comfort",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical assistance & biomaterials",
+          "specialty": "Precision in every procedure",
+          "bio": "Committed to the most rigorous clinical protocols and to the patient's comfort at every appointment.",
+          "credentials": [
+            "Comprehensive care",
+            "Cutting-edge protocols",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Clinical coordination & patient care",
+          "specialty": "Dental health and harmony",
+          "bio": "Guides each patient through every clinical stage, ensuring a warm, friendly and pain-free experience.",
+          "credentials": [
+            "Dedicated care",
+            "Patient experience",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Odontogamma team",
+          "role": "Coordination & VIP hospitality",
+          "specialty": "Patient experience & scheduling",
+          "bio": "Coordinates care, appointment times and exclusive support for local and international patients in El Carmen de Viboral.",
+          "credentials": [
+            "VIP support",
+            "End-to-end management",
+            "Odontogamma Oriente"
+          ]
+        }
+      ]
+    },
+    "synergy": {
+      "elCeramistaParticipaEn": "The ceramist joins the shade-matching session under polarised light."
+    }
+  }
+}

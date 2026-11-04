@@ -1,0 +1,60 @@
+{
+  "contact": {
+    "hero": {
+      "atencionPrivadaOdontogammaOriente": "Atención privada en Odontogamma Oriente",
+      "atencionPrivada": "Atención privada",
+      "agendaTuValoracion": "Agenda tu valoración",
+      "iniciaTuExperienciaClinica": "Inicia tu experiencia clínica en Odontogamma Oriente. Nos comunicaremos contigo para coordinar una cita reservada exclusivamente para ti."
+    },
+    "info": {
+      "contactoInmediato": "Contacto inmediato",
+      "atencionDirecta": "Atención directa",
+      "siPrefieresUnaAtencion": "Si prefieres una atención ágil e instantánea, nuestro equipo de coordinación está disponible vía WhatsApp para responder tus dudas sobre tratamientos, disponibilidad y ubicación."
+    },
+    "whatsapp": {
+      "canalPrioritario": "Canal prioritario",
+      "escribirPorWhatsapp": "Escribir por WhatsApp",
+      "respuestaDirectaYPersonalizada": "Respuesta directa y personalizada"
+    },
+    "visit": {
+      "ubicacionDeLaClinica": "Ubicación de la clínica",
+      "sedeOdontogammaOriente": "Sede Odontogamma Oriente:",
+      "orienteAntioquenoColombia": "Cl. 30 #33-80, El Carmen de Viboral, Antioquia, Colombia.",
+      "horariosDeConsulta": "Horarios de consulta:",
+      "lunesAViernes8": "Lunes a viernes: 8:00 AM – 6:00 PM",
+      "sabados800Am": "Sábados: 8:00 AM – 1:00 PM",
+      "modalidad": "Modalidad:",
+      "exclusivamenteConCitaPrevia": "Exclusivamente con cita previa para garantizar atención sin esperas."
+    },
+    "success": {
+      "solicitudRecibida": "Solicitud recibida",
+      "enviarOtraSolicitud": "Enviar otra solicitud",
+      "message": "Gracias, <strong>{{ name }}</strong>. Nuestro equipo de coordinación clínica se comunicará contigo al teléfono <strong>{{ phone }}</strong> para confirmar los detalles de tu cita con el Dr. Jaime Arcila."
+    },
+    "form": {
+      "solicitudEnLinea": "Solicitud en línea",
+      "reservaDeConsulta": "Reserva de consulta",
+      "completaTusDatosBasicos": "Completa tus datos básicos para ponernos en contacto contigo. Sin registros ni contraseñas.",
+      "nombreCompleto": "Nombre completo *",
+      "ejMariaFernandaGomez": "Ej. María Fernanda Gómez",
+      "telefonoWhatsapp": "Teléfono / WhatsApp *",
+      "ej57300123": "Ej. +57 300 123 4567",
+      "correoElectronico": "Correo electrónico",
+      "tuCorreoCom": "tu@correo.com",
+      "tratamientoDeInteres": "Tratamiento de interés",
+      "carillasCeramicasDeAlta": "Carillas cerámicas de alta precisión",
+      "disenoDeSonrisaArmonizacion": "Diseño de sonrisa y armonización facial",
+      "rehabilitacionOralIntegral": "Rehabilitación oral integral",
+      "aclaramientoDentalAvanzado": "Aclaramiento dental avanzado",
+      "valoracionDiagnosticaGeneral": "Valoración diagnóstica general",
+      "comentariosOPreferenciasDe": "Comentarios o preferencias de horario",
+      "cuentanosBrevementeSobreLo": "Cuéntanos brevemente sobre lo que deseas mejorar en tu sonrisa...",
+      "enviarSolicitudDeCita": "Enviar solicitud de cita"
+    },
+    "assistant": {
+      "badge": "Asistente virtual",
+      "title": "Chatea con nuestro asistente",
+      "text": "Resuelve tus dudas sobre tratamientos y ubicación al instante."
+    }
+  }
+}

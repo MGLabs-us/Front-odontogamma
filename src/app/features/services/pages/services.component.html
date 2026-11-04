@@ -3,7 +3,7 @@
   <div class="absolute inset-0 z-0">
     <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
-      alt="Tratamientos de Firma Odontogamma Oriente"
+      [alt]="'services.list.hero.tratamientosDeFirmaOdontogamma' | transloco"
       class="w-full h-full object-cover object-center scale-105"
     />
     <div class="absolute inset-0 bg-black/55"></div>
@@ -12,13 +12,13 @@
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-28 pb-16 reveal-init reveal-fade-up">
     <span class="text-xs font-semibold tracking-[0.18em] uppercase text-white block mb-4">
-      Catálogo clínico
+      {{ 'services.list.hero.catalogoClinico' | transloco }}
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.1] mb-6">
-      Tratamientos de firma
+      {{ 'services.list.hero.tratamientosDeFirma' | transloco }}
     </h1>
     <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed">
-      Cada procedimiento combina ciencia biomimética, tecnología digital y un sentido estético refinado para transformar tu sonrisa de por vida.
+      {{ 'services.list.hero.cadaProcedimientoCombinaCiencia' | transloco }}
     </p>
   </div>
 </section>
@@ -33,7 +33,7 @@
       >
         <!-- Imagen del Tratamiento con enlace directo a vista individual -->
         <a
-          [routerLink]="['/servicios', service.slug]"
+          [routerLink]="'service-detail' | route: service.id"
           [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-100'"
           class="lg:col-span-6 block relative group overflow-hidden rounded-2xl border border-og-border shadow-elevated bg-slate-100 aspect-[16/10]"
           [class.lg:order-2]="i % 2 !== 0"
@@ -58,7 +58,7 @@
             {{ service.subtitle }}
           </span>
           <h2 class="text-3xl sm:text-4xl font-editorial font-normal text-og-headline mb-4 leading-tight">
-            <a [routerLink]="['/servicios', service.slug]" class="hover:text-og-electric transition-colors">
+            <a [routerLink]="'service-detail' | route: service.id" class="hover:text-og-electric transition-colors">
               {{ service.title }}
             </a>
           </h2>
@@ -72,7 +72,7 @@
           <!-- Beneficios y Puntos Clave -->
           <div class="hidden md:block mb-8">
             <span class="text-xs font-semibold tracking-[0.14em] uppercase text-og-headline block mb-3">
-              Distintivos del procedimiento:
+              {{ 'services.list.list.distintivosDelProcedimiento' | transloco }}
             </span>
             <ul class="space-y-2 text-xs sm:text-sm text-og-slate font-normal">
               @for (highlight of service.highlights; track highlight) {
@@ -87,20 +87,20 @@
           <!-- Acciones -->
           <div class="flex flex-wrap gap-4 pt-4 border-t border-og-border">
             <app-luxury-button
-              [routerLink]="['/servicios', service.slug]"
+              [routerLink]="'service-detail' | route: service.id"
               variant="primary"
               size="sm"
             >
-              Ver tratamiento
+              {{ 'services.list.list.verTratamiento' | transloco }}
             </app-luxury-button>
 
             <app-luxury-button
-              routerLink="/contacto"
+              [routerLink]="'contact' | route"
               variant="outline"
               size="sm"
               class="max-sm:hidden"
             >
-              Agendar valoración
+              {{ 'services.list.list.agendarValoracion' | transloco }}
             </app-luxury-button>
           </div>
         </div>
@@ -115,9 +115,9 @@
     <div class="reveal-init reveal-fade-up">
       <app-section-header
         theme="dark"
-        kicker="Tu experiencia clínica"
-        title="El viaje hacia tu nueva sonrisa"
-        subtitle="Un proceso meticuloso concebido para garantizar tranquilidad, predictibilidad y resultados impecables."
+        [kicker]="'services.list.process.tuExperienciaClinica' | transloco"
+        [title]="'services.list.process.elViajeHaciaTu' | transloco"
+        [subtitle]="'services.list.process.unProcesoMeticulosoConcebido' | transloco"
         align="center"
       />
     </div>
@@ -125,40 +125,40 @@
     <div class="mobile-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
       <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-left delay-100 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 01</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Consulta y diálogo</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">{{ 'services.list.process.paso01' | transloco }}</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">{{ 'services.list.process.consultaYDialogo' | transloco }}</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
-            Escuchamos tus expectativas, evaluamos la armonía facial y realizamos fotografías diagnósticas de alta definición.
+            {{ 'services.list.process.escuchamosTusExpectativasEvaluamos' | transloco }}
           </p>
         </div>
       </div>
 
       <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-up delay-200 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 02</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Diseño digital & prueba</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">{{ 'services.list.process.paso02' | transloco }}</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">{{ 'services.list.process.disenoDigitalPrueba' | transloco }}</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
-            Modelamos tu sonrisa en 3D y realizamos una prueba estética (mock-up) para que aprecies el resultado antes de comenzar.
+            {{ 'services.list.process.modelamosTuSonrisaEn' | transloco }}
           </p>
         </div>
       </div>
 
       <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-up delay-300 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 03</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Confección artesanal</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">{{ 'services.list.process.paso03' | transloco }}</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">{{ 'services.list.process.confeccionArtesanal' | transloco }}</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
-            Los maestros ceramistas elaboran cada lámina de porcelana a mano, asegurando translucidez y naturalidad máxima.
+            {{ 'services.list.process.losMaestrosCeramistasElaboran' | transloco }}
           </p>
         </div>
       </div>
 
       <div class="p-8 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] transition duration-300 reveal-init reveal-fade-right delay-400 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">Paso 04</span>
-          <h3 class="text-2xl font-editorial font-medium text-white mb-3">Cementación y entrega</h3>
+          <span class="text-xs font-mono font-bold tracking-[0.14em] uppercase text-white block mb-3">{{ 'services.list.process.paso04' | transloco }}</span>
+          <h3 class="text-2xl font-editorial font-medium text-white mb-3">{{ 'services.list.process.cementacionYEntrega' | transloco }}</h3>
           <p class="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
-            Adhesión micrométrica bajo aislamiento absoluto, ajuste de oclusión y pulido de brillo dental final.
+            {{ 'services.list.process.adhesionMicrometricaBajoAislamiento' | transloco }}
           </p>
         </div>
       </div>
@@ -171,9 +171,9 @@
   <div class="max-w-7xl mx-auto">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
-        kicker="El proceso explicado"
-        title="Conoce tu tratamiento con el Dr. Jaime Arcila"
-        subtitle="Videos cortos para resolver tus dudas sobre carillas de porcelana y transformación de sonrisa."
+        [kicker]="'services.list.reels.elProcesoExplicado' | transloco"
+        [title]="'services.list.reels.conoceTuTratamientoCon' | transloco"
+        [subtitle]="'services.list.reels.videosCortosParaResolver' | transloco"
         align="center"
       />
     </div>
@@ -191,25 +191,25 @@
     </div>
     <!-- Contenido Textual -->
     <div class="text-center lg:text-left relative z-10 max-w-2xl">
-      <app-editorial-label class="mb-3">Diagnóstico virtual & ortodoncia digital</app-editorial-label>
+      <app-editorial-label class="mb-3">{{ 'services.list.cta.diagnosticoVirtualOrtodonciaDigital' | transloco }}</app-editorial-label>
       <h3 class="text-2xl sm:text-3xl md:text-4xl font-editorial font-medium text-slate-900 leading-snug">
-        Tu Sonrisa es tu Mayor Carta de Presentación
+        {{ 'services.list.cta.tuSonrisaEsTu' | transloco }}
       </h3>
       <p class="text-base sm:text-lg text-slate-700 font-normal mt-2 leading-relaxed">
-        Descubre en menos de 24 horas qué es posible lograr en tus dientes con alineación invisible, carillas o aclaramiento enviando 3 fotos desde tu celular.
+        {{ 'services.list.cta.descubreEnMenosDe' | transloco }}
       </p>
     </div>
 
     <!-- Botón de Conversión Destacado -->
     <div class="relative z-10 shrink-0">
       <app-luxury-button
-        routerLink="/nuestro-trabajo/valoracion-virtual"
+        [routerLink]="'virtual-consultation' | route"
         variant="primary"
         size="md"
         [arrow]="true"
         class="shadow-glow font-semibold text-white whitespace-nowrap"
       >
-        Iniciar valoración gratuita
+        {{ 'services.list.cta.iniciarValoracionGratuita' | transloco }}
       </app-luxury-button>
     </div>
   </div>

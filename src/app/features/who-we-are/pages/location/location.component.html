@@ -5,7 +5,7 @@
     <video
       [src]="heroVideo.videoUrl"
       [poster]="heroImageUrl"
-      [attr.aria-label]="heroVideo.title"
+      [attr.aria-label]="('videos.' + heroVideo.id + '.title') | transloco"
       autoplay
       muted
       [muted]="true"
@@ -24,35 +24,35 @@
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <span class="text-xs sm:text-xs uppercase tracking-[0.18em] text-white font-semibold block mb-4">
-      Oriente Antioqueño · El Carmen de Viboral
+      {{ 'location.hero.orienteAntioquenoElCarmen' | transloco }}
     </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.08] mb-6">
-      Un Santuario de Calma, <br />
+      {{ 'location.hero.unSantuarioDeCalma' | transloco }} <br />
       <span class="italic font-medium text-og-cyan">
-        Privacidad y naturaleza
+        {{ 'location.hero.privacidadYNaturaleza' | transloco }}
       </span>
     </h1>
 
     <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed mb-10">
-      Diseñada para transformar tu experiencia médica en un momento de absoluto bienestar. A minutos del Aeropuerto Internacional JMC y en el corazón campestre más exclusivo de Antioquia.
+      {{ 'location.hero.disenadaParaTransformarTu' | transloco }}
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        [routerLink]="'contact' | route"
         variant="primary"
         size="md"
       >
-        Programar visita privada
+        {{ 'location.hero.programarVisitaPrivada' | transloco }}
       </app-luxury-button>
       <a
-        href="https://maps.google.com"
+        href="https://www.google.com/maps/search/?api=1&query=Cl.%2030%20%2333-80%2C%20El%20Carmen%20de%20Viboral%2C%20Antioquia%2C%20Colombia"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center px-8 py-3.5 text-xs uppercase tracking-[0.14em] font-medium text-white border border-white/30 rounded-2xl hover:border-white hover:text-white transition duration-300 backdrop-blur-sm"
       >
-        Ver en Google Maps <app-arrow-mark direction="external" />
+        {{ 'location.hero.verEnGoogleMaps' | transloco }} <app-arrow-mark direction="external" />
       </a>
     </div>
   </div>
@@ -62,15 +62,15 @@
 <section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Arquitectura & bienestar"
-      title="Espacios concebidos para el confort supremo"
-      subtitle="Cada rincón de nuestra clínica combina líneas contemporáneas, luz natural y tecnología médica silenciosa."
+      [kicker]="'location.spaces.arquitecturaBienestar' | transloco"
+      [title]="'location.spaces.espaciosConcebidosParaEl' | transloco"
+      [subtitle]="'location.spaces.cadaRinconDeNuestra' | transloco"
       align="center"
     />
   </div>
 
   <div class="mobile-rail grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-    @for (space of spaces; track space.title; let i = $index) {
+    @for (space of spaces(); track space.title; let i = $index) {
       <div
         [class]="i % 2 === 0 ? 'reveal-init reveal-fade-left delay-100' : 'reveal-init reveal-fade-right delay-200'"
         class="group bg-white border border-og-border rounded-2xl overflow-hidden shadow-subtle hover:shadow-elevated transition duration-300"
@@ -104,35 +104,35 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="max-w-3xl mb-12 reveal-init reveal-fade-up">
       <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
-        Hospitalidad de alto nivel
+        {{ 'location.amenities.hospitalidadDeAltoNivel' | transloco }}
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline leading-tight">
-        Detalles que Definen la Experiencia Odontogamma
+        {{ 'location.amenities.detallesQueDefinenLa' | transloco }}
       </h2>
     </div>
 
     <div class="mobile-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-200">
         <span class="text-xs uppercase tracking-[0.14em] text-og-cyan font-semibold block mb-2 font-mono">01</span>
-        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Concierge de traslados</h4>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">{{ 'location.amenities.conciergeDeTraslados' | transloco }}</h4>
         <p class="text-xs text-og-slate font-normal leading-relaxed">
-          Coordinación de transporte privado desde el Aeropuerto JMC y los principales hoteles de Medellín y El Carmen de Viboral.
+          {{ 'location.amenities.coordinacionDeTransportePrivado' | transloco }}
         </p>
       </div>
 
       <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-300">
         <span class="text-xs uppercase tracking-[0.14em] text-og-cyan font-semibold block mb-2 font-mono">02</span>
-        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Entorno Anti-Estrés</h4>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">{{ 'location.amenities.entornoAntiEstres' | transloco }}</h4>
         <p class="text-xs text-og-slate font-normal leading-relaxed">
-          Aromaterapia sutil, insonorización acústica y vista a jardines verdes para una experiencia médica relajante.
+          {{ 'location.amenities.aromaterapiaSutilInsonorizacionAcustica' | transloco }}
         </p>
       </div>
 
       <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-right delay-400">
         <span class="text-xs uppercase tracking-[0.14em] text-og-cyan font-semibold block mb-2 font-mono">03</span>
-        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">Atención Bilingüe</h4>
+        <h4 class="text-base font-editorial font-medium text-og-headline mb-2">{{ 'location.amenities.atencionBilingue' | transloco }}</h4>
         <p class="text-xs text-og-slate font-normal leading-relaxed">
-          Personal clínico y de hospitalidad fluido en inglés para atender a nuestros pacientes internacionales sin barreras.
+          {{ 'location.amenities.personalClinicoYDe' | transloco }}
         </p>
       </div>
     </div>
@@ -144,9 +144,9 @@
   <div class="max-w-7xl mx-auto">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
-        kicker="La sede en movimiento"
-        title="Conoce Odontogamma Oriente por dentro"
-        subtitle="Un vistazo en video a la recepción, los consultorios y la atención diaria en El Carmen de Viboral."
+        [kicker]="'location.reels.laSedeEnMovimiento' | transloco"
+        [title]="'location.reels.conoceOdontogammaOrientePor' | transloco"
+        [subtitle]="'location.reels.unVistazoEnVideo' | transloco"
         align="center"
       />
     </div>
@@ -160,15 +160,15 @@
 <section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Accesibilidad privilegiada"
-      title="Tu viaje a nuestra sede"
-      subtitle="Ubicación estratégica y descongestionada en el corazón del Oriente Antioqueño."
+      [kicker]="'location.access.accesibilidadPrivilegiada' | transloco"
+      [title]="'location.access.tuViajeANuestra' | transloco"
+      [subtitle]="'location.access.ubicacionEstrategicaYDescongestionada' | transloco"
       align="center"
     />
   </div>
 
   <div class="rail-md grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-    @for (route of travelRoutes; track route.origin; let i = $index) {
+    @for (route of travelRoutes(); track route.origin; let i = $index) {
       <div
         [class]="i === 0 ? 'reveal-init reveal-fade-left delay-100' : (i === 1 ? 'reveal-init reveal-fade-up delay-200' : 'reveal-init reveal-fade-right delay-300')"
         class="p-8 border border-og-border bg-white rounded-2xl flex flex-col justify-between shadow-subtle"
@@ -196,22 +196,22 @@
 <section class="py-16 md:py-32 px-6 md:px-12 bg-og-marble relative overflow-hidden border-t border-slate-200/80">
   <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-6 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
     <span class="text-xs uppercase tracking-[0.18em] text-og-electric block mb-3 font-semibold font-mono">
-      Oriente Antioqueño
+      {{ 'location.cta.orienteAntioqueno' | transloco }}
     </span>
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-normal text-og-headline mb-5">
-      Ven a conocer la experiencia en persona
+      {{ 'location.cta.venAConocerLa' | transloco }}
     </h2>
     <p class="text-sm sm:text-base text-og-slate font-normal max-w-xl mx-auto leading-relaxed mb-8">
-      Te esperamos en nuestra sede de El Carmen de Viboral para diseñar la sonrisa que siempre soñaste.
+      {{ 'location.cta.teEsperamosEnNuestra' | transloco }}
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        [routerLink]="'contact' | route"
         variant="primary"
         size="md"
       >
-        Agendar cita privada
+        {{ 'location.cta.agendarCitaPrivada' | transloco }}
       </app-luxury-button>
     </div>
   </div>

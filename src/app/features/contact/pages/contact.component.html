@@ -3,7 +3,7 @@
   <div class="absolute inset-0 z-0">
     <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
-      alt="Atención Privada Odontogamma Oriente"
+      [alt]="'contact.hero.atencionPrivadaOdontogammaOriente' | transloco"
       class="w-full h-full object-cover object-center scale-105"
     />
     <!-- Velo neutral para preservar los tonos naturales de la fotografía -->
@@ -13,13 +13,13 @@
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10 pt-28 pb-16 reveal-init reveal-fade-up">
     <span class="text-xs font-semibold tracking-[0.18em] uppercase text-white block mb-4">
-      Atención privada
+      {{ 'contact.hero.atencionPrivada' | transloco }}
     </span>
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.1] mb-6">
-      Agenda tu valoración
+      {{ 'contact.hero.agendaTuValoracion' | transloco }}
     </h1>
     <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed">
-      Inicia tu experiencia clínica en Odontogamma Oriente. Nos comunicaremos contigo para coordinar una cita reservada exclusivamente para ti.
+      {{ 'contact.hero.iniciaTuExperienciaClinica' | transloco }}
     </p>
   </div>
 </section>
@@ -32,18 +32,18 @@
     <div class="lg:col-span-5 space-y-8">
       <div class="reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-2">
-          Contacto inmediato
+          {{ 'contact.info.contactoInmediato' | transloco }}
         </span>
         <h2 class="text-3xl font-editorial font-normal text-og-headline mb-4">
-          Atención directa
+          {{ 'contact.info.atencionDirecta' | transloco }}
         </h2>
         <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed mb-6">
-          Si prefieres una atención ágil e instantánea, nuestro equipo de coordinación está disponible vía WhatsApp para responder tus dudas sobre tratamientos, disponibilidad y ubicación.
+          {{ 'contact.info.siPrefieresUnaAtencion' | transloco }}
         </p>
 
         <!-- Card WhatsApp Concierge Directo -->
         <a
-          href="https://wa.me/573217209420?text=Hola,%20deseo%20solicitar%20información%20y%20agendar%20una%20cita%20con%20el%20Dr.%20Jaime%20Arcila%20en%20Odontogamma%20Oriente."
+          [href]="'whatsapp.contact' | whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           class="block p-6 bg-white border border-og-border rounded-2xl shadow-subtle hover:shadow-elevated hover:border-emerald-500/50 transition duration-300 group"
@@ -56,40 +56,64 @@
             </div>
             <div>
               <span class="text-xs tracking-[0.14em] uppercase font-semibold text-emerald-600 block">
-                Canal prioritario
+                {{ 'contact.whatsapp.canalPrioritario' | transloco }}
               </span>
               <span class="text-sm font-semibold text-og-headline group-hover:text-emerald-700 transition-colors">
-                Escribir por WhatsApp
+                {{ 'contact.whatsapp.escribirPorWhatsapp' | transloco }}
               </span>
               <span class="text-xs text-og-slate block font-normal">
-                Respuesta directa y personalizada
+                {{ 'contact.whatsapp.respuestaDirectaYPersonalizada' | transloco }}
               </span>
             </div>
           </div>
         </a>
+
+        <!-- Card Asistente virtual (abre el chat) -->
+        <button
+          type="button"
+          (click)="chat.open()"
+          class="mt-4 w-full text-left block p-6 bg-white border border-og-border rounded-2xl shadow-subtle hover:shadow-elevated hover:border-og-electric/50 transition duration-300 group cursor-pointer"
+        >
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-og-electric/10 text-og-electric flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <app-icon name="chat" class="w-6 h-6"></app-icon>
+            </div>
+            <div>
+              <span class="text-xs tracking-[0.14em] uppercase font-semibold text-og-electric block">
+                {{ 'contact.assistant.badge' | transloco }}
+              </span>
+              <span class="text-sm font-semibold text-og-headline transition-colors">
+                {{ 'contact.assistant.title' | transloco }}
+              </span>
+              <span class="text-xs text-og-slate block font-normal">
+                {{ 'contact.assistant.text' | transloco }}
+              </span>
+            </div>
+          </div>
+        </button>
       </div>
 
       <!-- Información de Ubicación -->
       <div class="p-8 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-left delay-200">
         <h3 class="text-xl font-editorial font-medium text-og-headline mb-4">
-          Ubicación de la Clínica
+          {{ 'contact.visit.ubicacionDeLaClinica' | transloco }}
         </h3>
 
         <div class="space-y-4 text-xs sm:text-sm text-og-slate font-normal">
           <div>
-            <span class="font-medium text-og-headline block">Sede Odontogamma Oriente:</span>
-            <span>Oriente Antioqueño, Colombia.</span>
+            <span class="font-medium text-og-headline block">{{ 'contact.visit.sedeOdontogammaOriente' | transloco }}</span>
+            <span>{{ 'contact.visit.orienteAntioquenoColombia' | transloco }}</span>
           </div>
 
           <div>
-            <span class="font-medium text-og-headline block">Horarios de Consulta:</span>
-            <span>Lunes a Viernes: 8:00 AM – 6:00 PM</span><br />
-            <span>Sábados: 8:00 AM – 1:00 PM</span>
+            <span class="font-medium text-og-headline block">{{ 'contact.visit.horariosDeConsulta' | transloco }}</span>
+            <span>{{ 'contact.visit.lunesAViernes8' | transloco }}</span><br />
+            <span>{{ 'contact.visit.sabados800Am' | transloco }}</span>
           </div>
 
           <div>
-            <span class="font-medium text-og-headline block">Modalidad:</span>
-            <span>Exclusivamente con cita previa para garantizar atención sin esperas.</span>
+            <span class="font-medium text-og-headline block">{{ 'contact.visit.modalidad' | transloco }}</span>
+            <span>{{ 'contact.visit.exclusivamenteConCitaPrevia' | transloco }}</span>
           </div>
         </div>
       </div>
@@ -106,36 +130,34 @@
               <app-icon name="check" class="w-8 h-8"></app-icon>
             </div>
             <h3 class="text-2xl sm:text-3xl font-editorial font-normal text-og-headline mb-3">
-              Solicitud recibida
+              {{ 'contact.success.solicitudRecibida' | transloco }}
             </h3>
-            <p class="text-xs sm:text-sm text-og-slate font-normal max-w-md mx-auto leading-relaxed mb-8">
-              Gracias, <strong>{{ formData.name }}</strong>. Nuestro equipo de coordinación clínica se comunicará contigo al teléfono <strong>{{ formData.phone }}</strong> para confirmar los detalles de tu cita con el Dr. Jaime Arcila.
-            </p>
+            <p class="text-xs sm:text-sm text-og-slate font-normal max-w-md mx-auto leading-relaxed mb-8" [innerHTML]="'contact.success.message' | transloco: { name: esc(formData.name), phone: esc(formData.phone) }"></p>
             <app-luxury-button
               (clicked)="resetForm()"
               variant="outline"
               size="sm"
             >
-              Enviar otra solicitud
+              {{ 'contact.success.enviarOtraSolicitud' | transloco }}
             </app-luxury-button>
           </div>
         } @else {
           <!-- Formulario de Agendamiento -->
           <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-2">
-            Solicitud en línea
+            {{ 'contact.form.solicitudEnLinea' | transloco }}
           </span>
           <h2 class="text-3xl font-editorial font-normal text-og-headline mb-2">
-            Reserva de consulta
+            {{ 'contact.form.reservaDeConsulta' | transloco }}
           </h2>
           <p class="text-xs text-og-slate font-normal mb-8">
-            Completa tus datos básicos para ponernos en contacto contigo. Sin registros ni contraseñas.
+            {{ 'contact.form.completaTusDatosBasicos' | transloco }}
           </p>
 
           <form (ngSubmit)="onSubmit()" class="space-y-6">
             <!-- Nombre Completo -->
             <div>
               <label for="name" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                Nombre Completo *
+                {{ 'contact.form.nombreCompleto' | transloco }}
               </label>
               <input
                 id="name"
@@ -143,7 +165,7 @@
                 required
                 [(ngModel)]="formData.name"
                 name="name"
-                placeholder="Ej. María Fernanda Gómez"
+                [placeholder]="'contact.form.ejMariaFernandaGomez' | transloco"
                 class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
               />
             </div>
@@ -152,7 +174,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="phone" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                  Teléfono / WhatsApp *
+                  {{ 'contact.form.telefonoWhatsapp' | transloco }}
                 </label>
                 <input
                   id="phone"
@@ -160,21 +182,21 @@
                   required
                   [(ngModel)]="formData.phone"
                   name="phone"
-                  placeholder="Ej. +57 300 123 4567"
+                  [placeholder]="'contact.form.ej57300123' | transloco"
                   class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
                 />
               </div>
 
               <div>
                 <label for="email" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                  Correo electrónico
+                  {{ 'contact.form.correoElectronico' | transloco }}
                 </label>
                 <input
                   id="email"
                   type="email"
                   [(ngModel)]="formData.email"
                   name="email"
-                  placeholder="tu@correo.com"
+                  [placeholder]="'contact.form.tuCorreoCom' | transloco"
                   class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
                 />
               </div>
@@ -183,7 +205,7 @@
             <!-- Tratamiento de Interés -->
             <div>
               <label for="treatment" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                Tratamiento de interés
+                {{ 'contact.form.tratamientoDeInteres' | transloco }}
               </label>
               <select
                 id="treatment"
@@ -191,25 +213,25 @@
                 name="treatment"
                 class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors"
               >
-                <option value="carillas">Carillas Cerámicas de Alta Precisión</option>
-                <option value="diseno-sonrisa">Diseño de Sonrisa & Armonización Facial</option>
-                <option value="rehabilitacion">Rehabilitación Oral Integral</option>
-                <option value="aclaramiento">Aclaramiento Dental Avanzado</option>
-                <option value="valoracion">Valoración Diagnóstica General</option>
+                <option value="carillas">{{ 'contact.form.carillasCeramicasDeAlta' | transloco }}</option>
+                <option value="diseno-sonrisa">{{ 'contact.form.disenoDeSonrisaArmonizacion' | transloco }}</option>
+                <option value="rehabilitacion">{{ 'contact.form.rehabilitacionOralIntegral' | transloco }}</option>
+                <option value="aclaramiento">{{ 'contact.form.aclaramientoDentalAvanzado' | transloco }}</option>
+                <option value="valoracion">{{ 'contact.form.valoracionDiagnosticaGeneral' | transloco }}</option>
               </select>
             </div>
 
             <!-- Mensaje Adicional -->
             <div>
               <label for="message" class="block text-xs uppercase tracking-wider font-medium text-og-headline mb-2">
-                Comentarios o preferencias de horario
+                {{ 'contact.form.comentariosOPreferenciasDe' | transloco }}
               </label>
               <textarea
                 id="message"
                 rows="3"
                 [(ngModel)]="formData.message"
                 name="message"
-                placeholder="Cuéntanos brevemente sobre lo que deseas mejorar en tu sonrisa..."
+                [placeholder]="'contact.form.cuentanosBrevementeSobreLo' | transloco"
                 class="w-full px-4 py-3 text-xs md:text-sm bg-slate-50 border border-og-border rounded-xl focus:bg-white focus:border-og-electric focus:outline-hidden transition-colors resize-none"
               ></textarea>
             </div>
@@ -222,7 +244,7 @@
                 size="lg"
                 class="w-full"
               >
-                Enviar solicitud de cita
+                {{ 'contact.form.enviarSolicitudDeCita' | transloco }}
               </app-luxury-button>
             </div>
           </form>

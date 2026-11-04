@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
@@ -6,6 +6,9 @@ import { LuxuryButtonComponent } from '../../../../shared/components/luxury-butt
 import { EditorialLabelComponent } from '../../../../shared/components/editorial-label/editorial-label.component';
 import { CLOUDINARY_ASSETS_MANIFEST } from '../../../../core/constants/cloudinary-assets.manifest';
 import { VideoReelComponent } from '../../../../shared/components/video-reel/video-reel.component';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { RoutePipe } from '../../../../core/i18n/route.pipe';
+import { I18nService } from '../../../../core/i18n/i18n.service';
 
 interface ClinicMoment {
   id: string;
@@ -21,43 +24,23 @@ interface ClinicMoment {
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CommonModule, RouterLink, VideoReelComponent, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
+  imports: [TranslocoPipe, RoutePipe, CommonModule, RouterLink, VideoReelComponent, SectionHeaderComponent, LuxuryButtonComponent, EditorialLabelComponent],
   templateUrl: './testimonials.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent {
+  private readonly i18n = inject(I18nService);
   protected readonly heroImageUrl = CLOUDINARY_ASSETS_MANIFEST.images.patients.blackBackdrop;
 
-  protected readonly moments: ClinicMoment[] = [
-    {
-      id: 'mirror',
-      title: 'Un momento para mirarte de nuevo',
-      description: 'Una experiencia personal, acompañada por el equipo de la clínica.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.mirror,
-      alt: 'Paciente observando su sonrisa frente a un espejo'
-    },
-    {
-      id: 'lounge',
-      title: 'Un espacio para sentirte bien',
-      description: 'Ambientes tranquilos que hacen parte de la experiencia en la sede.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.loungeTall,
-      alt: 'Sala de espera de la clínica Odontogamma Oriente'
-    },
-    {
-      id: 'treatment-room',
-      title: 'Tecnología y atención clínica',
-      description: 'Espacios preparados para acompañar cada consulta.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultPanoramic,
-      alt: 'Consultorio odontológico de la sede'
-    },
-    {
-      id: 'reception',
-      title: 'Te recibimos en El Carmen de Viboral',
-      description: 'Un equipo y una sede pensados para atenderte con cercanía.',
-      imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.facade,
-      alt: 'Fachada de la clínica Odontogamma Oriente'
-    }
+  private readonly momentsBase = [
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.patients.mirror },
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.loungeTall },
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.consultPanoramic },
+    { imageUrl: CLOUDINARY_ASSETS_MANIFEST.images.clinic.facade }
   ];
+  protected readonly moments = computed<ClinicMoment[]>(() =>
+    this.i18n.obj<ClinicMoment[]>('testimonials.moments.items').map((text, i) => ({ ...text, ...this.momentsBase[i] }) as ClinicMoment)
+  );
 
   protected readonly testimonialReels = CLOUDINARY_ASSETS_MANIFEST.videos.testimonials;
 

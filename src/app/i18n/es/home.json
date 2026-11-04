@@ -1,0 +1,142 @@
+{
+  "home": {
+    "hero": {
+      "salaDeEsperaDe": "Sala de espera de Odontogamma Oriente",
+      "orienteAntioquenoElCarmen": "Oriente Antioqueño · El Carmen de Viboral",
+      "dondeLaCiencia": "Donde la ciencia",
+      "seConvierteEnArte": "se convierte en arte",
+      "odontologiaEsteticaDeMinima": "Odontología estética de mínima invasión, carillas cerámicas de alta precisión y diseño de sonrisa biomimético dirigido por el Dr. Jaime Arcila Cano.",
+      "iniciarValoracionGratuita": "Iniciar valoración gratuita",
+      "explorarTratamientos": "Explorar tratamientos",
+      "descubreMas": "Descubre más"
+    },
+    "philosophy": {
+      "nuestraFilosofia": "Nuestra filosofía",
+      "laOdontologiaConcebida": "La odontología concebida",
+      "comoUnaObraDe": "como una obra de arte",
+      "unionImpecableEntreArtesania": "Unión impecable entre artesanía analógica, microscopía de precisión y tecnología tridimensional para que sonreír vuelva a ser tu mayor fuente de seguridad y orgullo.",
+      "items": [
+        {
+          "badge": "Dirección médica",
+          "categoryTag": "BIOMIMÉTICA & PRECISIÓN",
+          "title": "Biomimética y alta precisión",
+          "subtitle": "Tus dientes intactos: belleza sin dolor",
+          "description": "Láminas cerámicas ultrafinas (0.2 a 0.3 mm) modeladas con magnificación microscópica que preservan tu esmalte biológico vivo sin desgastes invasivos.",
+          "linkText": "Conocer carillas de porcelana"
+        },
+        {
+          "badge": "Experiencia sensorial",
+          "categoryTag": "CONFORT CLÍNICO & CERO DOLOR",
+          "title": "Confort clínico cero dolor",
+          "subtitle": "Olvídate del miedo al odontólogo",
+          "description": "Una sede acogedora en El Carmen de Viboral, tecnología 3D sin moldes incómodos y un trato cálido pensado para tu absoluta relajación.",
+          "linkText": "Explorar nuestra sede"
+        },
+        {
+          "badge": "Resultados reales",
+          "categoryTag": "EVIDENCIA CLÍNICA & PRESTIGIO",
+          "title": "Sonrisas de firma y confianza",
+          "subtitle": "Resultados que transforman vidas",
+          "description": "Casos clínicos reales que devuelven la armonía y naturalidad a tu rostro para que sonreír vuelva a ser tu mayor fuente de orgullo y seguridad.",
+          "linkText": "Ver casos clínicos"
+        }
+      ]
+    },
+    "featured": {
+      "transformacionesClinicas": "Transformaciones clínicas",
+      "antesYDespues": "Antes y después",
+      "resultadosSutilesYBalanceados": "Resultados sutiles y balanceados que armonizan con la fisionomía del rostro sin artificialidad.",
+      "verGaleriaCompleta": "Ver galería completa",
+      "deslizaParaComparar": "Desliza para comparar",
+      "procedimiento": "Procedimiento",
+      "enfoque": "Enfoque",
+      "resultado": "Resultado",
+      "conocerTratamientoClinico": "Conocer tratamiento clínico"
+    },
+    "gallery": {
+      "macroEsteticaEvidenciaClinica": "Macro-Estética & Evidencia Clínica",
+      "elArteDeCada": "El arte de cada sonrisa",
+      "enMicroDetalle": "en micro detalle",
+      "fotografiasClinicasDeAlta": "Fotografías clínicas de alta fidelidad donde se aprecia la textura, la translucidez del esmalte y la integración biológica con la encía.",
+      "verDetalle": "Ver detalle",
+      "verTodosLosCasos": "Ver todos los casos",
+      "categories": [
+        {
+          "label": "Todos los casos"
+        },
+        {
+          "label": "Carillas"
+        },
+        {
+          "label": "Diseño de sonrisa"
+        },
+        {
+          "label": "Rehabilitación"
+        },
+        {
+          "label": "Ortodoncia"
+        }
+      ],
+      "finalResult": "Resultado final",
+      "initialState": "Estado inicial",
+      "viewBefore": "Ver antes",
+      "viewResult": "Ver resultado"
+    },
+    "treatments": {
+      "procedimientosDeFirma": "Procedimientos de firma",
+      "tratamientosDisenadosAMedida": "Tratamientos diseñados a medida",
+      "solucionesDeOdontologiaAvanzada": "Soluciones de odontología avanzada que integran salud funcional y perfección estética.",
+      "conocerProcedimiento": "Conocer procedimiento",
+      "anterior": "Anterior",
+      "siguiente": "Siguiente",
+      "featuredBadge": "Procedimiento destacado"
+    },
+    "orthodontics": {
+      "ortodonciaDigitalExpansionDe": "Ortodoncia digital & expansión de arco",
+      "laBaseOclusalPara": "La base oclusal para una",
+      "sonrisaATuMedida": "sonrisa a tu medida",
+      "antesDeColocarCarillas": "Antes de colocar carillas cerámicas o diseñar una sonrisa cosmética, la correcta alineación dental restaura el plano de mordida y la simetría de tus facciones. Mediante escaneo 3D y biomecánica de precisión, corregimos apiñamientos para que cualquier resultado definitivo sea biológicamente sano y perdurable.",
+      "correccionDeApinamientosY": "Corrección de apiñamientos y rotaciones",
+      "movimientosMilimetricosControladosQue": "Movimientos milimétricos controlados que restauran la continuidad del arco dental.",
+      "expansionArmonicaDelCorredor": "Expansión armónica del corredor bucal",
+      "amplitudSimetricaQueIlumina": "Amplitud simétrica que ilumina las comisuras labiales y equilibra el rostro.",
+      "preparacionDeMinimaInvasion": "Preparación de mínima invasión para carillas",
+      "alAlinearPrimeroLos": "Al alinear primero los ejes, cualquier restauración requiere cero desgaste agresivo.",
+      "verCasosDeAlineacion": "Ver casos de alineación",
+      "casoCertificadoOrtodoncia": "Caso clínico · Ortodoncia",
+      "caso09": "Caso 09",
+      "casoDeOrtodonciaY": "Caso de ortodoncia y alineación dental",
+      "diagnostico": "Diagnóstico",
+      "apinamientoYAsimetria": "Apiñamiento y asimetría",
+      "tratamiento": "Tratamiento",
+      "alineacionBiomecanicaExpansion": "Alineación biomecánica & expansión",
+      "resultado": "Resultado",
+      "oclusionBalanceadaSimetria": "Oclusión balanceada & simetría",
+      "withBraces": "Con brackets",
+      "finalAlignment": "Alineación final"
+    },
+    "quote": {
+      "noSeTrataUnicamente": "No se trata únicamente de colocar carillas o reparar piezas dentales; se trata de comprender la armonía facial y devolver la seguridad con la que una persona sonríe y se comunica con el mundo.",
+      "drJaimeArcilaCano": "Dr. Jaime Arcila Cano",
+      "directorClinicoEspecialistaEn": "Director Clínico & Especialista en Estética Dental — Odontogamma Oriente",
+      "conocerSuTrayectoria": "Conocer su trayectoria"
+    },
+    "reels": {
+      "historiasEnVideo": "Historias en video",
+      "pacientesQueYaSonrien": "Pacientes que ya sonríen con confianza",
+      "escuchaAQuienesViven": "Escucha a quienes viven su transformación en Odontogamma Oriente."
+    },
+    "cta": {
+      "comienzaTuTransformacion": "Comienza tu transformación",
+      "agendaTuValoracion": "Agenda tu valoración",
+      "sinCosto": "sin costo",
+      "eligeLaViaQue": "Elige la vía que te quede más cómoda. En todas te atiende el equipo del Dr. Jaime Arcila Cano.",
+      "escribenosPorWhatsapp": "Escríbenos por WhatsApp",
+      "respuestaDirectaYTodos": "Respuesta directa y todos los detalles de la experiencia.",
+      "valoracionVirtual": "Valoración virtual",
+      "envia3FotosDesde": "Envía 3 fotos desde tu celular y recibe la opinión del Dr. Jaime Arcila en menos de 24 horas.",
+      "citaEnSede": "Cita en sede",
+      "escaneo3dYDiseno": "Escaneo 3D y diseño de sonrisa en El Carmen de Viboral."
+    }
+  }
+}

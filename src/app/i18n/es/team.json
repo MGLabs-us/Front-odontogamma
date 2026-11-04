@@ -1,0 +1,95 @@
+{
+  "team": {
+    "hero": {
+      "equipoClinicoOdontogammaOriente": "Equipo clínico de Odontogamma Oriente",
+      "especialistasClinicos": "Especialistas clínicos",
+      "mentesMaestras": "Mentes maestras",
+      "yManosArtesanales": "y manos artesanales",
+      "unColectivoInterdisciplinarioDe": "Un colectivo interdisciplinario de odontólogos estéticos, ceramistas maestros y coordinadores de experiencia dedicados a un solo propósito: crear sonrisas irrepetibles con el máximo confort y precisión.",
+      "conoceAlEquipoEn": "Conoce al equipo en persona",
+      "descubreNuestraClinica": "Descubre nuestra clínica"
+    },
+    "members": {
+      "elColectivoClinico": "El colectivo clínico",
+      "especialistasDedicadosATu": "Especialistas dedicados a tu transformación",
+      "cadaMiembroAportaUn": "Cada miembro aporta un área específica de maestría para que tu sonrisa sea tratada con visión de 360 grados.",
+      "items": [
+        {
+          "name": "Dr. Jaime Arcila Cano",
+          "role": "Director médico & especialista en estética",
+          "specialty": "Diseño de sonrisa biomimético",
+          "bio": "Lidera la dirección clínica, la visión artística y la personalización integral de cada sonrisa en Odontogamma Oriente.",
+          "credentials": [
+            "Director clínico",
+            "Rehabilitación oral & estética",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Equipo Odontogamma",
+          "role": "Atención clínica & estética dental",
+          "specialty": "Odontología de precisión",
+          "bio": "Parte integral del equipo interdisciplinario que acompaña al Dr. Jaime Arcila en cada procedimiento de diseño y restauración estética.",
+          "credentials": [
+            "Atención personalizada",
+            "Biomimética y confort",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Equipo Odontogamma",
+          "role": "Asistencia clínica & biomateriales",
+          "specialty": "Precisión en procedimientos",
+          "bio": "Comprometida con los protocolos clínicos más rigurosos y el bienestar sensorial del paciente en cada sesión de consulta.",
+          "credentials": [
+            "Cuidado integral",
+            "Protocolos de vanguardia",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Equipo Odontogamma",
+          "role": "Coordinación clínica & cuidados",
+          "specialty": "Salud y armonía dental",
+          "bio": "Acompaña a cada paciente durante las distintas etapas clínicas, asegurando una experiencia cálida, cercana y sin dolor.",
+          "credentials": [
+            "Atención dedicada",
+            "Experiencia del paciente",
+            "Odontogamma Oriente"
+          ]
+        },
+        {
+          "name": "Equipo Odontogamma",
+          "role": "Coordinación & hospitalidad VIP",
+          "specialty": "Experiencia & gestión de pacientes",
+          "bio": "Coordina la atención, tiempos de cita y acompañamiento exclusivo para pacientes locales e internacionales en El Carmen de Viboral.",
+          "credentials": [
+            "Acompañamiento VIP",
+            "Gestión integral",
+            "Odontogamma Oriente"
+          ]
+        }
+      ]
+    },
+    "synergy": {
+      "sinergiaEnUnMismo": "Sinergia bajo un mismo techo",
+      "porQueUnEquipo": "Por qué un equipo completo hace la diferencia",
+      "enLaOdontologiaTradicional": "En la odontología tradicional, el odontólogo toma un molde y lo envía a un laboratorio distante que jamás ve al paciente. En Odontogamma Oriente, el maestro ceramista, el periodoncista y el doctor trabajan juntos en la misma clínica.",
+      "estoPermiteEvaluarEl": "Esto permite evaluar el tono de la piel en vivo bajo luz natural, calibrar el diseño de sonrisa en tiempo real y ajustar cada detalle milimétrico antes de la cementación definitiva.",
+      "evaluacionEnVivo": "Evaluación en vivo",
+      "elCeramistaParticipaEn": "El ceramista participa en la sesión de colorimetría con luz polarizada.",
+      "saludGingival": "Salud gingival",
+      "enciasSanasYSimetricas": "Encías sanas y simétricas antes de colocar la primera carilla.",
+      "oclusionSegura": "Oclusión segura",
+      "armonizacionDeMordidaPara": "Armonización de mordida para evitar fracturas o desgastes prematuros.",
+      "conciergePrivado": "Concierge privado",
+      "atencionPrioritariaYAgenda": "Atención prioritaria y agenda confidencial de principio a fin."
+    },
+    "cta": {
+      "tuEquipoMedico": "Tu equipo médico",
+      "empiezaTuExperienciaEn": "Empieza tu experiencia en buenas manos",
+      "conversemosSobreTusExpectativas": "Conversemos sobre tus expectativas estéticas y creemos juntos un plan a tu medida.",
+      "reservarValoracionConEl": "Reservar valoración con el equipo"
+    }
+  }
+}

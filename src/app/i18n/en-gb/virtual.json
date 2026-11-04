@@ -1,0 +1,62 @@
+{
+  "virtual": {
+    "hero": {
+      "sube3FotografiasDe": "Upload 3 photos of your teeth from your mobile. Dr Jaime Arcila Cano will personally review your case and email you a preliminary cosmetic evaluation with realistic options.",
+      "llenarFormularioYSubir": "Fill in the form and upload photos"
+    },
+    "success": {
+      "message": "We've received your details and photos. <strong>Dr Jaime Arcila Cano</strong> and our clinical team will study the proportions of your smile and email a preliminary cosmetic feasibility report to <strong>{{ email }}</strong> within <strong>24 to 48 business hours</strong>."
+    },
+    "guide": {
+      "paraQueElDr": "So Dr Jaime Arcila can evaluate your teeth accurately, follow these simple tips with your phone camera.",
+      "items": [
+        {
+          "step": "Photo 01",
+          "title": "Natural smile, straight on",
+          "description": "A front-facing shot in good natural light, with relaxed lips and a spontaneous smile showing your teeth.",
+          "tip": "Avoid harsh shadows and don't use beauty filters."
+        },
+        {
+          "step": "Photo 02",
+          "title": "Smile in profile / three-quarter view",
+          "description": "This lets Dr Jaime Arcila assess how your teeth project, your lip profile and how your smile works with your nose and chin.",
+          "tip": "Turn your head slightly, about 45 degrees, while looking at the camera."
+        },
+        {
+          "step": "Photo 03",
+          "title": "Close-up of your teeth",
+          "description": "A clear close-up showing the edges of your upper and lower teeth while biting down normally.",
+          "tip": "Focus sharply on your teeth in good daylight."
+        }
+      ]
+    },
+    "form": {
+      "evaluacionEsteticaPersonalizada": "Personalised cosmetic evaluation",
+      "ejMedellinColombiaMiami": "e.g. London, UK / Medellín, Colombia",
+      "alEnviarAceptasQue": "By submitting, you agree to have your case reviewed by Dr Jaime Arcila Cano's clinical team.",
+      "options": [
+        {
+          "label": "Feldspathic porcelain veneers"
+        },
+        {
+          "label": "Cosmetic dentistry & facial harmonisation"
+        },
+        {
+          "label": "Complete smile makeover"
+        },
+        {
+          "label": "Laser teeth whitening"
+        },
+        {
+          "label": "Repair of worn or fractured teeth"
+        },
+        {
+          "label": "Something else / personalised advice"
+        }
+      ]
+    },
+    "faq": {
+      "absolutamenteNingunoLaValoracion": "None at all. The virtual evaluation is our gift to you, so you can get an honest opinion from a cosmetic dentistry specialist before travelling or booking an in-person visit."
+    }
+  }
+}

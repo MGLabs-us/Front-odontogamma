@@ -1,0 +1,63 @@
+{
+  "doctor": {
+    "hero": {
+      "drJaime": "Dr Jaime",
+      "especialistaEnOdontologiaEstetica": "Specialist in biomimetic cosmetic dentistry in Eastern Antioquia. Dr Arcila's practice is built on preserving as much natural tooth structure as possible, high-fidelity ceramic micro-sculpting and complete smile transformation.",
+      "drJaimeArcilaCano": "Dr Jaime Arcila Cano - Clinical Director, Odontogamma Oriente",
+      "drJaimeArcilaCano2": "Dr Jaime Arcila Cano"
+    },
+    "story": {
+      "laTecnologia3dEs": "‘3D technology is the map, but the specialist's skilled hand is what brings the veneer to life and makes it look natural.’",
+      "unaSonrisaNoDebe": "‘A smile shouldn't announce that it's new. It should quietly signal elegance and health.’",
+      "duranteMasDeUna": "For more than a decade in clinical practice in Antioquia, Dr Jaime Arcila Cano has refined an approach that avoids the artificial, flat, overly white teeth that flood the market."
+    },
+    "principles": {
+      "laBaseCientificaY": "The scientific and human foundation behind every case Dr Jaime Arcila Cano treats.",
+      "items": [
+        {
+          "title": "People-first dentistry",
+          "quote": "‘We don't just change teeth. We give people back the confidence to smile at the world without holding back.’",
+          "description": "Every patient arrives with a story, past insecurities or personal hopes. The first step is never the drill; it is listening with empathy and truly understanding what they want."
+        },
+        {
+          "title": "Minimally invasive biomimetics",
+          "quote": "‘A cosmetic dentist's greatest achievement isn't what they remove, but what they manage to preserve.’",
+          "description": "Using optical magnification and the latest adhesive technology, we work in millimetre-thin layers, respecting the living structure of the natural tooth."
+        },
+        {
+          "title": "Whole-face harmony",
+          "quote": "‘A perfect smile in isolation can look fake. True beauty is in how it works with the eyes, the lips and the expression.’",
+          "description": "We evaluate the design in three dimensions on a face in motion, taking into account speech, the curve of the lips and the projection of the lower third of the face."
+        }
+      ]
+    },
+    "career": {
+      "credencialesYEspecializacion": "Credentials and specialisation",
+      "items": [
+        {
+          "institution": "Medical director & founder",
+          "role": "Odontogamma Oriente",
+          "detail": "A leader in complex ceramic smile design in Antioquia."
+        },
+        {
+          "institution": "Oral rehabilitation & advanced cosmetic dentistry",
+          "role": "Advanced clinical specialisation",
+          "detail": "Ongoing training with leading figures of the European and North American schools."
+        },
+        {
+          "institution": "Digital 3D dentistry",
+          "role": "CAD/CAM digital workflow certification",
+          "detail": "Skilled in intraoral scanning, virtual diagnostic wax-ups and computer-aided design."
+        },
+        {
+          "institution": "Professional societies",
+          "role": "Active member",
+          "detail": "A rigorous commitment to staying current on the latest ceramic biomaterials."
+        }
+      ]
+    },
+    "cta": {
+      "disenaTuSonrisaDirectamente": "Design your smile directly with Dr Arcila"
+    }
+  }
+}

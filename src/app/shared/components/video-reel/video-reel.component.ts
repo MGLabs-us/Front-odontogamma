@@ -1,4 +1,5 @@
 import { Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
 
 /**
@@ -9,6 +10,7 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
 @Component({
   selector: 'app-video-reel',
   standalone: true,
+  imports: [TranslocoPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
@@ -24,7 +26,7 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
             <video
               [src]="item.videoUrl"
               [poster]="item.posterUrl"
-              [attr.aria-label]="item.title"
+              [attr.aria-label]="('videos.' + item.id + '.title') | transloco"
               class="reel-video absolute inset-0 w-full h-full object-contain bg-black"
               controls
               autoplay
@@ -35,12 +37,12 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
             <button
               type="button"
               class="absolute inset-0 w-full h-full text-left cursor-pointer"
-              [attr.aria-label]="'Reproducir video: ' + item.title"
+              [attr.aria-label]="'videos.play' | transloco: { title: ('videos.' + item.id + '.title') | transloco }"
               (click)="activeId.set(item.id)"
             >
               <img
                 [src]="item.posterUrl"
-                [alt]="item.title"
+                [alt]="('videos.' + item.id + '.title') | transloco"
                 loading="lazy"
       decoding="async"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -56,8 +58,8 @@ import { VideoAsset } from '../../../core/constants/cloudinary-assets.manifest';
               </span>
 
               <span class="absolute inset-x-0 bottom-0 p-4 text-white">
-                <span class="block text-sm font-editorial font-medium leading-snug">{{ item.title }}</span>
-                <span class="block text-[11px] text-white/75 font-light leading-snug mt-1">{{ item.caption }}</span>
+                <span class="block text-sm font-editorial font-medium leading-snug">{{ ('videos.' + item.id + '.title') | transloco }}</span>
+                <span class="block text-[11px] text-white/75 font-light leading-snug mt-1">{{ ('videos.' + item.id + '.caption') | transloco }}</span>
               </span>
             </button>
           }

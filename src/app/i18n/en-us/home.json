@@ -1,0 +1,142 @@
+{
+  "home": {
+    "hero": {
+      "salaDeEsperaDe": "Waiting room at Odontogamma Oriente",
+      "orienteAntioquenoElCarmen": "El Carmen de Viboral · Antioquia, Colombia",
+      "dondeLaCiencia": "Where science",
+      "seConvierteEnArte": "becomes art",
+      "odontologiaEsteticaDeMinima": "Minimally invasive cosmetic dentistry, high-precision ceramic veneers and biomimetic smile design led by Dr. Jaime Arcila Cano.",
+      "iniciarValoracionGratuita": "Book your free consultation",
+      "explorarTratamientos": "Explore treatments",
+      "descubreMas": "Discover more"
+    },
+    "philosophy": {
+      "nuestraFilosofia": "Our philosophy",
+      "laOdontologiaConcebida": "Dentistry approached as",
+      "comoUnaObraDe": "a work of art",
+      "unionImpecableEntreArtesania": "A seamless blend of hand craftsmanship, precision microscopy and 3D technology, so your smile can be a source of confidence and pride again.",
+      "items": [
+        {
+          "badge": "Medical leadership",
+          "categoryTag": "BIOMIMETICS & PRECISION",
+          "title": "Biomimetics and high precision",
+          "subtitle": "Your natural teeth, preserved: beauty without the pain",
+          "description": "Ultra-thin ceramic veneers (0.2–0.3 mm), shaped under magnification, that preserve your natural enamel without aggressive tooth reduction.",
+          "linkText": "Explore porcelain veneers"
+        },
+        {
+          "badge": "A calming experience",
+          "categoryTag": "COMFORTABLE, PAIN-FREE CARE",
+          "title": "Comfortable, pain-free care",
+          "subtitle": "Say goodbye to dental anxiety",
+          "description": "A welcoming clinic in El Carmen de Viboral, 3D scanning instead of messy impressions, and a warm, personal approach so you can relax completely.",
+          "linkText": "Tour our clinic"
+        },
+        {
+          "badge": "Real results",
+          "categoryTag": "PROVEN RESULTS",
+          "title": "Signature smiles, real confidence",
+          "subtitle": "Results that transform lives",
+          "description": "Real patient cases that bring harmony and a natural look back to your face, so you can smile with pride again.",
+          "linkText": "See real cases"
+        }
+      ]
+    },
+    "featured": {
+      "transformacionesClinicas": "Smile transformations",
+      "antesYDespues": "Before and after",
+      "resultadosSutilesYBalanceados": "Subtle, balanced results that complement your natural features and never look artificial.",
+      "verGaleriaCompleta": "View full gallery",
+      "deslizaParaComparar": "Slide to compare",
+      "procedimiento": "Procedure",
+      "enfoque": "Focus",
+      "resultado": "Result",
+      "conocerTratamientoClinico": "Explore this treatment"
+    },
+    "gallery": {
+      "macroEsteticaEvidenciaClinica": "Close-up detail & clinical evidence",
+      "elArteDeCada": "The art of every smile",
+      "enMicroDetalle": "in close-up detail",
+      "fotografiasClinicasDeAlta": "High-resolution clinical photos that show the texture and translucency of the enamel and how naturally each restoration blends with the gum line.",
+      "verDetalle": "View details",
+      "verTodosLosCasos": "View all cases",
+      "categories": [
+        {
+          "label": "All cases"
+        },
+        {
+          "label": "Veneers"
+        },
+        {
+          "label": "Smile design"
+        },
+        {
+          "label": "Rehabilitation"
+        },
+        {
+          "label": "Orthodontics"
+        }
+      ],
+      "finalResult": "Final result",
+      "initialState": "Initial state",
+      "viewBefore": "See before",
+      "viewResult": "See result"
+    },
+    "treatments": {
+      "procedimientosDeFirma": "Signature procedures",
+      "tratamientosDisenadosAMedida": "Treatments tailored to you",
+      "solucionesDeOdontologiaAvanzada": "Advanced dental solutions that combine oral health with a beautiful, natural-looking result.",
+      "conocerProcedimiento": "Explore this procedure",
+      "anterior": "Previous",
+      "siguiente": "Next",
+      "featuredBadge": "Featured procedure"
+    },
+    "orthodontics": {
+      "ortodonciaDigitalExpansionDe": "Digital orthodontics & arch expansion",
+      "laBaseOclusalPara": "The right bite for a",
+      "sonrisaATuMedida": "smile made for you",
+      "antesDeColocarCarillas": "Before placing ceramic veneers or designing a cosmetic smile, proper alignment restores your bite and the symmetry of your face. Using 3D scanning and precise biomechanics, we correct crowding so your final result is healthy and built to last.",
+      "correccionDeApinamientosY": "Correction of crowding and rotations",
+      "movimientosMilimetricosControladosQue": "Precise, controlled movements that restore the natural curve of your dental arch.",
+      "expansionArmonicaDelCorredor": "A wider, more balanced smile",
+      "amplitudSimetricaQueIlumina": "Even width that fills in the dark corners of the smile and balances your face.",
+      "preparacionDeMinimaInvasion": "Minimal-prep groundwork for veneers",
+      "alAlinearPrimeroLos": "Aligning your teeth first means any restoration needs far less tooth reduction.",
+      "verCasosDeAlineacion": "View alignment cases",
+      "casoCertificadoOrtodoncia": "Clinical case · Orthodontics",
+      "caso09": "Case 09",
+      "casoDeOrtodonciaY": "Orthodontic alignment case",
+      "diagnostico": "Diagnosis",
+      "apinamientoYAsimetria": "Crowding and asymmetry",
+      "tratamiento": "Treatment",
+      "alineacionBiomecanicaExpansion": "Biomechanical alignment & expansion",
+      "resultado": "Result",
+      "oclusionBalanceadaSimetria": "Balanced bite & symmetry",
+      "withBraces": "With braces",
+      "finalAlignment": "Final alignment"
+    },
+    "quote": {
+      "noSeTrataUnicamente": "It's not just about placing veneers or repairing teeth. It's about understanding facial harmony and giving people back the confidence to smile and connect with the world.",
+      "drJaimeArcilaCano": "Dr. Jaime Arcila Cano",
+      "directorClinicoEspecialistaEn": "Clinical Director & Cosmetic Dentistry Specialist, Odontogamma Oriente",
+      "conocerSuTrayectoria": "About Dr. Arcila"
+    },
+    "reels": {
+      "historiasEnVideo": "Stories on video",
+      "pacientesQueYaSonrien": "Patients who now smile with confidence",
+      "escuchaAQuienesViven": "Hear from patients about their transformation at Odontogamma Oriente."
+    },
+    "cta": {
+      "comienzaTuTransformacion": "Start your transformation",
+      "agendaTuValoracion": "Book your consultation",
+      "sinCosto": "completely free",
+      "eligeLaViaQue": "Choose whichever option is most convenient. Whichever you pick, Dr. Jaime Arcila Cano's team will be there to help.",
+      "escribenosPorWhatsapp": "Message us on WhatsApp",
+      "respuestaDirectaYTodos": "Get a direct reply and every detail about the experience.",
+      "valoracionVirtual": "Virtual consultation",
+      "envia3FotosDesde": "Send 3 photos from your phone and hear back from Dr. Jaime Arcila within 24 hours.",
+      "citaEnSede": "In-person visit",
+      "escaneo3dYDiseno": "3D scanning and smile design in El Carmen de Viboral."
+    }
+  }
+}

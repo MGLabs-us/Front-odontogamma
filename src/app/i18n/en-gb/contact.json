@@ -1,0 +1,15 @@
+{
+  "contact": {
+    "visit": {
+      "lunesAViernes8": "Monday to Friday: 8am – 6pm",
+      "sabados800Am": "Saturday: 8am – 1pm"
+    },
+    "success": {
+      "message": "Thank you, <strong>{{ name }}</strong>. Our clinical coordination team will contact you at <strong>{{ phone }}</strong> to confirm the details of your appointment with Dr Jaime Arcila."
+    },
+    "form": {
+      "ej57300123": "e.g. +44 7700 900123",
+      "disenoDeSonrisaArmonizacion": "Smile design & facial harmonisation"
+    }
+  }
+}

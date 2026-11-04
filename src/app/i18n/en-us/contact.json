@@ -1,0 +1,60 @@
+{
+  "contact": {
+    "hero": {
+      "atencionPrivadaOdontogammaOriente": "Private care at Odontogamma Oriente",
+      "atencionPrivada": "Private care",
+      "agendaTuValoracion": "Book your consultation",
+      "iniciaTuExperienciaClinica": "Start your experience at Odontogamma Oriente. We'll get in touch to arrange an appointment reserved just for you."
+    },
+    "info": {
+      "contactoInmediato": "Instant contact",
+      "atencionDirecta": "Direct support",
+      "siPrefieresUnaAtencion": "If you'd like a quick, instant reply, our coordination team is available on WhatsApp to answer your questions about treatments, availability and location."
+    },
+    "whatsapp": {
+      "canalPrioritario": "Priority channel",
+      "escribirPorWhatsapp": "Message us on WhatsApp",
+      "respuestaDirectaYPersonalizada": "Direct, personal replies"
+    },
+    "visit": {
+      "ubicacionDeLaClinica": "Clinic location",
+      "sedeOdontogammaOriente": "Odontogamma Oriente clinic:",
+      "orienteAntioquenoColombia": "Cl. 30 #33-80, El Carmen de Viboral, Antioquia, Colombia.",
+      "horariosDeConsulta": "Opening hours:",
+      "lunesAViernes8": "Monday to Friday: 8:00 AM – 6:00 PM",
+      "sabados800Am": "Saturday: 8:00 AM – 1:00 PM",
+      "modalidad": "Visits:",
+      "exclusivamenteConCitaPrevia": "By appointment only, so you're never kept waiting."
+    },
+    "success": {
+      "solicitudRecibida": "Request received",
+      "enviarOtraSolicitud": "Send another request",
+      "message": "Thank you, <strong>{{ name }}</strong>. Our clinical coordination team will contact you at <strong>{{ phone }}</strong> to confirm the details of your appointment with Dr. Jaime Arcila."
+    },
+    "form": {
+      "solicitudEnLinea": "Online request",
+      "reservaDeConsulta": "Book a consultation",
+      "completaTusDatosBasicos": "Just enter a few basic details so we can reach you. No sign-up or password needed.",
+      "nombreCompleto": "Full name *",
+      "ejMariaFernandaGomez": "e.g. Jane Smith",
+      "telefonoWhatsapp": "Phone / WhatsApp *",
+      "ej57300123": "e.g. +1 305 555 0123",
+      "correoElectronico": "Email",
+      "tuCorreoCom": "you@example.com",
+      "tratamientoDeInteres": "Treatment of interest",
+      "carillasCeramicasDeAlta": "High-precision ceramic veneers",
+      "disenoDeSonrisaArmonizacion": "Smile design & facial harmonization",
+      "rehabilitacionOralIntegral": "Complete oral rehabilitation",
+      "aclaramientoDentalAvanzado": "Advanced teeth whitening",
+      "valoracionDiagnosticaGeneral": "General diagnostic evaluation",
+      "comentariosOPreferenciasDe": "Comments or preferred times",
+      "cuentanosBrevementeSobreLo": "Tell us briefly what you'd like to improve about your smile...",
+      "enviarSolicitudDeCita": "Request an appointment"
+    },
+    "assistant": {
+      "badge": "Virtual assistant",
+      "title": "Chat with our assistant",
+      "text": "Get instant answers about treatments and how to find us."
+    }
+  }
+}

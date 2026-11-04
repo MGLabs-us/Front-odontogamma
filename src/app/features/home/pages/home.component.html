@@ -6,7 +6,7 @@
     <img
       fetchpriority="high"
       [src]="heroBackgroundImageUrl"
-      alt="Sala de espera de Odontogamma Oriente"
+      [alt]="'home.hero.salaDeEsperaDe' | transloco"
       class="w-full h-full object-cover object-center scale-105"
     />
     <!-- Velo petróleo para contraste del texto -->
@@ -23,42 +23,42 @@
         <!-- Insignia de Prestigio -->
         <div class="mb-4 md:mb-6">
           <app-editorial-label tone="dark">
-            Oriente Antioqueño · El Carmen de Viboral
+            {{ 'home.hero.orienteAntioquenoElCarmen' | transloco }}
           </app-editorial-label>
         </div>
 
         <!-- Titular Editorial Principal -->
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-editorial font-medium text-white tracking-tight leading-[1.08] mb-4 md:mb-6">
-          Donde la ciencia <br class="hidden sm:inline" />
+          {{ 'home.hero.dondeLaCiencia' | transloco }} <br class="hidden sm:inline" />
           <span class="italic font-medium text-og-cyan">
-            se convierte en arte
+            {{ 'home.hero.seConvierteEnArte' | transloco }}
           </span>
         </h1>
 
         <!-- Párrafo Descriptivo de Alta Gama -->
         <p class="text-base sm:text-lg md:text-xl text-slate-100 font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed mb-6 md:mb-8">
-          Odontología estética de mínima invasión, carillas cerámicas de alta precisión y diseño de sonrisa biomimético dirigido por el Dr. Jaime Arcila Cano.
+          {{ 'home.hero.odontologiaEsteticaDeMinima' | transloco }}
         </p>
 
         <!-- Botones de Acción Inmediata -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-2 lg:mb-8">
           <app-luxury-button
-            routerLink="/nuestro-trabajo/valoracion-virtual"
+            [routerLink]="'virtual-consultation' | route"
             variant="primary"
             size="md"
             [arrow]="true"
             class="w-full sm:w-auto shadow-glow font-semibold"
           >
-            Iniciar valoración gratuita
+            {{ 'home.hero.iniciarValoracionGratuita' | transloco }}
           </app-luxury-button>
 
           <app-luxury-button
-            routerLink="/servicios"
+            [routerLink]="'services' | route"
             variant="outline"
             size="md"
             class="max-sm:hidden sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
           >
-            Explorar tratamientos
+            {{ 'home.hero.explorarTratamientos' | transloco }}
           </app-luxury-button>
         </div>
 
@@ -91,7 +91,7 @@
             <video
               [src]="heroVideo.videoUrl"
               [poster]="heroVideo.posterUrl"
-              [attr.aria-label]="heroVideo.title"
+              [attr.aria-label]="('videos.' + heroVideo.id + '.title') | transloco"
               autoplay
               muted
               [muted]="true"
@@ -116,7 +116,7 @@
 
   <!-- Indicador sutil de Desplazamiento Inferior -->
   <div class="hidden lg:flex absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity text-white pointer-events-none">
-    <span class="text-xs uppercase tracking-[0.18em] font-mono text-white/80">Descubre más</span>
+    <span class="text-xs uppercase tracking-[0.18em] font-mono text-white/80">{{ 'home.hero.descubreMas' | transloco }}</span>
     <div class="w-[1px] h-5 bg-gradient-to-b from-og-cyan to-transparent animate-pulse"></div>
   </div>
 
@@ -128,23 +128,23 @@
 
     <!-- Encabezado Editorial con Scroll Reveal (Fade Up) -->
     <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal-init reveal-fade-up">
-      <app-editorial-label class="mb-4">Nuestra filosofía</app-editorial-label>
+      <app-editorial-label class="mb-4">{{ 'home.philosophy.nuestraFilosofia' | transloco }}</app-editorial-label>
 
       <h2 class="text-3xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 tracking-tight leading-[1.12] mb-6">
-        La odontología concebida <br class="hidden sm:inline" />
+        {{ 'home.philosophy.laOdontologiaConcebida' | transloco }} <br class="hidden sm:inline" />
         <span class="font-medium text-og-electric">
-          como una obra de arte
+          {{ 'home.philosophy.comoUnaObraDe' | transloco }}
         </span>
       </h2>
 
       <p class="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed max-w-3xl mx-auto line-clamp-3 md:line-clamp-none">
-        Unión impecable entre artesanía analógica, microscopía de precisión y tecnología tridimensional para que sonreír vuelva a ser tu mayor fuente de seguridad y orgullo.
+        {{ 'home.philosophy.unionImpecableEntreArtesania' | transloco }}
       </p>
     </div>
 
     <!-- Grid de Tarjetas Modernas Esculpidas con Física 3D Tilt y Glare Especular -->
     <div class="mobile-rail grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 perspective-1000">
-      @for (pillar of pillars; track pillar.number; let i = $index) {
+      @for (pillar of pillars(); track pillar.number; let i = $index) {
         <div
           appTilt3d
           [maxTilt]="8"
@@ -198,7 +198,7 @@
           <!-- Botón de Redirección en Cápsula Orgánica al Pie de la Tarjeta -->
           <div class="px-2 pb-2">
             <a
-              [routerLink]="pillar.link"
+              [routerLink]="pillar.route | route: pillar.serviceId"
               class="w-full py-4 px-6 rounded-full bg-slate-100/90 hover:bg-og-electric text-slate-900 hover:text-white flex items-center justify-between transition duration-300 group/btn border border-slate-200/80 hover:border-og-electric hover:shadow-[0_10px_25px_rgba(35,63,77,0.25)] cursor-pointer"
             >
               <span class="text-sm sm:text-base font-semibold transition-colors">
@@ -227,22 +227,22 @@
 
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-16 reveal-init reveal-fade-up">
       <div>
-        <app-editorial-label tone="dark" class="mb-3">Transformaciones clínicas</app-editorial-label>
+        <app-editorial-label tone="dark" class="mb-3">{{ 'home.featured.transformacionesClinicas' | transloco }}</app-editorial-label>
         <h2 class="text-3xl md:text-5xl lg:text-6xl font-editorial font-medium text-white tracking-tight">
-          Antes y después
+          {{ 'home.featured.antesYDespues' | transloco }}
         </h2>
         <p class="text-base sm:text-lg text-slate-200 font-normal mt-2 max-w-xl leading-relaxed">
-          Resultados sutiles y balanceados que armonizan con la fisionomía del rostro sin artificialidad.
+          {{ 'home.featured.resultadosSutilesYBalanceados' | transloco }}
         </p>
       </div>
 
       <app-luxury-button
-        routerLink="/nuestro-trabajo/antes-y-despues"
+        [routerLink]="'before-after' | route"
         variant="outline"
         size="md"
         class="border-white/30 text-white hover:border-white hover:text-white self-start md:self-auto font-semibold bg-white/10 backdrop-blur-md shadow-xs"
       >
-        Ver galería completa
+        {{ 'home.featured.verGaleriaCompleta' | transloco }}
       </app-luxury-button>
     </div>
 
@@ -266,7 +266,7 @@
               <!-- Píldora interactiva flotante de guía -->
               <div class="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-20 pointer-events-none opacity-85 group-hover:opacity-100 transition-opacity">
                 <app-editorial-label tone="dark">
-                  Desliza para comparar
+                  {{ 'home.featured.deslizaParaComparar' | transloco }}
                 </app-editorial-label>
               </div>
             </div>
@@ -289,19 +289,19 @@
           <div class="hidden sm:grid grid-cols-3 gap-3 pt-5 border-t border-white/15">
             @if (caseItem.details.treatment) {
               <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
-                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">Procedimiento</span>
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">{{ 'home.featured.procedimiento' | transloco }}</span>
                 <span class="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">{{ caseItem.details.treatment }}</span>
               </div>
             }
             @if (caseItem.details.focus) {
               <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
-                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">Enfoque</span>
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">{{ 'home.featured.enfoque' | transloco }}</span>
                 <span class="text-xs sm:text-sm font-bold text-white mt-1 leading-snug">{{ caseItem.details.focus }}</span>
               </div>
             }
             @if (caseItem.details.result) {
               <div class="p-3.5 rounded-2xl bg-white/5 border border-white/15 flex flex-col group-hover:bg-white/10 group-hover:border-white/40 transition-colors">
-                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">Resultado</span>
+                <span class="text-xs uppercase font-mono tracking-wider text-slate-400 font-semibold">{{ 'home.featured.resultado' | transloco }}</span>
                 <span class="text-xs sm:text-sm font-bold text-emerald-300 mt-1 leading-snug">{{ caseItem.details.result }}</span>
               </div>
             }
@@ -309,11 +309,11 @@
 
           <!-- Botón de Acción con Texto Claro -->
           <a
-            [routerLink]="caseItem.category === 'carillas' ? '/servicios/carillas-porcelana' : '/servicios/odontologia-cosmetica'"
+            [routerLink]="'service-detail' | route: (caseItem.category === 'carillas' ? 'carillas-porcelana' : 'odontologia-cosmetica')"
             class="mt-6 w-full py-4 px-6 rounded-full bg-white text-slate-900 hover:bg-slate-100 hover:text-slate-950 flex items-center justify-between transition duration-300 shadow-lg group/btn cursor-pointer font-bold"
           >
             <span class="text-xs sm:text-sm font-semibold">
-              Conocer tratamiento clínico
+              {{ 'home.featured.conocerTratamientoClinico' | transloco }}
             </span>
             <app-arrow-mark class="text-og-deep" />
           </a>
@@ -334,23 +334,23 @@
 
     <!-- Encabezado de la Galería Tridimensional -->
     <div class="text-center max-w-3xl mx-auto mb-12 reveal-init reveal-fade-up">
-      <app-editorial-label class="mb-4">Macro-Estética & Evidencia Clínica</app-editorial-label>
+      <app-editorial-label class="mb-4">{{ 'home.gallery.macroEsteticaEvidenciaClinica' | transloco }}</app-editorial-label>
 
       <h2 class="text-3xl sm:text-5xl md:text-6xl font-editorial font-medium text-slate-900 tracking-tight leading-[1.12] mb-5">
-        El arte de cada sonrisa <br class="hidden sm:inline" />
+        {{ 'home.gallery.elArteDeCada' | transloco }} <br class="hidden sm:inline" />
         <span class="font-medium text-og-electric">
-          en micro detalle
+          {{ 'home.gallery.enMicroDetalle' | transloco }}
         </span>
       </h2>
 
       <p class="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed max-w-2xl mx-auto">
-        Fotografías clínicas de alta fidelidad donde se aprecia la textura, la translucidez del esmalte y la integración biológica con la encía.
+        {{ 'home.gallery.fotografiasClinicasDeAlta' | transloco }}
       </p>
     </div>
 
     <!-- Píldoras de Filtro por Tratamiento -->
     <div class="chip-row mb-8 md:mb-14 reveal-init reveal-fade-up delay-100">
-      @for (cat of galleryCategories; track cat.id) {
+      @for (cat of galleryCategories(); track cat.id) {
         <button
           type="button"
           (click)="setCategory(cat.id)"
@@ -382,7 +382,7 @@
               <!-- Imagen del Caso (Alternable entre Antes y Después con Transición) -->
               <img
                 [src]="getCaseCurrentView(caseItem.id) === 'after' ? caseItem.afterImageUrl : caseItem.beforeImageUrl"
-                [alt]="caseItem.title + (getCaseCurrentView(caseItem.id) === 'after' ? ' - Resultado' : ' - Estado Inicial')"
+                [alt]="(getCaseCurrentView(caseItem.id) === 'after' ? 'slider.altAfter' : 'slider.altBefore') | transloco: { alt: caseItem.title }"
                 loading="lazy"
       decoding="async"
                 class="w-full h-full object-cover object-center transition duration-500 ease-brand group-hover:scale-105"
@@ -398,7 +398,7 @@
               <div class="absolute bottom-3 inset-x-3 z-30 translate-z-30 flex items-center justify-between">
                 <!-- Indicador de Estado Activo -->
                 <span class="text-xs uppercase font-mono tracking-widest text-white/90 drop-shadow-md font-semibold px-2 py-1 rounded-md bg-black/40 backdrop-blur-xs">
-                  {{ getCaseCurrentView(caseItem.id) === 'after' ? 'Resultado final' : 'Estado inicial' }}
+                  {{ (getCaseCurrentView(caseItem.id) === 'after' ? 'home.gallery.finalResult' : 'home.gallery.initialState') | transloco }}
                 </span>
 
                 <!-- Botón de Alternancia Rápida Táctil -->
@@ -411,7 +411,7 @@
                     : 'bg-og-electric text-white border-og-cyan hover:bg-og-deep hover:scale-105'"
                 >
                   <app-icon name="compare" class="w-3 h-3 text-og-electric" [class.text-white]="getCaseCurrentView(caseItem.id) === 'before'"></app-icon>
-                  <span>{{ getCaseCurrentView(caseItem.id) === 'after' ? 'Ver Antes' : 'Ver Resultado' }}</span>
+                  <span>{{ (getCaseCurrentView(caseItem.id) === 'after' ? 'home.gallery.viewBefore' : 'home.gallery.viewResult') | transloco }}</span>
                 </button>
               </div>
 
@@ -434,10 +434,10 @@
               {{ caseItem.details.treatment }}
             </span>
             <a
-              routerLink="/nuestro-trabajo/antes-y-despues"
+              [routerLink]="'before-after' | route"
               class="inline-flex items-center gap-1 text-xs font-bold text-og-electric group-hover:text-og-deep hover:underline cursor-pointer"
             >
-              <span>Ver detalle</span>
+              <span>{{ 'home.gallery.verDetalle' | transloco }}</span>
               <app-arrow-mark />
             </a>
           </div>
@@ -449,13 +449,13 @@
     <!-- Botón Central de Exploración Completa -->
     <div class="text-center mt-8 md:mt-14 reveal-init reveal-fade-up delay-200">
       <app-luxury-button
-        routerLink="/nuestro-trabajo/antes-y-despues"
+        [routerLink]="'before-after' | route"
         variant="outline"
         size="lg"
         [arrow]="true"
         class="border-slate-300 text-slate-900 hover:border-og-electric hover:text-og-electric shadow-xs font-semibold bg-white"
       >
-        Ver todos los casos
+        {{ 'home.gallery.verTodosLosCasos' | transloco }}
       </app-luxury-button>
     </div>
 
@@ -466,9 +466,9 @@
 <section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="Procedimientos de firma"
-      title="Tratamientos diseñados a medida"
-      subtitle="Soluciones de odontología avanzada que integran salud funcional y perfección estética."
+      [kicker]="'home.treatments.procedimientosDeFirma' | transloco"
+      [title]="'home.treatments.tratamientosDisenadosAMedida' | transloco"
+      [subtitle]="'home.treatments.solucionesDeOdontologiaAvanzada' | transloco"
       align="center"
     />
   </div>
@@ -529,7 +529,7 @@
               <!-- Insignia Superior Flotante en Cristal (Capa Z-30) -->
               <div class="absolute top-4 left-4 z-20 translate-z-30 pointer-events-none">
                 <app-editorial-label tone="dark" class="absolute top-4 left-4 z-20 translate-z-30 pointer-events-none">
-                  {{ service.badge || 'Procedimiento destacado' }}
+                  {{ service.badge || ('home.treatments.featuredBadge' | transloco) }}
                 </app-editorial-label>
               </div>
 
@@ -583,10 +583,10 @@
             <!-- Barra de Acciones y Controles de Navegación con Botones Claros -->
             <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               <a
-                [routerLink]="['/servicios', service.slug]"
+                [routerLink]="'service-detail' | route: service.id"
                 class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-og-electric hover:bg-slate-900 text-white font-semibold text-sm transition duration-300 shadow-[0_10px_25px_rgba(35,63,77,0.3)] hover:shadow-[0_15px_30px_rgba(35,63,77,0.3)] group/cta cursor-pointer"
               >
-                <span>Conocer procedimiento</span>
+                <span>{{ 'home.treatments.conocerProcedimiento' | transloco }}</span>
                 <app-arrow-mark />
               </a>
 
@@ -598,7 +598,7 @@
                   class="px-4 py-2.5 rounded-full border border-slate-200 bg-white hover:bg-slate-900 hover:text-white hover:border-slate-900 flex items-center gap-2 text-slate-700 text-xs font-semibold transition duration-300 shadow-xs cursor-pointer"
                 >
                   <app-icon name="chevron-left" class="w-4 h-4"></app-icon>
-                  <span class="hidden sm:inline">Anterior</span>
+                  <span class="hidden sm:inline">{{ 'home.treatments.anterior' | transloco }}</span>
                 </button>
 
                 <button
@@ -606,7 +606,7 @@
                   (click)="nextService()"
                   class="px-4 py-2.5 rounded-full border border-slate-200 bg-white hover:bg-slate-900 hover:text-white hover:border-slate-900 flex items-center gap-2 text-slate-700 text-xs font-semibold transition duration-300 shadow-xs cursor-pointer"
                 >
-                  <span class="hidden sm:inline">Siguiente</span>
+                  <span class="hidden sm:inline">{{ 'home.treatments.siguiente' | transloco }}</span>
                   <app-icon name="chevron-right" class="w-4 h-4"></app-icon>
                 </button>
               </div>
@@ -644,19 +644,19 @@
       <div class="lg:col-span-7 text-center lg:text-left">
 
         <!-- Insignia de Especialidad -->
-        <app-editorial-label tone="dark" class="mb-6">Ortodoncia digital & expansión de arco</app-editorial-label>
+        <app-editorial-label tone="dark" class="mb-6">{{ 'home.orthodontics.ortodonciaDigitalExpansionDe' | transloco }}</app-editorial-label>
 
         <!-- Titular Principal -->
         <h3 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-medium text-white leading-[1.12] mb-6">
-          La base oclusal para una <br class="hidden sm:inline" />
+          {{ 'home.orthodontics.laBaseOclusalPara' | transloco }} <br class="hidden sm:inline" />
           <span class="italic font-medium text-og-cyan">
-            sonrisa a tu medida
+            {{ 'home.orthodontics.sonrisaATuMedida' | transloco }}
           </span>
         </h3>
 
         <!-- Párrafo Descriptivo -->
         <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 line-clamp-4 md:line-clamp-none">
-          Antes de colocar carillas cerámicas o diseñar una sonrisa cosmética, la correcta alineación dental restaura el plano de mordida y la simetría de tus facciones. Mediante escaneo 3D y biomecánica de precisión, corregimos apiñamientos para que cualquier resultado definitivo sea biológicamente sano y perdurable.
+          {{ 'home.orthodontics.antesDeColocarCarillas' | transloco }}
         </p>
 
         <!-- Cápsulas Estructuradas de Beneficios Clínicos -->
@@ -666,8 +666,8 @@
               <app-icon name="check" class="w-4 h-4"></app-icon>
             </div>
             <div>
-              <h5 class="text-sm sm:text-base font-semibold text-white">Corrección de apiñamientos y rotaciones</h5>
-              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Movimientos milimétricos controlados que restauran la continuidad del arco dental.</p>
+              <h5 class="text-sm sm:text-base font-semibold text-white">{{ 'home.orthodontics.correccionDeApinamientosY' | transloco }}</h5>
+              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">{{ 'home.orthodontics.movimientosMilimetricosControladosQue' | transloco }}</p>
             </div>
           </div>
 
@@ -676,8 +676,8 @@
               <app-icon name="check" class="w-4 h-4"></app-icon>
             </div>
             <div>
-              <h5 class="text-sm sm:text-base font-semibold text-white">Expansión armónica del corredor bucal</h5>
-              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Amplitud simétrica que ilumina las comisuras labiales y equilibra el rostro.</p>
+              <h5 class="text-sm sm:text-base font-semibold text-white">{{ 'home.orthodontics.expansionArmonicaDelCorredor' | transloco }}</h5>
+              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">{{ 'home.orthodontics.amplitudSimetricaQueIlumina' | transloco }}</p>
             </div>
           </div>
 
@@ -686,8 +686,8 @@
               <app-icon name="check" class="w-4 h-4"></app-icon>
             </div>
             <div>
-              <h5 class="text-sm sm:text-base font-semibold text-white">Preparación de mínima invasión para carillas</h5>
-              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">Al alinear primero los ejes, cualquier restauración requiere cero desgaste agresivo.</p>
+              <h5 class="text-sm sm:text-base font-semibold text-white">{{ 'home.orthodontics.preparacionDeMinimaInvasion' | transloco }}</h5>
+              <p class="hidden sm:block text-xs sm:text-sm text-slate-200 mt-0.5 leading-relaxed">{{ 'home.orthodontics.alAlinearPrimeroLos' | transloco }}</p>
             </div>
           </div>
         </div>
@@ -695,13 +695,13 @@
         <!-- Botones de Acción -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
           <app-luxury-button
-            routerLink="/nuestro-trabajo/antes-y-despues"
+            [routerLink]="'before-after' | route"
             variant="outline"
             size="md"
             [arrow]="true"
             class="w-full sm:w-auto border-white/30 text-white hover:border-white hover:text-white font-semibold"
           >
-            Ver casos de alineación
+            {{ 'home.orthodontics.verCasosDeAlineacion' | transloco }}
           </app-luxury-button>
         </div>
 
@@ -719,9 +719,9 @@
           <!-- Insignia superior del caso -->
           <div class="flex items-center justify-between mb-4 translate-z-20">
             <app-editorial-label tone="dark">
-              Caso Certificado · Ortodoncia
+              {{ 'home.orthodontics.casoCertificadoOrtodoncia' | transloco }}
             </app-editorial-label>
-            <span class="text-xs font-mono text-slate-300 font-bold tracking-widest">Caso 09</span>
+            <span class="text-xs font-mono text-slate-300 font-bold tracking-widest">{{ 'home.orthodontics.caso09' | transloco }}</span>
           </div>
 
           <!-- Slider Interactivo de Antes y Después de Ortodoncia -->
@@ -729,9 +729,9 @@
             <app-before-after-slider
               beforeImage="https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/cropped_teeth.png"
               afterImage="https://res.cloudinary.com/u81t66ol/image/upload/v1793155005/cropped_teeth_after.png"
-              alt="Caso de Ortodoncia y Alineación Dental"
-              beforeLabel="Con Brackets"
-              afterLabel="Alineación Final"
+              [alt]="'home.orthodontics.casoDeOrtodonciaY' | transloco"
+              [beforeLabel]="'home.orthodontics.withBraces' | transloco"
+              [afterLabel]="'home.orthodontics.finalAlignment' | transloco"
               aspectRatio="aspect-[16/10]"
             />
           </div>
@@ -739,16 +739,16 @@
           <!-- Ficha de resultados técnicos -->
           <div class="hidden sm:block mt-5 pt-4 border-t border-white/15 space-y-2.5 translate-z-20">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-mono uppercase tracking-wider text-slate-400">Diagnóstico</span>
-              <span class="font-semibold text-slate-100">Apiñamiento y asimetría</span>
+              <span class="font-mono uppercase tracking-wider text-slate-400">{{ 'home.orthodontics.diagnostico' | transloco }}</span>
+              <span class="font-semibold text-slate-100">{{ 'home.orthodontics.apinamientoYAsimetria' | transloco }}</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-mono uppercase tracking-wider text-slate-400">Tratamiento</span>
-              <span class="font-semibold text-white">Alineación biomecánica & expansión</span>
+              <span class="font-mono uppercase tracking-wider text-slate-400">{{ 'home.orthodontics.tratamiento' | transloco }}</span>
+              <span class="font-semibold text-white">{{ 'home.orthodontics.alineacionBiomecanicaExpansion' | transloco }}</span>
             </div>
             <div class="flex items-center justify-between text-xs">
-              <span class="font-mono uppercase tracking-wider text-slate-400">Resultado</span>
-              <span class="font-semibold text-emerald-400">Oclusión balanceada & simetría</span>
+              <span class="font-mono uppercase tracking-wider text-slate-400">{{ 'home.orthodontics.resultado' | transloco }}</span>
+              <span class="font-semibold text-emerald-400">{{ 'home.orthodontics.oclusionBalanceadaSimetria' | transloco }}</span>
             </div>
           </div>
         </div>
@@ -764,23 +764,23 @@
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-init reveal-scale">
     <span class="text-5xl md:text-7xl font-editorial text-white/40 leading-none select-none">“</span>
     <blockquote class="text-xl sm:text-3xl md:text-4xl font-editorial font-normal leading-relaxed text-white -mt-4 mb-6 md:mb-8">
-      No se trata únicamente de colocar carillas o reparar piezas dentales; se trata de comprender la armonía facial y devolver la seguridad con la que una persona sonríe y se comunica con el mundo.
+      {{ 'home.quote.noSeTrataUnicamente' | transloco }}
     </blockquote>
     <div class="flex flex-col items-center">
       <span class="text-sm sm:text-base uppercase tracking-[0.18em] font-bold text-white mb-1 font-mono">
-        Dr. Jaime Arcila Cano
+        {{ 'home.quote.drJaimeArcilaCano' | transloco }}
       </span>
       <span class="text-sm text-slate-300 tracking-wider font-normal mb-6">
-        Director Clínico & Especialista en Estética Dental — Odontogamma Oriente
+        {{ 'home.quote.directorClinicoEspecialistaEn' | transloco }}
       </span>
 
       <app-luxury-button
-        routerLink="/quienes-somos/dr-jaime-arcila"
+        [routerLink]="'doctor' | route"
         variant="outline"
         size="md"
         class="text-white border-white/40 hover:border-white hover:bg-white/10 font-semibold"
       >
-        Conocer su trayectoria
+        {{ 'home.quote.conocerSuTrayectoria' | transloco }}
       </app-luxury-button>
     </div>
   </div>
@@ -791,9 +791,9 @@
   <div class="max-w-7xl mx-auto">
     <div class="reveal-init reveal-fade-up">
       <app-section-header
-        kicker="Historias en video"
-        title="Pacientes que ya sonríen con confianza"
-        subtitle="Escucha a quienes viven su transformación en Odontogamma oriente."
+        [kicker]="'home.reels.historiasEnVideo' | transloco"
+        [title]="'home.reels.pacientesQueYaSonrien' | transloco"
+        [subtitle]="'home.reels.escuchaAQuienesViven' | transloco"
         align="center"
       />
     </div>
@@ -811,7 +811,7 @@
       <video
         [src]="invitationVideo.videoUrl"
         [poster]="invitationVideo.posterUrl"
-        [attr.aria-label]="invitationVideo.title"
+        [attr.aria-label]="('videos.' + invitationVideo.id + '.title') | transloco"
         class="w-full h-full object-cover bg-black"
         controls
         playsinline
@@ -820,19 +820,19 @@
     </div>
 
     <div class="text-center md:text-left">
-      <app-editorial-label class="mb-4">Comienza tu transformación</app-editorial-label>
+      <app-editorial-label class="mb-4">{{ 'home.cta.comienzaTuTransformacion' | transloco }}</app-editorial-label>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-medium text-slate-900 mb-4 leading-tight">
-        Agenda tu valoración <span class="text-og-electric">sin costo</span>
+        {{ 'home.cta.agendaTuValoracion' | transloco }} <span class="text-og-electric">{{ 'home.cta.sinCosto' | transloco }}</span>
       </h2>
       <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-        Elige la vía que te quede más cómoda. En todas te atiende el equipo del Dr. Jaime Arcila Cano.
+        {{ 'home.cta.eligeLaViaQue' | transloco }}
       </p>
 
       <ul class="flex flex-col gap-3 text-left">
         <!-- WhatsApp: vía principal, también para conocer la experiencia completa -->
         <li>
           <a
-            [href]="whatsappUrl"
+            [href]="'whatsapp.video' | whatsapp"
             target="_blank"
             rel="noopener noreferrer"
             class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-og-dark text-white shadow-glow hover:-translate-y-0.5 transition duration-300"
@@ -841,8 +841,8 @@
               <app-icon name="chat" class="w-5 h-5"></app-icon>
             </span>
             <span class="flex-1">
-              <span class="block text-sm sm:text-base font-semibold">Escríbenos por WhatsApp</span>
-              <span class="hidden sm:block text-xs sm:text-sm text-white/75 leading-snug">Respuesta directa y todos los detalles de la experiencia.</span>
+              <span class="block text-sm sm:text-base font-semibold">{{ 'home.cta.escribenosPorWhatsapp' | transloco }}</span>
+              <span class="hidden sm:block text-xs sm:text-sm text-white/75 leading-snug">{{ 'home.cta.respuestaDirectaYTodos' | transloco }}</span>
             </span>
             <app-arrow-mark />
           </a>
@@ -851,15 +851,15 @@
         <!-- Valoración virtual -->
         <li>
           <a
-            routerLink="/nuestro-trabajo/valoracion-virtual"
+            [routerLink]="'virtual-consultation' | route"
             class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-og-electric/60 hover:-translate-y-0.5 transition duration-300"
           >
             <span class="w-11 h-11 rounded-xl bg-sky-50 text-og-electric flex items-center justify-center shrink-0">
               <app-icon name="mobile" class="w-5 h-5"></app-icon>
             </span>
             <span class="flex-1">
-              <span class="block text-sm sm:text-base font-semibold text-slate-900">Valoración virtual</span>
-              <span class="hidden sm:block text-xs sm:text-sm text-slate-600 leading-snug">Envía 3 fotos desde tu celular y recibe criterio del Dr. en menos de 24 horas.</span>
+              <span class="block text-sm sm:text-base font-semibold text-slate-900">{{ 'home.cta.valoracionVirtual' | transloco }}</span>
+              <span class="hidden sm:block text-xs sm:text-sm text-slate-600 leading-snug">{{ 'home.cta.envia3FotosDesde' | transloco }}</span>
             </span>
             <app-arrow-mark />
           </a>
@@ -868,15 +868,15 @@
         <!-- Cita presencial -->
         <li>
           <a
-            routerLink="/contacto"
+            [routerLink]="'contact' | route"
             class="group flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-900 hover:-translate-y-0.5 transition duration-300"
           >
             <span class="w-11 h-11 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
               <app-icon name="calendar" class="w-5 h-5"></app-icon>
             </span>
             <span class="flex-1">
-              <span class="block text-sm sm:text-base font-semibold text-slate-900">Cita en sede</span>
-              <span class="hidden sm:block text-xs sm:text-sm text-slate-600 leading-snug">Escaneo 3D y diseño de sonrisa en El Carmen de Viboral.</span>
+              <span class="block text-sm sm:text-base font-semibold text-slate-900">{{ 'home.cta.citaEnSede' | transloco }}</span>
+              <span class="hidden sm:block text-xs sm:text-sm text-slate-600 leading-snug">{{ 'home.cta.escaneo3dYDiseno' | transloco }}</span>
             </span>
             <app-arrow-mark />
           </a>

@@ -1,0 +1,28 @@
+{
+  "services": {
+    "list": {
+      "hero": {
+        "catalogoClinico": "Clinical catalogue"
+      },
+      "reels": {
+        "conoceTuTratamientoCon": "Learn about your treatment with Dr Jaime Arcila"
+      },
+      "cta": {
+        "descubreEnMenosDe": "Find out within 24 hours what's possible for your smile with clear aligners, veneers or whitening. Just send 3 photos from your mobile."
+      }
+    },
+    "items": {
+      "odontologia-cosmetica": {
+        "detailedDescription": [
+          "High-end cosmetic dentistry goes beyond straightening teeth: it looks at how your smile works with your eyes, your lips and your expressions when you talk and laugh.",
+          "We analyse the golden proportions of your face with studio macro photography and 3D modeling to design a smile that takes years off and boosts your confidence.",
+          "We combine gum contouring with a diode laser, enamel micro-aesthetics and digital design to sculpt a perfectly balanced result."
+        ],
+        "beforeAfter": {
+          "caseTitle": "Smile and arch harmonisation"
+        },
+        "badge": "Bespoke design"
+      }
+    }
+  }
+}

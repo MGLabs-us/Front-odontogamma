@@ -1,0 +1,67 @@
+{
+  "footer": {
+    "brand": {
+      "odontologiaEsteticaYDiseno": "Cosmetic dentistry and smile design in Eastern Antioquia, led by Dr Jaime Arcila Cano."
+    },
+    "about": {
+      "drJaimeArcilaCano": "Dr Jaime Arcila Cano"
+    },
+    "work": {
+      "catalogoDeProcedimientos": "Treatment catalogue"
+    },
+    "contact": {
+      "lunesAViernes8": "Monday to Friday: 8am – 6pm",
+      "sabados800Am": "Saturday: 8am – 1pm"
+    },
+    "credits": {
+      "odontogammaOrienteDrJaime": "Odontogamma Oriente. Dr Jaime Arcila Cano. All rights reserved."
+    }
+  },
+  "videos": {
+    "invitacion-experiencia": {
+      "caption": "Dr Jaime Arcila invites you to find out more about the experience."
+    },
+    "hero-doctor": {
+      "title": "Dr Jaime Arcila at work at Odontogamma Oriente",
+      "caption": "Introduction video from Dr Jaime Arcila Cano."
+    },
+    "veneers-semana": {
+      "caption": "Visit Colombia with Dr Jaime Arcila."
+    },
+    "veneers-viaje": {
+      "caption": "The procedure and timeline, explained by Dr Jaime Arcila."
+    },
+    "veneers-colombia": {
+      "caption": "Dr Jaime Arcila explains the porcelain veneer process in Colombia."
+    }
+  },
+  "whatsapp": {
+    "contact": "Hello, I'd like more information and to book an appointment with Dr Jaime Arcila at Odontogamma Oriente.",
+    "appointment": "Hello, I'd like to book a consultation with Dr Jaime Arcila at Odontogamma Oriente."
+  },
+  "nav": {
+    "services": {
+      "items": {
+        "cosmetic": {
+          "description": "Facial design and smile harmonisation"
+        }
+      }
+    },
+    "who": {
+      "items": {
+        "doctor": {
+          "label": "Dr Jaime Arcila Cano"
+        }
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "description": "Porcelain veneers, smile design and minimally invasive cosmetic dentistry in Eastern Antioquia, Colombia. Book a free consultation with Dr Jaime Arcila Cano."
+    },
+    "doctor": {
+      "title": "Dr Jaime Arcila Cano, Cosmetic Dentist | Odontogamma Oriente",
+      "description": "Background, training and clinical approach of Dr Jaime Arcila Cano, director of Odontogamma Oriente and cosmetic dentistry specialist."
+    }
+  }
+}

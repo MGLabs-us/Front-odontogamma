@@ -4,7 +4,7 @@
   <div class="absolute inset-0 z-0">
     <img loading="lazy" decoding="async"
       [src]="heroImageUrl"
-      alt="Equipo Clínico Odontogamma Oriente"
+      [alt]="'team.hero.equipoClinicoOdontogammaOriente' | transloco"
       class="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
     />
     <!-- Velo neutral para preservar los colores naturales de la fotografía -->
@@ -15,35 +15,35 @@
   <!-- Contenido Hero -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center pt-28 pb-16 reveal-init reveal-fade-up">
     <span class="text-xs sm:text-xs uppercase tracking-[0.18em] text-white font-semibold block mb-4">
-      Especialistas clínicos
+      {{ 'team.hero.especialistasClinicos' | transloco }}
     </span>
 
     <h1 class="text-4xl sm:text-6xl md:text-7xl font-editorial font-normal text-white tracking-tight leading-[1.08] mb-6">
-      Mentes Maestras <br />
+      {{ 'team.hero.mentesMaestras' | transloco }} <br />
       <span class="italic font-medium text-og-cyan">
-        y Manos Artesanales
+        {{ 'team.hero.yManosArtesanales' | transloco }}
       </span>
     </h1>
 
     <p class="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed mb-10">
-      Un colectivo interdisciplinario de odontólogos estéticos, ceramistas maestros y coordinadores de experiencia dedicados a un solo propósito: crear sonrisas irrepetibles con el máximo confort y precisión.
+      {{ 'team.hero.unColectivoInterdisciplinarioDe' | transloco }}
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        [routerLink]="'contact' | route"
         variant="primary"
         size="md"
       >
-        Conoce al equipo en persona
+        {{ 'team.hero.conoceAlEquipoEn' | transloco }}
       </app-luxury-button>
       <app-luxury-button
-        routerLink="/quienes-somos/sede"
+        [routerLink]="'location' | route"
         variant="outline"
         size="md"
         class="border-white/30 text-white hover:border-white hover:text-white"
       >
-        Descubre nuestra clínica
+        {{ 'team.hero.descubreNuestraClinica' | transloco }}
       </app-luxury-button>
     </div>
   </div>
@@ -53,16 +53,16 @@
 <section class="py-16 md:py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
   <div class="reveal-init reveal-fade-up">
     <app-section-header
-      kicker="El colectivo clínico"
-      title="Especialistas dedicados a tu transformación"
-      subtitle="Cada miembro aporta un área específica de maestría para que tu sonrisa sea tratada con visión de 360 grados."
+      [kicker]="'team.members.elColectivoClinico' | transloco"
+      [title]="'team.members.especialistasDedicadosATu' | transloco"
+      [subtitle]="'team.members.cadaMiembroAportaUn' | transloco"
       align="center"
     />
   </div>
 
   <!-- Grid de Gran Formato: Fotos Grandes que Sobresalen (2 Columnas de Alto Impacto) -->
   <div class="rail-md grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-16">
-    @for (member of members; track member.imageUrl; let i = $index) {
+    @for (member of members(); track member.imageUrl; let i = $index) {
       <div
         [class]="i % 2 === 0 ? 'reveal-init reveal-fade-up delay-100' : 'reveal-init reveal-fade-up delay-200'"
         class="group bg-white border border-slate-200/90 rounded-4xl p-5 sm:p-7 overflow-hidden shadow-[0_20px_50px_-15px_rgba(35,63,77,0.08)] hover:shadow-[0_30px_70px_-15px_rgba(35,63,77,0.2)] hover:-translate-y-2.5 transition duration-500 flex flex-col justify-between"
@@ -121,39 +121,39 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
       <div class="reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
-          Sinergia en un Mismo Espacio
+          {{ 'team.synergy.sinergiaEnUnMismo' | transloco }}
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline mb-6 leading-tight">
-          Por qué un equipo completo hace la diferencia
+          {{ 'team.synergy.porQueUnEquipo' | transloco }}
         </h2>
         <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed mb-6">
-          En la odontología tradicional, el odontólogo toma un molde y lo envía a un laboratorio distante que jamás ve al paciente. En Odontogamma Oriente, el maestro ceramista, el periodoncista y el doctor trabajan juntos en la misma clínica.
+          {{ 'team.synergy.enLaOdontologiaTradicional' | transloco }}
         </p>
         <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed">
-          Esto permite evaluar el tono de la piel en vivo bajo luz natural, calibrar el diseño de sonrisa en tiempo real y ajustar cada detalle milimétrico antes de la cementación definitiva.
+          {{ 'team.synergy.estoPermiteEvaluarEl' | transloco }}
         </p>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-100">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">01</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Evaluación en vivo</h4>
-          <p class="text-xs text-og-slate font-normal">El ceramista participa en la sesión de colorimetría con luz polarizada.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">{{ 'team.synergy.evaluacionEnVivo' | transloco }}</h4>
+          <p class="text-xs text-og-slate font-normal">{{ 'team.synergy.elCeramistaParticipaEn' | transloco }}</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-right delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">02</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Salud gingival</h4>
-          <p class="text-xs text-og-slate font-normal">Encías sanas y simétricas antes de colocar la primera carilla.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">{{ 'team.synergy.saludGingival' | transloco }}</h4>
+          <p class="text-xs text-og-slate font-normal">{{ 'team.synergy.enciasSanasYSimetricas' | transloco }}</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-up delay-200">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">03</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Oclusión segura</h4>
-          <p class="text-xs text-og-slate font-normal">Armonización de mordida para evitar fracturas o desgastes prematuros.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">{{ 'team.synergy.oclusionSegura' | transloco }}</h4>
+          <p class="text-xs text-og-slate font-normal">{{ 'team.synergy.armonizacionDeMordidaPara' | transloco }}</p>
         </div>
         <div class="p-6 bg-white border border-og-border rounded-2xl shadow-subtle reveal-init reveal-fade-right delay-300">
           <span class="text-2xl sm:text-3xl font-editorial text-slate-300 block mb-1">04</span>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">Concierge privado</h4>
-          <p class="text-xs text-og-slate font-normal">Atención prioritaria y agenda confidencial de principio a fin.</p>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-og-headline mb-2">{{ 'team.synergy.conciergePrivado' | transloco }}</h4>
+          <p class="text-xs text-og-slate font-normal">{{ 'team.synergy.atencionPrioritariaYAgenda' | transloco }}</p>
         </div>
       </div>
     </div>
@@ -164,22 +164,22 @@
 <section class="py-16 md:py-32 px-6 md:px-12 bg-og-marble relative overflow-hidden border-t border-slate-200/80">
   <div class="max-w-4xl mx-auto card-luxury-aesthetic rounded-xl p-6 sm:p-14 md:p-16 text-center relative z-10 reveal-init reveal-scale delay-100">
     <span class="text-xs uppercase tracking-[0.18em] text-og-electric block mb-3 font-semibold font-mono">
-      Tu equipo médico
+      {{ 'team.cta.tuEquipoMedico' | transloco }}
     </span>
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-editorial font-normal text-og-headline mb-5">
-      Empieza tu experiencia en buenas manos
+      {{ 'team.cta.empiezaTuExperienciaEn' | transloco }}
     </h2>
     <p class="text-sm sm:text-base text-og-slate font-normal max-w-xl mx-auto leading-relaxed mb-8">
-      Conversemos sobre tus expectativas estéticas y creemos juntos un plan a tu medida.
+      {{ 'team.cta.conversemosSobreTusExpectativas' | transloco }}
     </p>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <app-luxury-button
-        routerLink="/contacto"
+        [routerLink]="'contact' | route"
         variant="primary"
         size="md"
       >
-        Reservar Valoración con el Equipo
+        {{ 'team.cta.reservarValoracionConEl' | transloco }}
       </app-luxury-button>
     </div>
   </div>

@@ -7,16 +7,16 @@
 
       <!-- Marca y redes -->
       <div class="lg:col-span-4">
-        <a routerLink="/" class="block mb-6" aria-label="Odontogamma Oriente">
+        <a [routerLink]="'home' | route" class="block mb-6" [attr.aria-label]="'footer.brand.odontogammaOriente' | transloco">
           <app-brand-logo variant="footer"></app-brand-logo>
         </a>
         <p class="text-xs text-slate-300 leading-relaxed font-normal mb-8 max-w-sm">
-          Odontología estética y diseño de sonrisa en el Oriente Antioqueño, bajo la dirección del Dr. Jaime Arcila Cano.
+          {{ 'footer.brand.odontologiaEsteticaYDiseno' | transloco }}
         </p>
 
-        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-4">Síguenos</span>
-        <ul class="flex items-center gap-3" aria-label="Redes sociales">
-          @for (social of socials; track social.name) {
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-4">{{ 'footer.brand.siguenos' | transloco }}</span>
+        <ul class="flex items-center gap-3" [attr.aria-label]="'footer.brand.redesSociales' | transloco">
+          @for (social of socials(); track social.name) {
             <li>
               <a
                 [href]="social.url"
@@ -37,43 +37,43 @@
 
       <!-- Quiénes somos -->
       <div class="lg:col-span-2">
-        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">Quiénes somos</span>
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">{{ 'footer.about.quienesSomos' | transloco }}</span>
         <ul class="space-y-3 text-xs tracking-wider font-normal">
-          <li><a routerLink="/" class="footer-link">Inicio</a></li>
-          <li><a routerLink="/quienes-somos/sobre-nosotros" class="footer-link">Sobre nosotros</a></li>
-          <li><a routerLink="/quienes-somos/dr-jaime-arcila" class="footer-link">Dr. Jaime Arcila Cano</a></li>
-          <li><a routerLink="/quienes-somos/equipo" class="footer-link">Equipo clínico</a></li>
-          <li><a routerLink="/quienes-somos/sede" class="footer-link">Nuestra sede</a></li>
+          <li><a [routerLink]="'home' | route" class="footer-link">{{ 'footer.about.inicio' | transloco }}</a></li>
+          <li><a [routerLink]="'about' | route" class="footer-link">{{ 'footer.about.sobreNosotros' | transloco }}</a></li>
+          <li><a [routerLink]="'doctor' | route" class="footer-link">{{ 'footer.about.drJaimeArcilaCano' | transloco }}</a></li>
+          <li><a [routerLink]="'team' | route" class="footer-link">{{ 'footer.about.equipoClinico' | transloco }}</a></li>
+          <li><a [routerLink]="'location' | route" class="footer-link">{{ 'footer.about.nuestraSede' | transloco }}</a></li>
         </ul>
       </div>
 
       <!-- Nuestro trabajo -->
       <div class="lg:col-span-3">
-        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">Nuestro trabajo</span>
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">{{ 'footer.work.nuestroTrabajo' | transloco }}</span>
         <ul class="space-y-3 text-xs tracking-wider font-normal">
-          <li><a routerLink="/nuestro-trabajo/antes-y-despues" class="footer-link">Antes y después</a></li>
-          <li><a routerLink="/nuestro-trabajo/testimonios" class="footer-link">Testimonios de pacientes</a></li>
-          <li><a routerLink="/nuestro-trabajo/valoracion-virtual" class="footer-link !text-og-cyan font-medium">Valoración virtual gratuita</a></li>
-          <li><a routerLink="/servicios" class="footer-link">Catálogo de procedimientos</a></li>
-          <li><a routerLink="/contacto" class="footer-link">Agendar valoración presencial</a></li>
+          <li><a [routerLink]="'before-after' | route" class="footer-link">{{ 'footer.work.antesYDespues' | transloco }}</a></li>
+          <li><a [routerLink]="'testimonials' | route" class="footer-link">{{ 'footer.work.testimoniosDePacientes' | transloco }}</a></li>
+          <li><a [routerLink]="'virtual-consultation' | route" class="footer-link !text-og-cyan font-medium">{{ 'footer.work.valoracionVirtualGratuita' | transloco }}</a></li>
+          <li><a [routerLink]="'services' | route" class="footer-link">{{ 'footer.work.catalogoDeProcedimientos' | transloco }}</a></li>
+          <li><a [routerLink]="'contact' | route" class="footer-link">{{ 'footer.work.agendarValoracionPresencial' | transloco }}</a></li>
         </ul>
       </div>
 
       <!-- Contacto -->
       <div class="lg:col-span-3">
-        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">Sede & atención</span>
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-400 block mb-5">{{ 'footer.contact.sedeAtencion' | transloco }}</span>
         <ul class="space-y-4 text-xs font-normal text-slate-300">
           <li class="flex gap-3">
             <app-icon name="map-pin" class="h-4 w-4 mt-0.5 shrink-0 text-og-cyan"></app-icon>
-            <span>El Carmen de Viboral, Oriente Antioqueño, Colombia.<br />Atención con cita previa.</span>
+            <span>{{ 'footer.contact.elCarmenDeViboral' | transloco }}<br />{{ 'footer.contact.atencionConCitaPrevia' | transloco }}</span>
           </li>
           <li class="flex gap-3">
             <app-icon name="clock" class="h-4 w-4 mt-0.5 shrink-0 text-og-cyan"></app-icon>
-            <span>Lunes a viernes: 8:00 AM – 6:00 PM<br />Sábados: 8:00 AM – 1:00 PM</span>
+            <span>{{ 'footer.contact.lunesAViernes8' | transloco }}<br />{{ 'footer.contact.sabados800Am' | transloco }}</span>
           </li>
           <li class="flex gap-3">
             <app-icon name="phone" class="h-4 w-4 mt-0.5 shrink-0 text-og-cyan"></app-icon>
-            <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="font-mono tracking-wider text-white hover:text-og-cyan transition-colors">+57 321 720 9420</a>
+            <a [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer" class="font-mono tracking-wider text-white hover:text-og-cyan transition-colors">+57 321 720 9420</a>
           </li>
         </ul>
       </div>
@@ -82,8 +82,8 @@
 
     <!-- Créditos -->
     <div class="py-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 tracking-wider font-normal">
-      <p class="text-center sm:text-left">© {{ currentYear }} Odontogamma Oriente. Dr. Jaime Arcila Cano. Todos los derechos reservados.</p>
-      <p class="text-xs uppercase tracking-[0.14em]">Odontología de precisión & arte</p>
+      <p class="text-center sm:text-left">© {{ currentYear }} {{ 'footer.credits.odontogammaOrienteDrJaime' | transloco }}</p>
+      <p class="text-xs uppercase tracking-[0.14em]">{{ 'footer.credits.odontologiaDePrecisionArte' | transloco }}</p>
     </div>
 
   </div>

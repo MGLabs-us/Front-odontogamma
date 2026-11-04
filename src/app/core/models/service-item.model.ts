@@ -11,6 +11,8 @@ export interface ServiceItem {
   detailedDescription: string[];
   heroImageUrl: string;
   galleryImages: string[];
+  /** `object-position` de cada foto de la galería (para no cortar caras en fotos verticales). */
+  galleryFocus?: string[];
   highlights: string[];
   idealFor: string[];
   beforeAfter: {

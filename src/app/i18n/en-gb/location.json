@@ -1,0 +1,26 @@
+{
+  "location": {
+    "access": {
+      "items": [
+        {
+          "origin": "From the José María Córdova International Airport",
+          "time": "15 minutes",
+          "route": "Via El Carmen de Viboral / Rionegro",
+          "description": "A fast connection for domestic and international patients travelling for dental care."
+        },
+        {
+          "origin": "From Medellín (El Poblado / Laureles)",
+          "time": "35 minutes",
+          "route": "Through the Oriente Tunnel",
+          "description": "A direct, smooth drive with no city traffic, and the cool mountain climate to enjoy on the way."
+        },
+        {
+          "origin": "El Carmen de Viboral & Rionegro",
+          "time": "5 to 10 minutes",
+          "route": "Dining and residential corridor",
+          "description": "A prime spot in the most exclusive countryside area of the region."
+        }
+      ]
+    }
+  }
+}

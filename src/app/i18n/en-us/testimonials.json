@@ -1,0 +1,50 @@
+{
+  "testimonials": {
+    "page": {
+      "retratoDeUnaPaciente": "Portrait of a smiling patient",
+      "odontogammaOrienteElCarmen": "Odontogamma Oriente · El Carmen de Viboral",
+      "laConfianzaDeSonreir": "The confidence to smile:",
+      "experienciasReales": "real experiences",
+      "conoceLaSedeAl": "Meet the clinic, the team and the experiences some patients chose to share on video.",
+      "iniciarValoracionGratuita": "Book your free consultation",
+      "verCasosDeAntes": "See before and after cases",
+      "laExperienciaOdontogamma": "The Odontogamma experience",
+      "unEspacioParaCuidar": "A place to take care of your smile",
+      "unaMiradaALos": "A look at the spaces and moments that are part of every visit.",
+      "enSusPropiasPalabras": "In their own words",
+      "experienciasCompartidasPorPacientes": "Experiences shared by patients",
+      "escuchaDirectamenteAQuienes": "Hear directly from patients who chose to share their experience with the clinic.",
+      "tuHistoriaComienzaAqui": "Your story starts here",
+      "hablemosDeTuSonrisa": "Let's talk about your smile",
+      "enviaTusFotografiasDesde": "Send your photos from home and receive a preliminary cosmetic evaluation."
+    },
+    "moments": {
+      "items": [
+        {
+          "id": "mirror",
+          "title": "A moment to see yourself again",
+          "description": "A personal experience, with the clinic team by your side.",
+          "alt": "Patient looking at their smile in a mirror"
+        },
+        {
+          "id": "lounge",
+          "title": "A place to feel good",
+          "description": "Calm spaces that are part of the experience at our clinic.",
+          "alt": "Waiting room at the Odontogamma Oriente clinic"
+        },
+        {
+          "id": "treatment-room",
+          "title": "Technology and clinical care",
+          "description": "Spaces ready to support every appointment.",
+          "alt": "Treatment room at the clinic"
+        },
+        {
+          "id": "reception",
+          "title": "Welcome to El Carmen de Viboral",
+          "description": "A team and a clinic designed to make you feel at home.",
+          "alt": "Exterior of the Odontogamma Oriente clinic"
+        }
+      ]
+    }
+  }
+}

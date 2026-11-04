@@ -31,11 +31,11 @@
       <!-- Botones de Acción Inmediata -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <app-luxury-button
-          routerLink="/contacto"
+          [routerLink]="'contact' | route"
           variant="primary"
           size="lg"
         >
-          Agendar valoración
+          {{ 'services.detail.hero.agendarValoracion' | transloco }}
         </app-luxury-button>
 
         <app-luxury-button
@@ -44,7 +44,7 @@
           size="lg"
           class="text-white border-white/40 hover:border-white"
         >
-          Ver Antes y después
+          {{ 'services.detail.hero.verAntesYDespues' | transloco }}
         </app-luxury-button>
       </div>
 
@@ -52,7 +52,7 @@
 
     <!-- Indicador de Desplazamiento -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 text-white pointer-events-none">
-      <span class="text-xs uppercase tracking-[0.18em] font-normal">Explorar tratamiento</span>
+      <span class="text-xs uppercase tracking-[0.18em] font-normal">{{ 'services.detail.hero.explorarTratamiento' | transloco }}</span>
       <div class="w-[1px] h-6 bg-gradient-to-b from-white to-transparent"></div>
     </div>
   </section>
@@ -64,10 +64,10 @@
       <!-- Columna Izquierda: La Filosofía y Técnica del Procedimiento -->
       <div class="lg:col-span-7 space-y-6 reveal-init reveal-fade-left delay-100">
         <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block">
-          Excelencia clínica & artesanía
+          {{ 'services.detail.overview.excelenciaClinicaArtesania' | transloco }}
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-editorial font-normal text-og-headline leading-tight">
-          La ciencia biomimética detrás de tu nueva sonrisa
+          {{ 'services.detail.overview.laCienciaBiomimeticaDetras' | transloco }}
         </h2>
 
         <div class="space-y-4 text-xs sm:text-sm md:text-base text-og-slate font-normal leading-relaxed">
@@ -79,7 +79,7 @@
         <!-- Distintivos Técnicos de Odontogamma Oriente -->
         <div class="pt-6 border-t border-og-border">
           <span class="text-xs font-semibold tracking-[0.14em] uppercase text-og-headline block mb-4">
-            Por qué elegir este tratamiento en Odontogamma Oriente:
+            {{ 'services.detail.overview.porQueElegirEste' | transloco }}
           </span>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             @for (highlight of item.highlights; track highlight) {
@@ -98,13 +98,13 @@
         <!-- Tarjeta de Candidatos Ideales -->
         <div class="p-8 bg-white border border-og-border rounded-2xl shadow-elevated">
           <span class="text-xs uppercase tracking-[0.18em] font-semibold text-og-electric block mb-2">
-            Diagnóstico inicial
+            {{ 'services.detail.overview.diagnosticoInicial' | transloco }}
           </span>
           <h3 class="text-2xl font-editorial font-normal text-og-headline mb-4">
-            ¿Es este tratamiento para ti?
+            {{ 'services.detail.overview.esEsteTratamientoPara' | transloco }}
           </h3>
           <p class="text-xs text-og-slate font-normal mb-6 leading-relaxed">
-            Recomendado para pacientes que presentan las siguientes características:
+            {{ 'services.detail.overview.recomendadoParaPacientesQue' | transloco }}
           </p>
 
           <ul class="space-y-3 text-xs text-og-headline font-normal mb-8">
@@ -117,33 +117,33 @@
           </ul>
 
           <app-luxury-button
-            routerLink="/contacto"
+            [routerLink]="'contact' | route"
             variant="primary"
             size="md"
             class="w-full text-center"
           >
-            Solicitar valoración privada
+            {{ 'services.detail.overview.solicitarValoracionPrivada' | transloco }}
           </app-luxury-button>
         </div>
 
         <!-- Tarjeta Concierge Directo -->
         <div class="card-luxury-aesthetic p-8 rounded-2xl text-left">
           <span class="text-xs uppercase tracking-[0.18em] text-og-electric font-semibold block mb-2 font-mono">
-            Atención inmediata
+            {{ 'services.detail.overview.atencionInmediata' | transloco }}
           </span>
           <h4 class="text-xl font-editorial font-normal text-og-headline mb-2">
-            Consulta por WhatsApp
+            {{ 'services.detail.overview.consultaPorWhatsapp' | transloco }}
           </h4>
           <p class="text-xs text-og-slate font-normal leading-relaxed mb-6">
-            Resuelve dudas sobre tiempos, costos y agenda tu cita directamente con nuestro equipo.
+            {{ 'services.detail.overview.resuelveDudasSobreTiempos' | transloco }}
           </p>
           <a
-            [href]="'https://wa.me/573217209420?text=Hola,%20deseo%20más%20información%20sobre%20el%20tratamiento%20de%20' + item.title + '%20en%20Odontogamma%20Oriente.'"
+            [href]="'whatsapp.treatment' | whatsapp: { title: item.title }"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] font-medium text-og-electric hover:text-og-headline transition-colors"
           >
-            <span>Chatear por WhatsApp</span>
+            <span>{{ 'services.detail.overview.chatearPorWhatsapp' | transloco }}</span>
             <app-arrow-mark />
           </a>
         </div>
@@ -158,13 +158,13 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal-init reveal-fade-up">
         <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
-          Galería de referencia
+          {{ 'services.detail.gallery.galeriaDeReferencia' | transloco }}
         </span>
         <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-4">
-          Detalles de alta precisión
+          {{ 'services.detail.gallery.detallesDeAltaPrecision' | transloco }}
         </h2>
         <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed">
-          Un vistazo al entorno de confort, la aparatología biométrica y la maestría artesanal con la que creamos sonrisas únicas en el Oriente Antioqueño.
+          {{ 'services.detail.gallery.unVistazoAlEntorno' | transloco }}
         </p>
       </div>
 
@@ -177,14 +177,15 @@
           >
             <img
               [src]="imgUrl"
-              [alt]="item.title + ' detalle ' + (idx + 1)"
+              [alt]="'services.detail.gallery.imageAlt' | transloco: { title: item.title, n: idx + 1 }"
               loading="lazy"
       decoding="async"
+              [style.object-position]="item.galleryFocus?.[idx] ?? 'center'"
               class="w-full h-full object-cover transition-transform duration-500 ease-brand group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <span class="text-xs uppercase tracking-[0.14em] text-white font-medium">
-                Odontogamma Oriente clínica
+                {{ 'services.detail.gallery.odontogammaOrienteClinica' | transloco }}
               </span>
             </div>
           </div>
@@ -199,13 +200,13 @@
 
       <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal-init reveal-fade-up">
         <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3 font-mono">
-          Transformación real
+          {{ 'services.detail.case.transformacionReal' | transloco }}
         </span>
         <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-4">
-          Antes y después: {{ item.title }}
+          {{ 'services.detail.case.beforeAfterTitle' | transloco: { title: item.title } }}
         </h2>
         <p class="text-xs sm:text-sm text-og-slate font-normal leading-relaxed">
-          Desliza la barra divisoria interactiva para comparar el estado inicial con el resultado definitivo entregado al paciente.
+          {{ 'services.detail.case.deslizaLaBarraDivisoria' | transloco }}
         </p>
       </div>
 
@@ -220,7 +221,7 @@
 
         <div class="mt-8">
           <span class="text-xs tracking-[0.18em] uppercase text-og-electric font-semibold block mb-2 font-mono">
-            Caso clínico documentado
+            {{ 'services.detail.case.casoClinicoDocumentado' | transloco }}
           </span>
           <h3 class="text-2xl font-editorial text-og-headline font-normal mb-3">
             {{ item.beforeAfter.caseTitle }}
@@ -231,12 +232,12 @@
 
           <div class="flex flex-wrap gap-6 pt-4 border-t border-slate-200/80 text-xs text-slate-500 font-mono">
             @if (item.beforeAfter.technique) {
-              <span>• Técnica: {{ item.beforeAfter.technique }}</span>
+              <span>{{ 'services.detail.case.technique' | transloco: { value: item.beforeAfter.technique } }}</span>
             }
             @if (item.beforeAfter.focus) {
-              <span>• Enfoque: {{ item.beforeAfter.focus }}</span>
+              <span>{{ 'services.detail.case.focus' | transloco: { value: item.beforeAfter.focus } }}</span>
             }
-            <span>• Clínica: Odontogamma Oriente</span>
+            <span>{{ 'services.detail.case.clinicaOdontogammaOriente' | transloco }}</span>
           </div>
         </div>
       </div>
@@ -248,30 +249,30 @@
   <section class="py-16 md:py-24 px-6 md:px-12 bg-white text-center overflow-hidden">
     <div class="max-w-3xl mx-auto reveal-init reveal-scale delay-100">
       <span class="text-xs font-semibold tracking-[0.18em] uppercase text-og-electric block mb-3">
-        Tu próximo paso
+        {{ 'services.detail.cta.tuProximoPaso' | transloco }}
       </span>
       <h2 class="text-3xl sm:text-5xl font-editorial font-normal text-og-headline mb-6">
-        Comienza Tu Consulta para {{ item.title }}
+        {{ 'services.detail.cta.startConsultation' | transloco: { title: item.title } }}
       </h2>
       <p class="text-sm md:text-base text-og-slate font-normal leading-relaxed mb-10 max-w-xl mx-auto">
-        Cada sonrisa es diseñada a medida respetando tu fisionomía facial. Agenda una valoración privada para conocer las posibilidades de tu caso.
+        {{ 'services.detail.cta.cadaSonrisaEsDisenada' | transloco }}
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <app-luxury-button
-          routerLink="/contacto"
+          [routerLink]="'contact' | route"
           variant="primary"
           size="lg"
         >
-          Solicitar cita de valoración
+          {{ 'services.detail.cta.solicitarCitaDeValoracion' | transloco }}
         </app-luxury-button>
 
         <app-luxury-button
-          routerLink="/servicios"
+          [routerLink]="'services' | route"
           variant="secondary"
           size="lg"
         >
-          Ver todos los tratamientos
+          {{ 'services.detail.cta.verTodosLosTratamientos' | transloco }}
         </app-luxury-button>
       </div>
     </div>
@@ -280,10 +281,10 @@
   <!-- Estado cuando el tratamiento no se encuentra -->
   <section class="min-h-[70dvh] flex items-center justify-center px-6 py-16 md:py-24 text-center">
     <div>
-      <h2 class="text-3xl font-editorial text-og-headline mb-4">Tratamiento no encontrado</h2>
-      <p class="text-sm text-og-slate mb-8">El procedimiento solicitado no existe o fue reubicado.</p>
-      <app-luxury-button routerLink="/servicios" variant="primary" size="md">
-        Volver a tratamientos
+      <h2 class="text-3xl font-editorial text-og-headline mb-4">{{ 'services.detail.notFound.tratamientoNoEncontrado' | transloco }}</h2>
+      <p class="text-sm text-og-slate mb-8">{{ 'services.detail.notFound.elProcedimientoSolicitadoNo' | transloco }}</p>
+      <app-luxury-button [routerLink]="'services' | route" variant="primary" size="md">
+        {{ 'services.detail.notFound.volverATratamientos' | transloco }}
       </app-luxury-button>
     </div>
   </section>

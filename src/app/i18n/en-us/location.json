@@ -1,0 +1,80 @@
+{
+  "location": {
+    "hero": {
+      "orienteAntioquenoElCarmen": "El Carmen de Viboral · Antioquia, Colombia",
+      "unSantuarioDeCalma": "A sanctuary of calm,",
+      "privacidadYNaturaleza": "privacy and nature",
+      "disenadaParaTransformarTu": "Designed to turn your dental visit into a moment of real well-being. Minutes from José María Córdova International Airport (JMC) and in the most exclusive countryside setting in Antioquia.",
+      "programarVisitaPrivada": "Schedule a private visit",
+      "verEnGoogleMaps": "View on Google Maps"
+    },
+    "spaces": {
+      "arquitecturaBienestar": "Architecture & well-being",
+      "espaciosConcebidosParaEl": "Spaces designed for total comfort",
+      "cadaRinconDeNuestra": "Every corner of our clinic combines contemporary lines, natural light and quiet medical technology.",
+      "items": [
+        {
+          "title": "Private reception lounge",
+          "category": "Hospitality & calm",
+          "description": "A serene lobby designed to melt away dental anxiety. Specialty coffee from Eastern Antioquia, infused water and soft acoustic music."
+        },
+        {
+          "title": "Our treatment room",
+          "category": "Care & comfort",
+          "description": "A treatment room with an ergonomic chair and all the equipment for your evaluation and treatment, in a clean, comfortable setting."
+        },
+        {
+          "title": "On-site digital lab",
+          "category": "Craftsmanship & precision",
+          "description": "A dedicated area for shade matching in natural light and fine ceramic adjustments during your appointment, which cuts waiting time."
+        }
+      ]
+    },
+    "amenities": {
+      "hospitalidadDeAltoNivel": "Elevated hospitality",
+      "detallesQueDefinenLa": "Details that define the Odontogamma experience",
+      "conciergeDeTraslados": "Airport & hotel transfers",
+      "coordinacionDeTransportePrivado": "Private transportation arranged from the airport and the main hotels in Medellín and El Carmen de Viboral.",
+      "entornoAntiEstres": "A stress-free setting",
+      "aromaterapiaSutilInsonorizacionAcustica": "Subtle aromatherapy, acoustic soundproofing and views of green gardens for a relaxing visit.",
+      "atencionBilingue": "Bilingual care",
+      "personalClinicoYDe": "Our clinical and hospitality staff speak fluent English, so international patients feel at ease."
+    },
+    "reels": {
+      "laSedeEnMovimiento": "The clinic in motion",
+      "conoceOdontogammaOrientePor": "See inside Odontogamma Oriente",
+      "unVistazoEnVideo": "A quick video tour of reception, the treatment rooms and daily care in El Carmen de Viboral."
+    },
+    "access": {
+      "accesibilidadPrivilegiada": "Easy to reach",
+      "tuViajeANuestra": "Your journey to our clinic",
+      "ubicacionEstrategicaYDescongestionada": "A convenient, uncongested location in the heart of Eastern Antioquia.",
+      "items": [
+        {
+          "origin": "From the José María Córdova International Airport",
+          "time": "15 minutes",
+          "route": "Via El Carmen de Viboral / Rionegro",
+          "description": "A fast connection for domestic and international patients traveling for dental care."
+        },
+        {
+          "origin": "From Medellín (El Poblado / Laureles)",
+          "time": "35 minutes",
+          "route": "Through the Oriente Tunnel",
+          "description": "A direct, smooth drive with no city traffic, and the cool mountain climate to enjoy on the way."
+        },
+        {
+          "origin": "El Carmen de Viboral & Rionegro",
+          "time": "5 to 10 minutes",
+          "route": "Dining and residential corridor",
+          "description": "A prime spot in the most exclusive countryside area of the region."
+        }
+      ]
+    },
+    "cta": {
+      "orienteAntioqueno": "Eastern Antioquia",
+      "venAConocerLa": "Come experience it in person",
+      "teEsperamosEnNuestra": "We'd love to welcome you at our clinic in El Carmen de Viboral to design the smile you've always wanted.",
+      "agendarCitaPrivada": "Book a private consultation"
+    }
+  }
+}

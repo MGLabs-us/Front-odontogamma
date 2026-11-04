@@ -1,0 +1,9 @@
+{
+  "notFound": {
+    "code": "Error 404",
+    "title": "No encontramos esta página",
+    "text": "El enlace puede estar desactualizado. Puedes volver al inicio o ver nuestros tratamientos.",
+    "home": "Volver al inicio",
+    "treatments": "Ver tratamientos"
+  }
+}
