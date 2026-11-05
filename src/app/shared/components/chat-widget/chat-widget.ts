@@ -20,25 +20,10 @@ export class ChatWidget {
 
   constructor() {
     afterNextRender(() => {
-      let opened = false;
-      let dismissed = false;
-      try {
-        opened = globalThis.localStorage?.getItem('og-chat-opened') === '1';
-        dismissed = globalThis.sessionStorage?.getItem('og-chat-teaser') === '1';
-      } catch {
-        /* almacenamiento no disponible */
-      }
-      if (opened) {
-        this.chat.hasBeenOpened.set(true);
-        return;
-      }
-      if (dismissed) return;
-      const show = setTimeout(() => this.teaserVisible.set(true), 4500);
-      const hide = setTimeout(() => this.teaserVisible.set(false), 22000);
-      this.destroyRef.onDestroy(() => {
-        clearTimeout(show);
-        clearTimeout(hide);
-      });
+      // Se muestra en cada visita nada más cargar y se oculta a los 7 s.
+      this.teaserVisible.set(true);
+      const hide = setTimeout(() => this.teaserVisible.set(false), 7000);
+      this.destroyRef.onDestroy(() => clearTimeout(hide));
     });
 
     // Mantiene a la vista el último mensaje y el indicador de "escribiendo".
@@ -59,11 +44,6 @@ export class ChatWidget {
 
   protected dismissTeaser() {
     this.teaserVisible.set(false);
-    try {
-      globalThis.sessionStorage?.setItem('og-chat-teaser', '1');
-    } catch {
-      /* almacenamiento no disponible */
-    }
   }
 
   protected openFromTeaser() {
