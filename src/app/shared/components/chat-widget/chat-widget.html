@@ -47,7 +47,7 @@
 
 <button
   class="chat-fab"
-  [class.chat-fab--attention]="!chat.hasBeenOpened()"
+  [class.chat-fab--attention]="!chat.isOpen()"
   type="button"
   [attr.aria-expanded]="chat.isOpen()"
   [attr.aria-label]="(chat.isOpen() ? 'chat.close' : 'chat.open') | transloco"

@@ -940,15 +940,14 @@ video {
   display: none;
 }
 
-/* Video del hero: la forma orgánica vive en un <clipPath> SVG (objectBoundingBox) dentro de home.component.html */
-.hero-blob-clip {
-  clip-path: url(#hero-blob-clip);
+/* Video del hero: marco rectangular con esquinas redondeadas y contorno doble */
+.hero-frame-clip {
+  border-radius: 2.4rem;
 }
 
-.hero-blob-outline {
-  fill: none;
-  stroke: rgb(255 255 255 / 45%);
-  stroke-width: 1.25px;
+.hero-frame-outline {
+  border: 1.25px solid rgb(255 255 255 / 45%);
+  border-radius: 2.4rem;
 }
 
 /* Selector de idioma de la barra de navegación */
